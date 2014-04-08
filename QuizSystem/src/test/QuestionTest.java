@@ -9,13 +9,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import quizData.Question;
+import quizData.Quiz;
 
 public class QuestionTest {
 	ArrayList<String> answers;
 	String question;
 	Question q;
 	String ans1, ans2, ans3, ans4;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		ans1 = "a baby";
@@ -33,12 +34,24 @@ public class QuestionTest {
 
 	@After
 	public void tearDown() throws Exception {
+		ans1 = null;
+		ans2 = null;
+		ans3 = null;
+		ans4 = null;
+		answers = null;
+		question = null;
+		q =  null;
 	}
 
 	@Test
 	public final void testQuestion() {
-		fail("Not yet implemented"); // TODO
-	}
+		//expected
+		String expected = question;
+		//actual
+		String actual = q.getQuestionString();
+		//test
+		assertTrue("The class Question is not instantiating propperly",q instanceof Question);
+		assertEquals("The Question constructor is not passing the owner's name in propperly",expected, actual);	}
 
 	@Test
 	public final void testAddAnswer() {
