@@ -90,7 +90,14 @@ public class QuestionTest {
 
 	@Test
 	public final void testToString() {
-		fail("Not yet implemented"); // TODO
+		//setup
+		String questionString = q.toString();
+		//expected
+		String expected = question;
+		//actual
+		String actual = questionString;
+		//test
+		assertEquals("toString() is not implemented",expected, actual);
 	}
 
 }
