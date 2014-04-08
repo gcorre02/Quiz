@@ -34,8 +34,13 @@ public class Quiz {
 	}
 
 	public String orderedQuestions() {
-		// TODO Auto-generated method stub
-		return null;
+		String result = "";
+		int i = 0;
+		for(Question q : quizQuestions){
+			result += i +" -> "+q.getQuestionString() + "\n";
+			i++;
+		}
+		return result;
 	}
 	
 

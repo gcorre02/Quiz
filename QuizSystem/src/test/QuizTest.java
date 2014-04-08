@@ -106,10 +106,12 @@ public class QuizTest {
 		//expected
 		String prints = "0 -> "+question
 				+ "\n1 -> another question"
-				+ "\n2 -> what happens to John Hurt in Alien ?";
+				+ "\n2 -> what happens to John Hurt in Alien ?\n";
 		String expected = prints;
 		//actual
 		String actual = quiz.orderedQuestions();
+		//debug
+		System.out.println(actual);
 		//test
 		assertEquals("The getQuestion() is not returning a question",expected, actual);
 	}
