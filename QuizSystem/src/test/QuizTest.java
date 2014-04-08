@@ -23,6 +23,9 @@ public class QuizTest {
 
 	@After
 	public void tearDown() throws Exception {
+		quiz = null;
+		quizName = null;
+		question = null;
 	}
 
 	@Test
@@ -111,7 +114,7 @@ public class QuizTest {
 		//actual
 		String actual = quiz.orderedQuestions();
 		//debug
-		System.out.println(actual);
+		//System.out.println(actual.toString());
 		//test
 		assertEquals("The getQuestion() is not returning a question",expected, actual);
 	}
