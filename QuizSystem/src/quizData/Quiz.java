@@ -2,7 +2,6 @@ package quizData;
 
 import java.util.ArrayList;
 
-import tools.CollectionPrinter;
 import lombok.Data;
 
 @Data
@@ -15,17 +14,12 @@ public class Quiz {
 		quizQuestions = new ArrayList<>();
 		quizName = name;
 	}
-	
+
 	public void addQuestion(String questionString){
 		Question newQuestion = new Question(questionString);
 		quizQuestions.add(newQuestion);
 	}
 	
-	@Override
-	public String toString(){
-		return  quizName;
-	}
-
 	public void removeQuestion(int i) {
 		quizQuestions.remove(i);		
 	}
@@ -34,6 +28,10 @@ public class Quiz {
 		return quizQuestions.get(i);
 	}
 	
+	@Override
+	public String toString(){
+		return  quizName;
+	}
 	
 
 }
