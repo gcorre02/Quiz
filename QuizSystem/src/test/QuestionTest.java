@@ -80,7 +80,12 @@ public class QuestionTest {
 
 	@Test
 	public final void testGetAnswer() {
-		fail("Not yet implemented"); // TODO
+		//expected
+		String expected = ans4;
+		//actual 
+		String actual = q.getAnswer(3);
+		//test
+		assertEquals(expected, actual);
 	}
 
 	@Test
