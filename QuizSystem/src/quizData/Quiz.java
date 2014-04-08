@@ -32,6 +32,11 @@ public class Quiz {
 	public Question getQuestion(int i) {
 		return quizQuestions.get(i);
 	}
+
+	public String orderedQuestions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
