@@ -43,14 +43,14 @@ public abstract class CollectionPrinter {
 
 	private static String getKey(int i) {
 		String[] keys = {
-				"A"
-				+ "B"
-				+ "C"
-				+ "D"
-				+ "E"
-				+ "F"
-				+ "G"
-				+ "H"
+				"A",
+				 "B"
+				, "C"
+				, "D"
+				, "E"
+				, "F"
+				, "G"
+				, "H"
 		};
 		return keys[i];
 	}

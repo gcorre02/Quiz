@@ -33,11 +33,7 @@ public class Quiz {
 	public Question getQuestion(int i) {
 		return quizQuestions.get(i);
 	}
-
-	public String orderedQuestions() {
-		String result = CollectionPrinter.collectionPrinter('0', quizQuestions);
-		return result;
-	}
+	
 	
 
 }

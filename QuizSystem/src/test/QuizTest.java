@@ -100,22 +100,5 @@ public class QuizTest {
 		//test
 		assertEquals("The getQuestion() is not returning a question",expected, actual);
 	}
-	@Test
-	public final void testOrderQuestions() {
-		//setup
-		quiz.addQuestion(question);
-		quiz.addQuestion("another question");
-		quiz.addQuestion("what happens to John Hurt in Alien ?");
-		//expected
-		String prints = "0 -> "+question
-				+ "\n1 -> another question"
-				+ "\n2 -> what happens to John Hurt in Alien ?\n";
-		String expected = prints;
-		//actual
-		String actual = quiz.orderedQuestions();
-		//debug
-		//System.out.println(actual);
-		//test
-		assertEquals("The getQuestion() is not returning a question",expected, actual);
-	}
+	
 }
