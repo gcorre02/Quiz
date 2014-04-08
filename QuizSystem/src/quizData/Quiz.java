@@ -20,5 +20,5 @@ public class Quiz {
 		quizQuestions.add(newQuestion);
 	}
 	
-	
+
 }
