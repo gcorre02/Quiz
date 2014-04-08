@@ -28,6 +28,10 @@ public class Quiz {
 	public void removeQuestion(int i) {
 		quizQuestions.remove(i);		
 	}
+
+	public Question getQuestion(int i) {
+		return quizQuestions.get(i);
+	}
 	
 
 }

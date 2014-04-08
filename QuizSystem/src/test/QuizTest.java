@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import quizData.Question;
 import quizData.Quiz;
 
 public class QuizTest {
@@ -84,6 +85,16 @@ public class QuizTest {
 		//test
 		assertTrue(quiz.getQuizQuestions().size()==1);
 	}
-	
-
+	@Test
+	public final void testGetQuestion() {
+		//setup
+		quiz.addQuestion(question);
+		//expected
+		String expected = question;
+		//actual
+		Question q = quiz.getQuestion(0);
+		String actual = q.getQuestionString();
+		//test
+		assertEquals("The getQuestion() is not returning a question",expected, actual);
+	}
 }
