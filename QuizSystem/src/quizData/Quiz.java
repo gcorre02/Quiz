@@ -24,6 +24,10 @@ public class Quiz {
 	public String toString(){
 		return  quizName;
 	}
+
+	public void removeQuestion(int i) {
+		quizQuestions.remove(i);		
+	}
 	
 
 }

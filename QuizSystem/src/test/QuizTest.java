@@ -59,9 +59,31 @@ public class QuizTest {
 		assertEquals("toString() is not implemented",expected, actual);
 	}
 	
+	/*
+	 * the quiz name is changed by the already implemented by lombok method setQuizName
+	 */
 	@Test
-	public final void testChangeString(){
-		
+	public final void testChangeQuizName(){
+		//setup
+		String newQuizName = "Alien 2";
+		quiz.setQuizName(newQuizName);
+		//expected
+		String expected = newQuizName;
+		//actual
+		String actual = quiz.getQuizName();
+		//test
+		assertEquals("setQuizName() is not behaving as expected",expected, actual);
 	}
+	@Test
+	public final void testRemoveQuestion(){
+		//setup
+		String removeableQuestion = "another question";
+		quiz.addQuestion(question);
+		quiz.addQuestion(removeableQuestion);
+		quiz.removeQuestion(1);
+		//test
+		assertTrue(quiz.getQuizQuestions().size()==1);
+	}
+	
 
 }
