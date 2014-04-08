@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import quizData.Question;
-import quizData.Quiz;
 
 public class QuestionTest {
 	ArrayList<String> answers;
@@ -30,6 +29,7 @@ public class QuestionTest {
 		answers.add(ans4);
 		question = "What comes out of John Hurt's tummy?";
 		q = new Question(question);
+		q.setAnswers(answers);
 	}
 
 	@After
@@ -55,7 +55,15 @@ public class QuestionTest {
 
 	@Test
 	public final void testAddAnswer() {
-		fail("Not yet implemented"); // TODO
+		//setup
+		String answerString = "some other answer";
+		q.addAnswer(answerString);
+		//expected
+		String expected = answerString;
+		//actual
+		String actual = q.getAnswer(4);
+		//test
+		assertEquals("The addQuestion() is not behaving propperly",expected, actual);
 	}
 
 	@Test
