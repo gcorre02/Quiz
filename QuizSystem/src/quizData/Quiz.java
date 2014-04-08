@@ -20,5 +20,10 @@ public class Quiz {
 		quizQuestions.add(newQuestion);
 	}
 	
+	@Override
+	public String toString(){
+		return  quizName;
+	}
+	
 
 }
