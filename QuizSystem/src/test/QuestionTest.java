@@ -68,7 +68,14 @@ public class QuestionTest {
 
 	@Test
 	public final void testRemoveAnswer() {
-		fail("Not yet implemented"); // TODO
+		//setup
+		q.removeAnswer(2);
+		//expected
+		String expected = ans4;
+		//actual 
+		String actual = q.getAnswer(2);
+		//test
+		assertEquals(expected, actual);
 	}
 
 	@Test
