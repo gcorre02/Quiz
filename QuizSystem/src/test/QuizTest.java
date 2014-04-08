@@ -114,7 +114,7 @@ public class QuizTest {
 		//actual
 		String actual = quiz.orderedQuestions();
 		//debug
-		//System.out.println(actual.toString());
+		//System.out.println(actual);
 		//test
 		assertEquals("The getQuestion() is not returning a question",expected, actual);
 	}

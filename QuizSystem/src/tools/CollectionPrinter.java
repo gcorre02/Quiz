@@ -25,7 +25,7 @@ public abstract class CollectionPrinter {
 	private static <T> String populateResult(int i, ArrayList<T> collection){
 		String result = "";
 		for (T current : collection){
-			result = i +" -> "+ current.toString()+"\n";
+			result += i +" -> "+ current.toString()+"\n";
 			i++;
 		}
 		return result;
@@ -35,7 +35,7 @@ public abstract class CollectionPrinter {
 		String result = "";
 		int i =0;
 		for (T current : collection){
-			result = getKey(i) +" -> "+ current.toString()+"\n";
+			result += getKey(i) +" -> "+ current.toString()+"\n";
 			i++;
 		}
 		return result;

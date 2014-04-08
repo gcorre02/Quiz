@@ -2,6 +2,7 @@ package quizData;
 
 import java.util.ArrayList;
 
+import tools.CollectionPrinter;
 import lombok.Data;
 
 @Data
@@ -34,12 +35,7 @@ public class Quiz {
 	}
 
 	public String orderedQuestions() {
-		String result = "";
-		int i = 0;
-		for(Question q : quizQuestions){
-			result += i +" -> "+q.getQuestionString() + "\n";
-			i++;
-		}
+		String result = CollectionPrinter.collectionPrinter('0', quizQuestions);
 		return result;
 	}
 	

@@ -13,5 +13,9 @@ public class Question {
 	public Question(String questionString) {
 		this.questionString = questionString;
 	}
+	@Override
+	public String toString(){
+		return questionString;
+	}
 
 }
