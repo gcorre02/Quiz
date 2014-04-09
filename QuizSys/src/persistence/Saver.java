@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import lombok.Data;
-
+import com.google.gson.*;
 /**
  * source defines the folder where all the quiz system files are.
  * TODO<concurrency> some conflict checking must go in here.
@@ -26,6 +26,8 @@ public class Saver {
 	}
 	
 	public boolean saveUserNames(ArrayList<String> userNames){
+		Gson gson = new Gson();
+		System.out.println();
 		file = new File(source+File.separator+"UserNames.txt");
 		PrintWriter w;
 		try {
@@ -33,10 +35,9 @@ public class Saver {
 		} catch (FileNotFoundException e) {
 			return false;
 		}
-		for(String field : userNames){
-			w.println(field);
-		}
+		w.println(gson.toJson(userNames.toArray()));
 		w.close();
+		
 		return true;
 	}
 	
