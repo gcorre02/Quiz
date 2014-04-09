@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Map;
 
 import lombok.Data;
 
@@ -101,10 +102,56 @@ public class Saver {
 		}
 		file.delete();
 	}
-
-	public boolean saveUserQuizzes(){
-		return false;
+	/*
+	 * need to improve the json to make it understand the map propperly
+	 */
+	public boolean saveUserQuizzes(Map<String, String[]> userQuizzes){
+		if(!writeUserQuizzesJson(userQuizzes)){
+			return false;
+		}
+		try {
+			createQuizFiles(userQuizzes);
+		} catch (IOException e) {
+			System.out.println("couldn't set up all the quizz files");
+			return false;
+		}
+		return true;
 	}
+
+	private boolean writeUserQuizzesJson(Map<String, String[]> userQuizzes) {
+		Gson gson = new Gson();
+		file = new File(source+File.separator+"UserQuizzes.txt");
+		PrintWriter w;
+		try {
+			w = new PrintWriter(file);
+		} catch (FileNotFoundException e) {
+			return false;
+		}
+		w.println(gson.toJson(userQuizzes.toString()));
+		w.close();
+		return true;
+	}
+	private void createQuizFiles(Map<String, String[]> userQuizzes) throws IOException {
+		Loader l = new Loader(source);
+		for(String user : userQuizzes.keySet()){
+			if(!l.getUsernames().contains(user)){
+				addUserName(user);
+			}
+			generateQuizFiles(user, userQuizzes.get(user));
+		}
+	}
+	/*
+	 * needs to check if the files already exist.
+	 */
+	private void generateQuizFiles(String user, String[] strings) throws IOException {
+		for(String quizname: strings){
+			File quizFile = new File(source+File.separator+user+File.separator+quizname);
+			if(!quizFile.exists()){
+				quizFile.createNewFile();
+			}
+		}
+	}
+
 	public boolean saveQuiz(){
 		return false;
 	}
