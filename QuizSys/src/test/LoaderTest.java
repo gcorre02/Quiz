@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -28,7 +29,13 @@ public class LoaderTest {
 	@Test
 	public final void testGetUsernames() {
 		loader = new Loader("TestFiles");
-		ArrayList<String> usernames = loader.getUsernames();
+		ArrayList<String> usernames = new ArrayList<>();
+		try {
+			usernames = loader.getUsernames();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(usernames.toString());
 	}
 

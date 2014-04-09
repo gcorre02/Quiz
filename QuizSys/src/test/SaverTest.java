@@ -48,10 +48,11 @@ public class SaverTest {
 		assertEquals(expected, actual);
 	}
 
-	@Test
+	//@Test
 	public final void testSaveUserNames() {
 		assertTrue(s.saveUserNames(userNames));
 	}
+
 
 	//@Test
 	public final void testSaveUserQuizzes() {

@@ -2,10 +2,12 @@ package persistence;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import lombok.Data;
+
 import com.google.gson.*;
 /**
  * source defines the folder where all the quiz system files are.
@@ -39,6 +41,17 @@ public class Saver {
 		w.close();
 		
 		return true;
+	}
+	public boolean addUserName(String user) throws IOException{
+		Loader l = new Loader(source);
+		ArrayList<String> existingUserNameStrings = l.getUsernames();
+		if(existingUserNameStrings.contains(user)){
+			return false;
+		} else {
+			existingUserNameStrings.add(user);
+			saveUserNames(existingUserNameStrings);
+			return true;
+		}
 	}
 	
 	public boolean saveUserQuizzes(){
