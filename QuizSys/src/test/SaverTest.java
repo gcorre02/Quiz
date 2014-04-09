@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.After;
 import org.junit.Before;
@@ -73,9 +75,17 @@ public class SaverTest {
 		assertFalse(f.exists());
 	}
 	
-	//@Test
+	@Test
 	public final void testSaveUserQuizzes() {
-		fail("Not yet implemented"); // TODO
+		//setup
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		String[] gonzoQuizzes = {"numbers","people","cars"};
+		for(String name : userNames){
+			userQuizzes.put(name, new String[0]);
+		}
+		userQuizzes.put("Gonzo", gonzoQuizzes);
+		//test
+		assertTrue(s.saveUserQuizzes(userQuizzes));
 	}
 
 	//@Test
