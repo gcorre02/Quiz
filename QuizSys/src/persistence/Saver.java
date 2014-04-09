@@ -21,6 +21,10 @@ public class Saver {
 	File file;
 	public Saver(String path){
 		source = path;
+		createFolder(path);
+	}
+
+	private void createFolder(String path) {
 		File folder = new File(path);
 		if(!folder.exists()){
 			folder.mkdir();
@@ -29,7 +33,6 @@ public class Saver {
 	
 	public boolean saveUserNames(ArrayList<String> userNames){
 		Gson gson = new Gson();
-		System.out.println();
 		file = new File(source+File.separator+"UserNames.txt");
 		PrintWriter w;
 		try {
@@ -39,9 +42,10 @@ public class Saver {
 		}
 		w.println(gson.toJson(userNames.toArray()));
 		w.close();
-		
+		createUserFolders(userNames);
 		return true;
 	}
+	
 	public boolean addUserName(String user) throws IOException{
 		Loader l = new Loader(source);
 		ArrayList<String> existingUserNameStrings = l.getUsernames();
@@ -53,6 +57,17 @@ public class Saver {
 			return true;
 		}
 	}
+	
+	/*
+	 * creates folders for each user, if these do not exist already.
+	 *
+	 */
+	private void createUserFolders(ArrayList<String> users){
+		for(String user : users){
+			createFolder(source+File.separator+user);
+		}
+	}
+	
 	
 	public boolean saveUserQuizzes(){
 		return false;

@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -48,11 +49,15 @@ public class SaverTest {
 		assertEquals(expected, actual);
 	}
 
-	//@Test
+	@Test
 	public final void testSaveUserNames() {
 		assertTrue(s.saveUserNames(userNames));
 	}
-
+	//these two tests are trying to be handled concurrently by the system, which forces them to wait for each other.
+	@Test
+	public final void testAddUserNames() throws IOException {
+		assertTrue(s.addUserName("Guy Fawlkes"));
+	}
 
 	//@Test
 	public final void testSaveUserQuizzes() {
