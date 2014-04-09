@@ -56,7 +56,10 @@ public class SaverTest {
 	//these two tests are trying to be handled concurrently by the system, which forces them to wait for each other.
 	@Test
 	public final void testAddUserNames() throws IOException {
-		assertTrue(s.addUserName("Guy Fawlkes"));
+		String newUser = "Guy Fawlkes";
+		assertTrue(s.addUserName(newUser));
+		File f = new File(folder + File.separator + newUser);
+		assertTrue(f.exists());
 	}
 
 	//@Test
