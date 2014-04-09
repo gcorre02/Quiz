@@ -30,6 +30,7 @@ public class SaverTest {
 
 	@After
 	public void tearDown() throws Exception {
+		s.deleteFolder(folder);
 		userNames = null;
 		s = null;
 		folder = null;
@@ -56,6 +57,7 @@ public class SaverTest {
 	//these two tests are trying to be handled concurrently by the system, which forces them to wait for each other.
 	@Test
 	public final void testAddUserNames() throws IOException {
+		s.saveUserNames(userNames);
 		String newUser = "Guy Fawlkes";
 		assertTrue(s.addUserName(newUser));
 		File f = new File(folder + File.separator + newUser);
@@ -63,6 +65,7 @@ public class SaverTest {
 	}
 	@Test
 	public final void testDeleteUserNames() throws IOException {
+		s.saveUserNames(userNames);
 		String newUser = "DeleteableUser";
 		s.addUserName(newUser);
 		assertTrue(s.deleteUser(newUser));

@@ -30,7 +30,12 @@ public class Saver {
 			folder.mkdir();
 		}
 	}
-	
+	/**
+	 * add User names should be called usually, saveUserNames has the danger of overwriting existing users
+	 * TODO <overwriting> make it private ???
+	 * @param userNames
+	 * @return
+	 */
 	public boolean saveUserNames(ArrayList<String> userNames){
 		Gson gson = new Gson();
 		file = new File(source+File.separator+"UserNames.txt");
@@ -85,7 +90,7 @@ public class Saver {
 		}
 	}
 	
-	private void deleteFolder(String path) {
+	public void deleteFolder(String path) {
 		File file = new File(path);
 		if(file.list()!=null){
 			int i = file.list().length;
