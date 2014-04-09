@@ -67,8 +67,24 @@ public class Saver {
 			createFolder(source+File.separator+user);
 		}
 	}
+	public boolean deleteUser(String user) throws IOException{
+		Loader l = new Loader(source);
+		ArrayList<String> users = l.getUsernames();
+		if(!user.contains(user)){
+			return false;
+		} else {
+			users.remove(user);
+			saveUserNames(users);
+			deleteFolder(user);
+			return true;
+		}
+	}
 	
-	
+	private void deleteFolder(String user) {
+		File file = new File(source + File.separator + user);
+		file.delete();
+	}
+
 	public boolean saveUserQuizzes(){
 		return false;
 	}
