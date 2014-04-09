@@ -75,13 +75,23 @@ public class Saver {
 		} else {
 			users.remove(user);
 			saveUserNames(users);
-			deleteFolder(user);
+			String path =source + File.separator + user; 
+			deleteFolder(path);
+			File f = new File(path);
+			if(f.exists()){
+				return false;
+			}
 			return true;
 		}
 	}
 	
-	private void deleteFolder(String user) {
-		File file = new File(source + File.separator + user);
+	private void deleteFolder(String path) {
+		File file = new File(path);
+		if(file.list().length>0){
+			for(String s : file.list()){
+				deleteFolder(path+File.separator+s);
+			}
+		}
 		file.delete();
 	}
 

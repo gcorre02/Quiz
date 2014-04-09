@@ -61,7 +61,15 @@ public class SaverTest {
 		File f = new File(folder + File.separator + newUser);
 		assertTrue(f.exists());
 	}
-
+	@Test
+	public final void testDeleteUserNames() throws IOException {
+		String newUser = "DeleteableUser";
+		s.addUserName(newUser);
+		assertTrue(s.deleteUser(newUser));
+		File f = new File(folder + File.separator + newUser);
+		assertFalse(f.exists());
+	}
+	
 	//@Test
 	public final void testSaveUserQuizzes() {
 		fail("Not yet implemented"); // TODO
