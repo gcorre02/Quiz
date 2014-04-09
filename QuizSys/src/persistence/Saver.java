@@ -87,9 +87,11 @@ public class Saver {
 	
 	private void deleteFolder(String path) {
 		File file = new File(path);
-		if(file.list().length>0){
-			for(String s : file.list()){
-				deleteFolder(path+File.separator+s);
+		if(file.list()!=null){
+			int i = file.list().length;
+			for(int t = 0; t<i; t++){
+				String s = file.listFiles()[0].toPath().toString();
+				deleteFolder(s);
 			}
 		}
 		file.delete();
