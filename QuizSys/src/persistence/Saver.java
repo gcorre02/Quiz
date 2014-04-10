@@ -127,7 +127,7 @@ public class Saver {
 		} catch (FileNotFoundException e) {
 			return false;
 		}
-		w.println(gson.toJson(userQuizzes.toString()));
+		w.println(gson.toJson(userQuizzes));
 		w.close();
 		return true;
 	}
