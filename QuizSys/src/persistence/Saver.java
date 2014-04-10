@@ -214,7 +214,7 @@ public class Saver {
 			return false;
 		
 		if(
-				!saveQuizConfig(quiz.getOwner(),quiz.getQuizName(),quiz.getQuizQuestions().toArray(new String[0]))
+				!saveQuizConfig(quiz.getOwner(),quiz.getQuizName(),quiz.getQuizQuestions())
 				||!saveQuizObject(quiz)
 				||!generateQuestionFiles(quiz))
 			return false;
@@ -222,7 +222,7 @@ public class Saver {
 	}
 
 
-	private boolean saveQuizConfig(String owner, String quizName, String[] questions) {
+	private boolean saveQuizConfig(String owner, String quizName, ArrayList<String> questions) {
 		Gson gson = new Gson();
 		file = new File(source+File.separator+owner+File.separator+quizName+File.separator+quizName+".txt");
 		PrintWriter w;
@@ -271,6 +271,13 @@ public class Saver {
 	 */
 	public boolean addAQuestion(String question, String user, String quiz){
 		Loader l = new Loader(source);
+		try {
+			if(l.getQuizQuestionsConfig(user, quiz).contains(question))
+				return true;
+		} catch (IOException e) {
+			System.out.println("couldnt load the quizz config file");
+			return false;
+		}
 		Quiz q = l.getQuizObject(user, quiz);
 		q.addQuestion(question);
 		if(saveQuiz(q))

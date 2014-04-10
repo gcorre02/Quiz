@@ -92,4 +92,31 @@ public class Loader {
 		
 		return returnQuiz;
 	}
+
+	public ArrayList<String> getQuizQuestionsConfig(String owner, String quizName) throws IOException {
+		ArrayList<String> returnArray = new ArrayList<>();
+		
+		file = new File(source+File.separator+owner+File.separator+quizName+File.separator+quizName+".txt");
+		BufferedReader reader;
+		JsonReader jReader;
+	
+		try {
+			reader = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			System.out.print("File cannot be accessed");
+			return null;
+		}
+		
+		jReader = new JsonReader(reader);
+		jReader.beginArray();
+
+		while(jReader.hasNext()){
+			returnArray.add(jReader.nextString());
+		}
+		
+		jReader.close();
+		reader.close();
+		
+		return returnArray;
+	}
 }

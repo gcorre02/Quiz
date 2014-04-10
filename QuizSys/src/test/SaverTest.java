@@ -30,7 +30,7 @@ public class SaverTest {
 		}
 		folder = "testFiles";
 		s = new Saver(folder);
-		
+
 	}
 
 	@After
@@ -62,7 +62,7 @@ public class SaverTest {
 	//these two tests are trying to be handled concurrently by the system, which forces them to wait for each other.
 	@Test
 	public final void testAddUserNames() throws IOException {
-	//	s.saveUserNames(userNames);
+		//	s.saveUserNames(userNames);
 		String newUser = "Guy Fawlkes";
 		assertTrue(s.addUserName(newUser));
 		File f = new File(folder + File.separator + newUser);
@@ -77,23 +77,23 @@ public class SaverTest {
 		File f = new File(folder + File.separator + newUser);
 		assertFalse(f.exists());
 	}
-	
+
 	@Test
 	public final void testSaveUserQuizzes() {
 		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		//test
 		assertTrue(s.saveUserQuizzes(userQuizzes));
 	}
-	
+
 	@Test
 	public final void testAddQuizz(){
 		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		String newQuiz = "Sexy Sailors of the 20th Century";
 		String user = "Bartolomeu";
-		
+
 		//expected
 		String expected = newQuiz;
-		
+
 		Loader l = new Loader(folder);
 		//test
 		assertTrue(s.addQuiz(newQuiz, user, userQuizzes));
@@ -145,12 +145,31 @@ public class SaverTest {
 		quiz.setQuizQuestions(quizQuestions);
 		return quiz;
 	}
-	
+
 	@Test
-	public final void testAddQuestion(){
+	public final void testAddQuestion() throws IOException{
 		//setup
 		Quiz quiz = setupQuiz();
-		 
+		String newQuestion = "how many clowns fit in a Mini ?";
+		s.addAQuestion(newQuestion, quiz.getOwner(), quiz.getQuizName());
+		//expected
+		String expected = newQuestion;
+		//actual
+		Loader l = new Loader(folder);
+
+		String actual = l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName()).get(3);
+		
+		//debug
+		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
+		System.out.println(CollectionPrinter.collectionPrinter('0', l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName())));
+		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
+		//enddebug
+		
+		//test
+
+		File f = new File(folder + File.separator + quiz.getOwner()+ File.separator +quiz.getQuizName()+ File.separator + "3.txt");
+		assertTrue(f.exists());
+		assertEquals(expected, actual);
 	}
 
 }
