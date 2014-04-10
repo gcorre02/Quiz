@@ -205,7 +205,7 @@ public class Saver {
 	}
 	/**
 	 * each quiz has a config file, which has the name of the quiz and stores the name of the quiz object file, and associated questions.
-	 * returns false if config file doesnt exist, which means it's not in the structure.
+	 * returns false if config file doesnt exist, which means it's not in the structure, which means that addquiz hasnt been called first.
 	 * @return
 	 */
 	public boolean saveQuiz(Quiz quiz){
@@ -215,12 +215,12 @@ public class Saver {
 		
 		if(
 				!saveQuizConfig(quiz.getOwner(),quiz.getQuizName(),quiz.getQuizQuestions().toArray(new String[0]))
-				||!saveQuizObject(quiz))
+				||!saveQuizObject(quiz)
+				||!generateQuestionFiles(quiz))
 			return false;
 		return true;
 	}
 
-	
 
 	private boolean saveQuizConfig(String owner, String quizName, String[] questions) {
 		Gson gson = new Gson();
@@ -249,6 +249,21 @@ public class Saver {
 		}
 		w.println(gson.toJson(quiz));
 		w.close();
+		return true;
+	}
+	private boolean generateQuestionFiles(Quiz quiz) {
+		for(int i = 0; i < quiz.getQuizQuestions().size(); i++){
+			String path = source + File.separator + quiz.getOwner() + File.separator + quiz.getQuizName() + File.separator +i+ ".txt";
+			File f = new File(path);
+			if(!f.exists()){
+				try {
+					f.createNewFile();
+				} catch (IOException e) {
+					System.out.println("couldn't create the new question file");
+					return false;
+				}
+			}
+		}
 		return true;
 	}
 }

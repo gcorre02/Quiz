@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Quiz;
 import tools.CollectionPrinter;
 
 public class LoaderTest {
@@ -22,6 +23,7 @@ public class LoaderTest {
 	String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
 	ArrayList<String> userNames ;
 	Saver s;
+	String[] gonzoQuizzes = {"numbers","people","cars"};
 	@Before
 	public void setUp() throws Exception {
 		folder = "TestFiles";
@@ -33,6 +35,7 @@ public class LoaderTest {
 		}
 		s = new Saver(folder);
 		s.saveUserNames(userNames);
+		
 	}
 
 	@After
@@ -71,15 +74,7 @@ public class LoaderTest {
 	@Test
 	public final void testGetUserQuizzesMap(){
 		//setup
-		String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
-		Map<String, String[]> userQuizzes = new HashMap<>();
-		String[] gonzoQuizzes = {"numbers","people","cars"};
-		for(String name : names){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
-		s = new Saver(folder);
-		s.saveUserQuizzes(userQuizzes);
+		generateGonzoQuizzes();
 		//expected
 		String[] expecteds = gonzoQuizzes;
 		String[] expectedKeys = names;
@@ -93,6 +88,44 @@ public class LoaderTest {
 		assertTrue(CollectionPrinter.compareTwoArrays(actualKeys, expectedKeys));
 	}
 
+	private void generateGonzoQuizzes() {
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		
+		for(String name : names){
+			userQuizzes.put(name, new String[0]);
+		}
+		userQuizzes.put("Gonzo", gonzoQuizzes);
+		s.saveUserQuizzes(userQuizzes);
+	}
+	
+	@Test
+	public final void testGetQuizConfig(){
+		//setup
+		generateGonzoQuizzes();
+		Quiz quiz = generateCarsQuiz();
+		Quiz newQuiz = loader.getQuizObject("Gonzo", "cars");
+		//expected
+		Quiz expected = quiz;
+		//actual
+		Quiz actual = newQuiz;
+		//debug
+		System.out.println(CollectionPrinter.collectionPrinter('0', actual.getQuizQuestions()));
+		//test
+		assertEquals(expected, actual);
+	}
+
+	private Quiz generateCarsQuiz() {
+		String name = "cars";
+		String owner = "Gonzo";
+		Quiz quiz = new Quiz(name, owner);
+		ArrayList<String> quizQuestions = new ArrayList<>();
+		quizQuestions.add("How old is VW?");
+		quizQuestions.add("What was the first big car maker?");
+		quizQuestions.add("What brand is the batmobile?");
+		quiz.setQuizQuestions(quizQuestions);
+		s.saveQuiz(quiz);
+		return quiz;
+	}
 
 
 }
