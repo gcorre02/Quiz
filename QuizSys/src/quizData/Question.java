@@ -9,6 +9,8 @@ public class Question {
 	private String questionString;
 	private ArrayList<String> answers;
 	private String rightAnswer;
+	private String owner;
+	private String quiz;
 	
 	public Question(String questionString) {
 		this.questionString = questionString;

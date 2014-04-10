@@ -35,7 +35,7 @@ public class SaverTest {
 
 	@After
 	public void tearDown() throws Exception {
-		//s.deleteFolder(folder); TODO <make it available for general testing>
+		//s.deleteFolder(folder); //TODO <make it available for general testing>
 		userNames = null;
 		s = null;
 		folder = null;
@@ -174,11 +174,12 @@ public class SaverTest {
 		assertTrue(f.exists());
 		assertEquals(expected, actual);
 	}
+
 	@Test
 	public final void testRemoveQuestion() throws IOException{
 		//setup
 		String removeableQuestion = "How old is VW?";
-		Quiz quiz = setupQuiz();
+		setupQuiz();
 		s.removeAQuestion(removeableQuestion, "Gonzo", "cars");
 		Loader l = new Loader(folder);
 		//test

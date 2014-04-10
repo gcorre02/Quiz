@@ -7,12 +7,16 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
 
+import quizData.Question;
 import quizData.Quiz;
 import tools.CollectionPrinter;
 import lombok.Data;
 
 import com.google.gson.*;
 /**
+ * 
+ * TODO <>no support for changing question numbers at the moment.
+ * 
  * source defines the folder where all the quiz system files are.
  * TODO<concurrency> some conflict checking must go in here.
  * @author Guilherme
@@ -303,5 +307,33 @@ public class Saver {
 		if(saveQuiz(q))
 			return true;
 		return false;
+	}
+	
+	public boolean saveAQuestionObject(Question question){
+		Loader l = new Loader(source);
+		int qNumber;
+		try {
+			qNumber = l.getQuestionNumber(question.getQuestionString(), question.getOwner(), question.getQuiz());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		String path = source + File.separator + question.getOwner() + File.separator + question.getQuiz() + File.separator + qNumber+".txt";
+		try{
+			saveQuestionObjectJson(question, path);
+		}catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+
+	private void saveQuestionObjectJson(Question question, String path) throws FileNotFoundException {
+		Gson gson = new Gson();
+		file = new File(path);
+		PrintWriter w;
+		w = new PrintWriter(file);
+		w.println(gson.toJson(question));
+		w.close();
 	}
 }

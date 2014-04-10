@@ -119,4 +119,10 @@ public class Loader {
 		
 		return returnArray;
 	}
+
+	public int getQuestionNumber(String questionString, String owner,
+			String quiz) throws IOException {
+		ArrayList<String> questions = getQuizQuestionsConfig(owner, quiz);
+		return questions.indexOf(questionString);
+	}
 }
