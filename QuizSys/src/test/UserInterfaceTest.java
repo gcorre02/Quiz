@@ -14,7 +14,7 @@ public class UserInterfaceTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		ui = spy(new UserInterface());
+		ui = mock(UserInterface.class);
 	}
 
 	@After
