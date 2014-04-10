@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import persistence.Loader;
 import persistence.Saver;
+import tools.CollectionPrinter;
 
 public class SaverTest {
 	ArrayList<String> userNames;
@@ -109,6 +110,22 @@ public class SaverTest {
 		assertTrue(s.addQuiz(newQuiz, user, userQuizzes));
 		String actual = l.getUserQuizzes().get(user)[0];
 		assertEquals(expected, actual);
+	}
+	@Test
+	public final void testRemoveQuiz(){
+		//Setup
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		String[] gonzoQuizzes = {"numbers","people","cars"};
+		for(String name : userNames){
+			userQuizzes.put(name, new String[0]);
+		}
+		userQuizzes.put("Gonzo", gonzoQuizzes);
+		Loader l = new Loader(folder);
+		File removedFile = new File(folder+File.separator+"Gonzo"+File.separator+"people");
+		//test
+		assertTrue(s.removeQuiz("people", "Gonzo", userQuizzes));
+		assertFalse(CollectionPrinter.arrayContains("people", l.getUserQuizzes().get("Gonzo")));
+		assertFalse(removedFile.exists());
 	}
 	//@Test
 	public final void testSaveQuiz() {

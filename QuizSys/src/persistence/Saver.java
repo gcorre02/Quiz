@@ -190,9 +190,13 @@ public class Saver {
 		
 		//exec
 		userQuizzes.put(userName, CollectionPrinter.removeElementFromArray(quizName, userQuizzes.get(userName)));
-		
+		//deleteQuizFile
+		String path = source + File.separator + userName + File.separator + quizName;
+		deleteFolder(path);
+		file = new File(path);
 		//persist
-		if(saveUserQuizzes(userQuizzes))
+		if(saveUserQuizzes(userQuizzes)
+				|| !file.exists())
 			return true;
 		else
 			return false;
