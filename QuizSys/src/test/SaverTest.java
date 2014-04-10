@@ -143,6 +143,7 @@ public class SaverTest {
 		quizQuestions.add("What was the first big car maker?");
 		quizQuestions.add("What brand is the batmobile?");
 		quiz.setQuizQuestions(quizQuestions);
+		s.saveQuiz(quiz);
 		return quiz;
 	}
 
@@ -156,15 +157,17 @@ public class SaverTest {
 		String expected = newQuestion;
 		//actual
 		Loader l = new Loader(folder);
-
-		String actual = l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName()).get(3);
 		
 		//debug
 		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
 		System.out.println(CollectionPrinter.collectionPrinter('0', l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName())));
 		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
 		//enddebug
-		
+
+		String actual = l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName()).get(3);
+
+
+
 		//test
 
 		File f = new File(folder + File.separator + quiz.getOwner()+ File.separator +quiz.getQuizName()+ File.separator + "3.txt");
