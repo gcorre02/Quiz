@@ -284,4 +284,24 @@ public class Saver {
 			return true;
 		return false;
 	}
+	public boolean removeAQuestion(String question, String user, String quiz){
+		Loader l = new Loader(source);
+		ArrayList<String> quizConfig;
+		try {
+			quizConfig = l.getQuizQuestionsConfig(user, quiz);
+			if(!quizConfig.contains(question))
+				return true;
+		} catch (IOException e) {
+			System.out.println("couldnt load the quizz config file");
+			return false;
+		}
+		Quiz q = l.getQuizObject(user, quiz);
+		int questionId = quizConfig.indexOf(question);
+		q.removeQuestion(questionId );
+		String path = source + File.separator + user + File.separator + quiz + File.separator + questionId+".txt";
+		deleteFolder(path);
+		if(saveQuiz(q))
+			return true;
+		return false;
+	}
 }
