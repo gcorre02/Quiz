@@ -11,10 +11,11 @@ import userInterface.UserInterface;
 
 public class UserInterfaceTest {
 	UserInterface ui;
-	
+	UserInterface mockedUserInterface;
 	@Before
 	public void setUp() throws Exception {
-		ui = mock(UserInterface.class);
+		ui = new UserInterface();
+		mockedUserInterface = mock(UserInterface.class);
 	}
 
 	@After
@@ -25,16 +26,17 @@ public class UserInterfaceTest {
 	public void testReadFromUser() {
 		//just a test to make sure the mock is working
 		String userInput = "some words the user inputs on the console";
-		when(ui.readFromUser()).thenReturn(userInput);
+		when(mockedUserInterface.readFromUser()).thenReturn(userInput);
 		//test
-		assertEquals(userInput, ui.readFromUser());
+		assertEquals(userInput, mockedUserInterface.readFromUser());
 	}
 	
 	@Test
 	public void testGetUserAnswer(){
 		String userInput = "A";
+		when(mockedUserInterface.readFromUser()).thenReturn(userInput);
 		String aBunchOfChoices = "please press A, B or C";
-		char answer = ui.getUserAnswer();
+		char answer = ui.getUserAnswer(aBunchOfChoices, mockedUserInterface);
 		//test
 		assertEquals(userInput.charAt(0), answer);
 	}
