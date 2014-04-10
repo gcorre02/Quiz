@@ -155,17 +155,20 @@ public class Saver {
 
 	public boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
-		if(CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
-			System.out.println("A quiz with the name " + quizName + " already exists.");
-			return true;
-		}
 		if(!userQuizzes.keySet().contains(userName)){
 			System.out.println("User " + userName + " does not exist.");
 			return false;
 		}
+
+		if(CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
+			System.out.println("A quiz with the name " + quizName + " already exists.");
+			return true;
+		}
+		//exec
+		
 		userQuizzes.put(userName, CollectionPrinter.addElementToArray(quizName, userQuizzes.get(userName)));
 		//debug
-		System.out.println(CollectionPrinter.printMap(userQuizzes));
+		//System.out.println(CollectionPrinter.printMap(userQuizzes));
 		//end debug
 		if(saveUserQuizzes(userQuizzes))
 			return true;
@@ -173,8 +176,26 @@ public class Saver {
 			return false;
 	}
 
-	public void removeQuiz(){
+	public boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
+		//error checking
+		if(!userQuizzes.keySet().contains(userName)){
+			System.out.println("User " + userName + " does not exist.");
+			return false;
+		}
 
+		if(!CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
+			System.out.println("A quiz with the name " + quizName + " doesnt exist");
+			return true;
+		}
+		
+		//exec
+		userQuizzes.put(userName, CollectionPrinter.removeElementFromArray(quizName, userQuizzes.get(userName)));
+		
+		//persist
+		if(saveUserQuizzes(userQuizzes))
+			return true;
+		else
+			return false;
 	}
 
 	public boolean saveQuiz(){

@@ -104,17 +104,35 @@ public abstract class CollectionPrinter {
 			targetArray[i] = content.get(i);
 		}
 		//debug
-		System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
+		//System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
 		//end debug
 		return targetArray;
 	}
 
-	private static ArrayList<String> toArrayList(String[] targetArray) {
+	public static ArrayList<String> toArrayList(String[] targetArray) {
 		ArrayList<String> result = new ArrayList<>();
 		for(String current : targetArray){
 			result.add(current);
 		}
 		return result;
+	}
+
+	public static String[] removeElementFromArray(String toRemove,
+			String[] targetArray) {
+		
+		ArrayList<String> content = new ArrayList<>();
+		for(String element : targetArray){
+			content.add(element);
+		}
+		content.remove(toRemove);
+		targetArray = new String[content.size()];
+		for(int i = 0; i<content.size();i++){
+			targetArray[i] = content.get(i);
+		}
+		//debug
+		System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
+		//end debug
+		return targetArray;
 	}
 	
 	

@@ -100,13 +100,14 @@ public class SaverTest {
 		userQuizzes.put("Gonzo", gonzoQuizzes);
 		String newQuiz = "Sexy Sailors of the 20th Century";
 		String user = "Bartolomeu";
-		s.addQuiz(newQuiz, user, userQuizzes);
+		
 		//expected
 		String expected = newQuiz;
-		//actual
+		
 		Loader l = new Loader(folder);
-		String actual = l.getUserQuizzes().get(user)[0];
 		//test
+		assertTrue(s.addQuiz(newQuiz, user, userQuizzes));
+		String actual = l.getUserQuizzes().get(user)[0];
 		assertEquals(expected, actual);
 	}
 	//@Test
