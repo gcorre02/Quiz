@@ -12,13 +12,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import persistence.Loader;
+import persistence.Saver;
 import tools.CollectionPrinter;
 
 public class LoaderTest {
 	Loader loader;
+	String folder;
 	@Before
 	public void setUp() throws Exception {
-		loader = new Loader("TestFiles");
+		folder = "TestFiles";
+		loader = new Loader(folder);
 	}
 
 	@After
@@ -32,18 +35,29 @@ public class LoaderTest {
 	}
 
 	@Test
-	public final void testGetUsernames() {
-		
-		ArrayList<String> usernames = new ArrayList<>();
-		try {
-			usernames = loader.getUsernames();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public final void testGetUsernames() throws IOException {
+		//setup
+		String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
+		ArrayList<String> userNames = new ArrayList<>();
+		for(String name : names){
+			userNames.add(name);
 		}
-		System.out.println(usernames.toString());
+		Saver s = new Saver(folder);
+		s.saveUserNames(userNames);
+		
+		ArrayList<String> retrievedUserNames = new ArrayList<>();
+
+		retrievedUserNames = loader.getUsernames();
+		//debug
+		System.out.println(retrievedUserNames.toString());
+		//expecteds
+		String[] expecteds = userNames.toArray(new String[0]); 
+		//actuals
+		String[] actuals = retrievedUserNames.toArray(new String[0]); 
+		//test
+		assertArrayEquals(expecteds, actuals);
 	}
-	
+
 	@Test
 	public final void testGetUserQuizzesMap(){
 		//setup
@@ -54,6 +68,8 @@ public class LoaderTest {
 			userQuizzes.put(name, new String[0]);
 		}
 		userQuizzes.put("Gonzo", gonzoQuizzes);
+		Saver s = new Saver(folder);
+		s.saveUserQuizzes(userQuizzes);
 		//expected
 		String[] expecteds = gonzoQuizzes;
 		String[] expectedKeys = names;
@@ -67,6 +83,6 @@ public class LoaderTest {
 		assertTrue(CollectionPrinter.compareTwoArrays(actualKeys, expectedKeys));
 	}
 
-	
+
 
 }

@@ -50,6 +50,11 @@ public class Loader {
 		
 		return usernames;
 	}
+	/**
+	 * TODO should verify that all userquizzes have associated folders and files.
+	 * 
+	 * @return
+	 */
 	public Map<String, String[]> getUserQuizzes(){
 		Map<String, String[]> userQuizzes = new HashMap<>();
 		Gson gson = new Gson();
