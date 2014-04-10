@@ -7,24 +7,24 @@ import lombok.Data;
 @Data
 public class Quiz {
 	private String owner;
-	private ArrayList<Question> quizQuestions;
+	private ArrayList<String> quizQuestions;
 	private String quizName;
 	
-	public Quiz(String name){
+	public Quiz(String name, String owner){
 		quizQuestions = new ArrayList<>();
 		quizName = name;
+		this.owner = owner;
 	}
 
 	public void addQuestion(String questionString){
-		Question newQuestion = new Question(questionString);
-		quizQuestions.add(newQuestion);
+		quizQuestions.add(questionString);
 	}
 	
 	public void removeQuestion(int i) {
 		quizQuestions.remove(i);		
 	}
 
-	public Question getQuestion(int i) {
+	public String getQuestion(int i) {
 		return quizQuestions.get(i);
 	}
 	

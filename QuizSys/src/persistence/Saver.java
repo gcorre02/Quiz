@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
 
+import quizData.Question;
+import quizData.Quiz;
 import tools.CollectionPrinter;
 import lombok.Data;
 
@@ -202,8 +204,18 @@ public class Saver {
 		else
 			return false;
 	}
-
-	public boolean saveQuiz(){
+	/**
+	 * each quiz has a config file, which has the name of the quiz and stores the name of the quiz object file, and associated questions.
+	 * returns false if config file doesnt exist, which means it's not in the structure.
+	 * @return
+	 */
+	public boolean saveQuiz(Quiz quiz, ArrayList<Question> questions){
+		File f = new File(source+File.separator + quiz.getOwner()+File.separator+quiz.getQuizName());
+		if(!f.exists())
+			return false;
+		
+		saveQuizConfig(quiz.getQuizName(),quiz.getQuizQuestions());
+		saveQuizObject(quiz);
 		return false;
 	}
 }
