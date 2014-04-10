@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import quizData.Quiz;
+
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.reflect.TypeToken;
@@ -72,5 +74,22 @@ public class Loader {
 		userQuizzes = gson.fromJson(reader, new TypeToken<Map<String,String[]>>(){}.getType());
 		
 		return userQuizzes;
+	}
+	public Quiz getQuizObject(String user, String quizName){
+		Quiz returnQuiz;
+		Gson gson = new Gson();
+		
+		file = new File(source + File.separator+ user +File.separator+ quizName+File.separator+quizName + "Object.txt");
+		BufferedReader reader;
+		
+		try {
+			reader = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			System.out.print("UserQuizzes File cannot be accessed");
+			return null;
+		}
+		returnQuiz = gson.fromJson(reader, Quiz.class);
+		
+		return returnQuiz;
 	}
 }
