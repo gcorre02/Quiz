@@ -126,6 +126,12 @@ public class LoaderTest {
 		s.saveQuiz(quiz);
 		return quiz;
 	}
+	
 
+	//@Test
+	public final void testSaveQuestionToJson() throws IOException{
+		//TODO <already tested by saver. create if time allows it>
+		fail();
+	}
 
 }

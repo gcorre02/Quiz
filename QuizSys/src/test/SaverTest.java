@@ -203,11 +203,16 @@ public class SaverTest {
 		s.saveAQuestionObject(question);
 		//expected
 		Question expected = question;
+		String[] expecteds = question.getAnswers().toArray(new String[0]);
 		//actual
 		Loader l = new Loader(folder);
 		Question actual = l.getQuestionObject(owner, quiz, questionString);
+		String[] actuals = actual.getAnswers().toArray(new String[0]);
+		//debug
+		System.out.println(CollectionPrinter.collectionPrinter('1', actual.getAnswers()));
 		//test
 		assertEquals(expected, actual);
+		assertArrayEquals(expecteds, actuals);
 	}
 
 }
