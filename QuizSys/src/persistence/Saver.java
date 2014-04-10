@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
 
-import quizData.Question;
 import quizData.Quiz;
 import tools.CollectionPrinter;
 import lombok.Data;
@@ -209,7 +208,7 @@ public class Saver {
 	 * returns false if config file doesnt exist, which means it's not in the structure.
 	 * @return
 	 */
-	public boolean saveQuiz(Quiz quiz, ArrayList<Question> questions){
+	public boolean saveQuiz(Quiz quiz){
 		File f = new File(source+File.separator + quiz.getOwner()+File.separator+quiz.getQuizName());
 		if(!f.exists())
 			return false;

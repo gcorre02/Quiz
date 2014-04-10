@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Quiz;
 import tools.CollectionPrinter;
 
 public class SaverTest {
@@ -79,26 +80,14 @@ public class SaverTest {
 	
 	@Test
 	public final void testSaveUserQuizzes() {
-		//setup
-		Map<String, String[]> userQuizzes = new HashMap<>();
-		String[] gonzoQuizzes = {"numbers","people","cars"};
-		for(String name : userNames){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
+		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		//test
 		assertTrue(s.saveUserQuizzes(userQuizzes));
 	}
 	
 	@Test
 	public final void testAddQuizz(){
-		//setup
-		Map<String, String[]> userQuizzes = new HashMap<>();
-		String[] gonzoQuizzes = {"numbers","people","cars"};
-		for(String name : userNames){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
+		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		String newQuiz = "Sexy Sailors of the 20th Century";
 		String user = "Bartolomeu";
 		
@@ -114,12 +103,7 @@ public class SaverTest {
 	@Test
 	public final void testRemoveQuiz(){
 		//Setup
-		Map<String, String[]> userQuizzes = new HashMap<>();
-		String[] gonzoQuizzes = {"numbers","people","cars"};
-		for(String name : userNames){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
+		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		Loader l = new Loader(folder);
 		File removedFile = new File(folder+File.separator+"Gonzo"+File.separator+"people");
 		//test
@@ -127,9 +111,32 @@ public class SaverTest {
 		assertFalse(CollectionPrinter.arrayContains("people", l.getUserQuizzes().get("Gonzo")));
 		assertFalse(removedFile.exists());
 	}
+
+	private Map<String, String[]> generateGonzoQuizzes() {
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		String[] gonzoQuizzes = {"numbers","people","cars"};
+		for(String name : userNames){
+			userQuizzes.put(name, new String[0]);
+		}
+		userQuizzes.put("Gonzo", gonzoQuizzes);
+		return userQuizzes;
+	}
 	//@Test
 	public final void testSaveQuiz() {
-		fail("Not yet implemented"); // TODO
+		//setup
+		s.saveUserNames(userNames);
+		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
+		s.saveUserQuizzes(userQuizzes);
+		String name = "cars";
+		String owner = "Gonzo";
+		Quiz quiz = new Quiz(name, owner);
+		ArrayList<String> quizQuestions = new ArrayList<>();
+		quizQuestions.add("How old is VW?");
+		quizQuestions.add("What was the first big car maker?");
+		quizQuestions.add("What brand is the batmobile?");
+		quiz.setQuizQuestions(quizQuestions);
+		//test
+		assertTrue(s.saveQuiz(quiz));
 	}
 
 }
