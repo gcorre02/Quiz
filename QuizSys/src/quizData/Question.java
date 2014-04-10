@@ -2,13 +2,15 @@ package quizData;
 
 import java.util.ArrayList;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Question {
 	private String questionString;
 	private ArrayList<String> answers;
-	private String rightAnswer;
+	private int rightAnswer;
 	private String owner;
 	private String quiz;
 	

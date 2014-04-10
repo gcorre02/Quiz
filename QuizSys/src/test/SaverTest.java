@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Question;
 import quizData.Quiz;
 import tools.CollectionPrinter;
 
@@ -185,6 +186,24 @@ public class SaverTest {
 		//test
 		assertTrue(l.getQuizQuestionsConfig("Gonzo", "cars").size()==2);
 		assertFalse(l.getQuizObject("Gonzo", "cars").getQuizQuestions().contains(removeableQuestion));
+	}
+	
+	@Test
+	public final void testSaveQuestionToJson(){
+		//setup
+		setupQuiz();
+		String questionString = "What brand is the batmobile?";
+		ArrayList<String> answers = new ArrayList<>();
+		int rightAnswer = 1;
+		String owner = "Gonzo";
+		String quiz = "cars";
+		answers.add("Pingu Industries");
+		answers.add("it's home made by Albert");
+		answers.add("Something else");
+		Question question = new Question(questionString, answers, rightAnswer, owner, quiz);
+		//debug
+		s.saveAQuestionObject(question);
+		fail();
 	}
 
 }
