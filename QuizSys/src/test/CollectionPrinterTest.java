@@ -18,7 +18,7 @@ public class CollectionPrinterTest {
 	@Before
 	public void setUp() throws Exception {
 		quizName = "Alien";
-		quiz = new Quiz(quizName);
+		quiz = new Quiz(quizName,"Ridley");
 		question = "Who is the director of the Alien film?";
 	}
 

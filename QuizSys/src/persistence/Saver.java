@@ -214,8 +214,42 @@ public class Saver {
 		if(!f.exists())
 			return false;
 		
-		saveQuizConfig(quiz.getQuizName(),quiz.getQuizQuestions());
-		saveQuizObject(quiz);
-		return false;
+		if(
+				!saveQuizConfig(quiz.getOwner(),quiz.getQuizName(),quiz.getQuizQuestions().toArray(new String[0]))
+				||!saveQuizObject(quiz))
+			return false;
+		return true;
+	}
+
+	
+
+	private boolean saveQuizConfig(String owner, String quizName, String[] questions) {
+		Gson gson = new Gson();
+		file = new File(source+File.separator+owner+File.separator+quizName+File.separator+quizName+".txt");
+		PrintWriter w;
+		try {
+			w = new PrintWriter(file);
+		} catch (FileNotFoundException e) {
+			return false;
+		}
+		w.println(gson.toJson(questions));
+		w.close();
+		return true;
+	}
+	
+	private boolean saveQuizObject(Quiz quiz) {
+		Gson gson = new Gson();
+		String quizName = quiz.getQuizName();
+		String owner = quiz.getOwner();
+		file = new File(source+File.separator+owner+File.separator+quizName+File.separator+quizName+"Object.txt");
+		PrintWriter w;
+		try {
+			w = new PrintWriter(file);
+		} catch (FileNotFoundException e) {
+			return false;
+		}
+		w.println(gson.toJson(quiz));
+		w.close();
+		return true;
 	}
 }

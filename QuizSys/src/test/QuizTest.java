@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import quizData.Question;
 import quizData.Quiz;
 
 public class QuizTest {
@@ -17,7 +16,7 @@ public class QuizTest {
 	@Before
 	public void setUp() throws Exception {
 		quizName = "Alien";
-		quiz = new Quiz(quizName);
+		quiz = new Quiz(quizName,"Ridley");
 		question = "Who is the director of the Alien film?";
 	}
 
@@ -46,7 +45,7 @@ public class QuizTest {
 		//expected
 		String expected = question;
 		//actual
-		String actual = quiz.getQuizQuestions().get(0).getQuestionString();
+		String actual = quiz.getQuizQuestions().get(0);
 		//test
 		assertEquals("The addQuestion() is not behaving propperly",expected, actual);
 	}
@@ -95,8 +94,7 @@ public class QuizTest {
 		//expected
 		String expected = question;
 		//actual
-		Question q = quiz.getQuestion(0);
-		String actual = q.getQuestionString();
+		String actual = quiz.getQuestion(0);
 		//test
 		assertEquals("The getQuestion() is not returning a question",expected, actual);
 	}
