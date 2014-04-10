@@ -38,11 +38,13 @@ public class UserMenuTest {
 	}
 
 	@Test
-	public void testRun() {
+	public void testRunShutDown() {
 		//setup
-		when(ui.getUserAnswer(anyString())).thenReturn('A','B','C','D');
+		when(ui.getUserAnswer(anyString())).thenReturn('D','A','B','C','D');
 		//debug
 		um.run();
+		//test
+		verify(ui, times(1)).getUserAnswer(anyString());
 	}
 
 }
