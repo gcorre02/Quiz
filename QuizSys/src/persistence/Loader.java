@@ -21,6 +21,7 @@ public class Loader {
 		source = path;
 		File folder = new File(path);
 		if(!folder.exists()){
+			System.out.println("folder is empty");
 			folder.mkdir();
 		}
 	}

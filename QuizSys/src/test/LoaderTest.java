@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,32 +19,41 @@ import tools.CollectionPrinter;
 public class LoaderTest {
 	Loader loader;
 	String folder;
+	String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
+	ArrayList<String> userNames ;
+	Saver s;
 	@Before
 	public void setUp() throws Exception {
 		folder = "TestFiles";
 		loader = new Loader(folder);
+		
+		userNames = new ArrayList<>();
+		for(String name : names){
+			userNames.add(name);
+		}
+		s = new Saver(folder);
+		s.saveUserNames(userNames);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		loader = null;
+		folder = null;
+		userNames = null;
+		s = null;
 	}
 
 	@Test
 	public final void testLoader() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(loader instanceof Loader);
+		File f = new File(folder);
+		assertTrue(f.exists());
 	}
 
 	@Test
 	public final void testGetUsernames() throws IOException {
 		//setup
-		String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
-		ArrayList<String> userNames = new ArrayList<>();
-		for(String name : names){
-			userNames.add(name);
-		}
-		Saver s = new Saver(folder);
-		s.saveUserNames(userNames);
+		
 		
 		ArrayList<String> retrievedUserNames = new ArrayList<>();
 
@@ -68,7 +78,7 @@ public class LoaderTest {
 			userQuizzes.put(name, new String[0]);
 		}
 		userQuizzes.put("Gonzo", gonzoQuizzes);
-		Saver s = new Saver(folder);
+		s = new Saver(folder);
 		s.saveUserQuizzes(userQuizzes);
 		//expected
 		String[] expecteds = gonzoQuizzes;

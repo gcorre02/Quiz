@@ -146,10 +146,7 @@ public class Saver {
 	 */
 	private void generateQuizFiles(String user, String[] strings) throws IOException {
 		for(String quizname: strings){
-			File quizFolder = new File(source+File.separator+user+File.separator+quizname);
-			if(!quizFolder.exists()){
-				quizFolder.mkdir();
-			}
+			createFolder(source+File.separator+user+File.separator+quizname);
 			File quizFile = new File(source+File.separator+user+File.separator+quizname+File.separator+quizname+".txt");
 			if(!quizFile.exists()){
 				quizFile.createNewFile();
