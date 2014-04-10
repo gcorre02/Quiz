@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
 
+import tools.CollectionPrinter;
 import lombok.Data;
 
 import com.google.gson.*;
@@ -51,7 +52,7 @@ public class Saver {
 		createUserFolders(userNames);
 		return true;
 	}
-	
+
 	public boolean addUserName(String user) throws IOException{
 		Loader l = new Loader(source);
 		ArrayList<String> existingUserNameStrings = l.getUsernames();
@@ -63,7 +64,7 @@ public class Saver {
 			return true;
 		}
 	}
-	
+
 	/*
 	 * creates folders for each user, if these do not exist already.
 	 *
@@ -90,7 +91,7 @@ public class Saver {
 			return true;
 		}
 	}
-	
+
 	public void deleteFolder(String path) {
 		File file = new File(path);
 		if(file.list()!=null){
@@ -150,6 +151,30 @@ public class Saver {
 				quizFile.createNewFile();
 			}
 		}
+	}
+
+	public boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
+		//error checking
+		if(CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
+			System.out.println("A quiz with the name " + quizName + " already exists.");
+			return true;
+		}
+		if(!userQuizzes.keySet().contains(userName)){
+			System.out.println("User " + userName + " does not exist.");
+			return false;
+		}
+		userQuizzes.put(userName, CollectionPrinter.addElementToArray(quizName, userQuizzes.get(userName)));
+		//debug
+		System.out.println(CollectionPrinter.printMap(userQuizzes));
+		//end debug
+		if(saveUserQuizzes(userQuizzes))
+			return true;
+		else
+			return false;
+	}
+
+	public void removeQuiz(){
+
 	}
 
 	public boolean saveQuiz(){

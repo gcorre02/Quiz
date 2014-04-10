@@ -81,6 +81,41 @@ public abstract class CollectionPrinter {
 		}
 		return false;
 	}
+
+	public static boolean arrayContains(String toCheck, String[] stringArray) {
+		int i = 0;
+		for(String element : stringArray){
+			if(element.equals(toCheck))
+				i++;
+		}
+		if(i>0)
+			return true;
+		return false;
+	}
+
+	public static String[] addElementToArray(String toAdd, String[] targetArray) {
+		ArrayList<String> content = new ArrayList<>();
+		for(String element : targetArray){
+			content.add(element);
+		}
+		content.add(toAdd);
+		targetArray = new String[content.size()];
+		for(int i = 0; i<content.size();i++){
+			targetArray[i] = content.get(i);
+		}
+		//debug
+		System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
+		//end debug
+		return targetArray;
+	}
+
+	private static ArrayList<String> toArrayList(String[] targetArray) {
+		ArrayList<String> result = new ArrayList<>();
+		for(String current : targetArray){
+			result.add(current);
+		}
+		return result;
+	}
 	
 	
 }

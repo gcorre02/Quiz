@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import persistence.Loader;
 import persistence.Saver;
 
 public class SaverTest {
@@ -87,7 +88,27 @@ public class SaverTest {
 		//test
 		assertTrue(s.saveUserQuizzes(userQuizzes));
 	}
-
+	
+	@Test
+	public final void testAddQuizz(){
+		//setup
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		String[] gonzoQuizzes = {"numbers","people","cars"};
+		for(String name : userNames){
+			userQuizzes.put(name, new String[0]);
+		}
+		userQuizzes.put("Gonzo", gonzoQuizzes);
+		String newQuiz = "Sexy Sailors of the 20th Century";
+		String user = "Bartolomeu";
+		s.addQuiz(newQuiz, user, userQuizzes);
+		//expected
+		String expected = newQuiz;
+		//actual
+		Loader l = new Loader(folder);
+		String actual = l.getUserQuizzes().get(user)[0];
+		//test
+		assertEquals(expected, actual);
+	}
 	//@Test
 	public final void testSaveQuiz() {
 		fail("Not yet implemented"); // TODO
