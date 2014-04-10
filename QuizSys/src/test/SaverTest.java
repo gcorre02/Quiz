@@ -124,6 +124,14 @@ public class SaverTest {
 	@Test
 	public final void testSaveQuiz() {
 		//setup
+		Quiz quiz = setupQuiz();
+		//debug
+		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
+		//test
+		assertTrue(s.saveQuiz(quiz));
+	}
+
+	private Quiz setupQuiz() {
 		s.saveUserNames(userNames);
 		Map<String, String[]> userQuizzes = generateGonzoQuizzes();
 		s.saveUserQuizzes(userQuizzes);
@@ -135,10 +143,14 @@ public class SaverTest {
 		quizQuestions.add("What was the first big car maker?");
 		quizQuestions.add("What brand is the batmobile?");
 		quiz.setQuizQuestions(quizQuestions);
-		//debug
-		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
-		//test
-		assertTrue(s.saveQuiz(quiz));
+		return quiz;
+	}
+	
+	@Test
+	public final void testAddQuestion(){
+		//setup
+		Quiz quiz = setupQuiz();
+		
 	}
 
 }

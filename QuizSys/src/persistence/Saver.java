@@ -266,4 +266,15 @@ public class Saver {
 		}
 		return true;
 	}
+	/*
+	 * handles adding a question at every level, updates the object
+	 */
+	public boolean addAQuestion(String question, String user, String quiz){
+		Loader l = new Loader(source);
+		Quiz q = l.getQuizObject(user, quiz);
+		q.addQuestion(question);
+		if(saveQuiz(q))
+			return true;
+		return false;
+	}
 }
