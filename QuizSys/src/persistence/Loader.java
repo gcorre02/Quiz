@@ -6,8 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.reflect.TypeToken;
 
 public class Loader {
 	String source;
@@ -45,5 +49,22 @@ public class Loader {
 		reader.close();
 		
 		return usernames;
+	}
+	public Map<String, String[]> getUserQuizzes(){
+		Map<String, String[]> userQuizzes = new HashMap<>();
+		Gson gson = new Gson();
+		file = new File(source + File.separator+ "UserQuizzes.txt");
+		BufferedReader reader;
+		
+		try {
+			reader = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			System.out.print("UserQuizzes File cannot be accessed");
+			return null;
+		}
+		
+		userQuizzes = gson.fromJson(reader, new TypeToken<Map<String,String[]>>(){}.getType());
+		
+		return userQuizzes;
 	}
 }
