@@ -25,7 +25,7 @@ public class UserMenuTest {
 		ui = mock(UserInterface.class);
 		l = new Loader(source);
 		s = new Saver(source);
-		um = new UserMenu(l,s,ui);
+		um = spy(new UserMenu(l,s,ui));
 	}
 
 	@After
@@ -38,8 +38,11 @@ public class UserMenuTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testRun() {
+		//setup
+		when(ui.getUserAnswer(anyString())).thenReturn('A','B','C','D');
+		//debug
+		um.run();
 	}
 
 }
