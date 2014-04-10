@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import quizData.Question;
 import quizData.Quiz;
+import tools.CollectionPrinter;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -124,5 +126,24 @@ public class Loader {
 			String quiz) throws IOException {
 		ArrayList<String> questions = getQuizQuestionsConfig(owner, quiz);
 		return questions.indexOf(questionString);
+	}
+
+	public Question getQuestionObject(String owner, String quiz,
+			String questionString) throws IOException {
+		Question returnQuestion;
+		Gson gson = new Gson();
+		
+		file = new File(source + File.separator+ owner +File.separator+ quiz+File.separator+ getQuestionNumber(questionString, owner, quiz) + ".txt");
+		BufferedReader reader;
+		
+		try {
+			reader = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			System.out.print("UserQuizzes File cannot be accessed");
+			return null;
+		}
+		returnQuestion = gson.fromJson(reader, Question.class);
+		
+		return returnQuestion;
 	}
 }

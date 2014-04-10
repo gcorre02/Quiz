@@ -167,8 +167,6 @@ public class SaverTest {
 
 		String actual = l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName()).get(3);
 
-
-
 		//test
 
 		File f = new File(folder + File.separator + quiz.getOwner()+ File.separator +quiz.getQuizName()+ File.separator + "3.txt");
@@ -189,7 +187,7 @@ public class SaverTest {
 	}
 	
 	@Test
-	public final void testSaveQuestionToJson(){
+	public final void testSaveQuestionToJson() throws IOException{
 		//setup
 		setupQuiz();
 		String questionString = "What brand is the batmobile?";
@@ -203,7 +201,13 @@ public class SaverTest {
 		Question question = new Question(questionString, answers, rightAnswer, owner, quiz);
 		//debug
 		s.saveAQuestionObject(question);
-		fail();
+		//expected
+		Question expected = question;
+		//actual
+		Loader l = new Loader(folder);
+		Question actual = l.getQuestionObject(owner, quiz, questionString);
+		//test
+		assertEquals(expected, actual);
 	}
 
 }
