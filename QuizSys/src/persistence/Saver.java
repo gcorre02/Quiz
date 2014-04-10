@@ -82,7 +82,7 @@ public class Saver {
 	public boolean deleteUser(String user) throws IOException{
 		Loader l = new Loader(source);
 		ArrayList<String> users = l.getUsernames();
-		if(!user.contains(user)){
+		if(!users.contains(user)){
 			return false;
 		} else {
 			users.remove(user);

@@ -82,7 +82,7 @@ public class UserMenu {
 				System.out.println("User does not exist.");
 			}
 		} catch (IOException e) {
-			System.out.println("Couldn't delete user, please try again");
+			System.out.println("Couldn't delete user, file might be locked by another user or application, please try again");
 		}
 		
 	}

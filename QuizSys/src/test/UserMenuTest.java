@@ -18,7 +18,7 @@ public class UserMenuTest {
 	Loader l;
 	Saver s;
 	String source;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		source = "testFiles";
@@ -45,6 +45,25 @@ public class UserMenuTest {
 		um.run();
 		//test
 		verify(ui, times(1)).getUserAnswer(anyString());
+	}
+	//TODO make independent and a test
+	@Test
+	public void testDeleteUser(){
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+		when(ui.readFromUser()).thenReturn("Gonzo");
+		//debug
+		um.run();
+
+	}
+	//TODO make independent and a test
+	@Test
+	public void testDeleteUnexistentUser(){
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+		when(ui.readFromUser()).thenReturn("Gonzo");
+		//debug
+		um.run();
 	}
 
 }
