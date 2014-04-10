@@ -121,7 +121,7 @@ public class SaverTest {
 		userQuizzes.put("Gonzo", gonzoQuizzes);
 		return userQuizzes;
 	}
-	//@Test
+	@Test
 	public final void testSaveQuiz() {
 		//setup
 		s.saveUserNames(userNames);
@@ -135,6 +135,8 @@ public class SaverTest {
 		quizQuestions.add("What was the first big car maker?");
 		quizQuestions.add("What brand is the batmobile?");
 		quiz.setQuizQuestions(quizQuestions);
+		//debug
+		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
 		//test
 		assertTrue(s.saveQuiz(quiz));
 	}
