@@ -73,7 +73,6 @@ public class UserMenu {
 	
 	private void deleteUser() {
 		System.out.println("Please enter the username you wish to delete:");
-		// TODO Auto-generated method stub
 		String user = ui.readFromUser();
 		try {
 			if(s.deleteUser(user)){
@@ -89,7 +88,16 @@ public class UserMenu {
 	
 	private void createNewUser() {
 		System.out.println("Please enter the new username:");
-		// TODO Auto-generated method stub
+		String newUser = ui.readFromUser();
+		try {
+			if(s.addUserName(newUser)){
+				System.out.println(newUser+" has been added");
+			}else{
+				System.out.println(newUser+" already exists");
+			}
+		} catch (IOException e) {
+			System.out.println("Couldn't add user, file might be locked by another user or application, please try again");
+		}
 		
 	}
 }
