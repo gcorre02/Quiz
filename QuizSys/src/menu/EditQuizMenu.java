@@ -99,6 +99,9 @@ public class EditQuizMenu {
 		// TODO Auto-generated method stub
 		System.out.println("Please enter a question:");
 		String question = ui.readFromUser();
-		s.addAQuestion(question, user, quizName);
+		if(s.addAQuestion(question, user, quizName))
+			System.out.println(question + " was added succesfully.");
+		else
+			System.out.println("Couldnt add the question, please try again later.");
 	}
 }

@@ -77,13 +77,31 @@ public class EditQuizMenuTest {
 		//exec
 		eqm.run();
 		//test
-		
+
 		//Quiz quiz = l.getQuizObject(user, quizName);
 		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
 		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
-		
+
 		fail("Not yet implemented"); // TODO
-		
+
 	}
-		
+
+	//stub question dellete, needs a propper test
+	@Test
+	public final void testAddQuestion() throws IOException{
+		//setup
+		when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+		when(ui.readFromUser()).thenReturn("What type of moron is Moe Sizlack?");
+		//exec
+		eqm.run();
+		//test
+
+		//Quiz quiz = l.getQuizObject(user, quizName);
+		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
+
+		fail("Not yet implemented"); // TODO
+
+	}
+
 }
