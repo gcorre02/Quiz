@@ -15,7 +15,7 @@ public class UserMenu {
 	private UserInterface ui;
 	private String user;
 
-	public void run(){
+	public void run() throws NullPointerException{
 		//TODO <need to check if user has any quizzes first>
 		
 		String[] userQuizzes = l.getUserQuizzes().get(user);
@@ -66,7 +66,6 @@ public class UserMenu {
 	}
 
 	private void goBack() {
-		// TODO Auto-generated method stub
 		System.out.println("Logging out, thank you");
 	}
 
@@ -77,7 +76,10 @@ public class UserMenu {
 
 	private void deleteQuiz() {
 		// TODO Auto-generated method stub
-		System.out.println("Please enter the name of the quiz you wish to delete");
+		System.out.println("Please enter the number of the quiz you wish to delete");
+		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
+		//debug
+		System.out.println(quizName+"<<<<WAS PICKED>>>>");
 	}
 
 	private void createNewQuiz() {
@@ -86,42 +88,5 @@ public class UserMenu {
 	}
 
 	
-	/*
-	 * public void run(){
-		ArrayList<String> menuItems = new ArrayList<>();
-		menuItems.add("New user");
-		menuItems.add("Delete User");
-		menuItems.add("Login");
-		menuItems.add("Close Program");
-		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
-		runMenu(menu);
-	}
-	public void runMenu(String menu){
-		char choice = ui.getUserAnswer(menu);
-		//debug
-		System.out.println(choice);
-		//\debug
-		switch(choice){
-		case 'A':
-			createNewUser();
-			run();
-			break;
-		case 'B':
-			deleteUser();
-			run();
-			break;
-		case 'C':
-			login();
-			run();
-			break;
-		case 'D':
-			closeProgram();
-			break;
-		default:
-			System.out.println("Couldn't understand the input, please choose again.");
-			run();
-			break;
-		}
-	}
-	 */
+	
 }

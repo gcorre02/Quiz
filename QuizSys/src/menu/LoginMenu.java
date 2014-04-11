@@ -76,7 +76,7 @@ public class LoginMenu {
 			}else{
 				System.out.println(userName + " does not exist, can't login.");
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			System.out.println("couldn't access the file, please try logging in again later");
 		}
 		
