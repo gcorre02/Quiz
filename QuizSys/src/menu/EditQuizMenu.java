@@ -1,5 +1,6 @@
 package menu;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import persistence.Loader;
@@ -17,23 +18,28 @@ public class EditQuizMenu {
 	private String quizName;
 	
 	public void run() throws NullPointerException{
-		//TODO <need to check if user has any quizzes first>
+		//TODO <need to check if quiz has any questions first>
 
-		String[] userQuizzes = l.getUserQuizzes().get(user);
-		if(userQuizzes == null){
-			System.out.println(user + " has no quizzes.");
-		}else{
-			System.out.println("These are your quizzes:");
-			ArrayList<String> thisuserSQuizzes = CollectionPrinter.toArrayList(userQuizzes);
-			System.out.println(CollectionPrinter.collectionPrinter('0', thisuserSQuizzes));
+		ArrayList<String> userQuestions;
+		try {
+			userQuestions = l.getQuizQuestionsConfig(user, quizName);
+			if(userQuestions == null){
+				System.out.println(quizName + " has no questions.");
+			}else{
+				System.out.println("Current Questions:");
+				System.out.println(CollectionPrinter.collectionPrinter('0', userQuestions));
+			}
+		} catch (IOException e) {
+			System.out.println("Quiz has no questions.");
 		}
+		
 
 		//TODO <implement the rest>
 		ArrayList<String> menuItems = new ArrayList<>();
-		menuItems.add("Create a new Quizz");
-		menuItems.add("Delete an existing Quizz");
-		menuItems.add("Edit a Quizz");
-		menuItems.add("Go back to login");
+		menuItems.add("Create a new Question");
+		menuItems.add("Delete an existing Question");
+		menuItems.add("Edit a Question");
+		menuItems.add("Go back to Quiz choice");
 		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
@@ -45,15 +51,15 @@ public class EditQuizMenu {
 		//\debug
 		switch(choice){
 		case 'A':
-			createNewQuiz();
+			createNewQuestion();
 			run();
 			break;
 		case 'B':
-			deleteQuiz();
+			deleteQuestion();
 			run();
 			break;
 		case 'C':
-			editQuiz();
+			editQuestion();
 			run();
 			break;
 		case 'D':
@@ -64,5 +70,25 @@ public class EditQuizMenu {
 			run();
 			break;
 		}
+	}
+
+	private void editQuestion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void goBack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void deleteQuestion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void createNewQuestion() {
+		// TODO Auto-generated method stub
+		
 	}
 }

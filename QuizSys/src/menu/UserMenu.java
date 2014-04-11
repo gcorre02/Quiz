@@ -77,7 +77,11 @@ public class UserMenu {
 		System.out.println(quizName+" <<<<WAS PICKED>>>>");
 		//debug
 		EditQuizMenu eqm = new EditQuizMenu(l,s,ui,user,quizName);
-		eqm.run();
+		try {
+			eqm.run();
+		} catch (Exception e) {
+			System.out.println("Couldn't access the quiz, please try again");
+		}
 	}
 
 	private void deleteQuiz() {
