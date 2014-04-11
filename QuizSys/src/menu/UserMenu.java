@@ -79,7 +79,10 @@ public class UserMenu {
 		System.out.println("Please enter the number of the quiz you wish to delete");
 		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
 		//debug
-		System.out.println(quizName+"<<<<WAS PICKED>>>>");
+		System.out.println(quizName+" <<<<WAS PICKED>>>>");
+		//debug
+		s.removeQuiz(quizName, user, l.getUserQuizzes());
+		System.out.println("Quiz " + quizName + " has been removed successfuly");
 	}
 
 	private void createNewQuiz() {

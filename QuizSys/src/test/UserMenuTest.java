@@ -56,5 +56,15 @@ public class UserMenuTest {
 		when(ui.getUserAnswer(anyString())).thenReturn('D');
 		um.run();
 	}
+	
+	//TODO this is just a stubbed test for debug
+	@Test
+	public final void testDeleteQuiz(){
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
+		when(ui.readFromUser()).thenReturn("0");
+		um.run();
+		um.run();
+		fail("Not yet implemented"); // TODO
+	}
 
 }
