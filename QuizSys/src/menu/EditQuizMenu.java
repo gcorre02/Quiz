@@ -63,7 +63,11 @@ public class EditQuizMenu {
 			run();
 			break;
 		case 'C':
-			editQuestion();
+			try {
+				editQuestion();
+			} catch (Exception e) {
+				System.out.println("Couldn't access the question, please try again later.");
+			}
 			run();
 			break;
 		case 'D':
@@ -76,9 +80,10 @@ public class EditQuizMenu {
 		}
 	}
 
-	private void editQuestion() {
-		// TODO Auto-generated method stub
+	private void editQuestion() throws NumberFormatException, IOException {
 		System.out.println("Please enter the number for the question you wish to edit :");
+		String question = l.getQuizQuestionsConfig(user, quizName).get(Integer.parseInt(ui.readFromUser()));
+		EditQuestionMenu ecm =  new EditQuestionMenu(question, l, s, ui, user, quizName);
 	}
 
 	private void goBack() {
