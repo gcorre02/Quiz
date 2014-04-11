@@ -19,7 +19,7 @@ import userInterface.UserInterface;
  *
  */
 @AllArgsConstructor
-public class UserMenu {
+public class LoginMenu {
 	private Loader l;
 	private Saver s;
 	private UserInterface ui;
@@ -67,7 +67,16 @@ public class UserMenu {
 	
 	private void login() {
 		System.out.println("Please enter your username:");
-		// TODO Auto-generated method stub
+		String userName = ui.readFromUser();
+		try {
+			if(l.getUsernames().contains(userName)){
+				//TODO stub
+			}else{
+				System.out.println(userName + " does not exist, can't login.");
+			}
+		} catch (IOException e) {
+			System.out.println("couldn't access the file, please try logging in again later");
+		}
 		
 	}
 	

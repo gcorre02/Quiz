@@ -2,7 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import menu.UserMenu;
+import menu.LoginMenu;
 
 import org.junit.After;
 import org.junit.Before;
@@ -13,7 +13,7 @@ import persistence.Saver;
 import userInterface.UserInterface;
 
 public class UserMenuTest {
-	UserMenu um;
+	LoginMenu um;
 	UserInterface ui;
 	Loader l;
 	Saver s;
@@ -25,7 +25,7 @@ public class UserMenuTest {
 		ui = mock(UserInterface.class);
 		l = new Loader(source);
 		s = new Saver(source);
-		um = spy(new UserMenu(l,s,ui));
+		um = spy(new LoginMenu(l,s,ui));
 	}
 
 	@After
