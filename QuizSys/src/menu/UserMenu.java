@@ -14,15 +14,22 @@ public class UserMenu {
 	private Saver s;
 	private UserInterface ui;
 	private String user;
-	
+
 	public void run(){
 		//TODO <need to check if user has any quizzes first>
-		System.out.println("This are your quizzes:");
-		ArrayList<String> thisuserSQuizzes = CollectionPrinter.toArrayList(l.getUserQuizzes().get(user));
-		System.out.println(CollectionPrinter.collectionPrinter('0', thisuserSQuizzes));
+		
+		String[] userQuizzes = l.getUserQuizzes().get(user);
+		if(userQuizzes == null){
+			System.out.println(user + " has no quizzes.");
+		}else{
+			System.out.println("These are your quizzes:");
+			ArrayList<String> thisuserSQuizzes = CollectionPrinter.toArrayList(userQuizzes);
+			System.out.println(CollectionPrinter.collectionPrinter('0', thisuserSQuizzes));
+		}
+		
 		//TODO <implement the rest>
 	}
-	
+
 	/*
 	 * public void run(){
 		ArrayList<String> menuItems = new ArrayList<>();
