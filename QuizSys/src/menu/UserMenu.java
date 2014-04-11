@@ -29,10 +29,10 @@ public class UserMenu {
 		
 		//TODO <implement the rest>
 		ArrayList<String> menuItems = new ArrayList<>();
-		menuItems.add("New user");
-		menuItems.add("Delete User");
-		menuItems.add("Login");
-		menuItems.add("Close Program");
+		menuItems.add("Create a new Quizz");
+		menuItems.add("Delete an existing Quizz");
+		menuItems.add("Edit a Quizz");
+		menuItems.add("Go back to login");
 		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
@@ -44,25 +44,45 @@ public class UserMenu {
 		//\debug
 		switch(choice){
 		case 'A':
-			createNewUser();
+			createNewQuiz();
 			run();
 			break;
 		case 'B':
-			deleteUser();
+			deleteQuiz();
 			run();
 			break;
 		case 'C':
-			login();
+			editQuiz();
 			run();
 			break;
 		case 'D':
-			closeProgram();
+			goBack();
 			break;
 		default:
 			System.out.println("Couldn't understand the input, please choose again.");
 			run();
 			break;
 		}
+	}
+
+	private void goBack() {
+		// TODO Auto-generated method stub
+		System.out.println("Logging out, thank you");
+	}
+
+	private void editQuiz() {
+		// TODO Auto-generated method stub
+		System.out.println("Edit a quiz menu");
+	}
+
+	private void deleteQuiz() {
+		// TODO Auto-generated method stub
+		System.out.println("Please enter the name of the quiz you wish to delete");
+	}
+
+	private void createNewQuiz() {
+		// TODO Auto-generated method stub
+		System.out.println("Please enter the name of the quiz you want to create");
 	}
 
 	

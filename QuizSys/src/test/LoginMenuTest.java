@@ -98,7 +98,7 @@ public class LoginMenuTest {
 	@Test
 	public void testLoginUserWithNoQuizzes(){
 		//setup TODO <setup test> need to create the whole structure
-		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');//TODO needs to escape
 		when(ui.readFromUser()).thenReturn("Beta");
 		//debug
 		um.run();
@@ -108,7 +108,7 @@ public class LoginMenuTest {
 	@Test
 	public void testLoginUnexistentUser(){
 		//setup TODO <setup test> need to create the whole structure
-		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');//TODO needs to escape
 		when(ui.readFromUser()).thenReturn("Delta");
 		//debug
 		um.run();
