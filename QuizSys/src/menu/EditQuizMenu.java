@@ -74,21 +74,21 @@ public class EditQuizMenu {
 
 	private void editQuestion() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Please enter the number for the question you wish to edit :");
 	}
 
 	private void goBack() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("You will be returned to the previous menu.");
 	}
 
 	private void deleteQuestion() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Please enter the number of the question you wish to delete.");
 	}
 
 	private void createNewQuestion() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Please enter a question:");
 	}
 }
