@@ -113,5 +113,19 @@ public class LoginMenuTest {
 		//debug
 		um.run();
 	}
-
+	//TODO make independent and a test
+	@Test
+	public void testLoginUnexistentSystemFolder(){
+		//setup
+		String newSource = "folderthatainthere";
+		l = new Loader(newSource);
+		s = new Saver(newSource);
+		um = new LoginMenu(l, s, ui);
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');//TODO needs to escape
+		when(ui.readFromUser()).thenReturn("Delta");
+		//debug
+		System.out.println("<<<<<<TEST FOR UNEXISTENT SYSTEM FOLDER>>>>>>");
+		um.run();
+	}
 }
