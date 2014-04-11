@@ -85,4 +85,24 @@ public class UserMenuTest {
 		um.run();
 	}
 
+	//TODO make independent and a test
+	@Test
+	public void testLogin(){
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.readFromUser()).thenReturn("Gonzo");
+		//debug
+		um.run();
+
+	}
+	//TODO make independent and a test
+	@Test
+	public void testLoginUnexistentUser(){
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.readFromUser()).thenReturn("Delta");
+		//debug
+		um.run();
+	}
+
 }

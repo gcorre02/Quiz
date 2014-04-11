@@ -70,7 +70,8 @@ public class LoginMenu {
 		String userName = ui.readFromUser();
 		try {
 			if(l.getUsernames().contains(userName)){
-				//TODO stub
+				System.out.println("Welcome "+userName);
+				UserMenu um = new UserMenu(l, s, ui, userName);
 			}else{
 				System.out.println(userName + " does not exist, can't login.");
 			}
