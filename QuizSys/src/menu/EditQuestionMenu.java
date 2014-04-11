@@ -40,9 +40,51 @@ public class EditQuestionMenu {
 
 	}
 
-
 	private void runMenu(String menu) {
+		char choice = ui.getUserAnswer(menu);
+		//debug
+		System.out.println(choice);
+		//\debug
+		switch(choice){
+		case 'A':
+			createNewAnswer();
+			run();
+			break;
+		case 'B':
+			deleteAnswer();
+			run();
+			break;
+		case 'C':
+			chooseRightAnswer();
+			run();
+			break;
+		case 'D':
+			goBack();
+			break;
+		default:
+			System.out.println("Couldn't understand the input, please choose again.");
+			run();
+			break;
+		}
+	}
+
+	private void goBack() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("you'll be taken to the previous menu.");
+	}
+
+	private void chooseRightAnswer() {
+		// TODO Auto-generated method stub
+		System.out.println("Please enter the key to the new right answer :");
+	}
+
+	private void deleteAnswer() {
+		// TODO Auto-generated method stub
+		System.out.println("Please enter the number for the answer you wish to delete:");
+	}
+
+	private void createNewAnswer() {
+		// TODO Auto-generated method stub
+		System.out.println("Please enter the new answer :");
 	}
 }

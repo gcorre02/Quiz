@@ -104,4 +104,21 @@ public class EditQuizMenuTest {
 
 	}
 
+	//stub question dellete, needs a propper test
+	@Test
+	public final void testEditQuestion() throws IOException{
+		//setup
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');
+		when(ui.readFromUser()).thenReturn("0");
+		//exec
+		eqm.run();
+		//test
+
+		//Quiz quiz = l.getQuizObject(user, quizName);
+		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
+
+		fail("Not yet implemented"); // TODO
+
+	}
 }
