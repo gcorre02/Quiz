@@ -79,4 +79,14 @@ public class UserMenuTest {
 		um.run();
 		fail("Not yet implemented"); // TODO
 	}
+	//TODO this is just a stubbed test for debug
+	@Test
+	public final void testEditQuiz(){
+		
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');
+		when(ui.readFromUser()).thenReturn("0");
+		um.run();
+		
+		fail("Not yet implemented"); // TODO
+	}
 }
