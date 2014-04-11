@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 import menu.EditQuizMenu;
@@ -10,7 +12,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Any;
 
 import persistence.Loader;
 import persistence.Saver;
@@ -69,12 +70,17 @@ public class EditQuizMenuTest {
 	}
 	//stub question dellete, needs a propper test
 	@Test
-	public final void testDeleteQuestion(){
+	public final void testDeleteQuestion() throws IOException{
 		//setup
 		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
 		when(ui.readFromUser()).thenReturn("0");
 		//exec
 		eqm.run();
+		//test
+		
+		//Quiz quiz = l.getQuizObject(user, quizName);
+		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
 		
 		fail("Not yet implemented"); // TODO
 		

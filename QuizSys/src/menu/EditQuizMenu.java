@@ -98,5 +98,7 @@ public class EditQuizMenu {
 	private void createNewQuestion() {
 		// TODO Auto-generated method stub
 		System.out.println("Please enter a question:");
+		String question = ui.readFromUser();
+		s.addAQuestion(question, user, quizName);
 	}
 }
