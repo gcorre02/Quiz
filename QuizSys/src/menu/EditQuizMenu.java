@@ -84,6 +84,7 @@ public class EditQuizMenu {
 		System.out.println("Please enter the number for the question you wish to edit :");
 		String question = l.getQuizQuestionsConfig(user, quizName).get(Integer.parseInt(ui.readFromUser()));
 		EditQuestionMenu ecm =  new EditQuestionMenu(question, l, s, ui, user, quizName);
+		ecm.run();
 	}
 
 	private void goBack() {
