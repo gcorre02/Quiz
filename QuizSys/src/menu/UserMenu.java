@@ -28,8 +28,44 @@ public class UserMenu {
 		}
 		
 		//TODO <implement the rest>
+		ArrayList<String> menuItems = new ArrayList<>();
+		menuItems.add("New user");
+		menuItems.add("Delete User");
+		menuItems.add("Login");
+		menuItems.add("Close Program");
+		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+		runMenu(menu);
+	}
+	
+	public void runMenu(String menu){
+		char choice = ui.getUserAnswer(menu);
+		//debug
+		System.out.println(choice);
+		//\debug
+		switch(choice){
+		case 'A':
+			createNewUser();
+			run();
+			break;
+		case 'B':
+			deleteUser();
+			run();
+			break;
+		case 'C':
+			login();
+			run();
+			break;
+		case 'D':
+			closeProgram();
+			break;
+		default:
+			System.out.println("Couldn't understand the input, please choose again.");
+			run();
+			break;
+		}
 	}
 
+	
 	/*
 	 * public void run(){
 		ArrayList<String> menuItems = new ArrayList<>();
