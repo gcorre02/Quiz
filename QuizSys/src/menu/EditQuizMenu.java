@@ -55,7 +55,11 @@ public class EditQuizMenu {
 			run();
 			break;
 		case 'B':
-			deleteQuestion();
+			try {
+				deleteQuestion();
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("Couldn't access the requested question, please try again.");
+			}
 			run();
 			break;
 		case 'C':
@@ -78,13 +82,17 @@ public class EditQuizMenu {
 	}
 
 	private void goBack() {
-		// TODO Auto-generated method stub
 		System.out.println("You will be returned to the previous menu.");
 	}
 
-	private void deleteQuestion() {
+	private void deleteQuestion() throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Please enter the number of the question you wish to delete.");
+		String question = l.getQuizQuestionsConfig(user, quizName).get(Integer.parseInt(ui.readFromUser()));
+		s.removeAQuestion(question, user, quizName);
+		//debug
+		System.out.println(question+" <<<<WAS PICKED>>>>");
+		//debug
 	}
 
 	private void createNewQuestion() {

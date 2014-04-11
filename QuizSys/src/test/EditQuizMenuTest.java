@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-
+import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 
 import menu.EditQuizMenu;
@@ -9,6 +9,8 @@ import menu.EditQuizMenu;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Any;
 
 import persistence.Loader;
 import persistence.Saver;
@@ -31,7 +33,7 @@ public class EditQuizMenuTest {
 		String source = "testFiles";
 		l = new Loader(source);
 		s = new Saver(source);
-		ui = new UserInterface();
+		ui = mock(UserInterface.class);
 		user = "Septimus";
 		quizName = "Bond Villains";
 		newQuiz = new Quiz(quizName, user);
@@ -48,6 +50,7 @@ public class EditQuizMenuTest {
 
 	@After
 	public void tearDown() throws Exception {
+		//TODO remove files from system...
 	}
 
 	@Test
@@ -64,5 +67,17 @@ public class EditQuizMenuTest {
 	public final void testEditQuizMenu() {
 		fail("Not yet implemented"); // TODO
 	}
-
+	//stub question dellete, needs a propper test
+	@Test
+	public final void testDeleteQuestion(){
+		//setup
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+		when(ui.readFromUser()).thenReturn("0");
+		//exec
+		eqm.run();
+		
+		fail("Not yet implemented"); // TODO
+		
+	}
+		
 }
