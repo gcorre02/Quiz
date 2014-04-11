@@ -17,7 +17,7 @@ public class UserMenu {
 
 	public void run() throws NullPointerException{
 		//TODO <need to check if user has any quizzes first>
-		
+
 		String[] userQuizzes = l.getUserQuizzes().get(user);
 		if(userQuizzes == null){
 			System.out.println(user + " has no quizzes.");
@@ -26,7 +26,7 @@ public class UserMenu {
 			ArrayList<String> thisuserSQuizzes = CollectionPrinter.toArrayList(userQuizzes);
 			System.out.println(CollectionPrinter.collectionPrinter('0', thisuserSQuizzes));
 		}
-		
+
 		//TODO <implement the rest>
 		ArrayList<String> menuItems = new ArrayList<>();
 		menuItems.add("Create a new Quizz");
@@ -36,7 +36,7 @@ public class UserMenu {
 		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
-	
+
 	public void runMenu(String menu){
 		char choice = ui.getUserAnswer(menu);
 		//debug
@@ -70,26 +70,35 @@ public class UserMenu {
 	}
 
 	private void editQuiz() {
-		// TODO Auto-generated method stub
-		System.out.println("Edit a quiz menu");
+		System.out.println("Please enter the number for the quiz you wish to edit");
+		//find the name for the selected quiz.
+		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
+		//debug
+		System.out.println(quizName+" <<<<WAS PICKED>>>>");
+		//debug
+		EditQuizMenu eqm = new EditQuizMenu(l,s,ui,user,quizName);
+		eqm.run();
 	}
 
 	private void deleteQuiz() {
-		// TODO Auto-generated method stub
 		System.out.println("Please enter the number of the quiz you wish to delete");
 		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
 		//debug
 		System.out.println(quizName+" <<<<WAS PICKED>>>>");
 		//debug
-		s.removeQuiz(quizName, user, l.getUserQuizzes());
-		System.out.println("Quiz " + quizName + " has been removed successfuly");
+		if(s.removeQuiz(quizName, user, l.getUserQuizzes()))
+			System.out.println("Quiz " + quizName + " has been removed successfuly");
+		else
+			System.out.println("Quiz " + quizName + " could not be completely removed. \nThere might be a conflict with the file system. \nPlease try again.");
 	}
 
 	private void createNewQuiz() {
-		// TODO Auto-generated method stub
 		System.out.println("Please enter the name of the quiz you want to create");
+		String newQuizName = ui.readFromUser();
+		if(s.addQuiz(newQuizName, user, l.getUserQuizzes()))
+			System.out.println(newQuizName + " was successfully created.");
+		else
+			System.out.println(newQuizName + " could not be created.");
 	}
 
-	
-	
 }

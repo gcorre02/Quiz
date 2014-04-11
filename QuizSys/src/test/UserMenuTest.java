@@ -21,6 +21,7 @@ public class UserMenuTest {
 	private String source;
 	@Before
 	public void setUp() throws Exception {
+		//TODO need to write a setup for the file structure
 		ui = mock(UserInterface.class);
 		source = "testFiles";
 		l = new Loader(source);
@@ -46,7 +47,7 @@ public class UserMenuTest {
 		um.run();
 		fail("Not yet implemented"); // TODO
 	}
-	
+
 	@Test(expected = NullPointerException.class)
 	public final void testrunMenuNullExceptionDoesntBrakeSystem() {
 		String newSource = "unexistingFolder";
@@ -56,7 +57,7 @@ public class UserMenuTest {
 		when(ui.getUserAnswer(anyString())).thenReturn('D');
 		um.run();
 	}
-	
+
 	//TODO this is just a stubbed test for debug
 	@Test
 	public final void testDeleteQuiz(){
@@ -67,4 +68,15 @@ public class UserMenuTest {
 		fail("Not yet implemented"); // TODO
 	}
 
+	//TODO this is just a stubbed test for debug
+	@Test
+	public final void testCreateQuiz(){
+		//creates 3 quizzes
+		when(ui.getUserAnswer(anyString())).thenReturn('A','D','A','D','A','D');
+		when(ui.readFromUser()).thenReturn("Boats Boats Boats","cars 2", "numbers 2");
+		um.run();
+		um.run();
+		um.run();
+		fail("Not yet implemented"); // TODO
+	}
 }
