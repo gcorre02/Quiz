@@ -1,6 +1,5 @@
 package test;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import menu.LoginMenu;
 
@@ -12,7 +11,7 @@ import persistence.Loader;
 import persistence.Saver;
 import userInterface.UserInterface;
 
-public class UserMenuTest {
+public class LoginMenuTest {
 	LoginMenu um;
 	UserInterface ui;
 	Loader l;
