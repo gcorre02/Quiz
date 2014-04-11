@@ -97,6 +97,16 @@ public class UserMenuTest {
 	}
 	//TODO make independent and a test
 	@Test
+	public void testLoginUserWithNoQuizzes(){
+		//setup TODO <setup test> need to create the whole structure
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.readFromUser()).thenReturn("Beta");
+		//debug
+		um.run();
+
+	}
+	//TODO make independent and a test
+	@Test
 	public void testLoginUnexistentUser(){
 		//setup TODO <setup test> need to create the whole structure
 		when(ui.getUserAnswer(anyString())).thenReturn('C','D');

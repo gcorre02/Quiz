@@ -72,6 +72,7 @@ public class LoginMenu {
 			if(l.getUsernames().contains(userName)){
 				System.out.println("Welcome "+userName);
 				UserMenu um = new UserMenu(l, s, ui, userName);
+				um.run();
 			}else{
 				System.out.println(userName + " does not exist, can't login.");
 			}
@@ -86,9 +87,9 @@ public class LoginMenu {
 		String user = ui.readFromUser();
 		try {
 			if(s.deleteUser(user)){
-				System.out.println("user was deleted successfully");
+				System.out.println("user "+user+" was deleted successfully");
 			}else{
-				System.out.println("User does not exist.");
+				System.out.println("User "+user+" does not exist.");
 			}
 		} catch (IOException e) {
 			System.out.println("Couldn't delete user, file might be locked by another user or application, please try again");
