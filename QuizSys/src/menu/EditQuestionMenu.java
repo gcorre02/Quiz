@@ -52,7 +52,11 @@ public class EditQuestionMenu {
 			run();
 			break;
 		case 'B':
-			deleteAnswer();
+			try {
+				deleteAnswer();
+			} catch (Exception e1) {
+				System.out.println("Couldn't delete the answer, try again");
+			}
 			run();
 			break;
 		case 'C':
@@ -78,7 +82,6 @@ public class EditQuestionMenu {
 	}
 
 	private void selectRightAnswer() throws Exception {
-		// TODO Auto-generated method stub
 		Question qu = l.getQuestionObject(user, quizName, question);
 		if(qu.getRightAnswer()==100){
 			System.out.println("No right answer has been set up yet");
@@ -99,9 +102,21 @@ public class EditQuestionMenu {
 		s.saveAQuestionObject(qu);
 	}
 
-	private void deleteAnswer() {
-		// TODO Auto-generated method stub
+	private void deleteAnswer() throws Exception {
+		Question qu = l.getQuestionObject(user, quizName, question);
+		
 		System.out.println("Please enter the number for the answer you wish to delete:");
+		int answerToDelete = Integer.parseInt(ui.readFromUser());
+		String answerStr =""; 
+		try{
+			answerStr = qu.getAnswer(answerToDelete);
+		}catch(Exception e){
+			System.out.println("answer does not exist");
+			throw new Exception();
+		}
+		System.out.println("The answer to be deleted is: " + answerStr);
+		qu.removeAnswer(answerToDelete);
+		s.saveAQuestionObject(qu);
 	}
 
 	private void createNewAnswer() {

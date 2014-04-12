@@ -91,4 +91,16 @@ public class EditQuestionMenuTest {
 		//test
 		assertEquals(expected, actual);
 	}
+	@Test
+	public final void testDeleteAnswer() throws IOException {
+		//expected
+		String expected = l.getQuestionObject(user, quizName, questionString).getAnswer(1);
+		//Setup
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+		when(ui.readFromUser()).thenReturn("1");
+		eqm.run();
+		//actual
+		//test
+		assertFalse(l.getQuestionObject(user, quizName, questionString).getAnswers().contains(expected));
+	}
 }
