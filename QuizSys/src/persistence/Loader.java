@@ -19,11 +19,11 @@ import com.google.gson.reflect.TypeToken;
 public class Loader {
 	String source;
 	File file;
-
+	Saver s;
 	public Loader(String path){
 		source = path;
 		//setup basic file system;
-		Saver s = new Saver(path);
+		s = new Saver(path);
 		s = null;
 	}
 

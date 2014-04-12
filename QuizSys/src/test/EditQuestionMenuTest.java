@@ -1,10 +1,13 @@
 package test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 
+import menu.EditQuestionMenu;
 import menu.EditQuizMenu;
 
 import org.junit.After;
@@ -25,7 +28,7 @@ public class EditQuestionMenuTest {
 	private String user;
 	private String quizName;
 	private Quiz newQuiz;
-	private EditQuizMenu eqm;
+	private EditQuestionMenu eqm;
 	private ArrayList<String> quizQuestions;
 	private Question updatableQuestion;
 	private ArrayList<String> answers;
@@ -41,7 +44,6 @@ public class EditQuestionMenuTest {
 		s.addUserName(user);
 		quizName = "Another Bond";
 		newQuiz = new Quiz(quizName, user);
-		eqm = new EditQuizMenu(l, s, ui, user, quizName);
 		quizQuestions = new ArrayList<>();
 		String questionString ="Who is the sexiest bond villain?";
 		quizQuestions.add("Which bond villain has a massive jaw?");
@@ -58,6 +60,7 @@ public class EditQuestionMenuTest {
 		answers.add("MoneyPenny");
 		updatableQuestion = new Question(questionString, answers, 1, user, quizName);
 		s.saveAQuestionObject(updatableQuestion);
+		eqm = new EditQuestionMenu(questionString,l, s, ui, user, quizName);
 	}
 
 	@After
@@ -75,7 +78,10 @@ public class EditQuestionMenuTest {
 	}
 	
 	@Test
-	public final void testRemoveUser() {
+	public final void testChangeRightAnswerInt() {
+		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+		when(ui.readFromUser()).thenReturn("0");
+		eqm.run();
 		fail("Not yet implemented"); // TODO
 	}
 }

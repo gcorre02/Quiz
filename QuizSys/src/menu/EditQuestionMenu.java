@@ -55,7 +55,11 @@ public class EditQuestionMenu {
 			run();
 			break;
 		case 'C':
-			chooseRightAnswer();
+			try {
+				chooseRightAnswer();
+			} catch (IOException e) {
+				System.out.println("Couldn't access the question object. please try again later.");
+			}
 			run();
 			break;
 		case 'D':
@@ -69,13 +73,18 @@ public class EditQuestionMenu {
 	}
 
 	private void goBack() {
-		// TODO Auto-generated method stub
 		System.out.println("you'll be taken to the previous menu.");
 	}
 
-	private void chooseRightAnswer() {
+	private void chooseRightAnswer() throws IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Please enter the key to the new right answer :");
+		Question qu = l.getQuestionObject(user, quizName, question);
+		System.out.println("The current right answer is -> " + qu.getAnswer(qu.getRightAnswer()));
+		System.out.println("Please enter the number to identify the new right answer :");
+		int newRightAnswer = Integer.parseInt(ui.readFromUser());
+		qu.setRightAnswer(newRightAnswer);
+		System.out.println("The new right answer is : " + qu.getAnswer(newRightAnswer));
+		s.saveAQuestionObject(qu);
 	}
 
 	private void deleteAnswer() {
