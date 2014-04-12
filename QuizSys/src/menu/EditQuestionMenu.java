@@ -28,6 +28,7 @@ public class EditQuestionMenu {
 			System.out.println(CollectionPrinter.collectionPrinter('0', answers));
 		}catch(Exception e){
 			System.out.println(question+" has no answers yet");
+			Question quStub = new Question(question, new ArrayList<String>(), 100, user, quizName);
 		}
 		//TODO <implement the rest>
 		ArrayList<String> menuItems = new ArrayList<>();
@@ -56,8 +57,8 @@ public class EditQuestionMenu {
 			break;
 		case 'C':
 			try {
-				chooseRightAnswer();
-			} catch (IOException e) {
+				selectRightAnswer();
+			} catch (Exception e) {
 				System.out.println("Couldn't access the question object. please try again later.");
 			}
 			run();
@@ -76,14 +77,25 @@ public class EditQuestionMenu {
 		System.out.println("you'll be taken to the previous menu.");
 	}
 
-	private void chooseRightAnswer() throws IOException {
+	private void selectRightAnswer() throws Exception {
 		// TODO Auto-generated method stub
 		Question qu = l.getQuestionObject(user, quizName, question);
-		System.out.println("The current right answer is -> " + qu.getAnswer(qu.getRightAnswer()));
+		if(qu.getRightAnswer()==100){
+			System.out.println("No right answer has been set up yet");
+		}else {
+			System.out.println("The current right answer is -> " + qu.getAnswer(qu.getRightAnswer()));
+		}
 		System.out.println("Please enter the number to identify the new right answer :");
 		int newRightAnswer = Integer.parseInt(ui.readFromUser());
 		qu.setRightAnswer(newRightAnswer);
-		System.out.println("The new right answer is : " + qu.getAnswer(newRightAnswer));
+		String newRightAnswerStr =""; 
+		try{
+			newRightAnswerStr = qu.getAnswer(newRightAnswer);
+		}catch(Exception e){
+			System.out.println("answer does not exist");
+			throw new Exception();
+		}
+		System.out.println("The new right answer is : " + newRightAnswerStr);
 		s.saveAQuestionObject(qu);
 	}
 

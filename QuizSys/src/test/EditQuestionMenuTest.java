@@ -5,6 +5,7 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import menu.EditQuestionMenu;
@@ -32,7 +33,8 @@ public class EditQuestionMenuTest {
 	private ArrayList<String> quizQuestions;
 	private Question updatableQuestion;
 	private ArrayList<String> answers;
-
+	String questionString;
+	
 	@Before
 	public void setUp() throws Exception {
 		//TODO need to setup the file system.
@@ -45,7 +47,7 @@ public class EditQuestionMenuTest {
 		quizName = "Another Bond";
 		newQuiz = new Quiz(quizName, user);
 		quizQuestions = new ArrayList<>();
-		String questionString ="Who is the sexiest bond villain?";
+		questionString ="Who is the sexiest bond villain?";
 		quizQuestions.add("Which bond villain has a massive jaw?");
 		quizQuestions.add("Which bond villain has a golden penis?");
 		quizQuestions.add(questionString);
@@ -78,10 +80,16 @@ public class EditQuestionMenuTest {
 	}
 	
 	@Test
-	public final void testChangeRightAnswerInt() {
+	public final void testChangeRightAnswerInt() throws IOException {
+		//Setup
 		when(ui.getUserAnswer(anyString())).thenReturn('C','D');
 		when(ui.readFromUser()).thenReturn("0");
 		eqm.run();
-		fail("Not yet implemented"); // TODO
+		//expected
+		int expected = 0;
+		//actual
+		int actual = l.getQuestionObject(user, quizName, questionString).getRightAnswer();
+		//test
+		assertEquals(expected, actual);
 	}
 }
