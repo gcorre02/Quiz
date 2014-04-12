@@ -48,7 +48,11 @@ public class EditQuestionMenu {
 		//\debug
 		switch(choice){
 		case 'A':
-			createNewAnswer();
+			try {
+				createNewAnswer();
+			} catch (Exception e2) {
+				System.out.println("Couldn't add the new answer, please try again");
+			}
 			run();
 			break;
 		case 'B':
@@ -99,12 +103,12 @@ public class EditQuestionMenu {
 			throw new Exception();
 		}
 		System.out.println("The new right answer is : " + newRightAnswerStr);
-		s.saveAQuestionObject(qu);
+		updateQuestionObject(qu);
 	}
 
 	private void deleteAnswer() throws Exception {
 		Question qu = l.getQuestionObject(user, quizName, question);
-		
+
 		System.out.println("Please enter the number for the answer you wish to delete:");
 		int answerToDelete = Integer.parseInt(ui.readFromUser());
 		String answerStr =""; 
@@ -116,11 +120,25 @@ public class EditQuestionMenu {
 		}
 		System.out.println("The answer to be deleted is: " + answerStr);
 		qu.removeAnswer(answerToDelete);
-		s.saveAQuestionObject(qu);
+		updateQuestionObject(qu);
 	}
 
-	private void createNewAnswer() {
-		// TODO Auto-generated method stub
+	private void createNewAnswer() throws Exception {
+		Question qu = l.getQuestionObject(user, quizName, question);
+
 		System.out.println("Please enter the new answer :");
+		
+		String answerStr = ui.readFromUser();
+		
+		qu.addAnswer(answerStr);
+		updateQuestionObject(qu);
+	}
+
+	private void updateQuestionObject(Question qu) throws Exception {
+		if(s.saveAQuestionObject(qu)){
+			System.out.println("Operation on question object successsful");
+		}else{
+			throw new Exception();
+		}
 	}
 }
