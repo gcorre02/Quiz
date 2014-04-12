@@ -214,5 +214,18 @@ public class SaverTest {
 		assertEquals(expected, actual);
 		assertArrayEquals(expecteds, actuals);
 	}
-
+	
+	@Test
+	public final void checkNewSaverDoensntOverwriteExistingFileSystem() throws IOException{
+		//setup
+		s = new Saver(folder);
+		s = null;
+		Loader l = new Loader(folder);
+		//expected
+		ArrayList<String> expecteds = userNames;
+		//actual
+		ArrayList<String> actuals = l.getUsernames();
+		//test
+		assertEquals(expecteds, actuals);
+	}
 }

@@ -22,11 +22,9 @@ public class Loader {
 
 	public Loader(String path){
 		source = path;
-		File folder = new File(path);
-		if(!folder.exists()){
-			System.out.println("folder is empty");
-			folder.mkdir();
-		}
+		//setup basic file system;
+		Saver s = new Saver(path);
+		s = null;
 	}
 
 	public ArrayList<String> getUsernames() throws IOException{

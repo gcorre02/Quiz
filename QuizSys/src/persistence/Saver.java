@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import quizData.Question;
@@ -30,6 +31,26 @@ public class Saver {
 	public Saver(String path){
 		source = path;
 		createFolder(path);
+		createUserNames(path);
+		createUserQuizzes(path);
+	}
+
+	private void createUserQuizzes(String path) {
+		File f = new File(path + File.separator + "UserQuizzes.txt");
+		if(!f.exists()){
+			Map<String,String[]> userNames = new HashMap<>();
+			userNames.put("Admin",new String[0]);
+			saveUserQuizzes(userNames);
+		}
+	}
+
+	private void createUserNames(String path) {
+		File f = new File(path + File.separator + "UserNames.txt");
+		if(!f.exists()){
+			ArrayList<String> userNames = new ArrayList<>();
+			userNames.add("Admin");
+			saveUserNames(userNames);
+		}
 	}
 
 	private void createFolder(String path) {
@@ -41,7 +62,7 @@ public class Saver {
 	/**
 	 * 
 	 * add User names should be called usually, saveUserNames has the danger of overwriting existing users
-	 * TODO <overwriting> make it private ???
+	 * TODO <overwriting> make it private !!!???
 	 * @param userNames
 	 * @return
 	 */
@@ -64,12 +85,24 @@ public class Saver {
 		Loader l = new Loader(source);
 		ArrayList<String> existingUserNameStrings = l.getUsernames();
 		if(existingUserNameStrings.contains(user)){
+			addUserToUserQuizzes(user);
 			return false;
 		} else {
 			existingUserNameStrings.add(user);
 			saveUserNames(existingUserNameStrings);
+			addUserToUserQuizzes(user);
 			return true;
 		}
+	}
+
+	private void addUserToUserQuizzes(String user) {
+		Loader l = new Loader(source);
+		Map<String, String[]> userQuizzes = l.getUserQuizzes();
+		if(!userQuizzes.containsKey(user)){
+			userQuizzes.put(user, new String[0]);
+		}
+		//TODO error checking:
+		saveUserQuizzes(userQuizzes);
 	}
 
 	/*
@@ -83,6 +116,13 @@ public class Saver {
 	}
 	public boolean deleteUser(String user) throws IOException{
 		Loader l = new Loader(source);
+		if(deleteUserFromUserQuizzes(user)){
+			System.out.println("user successfully removed from userQuizzes");
+		}else{
+			System.out.println("Couldn't remove user from user quizzes. please try again later.");
+			return false;
+		}
+			
 		ArrayList<String> users = l.getUsernames();
 		if(!users.contains(user)){
 			return false;
@@ -97,6 +137,17 @@ public class Saver {
 			}
 			return true;
 		}
+	}
+
+	private boolean deleteUserFromUserQuizzes(String user) {
+		Loader l = new Loader(source);
+		Map<String, String[]> userQuizzes = l.getUserQuizzes();
+		if(userQuizzes.containsKey(user)){
+			userQuizzes.remove(user);
+			if(saveUserQuizzes(userQuizzes))
+					return true;
+		}
+		return false;
 	}
 
 	public void deleteFolder(String path) {

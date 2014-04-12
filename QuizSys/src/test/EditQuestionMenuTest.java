@@ -1,0 +1,81 @@
+package test;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+
+import java.util.ArrayList;
+
+import menu.EditQuizMenu;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import persistence.Loader;
+import persistence.Saver;
+import quizData.Question;
+import quizData.Quiz;
+import userInterface.UserInterface;
+
+public class EditQuestionMenuTest {
+
+	private Loader l;
+	private Saver s;
+	private UserInterface ui;
+	private String user;
+	private String quizName;
+	private Quiz newQuiz;
+	private EditQuizMenu eqm;
+	private ArrayList<String> quizQuestions;
+	private Question updatableQuestion;
+	private ArrayList<String> answers;
+
+	@Before
+	public void setUp() throws Exception {
+		//TODO need to setup the file system.
+		String source = "testFiles";
+		s = new Saver(source);
+		l = new Loader(source);
+		ui = mock(UserInterface.class);
+		user = "Guy Fawlkes";
+		s.addUserName(user);
+		quizName = "Another Bond";
+		newQuiz = new Quiz(quizName, user);
+		eqm = new EditQuizMenu(l, s, ui, user, quizName);
+		quizQuestions = new ArrayList<>();
+		String questionString ="Who is the sexiest bond villain?";
+		quizQuestions.add("Which bond villain has a massive jaw?");
+		quizQuestions.add("Which bond villain has a golden penis?");
+		quizQuestions.add(questionString);
+		quizQuestions.add("Which bond villain is actually a nice person?");
+		newQuiz.setQuizQuestions(quizQuestions);
+		s.addQuiz(quizName, user, l.getUserQuizzes());
+		s.saveQuiz(newQuiz);
+		answers = new ArrayList<String>();
+		answers.add("Odd Job");
+		answers.add("Octopussy");
+		answers.add("Bane");
+		answers.add("MoneyPenny");
+		updatableQuestion = new Question(questionString, answers, 1, user, quizName);
+		s.saveAQuestionObject(updatableQuestion);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public final void testRun() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public final void testEditQuestionMenu() {
+		fail("Not yet implemented"); // TODO
+	}
+	
+	@Test
+	public final void testRemoveUser() {
+		fail("Not yet implemented"); // TODO
+	}
+}
