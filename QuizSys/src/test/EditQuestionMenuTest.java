@@ -33,7 +33,7 @@ public class EditQuestionMenuTest {
 	private Question updatableQuestion;
 	private ArrayList<String> answers;
 	String questionString;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		//TODO need to setup the file system.
@@ -77,7 +77,7 @@ public class EditQuestionMenuTest {
 	public final void testEditQuestionMenu() {
 		fail("Not yet implemented"); // TODO
 	}
-	
+
 	@Test
 	public final void testChangeRightAnswerInt() throws IOException {
 		//Setup
@@ -102,5 +102,20 @@ public class EditQuestionMenuTest {
 		//actual
 		//test
 		assertFalse(l.getQuestionObject(user, quizName, questionString).getAnswers().contains(expected));
+	}
+
+	@Test
+	public final void testCreateAnswer() throws IOException {
+		//expected
+		String expected = "Dr. NO";
+		//Setup
+		when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+		when(ui.readFromUser()).thenReturn(expected);
+		eqm.run();
+		
+		//actual
+		String actual = l.getQuestionObject(user, quizName, questionString).getAnswer(4);
+		//test
+		assertEquals(expected, actual);
 	}
 }
