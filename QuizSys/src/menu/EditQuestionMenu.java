@@ -1,6 +1,5 @@
 package menu;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import persistence.Loader;
@@ -29,6 +28,7 @@ public class EditQuestionMenu {
 		}catch(Exception e){
 			System.out.println(question+" has no answers yet");
 			Question quStub = new Question(question, new ArrayList<String>(), 100, user, quizName);
+			s.saveAQuestionObject(quStub);
 		}
 		//TODO <implement the rest>
 		ArrayList<String> menuItems = new ArrayList<>();

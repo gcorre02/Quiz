@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Quiz;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,10 @@ public class EditQuizMenu {
 				System.out.println(CollectionPrinter.collectionPrinter('0', userQuestions));
 			}
 		} catch (IOException e) {
-			System.out.println("Quiz has no questions.");
+			Quiz quiz = new Quiz(quizName, user);
+			quiz.setQuizQuestions(new ArrayList<String>());
+			s.saveQuiz(quiz);
+			System.out.println("Quiz is empty.");
 		}
 		
 
