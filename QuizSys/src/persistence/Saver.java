@@ -350,7 +350,7 @@ public class Saver {
 			if(!quizConfig.contains(question))
 				return true;
 		} catch (IOException e) {
-			System.out.println("couldnt load the quizz config file");
+			System.out.println("couldnt load the quiz config file");
 			return false;
 		}
 		Quiz q = l.getQuizObject(user, quiz);
