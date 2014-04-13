@@ -13,7 +13,7 @@ import quizData.Quiz;
 import tools.CollectionPrinter;
 import lombok.Data;
 
-import com.google.gson.*;
+import  com.google.gson.Gson;
 
 /**
  * 
