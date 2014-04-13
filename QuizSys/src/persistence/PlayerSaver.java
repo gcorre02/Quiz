@@ -5,6 +5,7 @@ import quizData.Player;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -80,9 +81,10 @@ public class PlayerSaver {
             f.mkdir();
         }
     }
-    public void addPlayer(String name){
+    public void addPlayer(String name) throws IOException {
         PlayerLoader pl = new PlayerLoader(source);
-        ArrayList<String> existingPlayer = pl.getPlayersArray();
+        ArrayList<String> existingPlayer;
+        existingPlayer = pl.getPlayersArray();
         existingPlayer.add(name);
         createPlayersIndexJson(existingPlayer);
     }
