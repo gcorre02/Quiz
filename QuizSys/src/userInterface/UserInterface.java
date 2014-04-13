@@ -1,9 +1,11 @@
 package userInterface;
 
 public class UserInterface {
-
+    //TODO improve the regex, to accept most inputs.
 	public String readFromUser() {
-		return System.console().readLine();
+		String input = System.console().readLine();
+        input = input.replaceAll("\"","");
+        return input;
 	}
 
 	public char getUserAnswer(String aBunchOfChoices) {

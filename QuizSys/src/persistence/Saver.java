@@ -309,6 +309,7 @@ public class Saver {
 		return true;
 	}
 	private boolean generateQuestionFiles(Quiz quiz) {
+        //TODO replace integer name of new file with actual question name, removing ? mark.
 		for(int i = 0; i < quiz.getQuizQuestions().size(); i++){
 			String path = source + File.separator + quiz.getOwner() + File.separator + quiz.getQuizName() + File.separator +i+ ".txt";
 			File f = new File(path);
