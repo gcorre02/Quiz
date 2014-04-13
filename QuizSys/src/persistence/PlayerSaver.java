@@ -24,7 +24,6 @@ public class PlayerSaver {
         s = null;
         checkPlayerFolderExists();
         checkPlayersIndexFileExists();
-
     }
 
     private void checkPlayersIndexFileExists() {
@@ -81,6 +80,11 @@ public class PlayerSaver {
             f.mkdir();
         }
     }
-
+    public void addPlayer(String name){
+        PlayerLoader pl = new PlayerLoader(source);
+        ArrayList<String> existingPlayer = pl.getPlayersArray();
+        existingPlayer.add(name);
+        createPlayersIndexJson(existingPlayer);
+    }
 
 }
