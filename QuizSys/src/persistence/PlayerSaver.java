@@ -94,6 +94,7 @@ public class PlayerSaver {
         }else{
             existingPlayer.add(name);
             savePlayersIndexJson(existingPlayer);
+            System.out.println("Player " + name + " has been added.");
         }
     }
 

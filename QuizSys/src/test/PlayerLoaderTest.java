@@ -6,8 +6,12 @@ import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import quizData.Player;
+import tools.CollectionPrinter;
+
+import java.util.ArrayList;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.fail;
 
 /**
@@ -23,7 +27,7 @@ public class PlayerLoaderTest {
         source = "testFiles";
         pl = new PlayerLoader(source);
         playerName = "Liam";
-        ps = new PlayerSaver(playerName);
+        ps = new PlayerSaver(source);
     }
 
     @After
@@ -33,7 +37,15 @@ public class PlayerLoaderTest {
 
     @Test
     public void testGetPlayersArray() throws Exception {
-        fail();//TODO impl
+        //expected
+        ArrayList<String> expecteds = new ArrayList<>();
+        expecteds.add("AdminPlayer");
+        //actual
+        ArrayList<String> actuals = pl.getPlayersArray();
+        //debug
+        System.out.println(CollectionPrinter.collectionPrinter('0',actuals));
+        //test
+        assertTrue(actuals.containsAll(expecteds));
     }
 
     @Test
