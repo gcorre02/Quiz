@@ -60,7 +60,11 @@ public class PlayerSaver {
         }
     }
 
-    private void savePlayer(Player p) {
+    /**
+     * used to save or update a player object.
+     * @param p the player object to create or update.
+     */
+    public void savePlayer(Player p) {
         String path = source + File.separator + "Player" + File.separator + p.getName()+".txt";
         Gson gson = new Gson();
         File file = new File(path);
