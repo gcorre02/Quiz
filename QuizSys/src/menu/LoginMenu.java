@@ -33,6 +33,7 @@ public class LoginMenu {
 		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
+
 	public void runMenu(String menu){
 		char choice = ui.getUserAnswer(menu);
 		//debug
