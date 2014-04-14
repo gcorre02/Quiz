@@ -63,6 +63,8 @@ public class PlayerLoginMenu {
     private void login() {
         //TODO
         System.out.println("Please enter your name : ");
+        //String username = ui.readFromUser();
+
     }
 
     private void deletePlayer() {
