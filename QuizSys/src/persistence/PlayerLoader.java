@@ -3,6 +3,7 @@ package persistence;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import lombok.AllArgsConstructor;
+import quizData.Player;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -47,5 +48,24 @@ public class PlayerLoader {
         //TODO finish this
 
         return playernames;
+    }
+    public Player getPlayer(String name){
+        Player p;
+
+        Gson gson = new Gson();
+
+        File file;
+        file = new File(source + File.separator+ "Player" +File.separator+ name+ ".txt");
+        BufferedReader reader;
+
+        try {
+            reader = new BufferedReader(new FileReader(file));
+        } catch (FileNotFoundException e) {
+            System.out.print("Player File cannot be accessed");
+            return null;
+        }
+        p = gson.fromJson(reader, Player.class);
+
+        return p;
     }
 }
