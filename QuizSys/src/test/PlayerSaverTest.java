@@ -50,4 +50,11 @@ public class PlayerSaverTest {
         String expected = "Jonah";
         ps.addPlayer(expected);
     }
+    @Test
+    public final void testDeletePlayerDelsPlayer() throws IOException {
+        //TODO just a behaviour stub
+        String expected = "Jon";
+        ps.addPlayer(expected);
+        ps.removePlayer(expected);
+    }
 }

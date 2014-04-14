@@ -108,7 +108,15 @@ public class PlayerSaver {
 
     private void deletePlayerFile(String name) {
         String path = source + File.separator + "Player" + File.separator + name+".txt";
-        s.deleteFolder(path);
+        deleteFile(path);
+    }
+
+    private void deleteFile(String path) {
+        File f = new File(path);
+        if(f.exists())
+            f.delete();
+        else
+            System.out.println("File already does not exist");
     }
 
 }
