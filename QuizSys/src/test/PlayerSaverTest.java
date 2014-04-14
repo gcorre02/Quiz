@@ -6,6 +6,7 @@ import org.junit.Test;
 import persistence.PlayerSaver;
 
 import java.io.File;
+import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
@@ -42,5 +43,11 @@ public class PlayerSaverTest {
         assertTrue(p.exists());
         assertTrue(a.exists());
         assertTrue(i.exists());
+    }
+    @Test
+    public final void testAddPlayerAddsPlayer() throws IOException {
+        //TODO just a behaviour stub
+        String expected = "Jonah";
+        ps.addPlayer(expected);
     }
 }

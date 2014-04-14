@@ -1,6 +1,7 @@
 package persistence;
 
 import com.google.gson.Gson;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import quizData.Player;
 
 import java.io.File;
@@ -85,8 +86,12 @@ public class PlayerSaver {
         PlayerLoader pl = new PlayerLoader(source);
         ArrayList<String> existingPlayer;
         existingPlayer = pl.getPlayersArray();
-        existingPlayer.add(name);
-        createPlayersIndexJson(existingPlayer);
+        if(existingPlayer.contains(name)){
+            System.out.println(name + " already exists.");
+        }else{
+            existingPlayer.add(name);
+            createPlayersIndexJson(existingPlayer);
+        }
     }
 
 }
