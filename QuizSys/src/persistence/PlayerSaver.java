@@ -1,7 +1,6 @@
 package persistence;
 
 import com.google.gson.Gson;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import quizData.Player;
 
 import java.io.File;
@@ -34,11 +33,11 @@ public class PlayerSaver {
         if(!f.exists()){
             ArrayList<String> stubUsers = new ArrayList<>();
             stubUsers.add("AdminPlayer");
-            createPlayersIndexJson(stubUsers);
+            savePlayersIndexJson(stubUsers);
         }
     }
 
-    private void createPlayersIndexJson(ArrayList<String> inputArray) {
+    private void savePlayersIndexJson(ArrayList<String> inputArray) {
         String path = source + File.separator + "Player" + File.separator + "playersIndex.txt";
         Gson gson = new Gson();
         File file = new File(path);
@@ -90,8 +89,26 @@ public class PlayerSaver {
             System.out.println(name + " already exists.");
         }else{
             existingPlayer.add(name);
-            createPlayersIndexJson(existingPlayer);
+            savePlayersIndexJson(existingPlayer);
         }
+    }
+
+    public void removePlayer(String name) throws IOException {
+        PlayerLoader pl = new PlayerLoader(source);
+        ArrayList<String> existingPlayers;
+        existingPlayers = pl.getPlayersArray();
+        if(!existingPlayers.contains(name)){
+            System.out.println(name + " has already been removed.");
+        }else{
+            existingPlayers.remove(name);
+            deletePlayerFile(name);
+            savePlayersIndexJson(existingPlayers);
+        }
+    }
+
+    private void deletePlayerFile(String name) {
+        String path = source + File.separator + "Player" + File.separator + name+".txt";
+        s.deleteFolder(path);
     }
 
 }
