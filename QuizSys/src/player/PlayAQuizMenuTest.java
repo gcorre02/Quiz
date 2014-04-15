@@ -7,13 +7,16 @@ import persistence.Loader;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import persistence.Saver;
+import quizData.Player;
 import quizData.Question;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
 import java.util.ArrayList;
 
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by Admin on 15/04/2014.
@@ -56,11 +59,16 @@ public class PlayAQuizMenuTest {
         s.saveAQuestionObject(qu1);
         s.saveAQuestionObject(qu3);
 
+        //setup player obj
+        player = "Esteban";
+        Player playa = new Player(player);
+        ps = new PlayerSaver(source);
+        ps.savePlayer(playa);
         //setup PlayAQuizMenu obj
         ui = mock(UserInterface.class);
-        player = "Esteban";
+
         pl = new PlayerLoader(source);
-        ps = new PlayerSaver(source);
+
 
         pqm = new PlayAQuizMenu(ui,pl,ps,player,quizOwner,quizName);
     }
@@ -72,6 +80,11 @@ public class PlayAQuizMenuTest {
 
     @Test
     public void testRun() throws Exception {
+        //TODO working, need assert.
+
+        //mock
+        when(ui.readFromUser()).thenReturn("1");
+        //exec
         pqm.run();
     }
 }

@@ -47,6 +47,7 @@ public class PlayAQuizMenu {
 
         ArrayList<String> questions = pl.getL().getQuizQuestionsConfig(quizOwner,quiz);
         for(String question : questions){
+            System.out.println("\n"+question);
             Question q = pl.getL().getQuestionObject(quizOwner,quiz,question);
             int qScore = getQuestionScore(q);
             score += qScore;
