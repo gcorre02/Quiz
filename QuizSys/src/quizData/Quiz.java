@@ -9,12 +9,14 @@ public class Quiz {
 	private String owner;
 	private ArrayList<String> quizQuestions;
 	private String quizName;
-	
+
 	public Quiz(String name, String owner){
 		quizQuestions = new ArrayList<>();
 		quizName = name;
 		this.owner = owner;
 	}
+
+    //TODO need to have a field that is set if quiz can be played or not. corresponding checks also in the PlayerMenus
 
 	public void addQuestion(String questionString){
 		quizQuestions.add(questionString);
