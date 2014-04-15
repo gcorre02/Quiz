@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import persistence.Loader;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
+import quizData.Quiz;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -61,10 +63,25 @@ public class PlayerMenu {
 
     }
 
-    private void playAQuizz() {
-        System.out.println("Pick a user to browse his quizzes:");
+    private void playAQuizz() throws IOException {
+        showAllQuizzes();
+        System.out.println("Which user would you like to access ? ");
+        Loader l = pl.getL();
+        ArrayList<String> usernames = l.getUsernames();
+        String users = CollectionPrinter.collectionPrinter('0', usernames);
+        System.out.println(users);
+        String quizOwner = usernames.get(Integer.parseInt(ui.readFromUser()));
         System.out.println("Please choose a quiz to play: ");
-        PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, QuizOwner, Quiz);
+        String[] quizNames = l.getUserQuizzes().get(quizOwner);
+        ArrayList<String> quizNamesArray = new ArrayList<>();
+        Collections.addAll(quizNamesArray, quizNames);
+        String quizzes = CollectionPrinter.collectionPrinter('0',quizNamesArray);
+        System.out.println(quizzes);
+        String quiz = quizNamesArray.get(Integer.parseInt(ui.readFromUser()));
+        //debug
+        System.out.println("You picked quiz " + quiz + " from user " + quizOwner);
+        //\debug
+        //PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, quizOwner, quiz);
     }
 
     private void showAllQuizzes() {
