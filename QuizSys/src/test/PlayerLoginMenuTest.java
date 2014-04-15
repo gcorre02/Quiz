@@ -1,10 +1,11 @@
-package player;
+package test;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
+import player.PlayerLoginMenu;
 import userInterface.UserInterface;
 
 import java.io.File;
