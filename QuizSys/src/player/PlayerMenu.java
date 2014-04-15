@@ -41,8 +41,7 @@ public class PlayerMenu {
                 run();
                 break;
             case 'B':
-                System.out.println("Please choose a quiz to play: ");
-              //  deletePlayer();
+                playAQuizz();
                 run();
                 break;
             case 'C':
@@ -60,6 +59,12 @@ public class PlayerMenu {
                 break;
         }
 
+    }
+
+    private void playAQuizz() {
+        System.out.println("Pick a user to browse his quizzes:");
+        System.out.println("Please choose a quiz to play: ");
+        PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, QuizOwner, Quiz);
     }
 
     private void showAllQuizzes() {
