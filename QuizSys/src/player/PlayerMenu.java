@@ -46,6 +46,7 @@ public class PlayerMenu {
                 break;
             case 'B':
                 try {
+                    //TODO need to check if the quiz is playable, if not, cant play it. setup by user and saved inside the quiz object
                     playAQuizz();
                 } catch (IOException e) {
                     System.out.println("Couldn't access user quizzes file.");
@@ -58,7 +59,6 @@ public class PlayerMenu {
                 break;
             case 'D':
                 System.out.println("Thank you for playing. Goodbye");
-          //      closeProgram();
                 break;
             default:
                 System.out.println("Couldn't understand the input, please choose again.");
