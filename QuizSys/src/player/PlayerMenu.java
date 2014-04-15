@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import persistence.Loader;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
+import quizData.Player;
 import quizData.Quiz;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 
 /**
  * Created by Admin on 15/04/2014.
@@ -51,8 +53,7 @@ public class PlayerMenu {
                 run();
                 break;
             case 'C':
-                System.out.println("These are the quizzes you have played:");
-            //    login();
+                printPlayerPlayedQuizzes();
                 run();
                 break;
             case 'D':
@@ -67,14 +68,26 @@ public class PlayerMenu {
 
     }
 
+    private void printPlayerPlayedQuizzes() {
+        //SETUP
+        Player p = pl.getPlayer(playerName);
+        Map<String, String[]> playedQuizzes = p.getPlayedQuizzes();
+        //RUN
+        System.out.println("These are the quizzes you have played:");
+        CollectionPrinter.printMap(playedQuizzes);
+    }
+
     private void playAQuizz() throws IOException {
-        showAllQuizzes();
-        System.out.println("Which user would you like to access ? ");
+        //SETUP
         Loader l = pl.getL();
+        showAllQuizzes();
+        //USER
+        System.out.println("Which user would you like to access ? ");
         ArrayList<String> userNames = l.getUsernames();
         String users = CollectionPrinter.collectionPrinter('0', userNames);
         System.out.println(users);
         String quizOwner = userNames.get(Integer.parseInt(ui.readFromUser()));
+        //QUIZ
         System.out.println("Please choose a quiz to play: ");
         String[] quizNames = l.getUserQuizzes().get(quizOwner);
         ArrayList<String> quizNamesArray = new ArrayList<>();
@@ -85,6 +98,7 @@ public class PlayerMenu {
         //debug
         System.out.println("You picked quiz " + quiz + " from user " + quizOwner);
         //\debug
+        //RUN QUIZ
         PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, quizOwner, quiz);
         paqm.run();
     }

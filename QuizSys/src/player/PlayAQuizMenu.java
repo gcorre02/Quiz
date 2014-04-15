@@ -19,5 +19,6 @@ public class PlayAQuizMenu {
 
     public void run() {
         //TODO stubbed method
+        System.out.println("Stubbed Play a quiz dude!!");
     }
 }
