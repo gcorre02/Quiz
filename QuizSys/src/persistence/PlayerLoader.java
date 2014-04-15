@@ -3,6 +3,7 @@ package persistence;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import quizData.Player;
 
 import java.io.*;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
  */
 public class PlayerLoader {
     private String source;
+    @Getter
     private Loader l;
 
     public PlayerLoader(String path){

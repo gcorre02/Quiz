@@ -1,6 +1,7 @@
 package player;
 
 import lombok.AllArgsConstructor;
+import persistence.Loader;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import tools.CollectionPrinter;
@@ -21,7 +22,7 @@ public class PlayerMenu {
     PlayerSaver ps;
 
     public void run() {
-        String[] menuArray = {"Browse User Quizzes", "Play a Quiz", "Played Quizzes", "Logout"};
+        String[] menuArray = {"Browse All Quizzes", "Play a Quiz", "Played Quizzes", "Logout"};
         ArrayList<String> menuItems = new ArrayList<>();
         Collections.addAll(menuItems, menuArray);
         String menu = CollectionPrinter.collectionPrinter('S', menuItems);
@@ -36,8 +37,7 @@ public class PlayerMenu {
         //\debug
         switch(choice){
             case 'A':
-                //createNewPlayer();
-                System.out.println("These are the selected user's quizzes: ");
+                showAllQuizzes();
                 run();
                 break;
             case 'B':
@@ -60,5 +60,12 @@ public class PlayerMenu {
                 break;
         }
 
+    }
+
+    private void showAllQuizzes() {
+        System.out.println("These are all the available quizzes: ");
+        Loader l = pl.getL();
+        String print = CollectionPrinter.printMap(l.getUserQuizzes());
+        System.out.println(print);
     }
 }
