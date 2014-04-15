@@ -364,15 +364,16 @@ public class Saver {
 	}
 	
 	public boolean saveAQuestionObject(Question question){
-		Loader l = new Loader(source);
-		int qNumber;
+        Loader l = new Loader(source);
+        int qNumber;
 		try {
-			qNumber = l.getQuestionNumber(question.getQuestionString(), question.getOwner(), question.getQuiz());
-		} catch (IOException e) {
+            qNumber = l.getQuestionNumber(question.getQuestionString(), question.getOwner(), question.getQuiz());
+        } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
+
 		String path = source + File.separator + question.getOwner() + File.separator + question.getQuiz() + File.separator + qNumber+".txt";
 		try{
 			saveQuestionObjectJson(question, path);
