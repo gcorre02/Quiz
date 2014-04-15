@@ -8,6 +8,7 @@ import userInterface.UserInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Admin on 15/04/2014.
@@ -20,11 +21,9 @@ public class PlayerMenu {
     PlayerSaver ps;
 
     public void run() {
+        String[] menuArray = {"Browse User Quizzes", "Play a Quiz", "Played Quizzes", "Logout"};
         ArrayList<String> menuItems = new ArrayList<>();
-        menuItems.add("New Player");
-        menuItems.add("Delete Player");
-        menuItems.add("Login");
-        menuItems.add("Close Program");
+        Collections.addAll(menuItems, menuArray);
         String menu = CollectionPrinter.collectionPrinter('S', menuItems);
         runMenu(menu);
     }
@@ -37,19 +36,23 @@ public class PlayerMenu {
         //\debug
         switch(choice){
             case 'A':
-                    createNewPlayer();
+                //createNewPlayer();
+                System.out.println("These are the selected user's quizzes: ");
                 run();
                 break;
             case 'B':
-                    deletePlayer();
+                System.out.println("Please choose a quiz to play: ");
+              //  deletePlayer();
                 run();
                 break;
             case 'C':
-                login();
+                System.out.println("These are the quizzes you have played:");
+            //    login();
                 run();
                 break;
             case 'D':
-                closeProgram();
+                System.out.println("Thank you for playing. Goodbye");
+          //      closeProgram();
                 break;
             default:
                 System.out.println("Couldn't understand the input, please choose again.");
