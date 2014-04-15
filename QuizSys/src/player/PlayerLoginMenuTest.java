@@ -11,6 +11,7 @@ import java.io.File;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -67,4 +68,21 @@ public class PlayerLoginMenuTest {
         File f = new File(source + File.separator + "Player" + File.separator + playerStr+".txt");
         assertFalse(f.exists());
         }
+
+    @Test
+    public void testCreateAPlayer() throws Exception {
+        //TODO only a stub
+        String playerStr = "Jeremias";
+        when(ui.readFromUser()).thenReturn(playerStr);
+        when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+        plm.run();
+        //Expected
+        String expected = playerStr;
+        //actual
+        String actual = playerStr;
+        //test
+        File f = new File(source + File.separator + "Player" + File.separator + playerStr+".txt");
+        assertTrue(f.exists());
+    }
+
 }
