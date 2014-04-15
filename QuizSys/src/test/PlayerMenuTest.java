@@ -48,7 +48,7 @@ public class PlayerMenuTest {
     public void testRun() throws Exception {
         //TODO implement
         //setup
-        when(ui.getUserAnswer(anyString())).thenReturn('A','B','C','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('A','C','D');
         //debug
         pm.run();
         //test
@@ -63,5 +63,16 @@ public class PlayerMenuTest {
         pm.run();
         //test
         verify(ui,times(2)).getUserAnswer(anyString());
+    }
+    @Test
+    public void testPlayAQuiz() throws Exception {
+        //TODO implement
+        //setup
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+        when(ui.readFromUser()).thenReturn("1","0");
+        //debug
+        pm.run();
+        //test
+        fail();
     }
 }

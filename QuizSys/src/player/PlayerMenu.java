@@ -43,7 +43,11 @@ public class PlayerMenu {
                 run();
                 break;
             case 'B':
-                playAQuizz();
+                try {
+                    playAQuizz();
+                } catch (IOException e) {
+                    System.out.println("Couldn't access user quizzes file.");
+                }
                 run();
                 break;
             case 'C':
@@ -67,10 +71,10 @@ public class PlayerMenu {
         showAllQuizzes();
         System.out.println("Which user would you like to access ? ");
         Loader l = pl.getL();
-        ArrayList<String> usernames = l.getUsernames();
-        String users = CollectionPrinter.collectionPrinter('0', usernames);
+        ArrayList<String> userNames = l.getUsernames();
+        String users = CollectionPrinter.collectionPrinter('0', userNames);
         System.out.println(users);
-        String quizOwner = usernames.get(Integer.parseInt(ui.readFromUser()));
+        String quizOwner = userNames.get(Integer.parseInt(ui.readFromUser()));
         System.out.println("Please choose a quiz to play: ");
         String[] quizNames = l.getUserQuizzes().get(quizOwner);
         ArrayList<String> quizNamesArray = new ArrayList<>();
