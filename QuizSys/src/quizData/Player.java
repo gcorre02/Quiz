@@ -3,11 +3,19 @@ package quizData;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Guilherme on 13-04-2014.
  */
 @Data
-@AllArgsConstructor
 public class Player {
-    String name;
+    private String name;
+    private Map<String, String[]> playedQuizzes;
+
+    public Player(String name){
+        this.name = name;
+        playedQuizzes = new HashMap<>();
+    }
 }
