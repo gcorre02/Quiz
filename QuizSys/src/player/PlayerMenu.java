@@ -74,7 +74,8 @@ public class PlayerMenu {
         Map<String, String[]> playedQuizzes = p.getPlayedQuizzes();
         //RUN
         System.out.println("These are the quizzes you have played:");
-        CollectionPrinter.printMap(playedQuizzes);
+        String played = CollectionPrinter.printMap(playedQuizzes);
+        System.out.println(played);
     }
 
     private void playAQuizz() throws IOException {

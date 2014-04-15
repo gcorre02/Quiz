@@ -17,5 +17,6 @@ public class Player {
     public Player(String name){
         this.name = name;
         playedQuizzes = new HashMap<>();
+        playedQuizzes.put("No Quizzes Played Yet",new String[0]);
     }
 }

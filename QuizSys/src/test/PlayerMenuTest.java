@@ -75,4 +75,16 @@ public class PlayerMenuTest {
         //test
         fail();
     }
+
+    @Test
+    public void testPrintPlayedQuizzes() {
+        //TODO implement
+        //setup
+        when(ui.getUserAnswer(anyString())).thenReturn('C','D');
+
+        //debug
+        pm.run();
+        //test
+        fail();
+    }
 }
