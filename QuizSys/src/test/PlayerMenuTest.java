@@ -10,8 +10,7 @@ import userInterface.UserInterface;
 
 import static junit.framework.TestCase.fail;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by Admin on 15/04/2014.
@@ -54,5 +53,15 @@ public class PlayerMenuTest {
         pm.run();
         //test
         fail();
+    }
+    @Test
+    public void testShowAllQuizzes() throws Exception {
+        //TODO improve test, kinda sucks
+        //setup
+        when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+        //debug
+        pm.run();
+        //test
+        verify(ui,times(2)).getUserAnswer(anyString());
     }
 }
