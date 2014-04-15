@@ -85,7 +85,8 @@ public class PlayerMenu {
         //debug
         System.out.println("You picked quiz " + quiz + " from user " + quizOwner);
         //\debug
-        //PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, quizOwner, quiz);
+        PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, quizOwner, quiz);
+        paqm.run();
     }
 
     private void showAllQuizzes() {
