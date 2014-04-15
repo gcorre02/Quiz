@@ -26,7 +26,6 @@ public class PlayAQuizMenu {
     private String quiz;
 
     public void run() {
-        //TODO stubbed method
 
         //TODO played counter needs to be implemented into the Player Object
 
