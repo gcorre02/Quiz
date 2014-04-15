@@ -73,13 +73,12 @@ public class PlayerLoginMenu {
     }
 
     private void deletePlayer() throws IOException {
-
         System.out.println("Please enter the name of the player to delete:");
-        String deleteablePlayer = ui.readFromUser();
-        if(!l.getPlayersArray().contains(deleteablePlayer))
+        String deletablePlayer = ui.readFromUser();
+        if(!l.getPlayersArray().contains(deletablePlayer))
             System.out.println("Player already does not exist.");
         else
-            s.removePlayer(deleteablePlayer);
+            s.removePlayer(deletablePlayer);
     }
 
     private void createNewPlayer() {
