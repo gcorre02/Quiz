@@ -45,6 +45,7 @@ public class PlayerLoginMenuTest {
     @Test
     public void testRun() throws Exception {
         //TODO only a stub
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
         plm.run();
 
         fail();
@@ -54,8 +55,9 @@ public class PlayerLoginMenuTest {
     public void testDeleteAPlayer() throws Exception {
         //TODO only a stub
         String playerStr = "Goncalo";
-        when(ui.readFromUser()).thenReturn(playerStr, playerStr);
-        when(ui.getUserAnswer(anyString())).thenReturn('A','D','B','D');
+        ps.addPlayer(playerStr);
+        when(ui.readFromUser()).thenReturn(playerStr);
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
         plm.run();
         //Expected
         String expected = playerStr;

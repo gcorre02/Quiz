@@ -39,7 +39,7 @@
               <file leaf-file-name="LoginMenu.java" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/menu/LoginMenu.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-0.20572057" vertical-offset="867" max-vertical-offset="2006">
+                    <state vertical-scroll-proportion="-0.31270903" vertical-offset="867" max-vertical-offset="2006">
                       <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
                       <folding />
                     </state>
@@ -50,11 +50,11 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="PlayerLoginMenu.java" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="PlayerLoginMenu.java" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenu.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="1.0935093" vertical-offset="162" max-vertical-offset="1496">
-                      <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
+                    <state vertical-scroll-proportion="0.8444816" vertical-offset="770" max-vertical-offset="1530">
+                      <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
                       <folding />
                     </state>
                   </provider>
@@ -66,11 +66,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="PlayerLoginMenuTest.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="PlayerLoginMenuTest.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenuTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9438944" vertical-offset="264" max-vertical-offset="1258">
-                  <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.29765886" vertical-offset="638" max-vertical-offset="1292">
+                  <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -107,8 +107,8 @@
         <option value="$PROJECT_DIR$/src/persistence/PlayerSaver.java" />
         <option value="$PROJECT_DIR$/src/test/PlayerLoaderTest.java" />
         <option value="$PROJECT_DIR$/src/menu/LoginMenu.java" />
-        <option value="$PROJECT_DIR$/src/player/PlayerLoginMenu.java" />
         <option value="$PROJECT_DIR$/src/player/PlayerLoginMenuTest.java" />
+        <option value="$PROJECT_DIR$/src/player/PlayerLoginMenu.java" />
       </list>
     </option>
   </component>
@@ -306,6 +306,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -320,7 +321,7 @@
       <recent name="quizData" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.test in QuizSys">
+  <component name="RunManager" selected="JUnit.PlayerLoginMenuTest">
     <configuration default="false" name="test in QuizSys" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -394,6 +395,29 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PlayerLoginMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="QuizSys" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerLoginMenuTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -519,17 +543,19 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.PlayerLoaderTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.test in QuizSys" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest.testConstructorGeneratesFileSystem" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PlayerLoginMenuTest" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.test in QuizSys" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest.testConstructorGeneratesFileSystem" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PlayerLoginMenuTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.test in QuizSys" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PlayerSaverTest.testConstructorGeneratesFileSystem" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -553,7 +579,7 @@
       <workItem from="1397487394956" duration="7211000" />
       <workItem from="1397562736052" duration="81000" />
       <workItem from="1397562861513" duration="108000" />
-      <workItem from="1397562973836" duration="1877000" />
+      <workItem from="1397562973836" duration="2158000" />
     </task>
     <task id="LOCAL-00001" summary="built a jar and run the main successfuly. changed to intelliJ">
       <created>1397389975271</created>
@@ -627,11 +653,15 @@
       <created>1397564398537</created>
       <updated>1397564398537</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="wrote test for delete a Player () under PlaayerLogin Test class.">
+      <created>1397564886575</created>
+      <updated>1397564886575</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24475000" />
+    <option name="totallyTimeSpent" value="24756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -652,7 +682,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.8040254" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32805908" sideWeight="0.8040254" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -723,7 +753,8 @@
     <MESSAGE value="wrote stub test forPlayerLoginMenu.class" />
     <MESSAGE value="installed and run intelliJ in a different computer. created an export Jar artifact settings file." />
     <MESSAGE value="implemented deletePlayer() under PlayerLoginMenu.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented deletePlayer() under PlayerLoginMenu.class" />
+    <MESSAGE value="wrote test for delete a Player () under PlaayerLogin Test class." />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote test for delete a Player () under PlaayerLogin Test class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1092,27 +1123,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/LoginMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20572057" vertical-offset="867" max-vertical-offset="2006">
+        <state vertical-scroll-proportion="-0.31270903" vertical-offset="867" max-vertical-offset="2006">
           <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0935093" vertical-offset="162" max-vertical-offset="1496">
-          <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9438944" vertical-offset="264" max-vertical-offset="1258">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.29765886" vertical-offset="638" max-vertical-offset="1292">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8444816" vertical-offset="770" max-vertical-offset="1530">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

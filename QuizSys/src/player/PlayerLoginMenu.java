@@ -77,8 +77,10 @@ public class PlayerLoginMenu {
         String deletablePlayer = ui.readFromUser();
         if(!l.getPlayersArray().contains(deletablePlayer))
             System.out.println("Player already does not exist.");
-        else
+        else{
+            System.out.println(deletablePlayer + " has been removed");
             s.removePlayer(deletablePlayer);
+        }
     }
 
     private void createNewPlayer() {
