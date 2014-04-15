@@ -35,7 +35,11 @@ public class PlayerLoginMenu {
         //\debug
         switch(choice){
             case 'A':
-                createNewPlayer();
+                try {
+                    createNewPlayer();
+                } catch (IOException e) {
+                    System.out.println("Couldn't access Player Files at the moment, please try again later.");
+                }
                 run();
                 break;
             case 'B':
@@ -78,14 +82,21 @@ public class PlayerLoginMenu {
         if(!l.getPlayersArray().contains(deletablePlayer))
             System.out.println("Player already does not exist.");
         else{
-            System.out.println(deletablePlayer + " has been removed");
             s.removePlayer(deletablePlayer);
+            System.out.println(deletablePlayer + " has been removed");
         }
     }
 
-    private void createNewPlayer() {
+    private void createNewPlayer() throws IOException {
         //TODO
         System.out.println("Please enter the new player name :");
+        String newPlayer = ui.readFromUser();
+        if(l.getPlayersArray().contains(newPlayer))
+            System.out.println("Player already exists.");
+        else{
+            s.addPlayer(newPlayer);
+            System.out.println(newPlayer + " has been added");
+        }
     }
 
 }
