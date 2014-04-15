@@ -73,7 +73,8 @@ public class PlayerLoginMenu {
         //TODO
         System.out.println("Please enter your name : ");
         String username = ui.readFromUser();
-
+        PlayerMenu pm = new PlayerMenu(username);
+        pm.run();
     }
 
     private void deletePlayer() throws IOException {
