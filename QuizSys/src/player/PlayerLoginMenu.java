@@ -6,6 +6,7 @@ import persistence.PlayerSaver;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -38,7 +39,11 @@ public class PlayerLoginMenu {
                 run();
                 break;
             case 'B':
-                deletePlayer();
+                try {
+                    deletePlayer();
+                } catch (IOException e) {
+                    System.out.println("Couldn't access Player Files at the moment, please try again later.");
+                }
                 run();
                 break;
             case 'C':
@@ -67,9 +72,14 @@ public class PlayerLoginMenu {
 
     }
 
-    private void deletePlayer() {
-        //TODO
+    private void deletePlayer() throws IOException {
+
         System.out.println("Please enter the name of the player to delete:");
+        String deleteablePlayer = ui.readFromUser();
+        if(!l.getPlayersArray().contains(deleteablePlayer))
+            System.out.println("Player already does not exist.");
+        else
+            s.removePlayer(deleteablePlayer);
     }
 
     private void createNewPlayer() {
