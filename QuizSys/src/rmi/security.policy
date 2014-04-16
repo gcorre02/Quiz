@@ -5,3 +5,5 @@ grant{
     permission java.net.SocketPermission "192.168.1.73:*", "accept,connect"; //need for the interaction between two separate computers
     permission java.net.SocketPermission "192.168.1.75:*", "accept,connect";
 };
+
+//C:\Users\user\IdeaProjects\Quiz\QuizSys\out\production\QuizSys>java -Djava.security.policy=rmi/security.policy rmi.LoaderServerLauncher

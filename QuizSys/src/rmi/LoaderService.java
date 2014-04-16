@@ -12,5 +12,5 @@ import java.util.ArrayList;
  */
 public interface LoaderService extends Remote {
 
-    public ArrayList<String> loadUserNames() throws RemoteException;
+    public ArrayList<String> loadUserNames(String source) throws RemoteException;
 }
