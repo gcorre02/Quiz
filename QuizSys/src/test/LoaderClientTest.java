@@ -6,6 +6,7 @@ import org.junit.Test;
 import rmi.LoaderClient;
 import userInterface.UserInterface;
 
+import static junit.framework.TestCase.fail;
 import static org.mockito.Mockito.mock;
 
 /**
@@ -28,10 +29,12 @@ public class LoaderClientTest {
     @Test
     public void testMain() throws Exception {
         lc.main(new String[0]);
+        fail();
     }
 
     @Test
     public void testRun() throws Exception {
         lc.run();
+        fail();
     }
 }
