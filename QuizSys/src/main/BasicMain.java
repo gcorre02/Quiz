@@ -11,9 +11,11 @@ import menu.LoginMenu;
 
 import java.util.ArrayList;
 
+//Client
 public class BasicMain {
-	
-	public static void main(String[] args) {
+
+
+    public static void main(String[] args) {
         final String[] FOLDER = {"ExecTry"};
 		UserInterface ui = new UserInterface();
         String[] strs = {"Go to Player Menus","Go to User Menus"};
@@ -26,5 +28,6 @@ public class BasicMain {
         else
             System.out.println("Couldn't understand input. Bye");
     }
+
 
 }
