@@ -29,7 +29,7 @@ public class LoaderClient {
             ui = new UserInterface();
         Remote service = null;
         try {
-            service = Naming.lookup("//192.168.1.75:1099/loader");
+            service = Naming.lookup("//127.0.0.1:1099/loader");//("//192.168.1.75:1099/loader");
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {

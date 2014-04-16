@@ -22,11 +22,12 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
     @Override
     public ArrayList<String> loadUserNames(String source) {
         Loader l = new Loader(source);
-        ArrayList<String> s = null;
+        ArrayList<String> s = new ArrayList<>();
+        s.add("empty, LoaderServer failed");
         try {
             s = l.getUsernames();
         } catch (IOException e) {
-            return s;
+            System.out.println("Can't load usernames.");
         }
         //debug
 
