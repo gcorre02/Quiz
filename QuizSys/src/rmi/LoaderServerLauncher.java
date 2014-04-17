@@ -34,4 +34,7 @@ public class LoaderServerLauncher {
             ex.printStackTrace();
         }
     }
+    public void shutDown(){
+        System.exit(0);
+    }
 }
