@@ -1,5 +1,7 @@
 package rmi;
 
+import quizData.Quiz;
+
 import java.util.ArrayList;
 
 /**
@@ -17,4 +19,18 @@ public class GenericClassToBeUSedStub {
         returnable.add("!!");
         return returnable;
     }
+
+    public Quiz returnsAQuiz(){
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("I'm");
+        questions.add("Returning");
+        questions.add("Stuff");
+        questions.add("!!");
+
+        Quiz q = new Quiz("generics","reflectors");
+        q.setQuizQuestions(questions);
+
+        return q;
+    }
+
 }
