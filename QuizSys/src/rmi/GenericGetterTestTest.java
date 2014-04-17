@@ -16,7 +16,7 @@ public class GenericGetterTestTest {
     GenericGetterStub ggt;
     @Before
     public void setUp() throws Exception {
-        gcs = new GenericClassToBeUSedStub(true);
+        gcs = new GenericClassToBeUSedStub("true");
         ggt = new GenericGetterStub();
     }
 

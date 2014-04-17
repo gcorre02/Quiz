@@ -9,14 +9,14 @@ import java.util.ArrayList;
  */
 public class GenericGetterStub {
     public <T,S> T doAnything(String... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        S operator = (S) Class.forName(params[0]).newInstance();
+        S operator = (S) Class.forName(params[0]).getDeclaredConstructor(String.class).newInstance("testFiles");//of course, this only works for constructors that take strings
         Method method = operator.getClass().getMethod(params[1]);//only works for a method with no params
 
         return (T) method.invoke(operator);
     }
 
     public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        S operator = (S) Class.forName(inputClass).newInstance();
+        S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance("testFiles");
 
         ArrayList<Class<?>> parameters = new ArrayList<>();
         for(V parameter : params){

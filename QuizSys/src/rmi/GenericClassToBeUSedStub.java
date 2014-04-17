@@ -8,8 +8,9 @@ import java.util.ArrayList;
  * Created by user on 17-04-2014.
  */
 public class GenericClassToBeUSedStub {
-    public GenericClassToBeUSedStub(boolean check){
-        checked = check;
+    public GenericClassToBeUSedStub(String check){
+        if(check.equals("true"))
+            checked = true;
     }
 
     private boolean checked = false;
