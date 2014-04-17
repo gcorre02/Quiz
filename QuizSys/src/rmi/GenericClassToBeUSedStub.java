@@ -32,7 +32,7 @@ public class GenericClassToBeUSedStub {
 
         return q;
     }
-    public String getStringFromLoadsOfParams(String somename, int somenumber){
+    public String getStringFromLoadsOfParams(String somename, Integer somenumber){
         return somename + " is "+ somenumber + "years old." ;
     }
 

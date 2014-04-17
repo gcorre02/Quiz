@@ -61,7 +61,7 @@ public class GenericGetterTestTest {
         //debug
         //System.out.println(inputMethod);
         //\debug
-        String result = ggt.doAnythingWithMoreParams(inputClass,inputMethod,"Jimmy", "7");
+        String result = ggt.doAnythingWithMoreParams(inputClass,inputMethod,"Jimmy", 7);
         System.out.println(result);
     }
 
