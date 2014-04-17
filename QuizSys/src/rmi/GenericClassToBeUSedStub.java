@@ -32,5 +32,8 @@ public class GenericClassToBeUSedStub {
 
         return q;
     }
+    public String getStringFromLoadsOfParams(String somename, int somenumber){
+        return somename + " is "+ somenumber + "years old." ;
+    }
 
 }

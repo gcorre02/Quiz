@@ -28,7 +28,7 @@ public class GenericGetterTestTest {
     @Test //TODO impl test
     public void testDoAnythingGetaString() throws Exception {
         String inputClass = gcs.getClass().getName();
-        String inputMethod = gcs.getClass().getDeclaredMethods()[0].getName();
+        String inputMethod = "saySomething";
         String returnMessage = ggt.doAnything(inputClass,inputMethod);
         System.out.println(returnMessage);
     }
@@ -36,18 +36,33 @@ public class GenericGetterTestTest {
     @Test//TODO impl test
     public void testDoAnythingGetanArray() throws Exception {
         String inputClass = gcs.getClass().getName();
-        String inputMethod = gcs.getClass().getDeclaredMethods()[1].getName();
+        String inputMethod = "sayABunchOfStuff";
+        //debug
+        //System.out.println(inputMethod);
+        //\debug
         ArrayList<String> returnMessage = ggt.doAnything(inputClass,inputMethod);
         System.out.println(CollectionPrinter.collectionPrinter('S',returnMessage));
     }
     @Test//TODO impl test
     public void testDoAnythingGetaQuiz() throws Exception {
         String inputClass = gcs.getClass().getName();
-        String inputMethod = gcs.getClass().getDeclaredMethods()[2].getName();
+        String inputMethod = "returnsAQuiz";
         //debug
         //System.out.println(inputMethod);
         //\debug
         Quiz q = ggt.doAnything(inputClass,inputMethod);
         System.out.println(q + "\n" + q.getOwner() + "\n"+ q.getQuizQuestions());
     }
+
+    @Test//TODO impl test
+    public void testDoAnythingGetaStringFromParams() throws Exception {
+        String inputClass = gcs.getClass().getName();
+        String inputMethod = "getStringFromLoadsOfParams";
+        //debug
+        //System.out.println(inputMethod);
+        //\debug
+        String result = ggt.doAnythingWithMoreParams(inputClass,inputMethod,"Jimmy", "7");
+        System.out.println(result);
+    }
+
 }

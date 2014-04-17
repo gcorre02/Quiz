@@ -15,18 +15,17 @@ public class GenericGetterStub {
         return (T) method.invoke(operator);
     }
 
-    public <T,S> T doAnythingWithMoreParams(String... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        S operator = (S) Class.forName(params[0]).newInstance();
+    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        S operator = (S) Class.forName(inputClass).newInstance();
 
         ArrayList<Class<?>> parameters = new ArrayList<>();
-        for(String parameter : params){
-            parameters.add(Class.forName(parameter));
+        for(V parameter : params){
+            parameters.add(parameter.getClass());
         }
-        parameters.remove(0);
-        parameters.remove(1);
 
-        Method method = operator.getClass().getMethod(params[1],parameters.toArray(new Class<?>[0]));//only works for a method with no params
 
-        return (T) method.invoke(operator);
+        Method method = operator.getClass().getMethod(inputMethod,parameters.toArray(new Class<?>[0]));//only works for a method with no params
+
+        return (T) method.invoke(operator, params);
     }
 }
