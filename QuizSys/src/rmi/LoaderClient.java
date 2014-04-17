@@ -39,7 +39,7 @@ public class LoaderClient {
         }
         LoaderService loaderService = (LoaderService) service;
         try {
-            System.out.println(CollectionPrinter.collectionPrinter('0', loaderService.loadUserNames("testFiles")));//TODO make this input  a variable
+            System.out.println(CollectionPrinter.collectionPrinter('0', loaderService.loadUserNames()));//TODO make this input  a variable
         } catch (RemoteException e) {
             e.printStackTrace();
         }

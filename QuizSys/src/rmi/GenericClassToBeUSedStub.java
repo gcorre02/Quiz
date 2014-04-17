@@ -35,5 +35,10 @@ public class GenericClassToBeUSedStub {
     public String getStringFromLoadsOfParams(String somename, Integer somenumber){
         return somename + " is "+ somenumber + "years old." ;
     }
+    public Quiz returnsAQuizMultipleParams(String name, String owner, ArrayList<String> questions){
+        Quiz q = new Quiz(name,owner);
+        q.setQuizQuestions(questions);
+        return q;
+    }
 
 }

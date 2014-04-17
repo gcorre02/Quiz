@@ -15,14 +15,32 @@ import java.util.ArrayList;
 /**
  * Implements Echo Service
  * Impl of the Server.
+ *
+ * Server knows where it's files are. source is a local field. PROBABLY A SINGLETON
  */
+
 public class LoaderServer extends UnicastRemoteObject implements LoaderService {
-    public LoaderServer() throws RemoteException {
+    private LoaderServer() throws RemoteException {
         // nothing to initialise for this server
+    }
+    private static String source;
+    private static boolean instanciated;
+    private static LoaderServer instance;
+
+    protected void setSource(String source){
+        this.source = source;
+    }
+
+    public static LoaderServer getInstance() throws RemoteException {
+        if(!instanciated) {
+            instance = new LoaderServer();
+        }
+        return instance;
+
     }
 
     @Override
-    public ArrayList<String> loadUserNames(String source) {
+    public ArrayList<String> loadUserNames() throws RemoteException{
         Loader l = new Loader(source);
         ArrayList<String> s = new ArrayList<>();
         s.add("empty, LoaderServer failed");

@@ -22,7 +22,8 @@ public class LoaderServerLauncher {
 // 2. Create the registry if there is not one
             LocateRegistry.createRegistry(1099);
 // 3. Create the server object
-            LoaderServer server = new LoaderServer();
+            LoaderServer server = LoaderServer.getInstance();
+            server.setSource("testFiles");//TODO make this input  a variable
 // 4. Register (bind) the server object on the registy.
 // The registry may be on a different machine
             String registryHost = "//localhost/";

@@ -75,4 +75,26 @@ public class GenericGetterTestTest {
         System.out.println(result);
     }
 
+    @Test//TODO impl test
+    public void testDoAnythingGetaQuiznMultipleParams() throws Exception {
+        String inputClass = gcs.getClass().getName();
+        String inputMethod = "returnsAQuizMultipleParams";
+        //debug
+        //System.out.println(inputMethod);
+        //\debug
+
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("I'm");
+        questions.add("Returning");
+        questions.add("Stuff");
+        questions.add("!!");
+        String quizname = "new generics";
+        String quizOwner = "new reflectors";
+
+
+        Quiz q = ggt.doAnythingWithMoreParams(inputClass,inputMethod,quizname,quizOwner,questions);
+        System.out.println(q + "\n" + q.getOwner() + "\n"+ q.getQuizQuestions());
+    }
+
+
 }
