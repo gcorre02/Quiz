@@ -8,6 +8,12 @@ import java.util.ArrayList;
  * Created by user on 17-04-2014.
  */
 public class GenericClassToBeUSedStub {
+    public GenericClassToBeUSedStub(boolean check){
+        checked = check;
+    }
+
+    private boolean checked = false;
+
     public String saySomething(){
         return "Hello!";
     }

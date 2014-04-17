@@ -16,7 +16,7 @@ public class GenericGetterTestTest {
     GenericGetterStub ggt;
     @Before
     public void setUp() throws Exception {
-        gcs = new GenericClassToBeUSedStub();
+        gcs = new GenericClassToBeUSedStub(true);
         ggt = new GenericGetterStub();
     }
 
@@ -80,7 +80,7 @@ public class GenericGetterTestTest {
         String inputClass = gcs.getClass().getName();
         String inputMethod = "returnsAQuizMultipleParams";
         //debug
-        //System.out.println(inputMethod);
+        System.out.println(inputClass);
         //\debug
 
         ArrayList<String> questions = new ArrayList<>();
