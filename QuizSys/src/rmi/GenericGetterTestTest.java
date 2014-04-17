@@ -64,5 +64,15 @@ public class GenericGetterTestTest {
         String result = ggt.doAnythingWithMoreParams(inputClass,inputMethod,"Jimmy", 7);
         System.out.println(result);
     }
+    @Test//TODO impl test
+    public void testDoAnythingGetaStringnoParams() throws Exception {
+        String inputClass = gcs.getClass().getName();
+        String inputMethod = "saySomething";
+        //debug
+        //System.out.println(inputMethod);
+        //\debug
+        String result = ggt.doAnythingWithMoreParams(inputClass,inputMethod);
+        System.out.println(result);
+    }
 
 }
