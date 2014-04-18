@@ -20,7 +20,7 @@ public interface SaverInterface {
     void deleteFolder(String path);
 
     /*
-* need to improve the json to make it understand the map propperly
+* need to improve the json to make it understand the map properly
 */
     boolean saveUserQuizzes(Map<String, String[]> userQuizzes);
 
