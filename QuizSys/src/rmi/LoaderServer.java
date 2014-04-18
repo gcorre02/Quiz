@@ -22,8 +22,8 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
     private LoaderServer() throws RemoteException {
         // nothing to initialise for this server
     }
-    private static String source;
-    private static boolean instanciated;
+    private static String source = "testFiles";//TODO
+    private static boolean instanciated = false;
     private static LoaderServer instance;
 
     protected void setSource(String source){
@@ -59,7 +59,7 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
 
     @Override //TODO, quizData objects are not serializable yet.
     public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws Exception {
-        S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance("testFiles");
+        S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance(source);
 
         ArrayList<Class<?>> parameters = new ArrayList<>();
         for(V parameter : params){

@@ -32,16 +32,18 @@ public class LoaderClientTest {
         lsl.shutDown();
     }
 
-//    @Test
+    @Test
     public void testMain() throws Exception {
-        lc.main(new String[0]);
+        //lc.main(new String[0]);
         fail();
     }
 
-    @Test
+    //@Test
     public void testRun() throws Exception {
-
-        lc.run();
+    //this test calls the getUserNames() array.
+        String callClass = "persistence.Loader.class";
+        String callMethod = "getUsernames";
+        System.out.println(lc.run(callClass, callMethod));
         fail();
     }
 }

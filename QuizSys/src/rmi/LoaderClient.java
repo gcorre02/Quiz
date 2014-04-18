@@ -23,7 +23,7 @@ public class LoaderClient {
         ec.run();
     }
 */
-    public <V> void run(String inputClass, String inputMethod, V... params) throws Exception {
+    public <V,T> T run(String inputClass, String inputMethod, V... params) throws Exception {
         if(ui == null)
             ui = new UserInterface();
         Remote service = null;
@@ -38,10 +38,13 @@ public class LoaderClient {
         }
         LoaderService loaderService = (LoaderService) service;
         try {
-            System.out.println(loaderService.doAnythingWithMoreParams(inputClass,inputMethod, params));//TODO make this input  a variable
+            T returnableObj = loaderService.doAnythingWithMoreParams(inputClass,inputMethod, params);
+             System.out.println(returnableObj);//TODO make this input  a variable
+            return returnableObj;
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 }
