@@ -1,17 +1,17 @@
 package menu;
 
-import java.util.ArrayList;
-
-import persistence.Loader;
-import persistence.Saver;
+import lombok.AllArgsConstructor;
+import persistence.LoaderInterface;
+import persistence.SaverInterface;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
-import lombok.AllArgsConstructor;
+
+import java.util.ArrayList;
 
 @AllArgsConstructor
 public class UserMenu {
-	private Loader l;
-	private Saver s;
+    private LoaderInterface l;
+    private SaverInterface s;
 	private UserInterface ui;
 	private String user;
 

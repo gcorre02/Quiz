@@ -1,19 +1,19 @@
 package menu;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-import persistence.Loader;
-import persistence.Saver;
+import lombok.AllArgsConstructor;
+import persistence.LoaderInterface;
+import persistence.SaverInterface;
 import quizData.Quiz;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
-import lombok.AllArgsConstructor;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 @AllArgsConstructor
 public class EditQuizMenu {
-	private Loader l;
-	private Saver s;
+    private LoaderInterface l;
+    private SaverInterface s;
 	private UserInterface ui;
 	private String user;
 	private String quizName;

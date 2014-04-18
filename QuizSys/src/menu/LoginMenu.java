@@ -1,13 +1,13 @@
 package menu;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import lombok.AllArgsConstructor;
-import persistence.Loader;
-import persistence.Saver;
+import persistence.LoaderInterface;
+import persistence.SaverInterface;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Handles all interactions between the user and the user data.
@@ -20,8 +20,8 @@ import userInterface.UserInterface;
  */
 @AllArgsConstructor
 public class LoginMenu {
-	private Loader l;
-	private Saver s;
+    private LoaderInterface l;
+    private SaverInterface s;
 	private UserInterface ui;
 
 	public void run(){

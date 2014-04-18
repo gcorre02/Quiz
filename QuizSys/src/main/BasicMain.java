@@ -1,19 +1,11 @@
 package main;
 
-import persistence.Loader;
-import persistence.PlayerLoader;
-import persistence.PlayerSaver;
-import persistence.Saver;
-import player.PlayerLoginMenu;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
-import menu.LoginMenu;
-
-import java.util.ArrayList;
 
 //Client
 public class BasicMain {
-
+//TODO need to create a server Runner main and a process to get the folder from the server to set it here:
 
     public static void main(String[] args) {
         final String[] FOLDER = {"ExecTry"};
