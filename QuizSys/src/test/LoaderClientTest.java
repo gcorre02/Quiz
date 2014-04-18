@@ -14,6 +14,8 @@ import static junit.framework.TestCase.fail;
 /**
  * needs -Djava.security.policy=security.policy as jvm argument and for the security policy to be in the file system @ source(\...).
  *
+ * at the moment, these tests only run properly with the server run outside of intelliJ.
+ *
  * Created by Admin on 16/04/2014.
  */
 public class LoaderClientTest {
@@ -31,9 +33,10 @@ public class LoaderClientTest {
     @After
     public void tearDown() throws Exception {
         lsl.shutDown();
+        lsl = null;
     }
 
-    //@Test
+    @Test
     public void testMain() throws Exception {
         lc.main(new String[0]);
         fail();
@@ -51,7 +54,8 @@ public class LoaderClientTest {
             e.printStackTrace();
         }
         System.out.println(usernames);
-        //fail();
+
+        fail();
     }
     //@Test //TODO impl file system.
     public void testRunGetADataQuizObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
