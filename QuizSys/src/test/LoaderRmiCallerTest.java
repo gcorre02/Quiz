@@ -1,6 +1,7 @@
-package persistence;
+package test;
 
 import org.junit.*;
+import persistence.LoaderRmiCaller;
 import rmi.LoaderServerLauncher;
 import tools.CollectionPrinter;
 

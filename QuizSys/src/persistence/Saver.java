@@ -24,7 +24,7 @@ import java.util.Map;
  *
  */
 @Data
-public class Saver {
+public class Saver implements SaverInterface {
 	String source;
 	File file;
 	public Saver(String path){
@@ -65,7 +65,8 @@ public class Saver {
 	 * @param userNames
 	 * @return
 	 */
-	public boolean saveUserNames(ArrayList<String> userNames){
+	@Override
+    public boolean saveUserNames(ArrayList<String> userNames){
 		Gson gson = new Gson();
 		file = new File(source+File.separator+"UserNames.txt");
 		PrintWriter w;
@@ -80,7 +81,8 @@ public class Saver {
 		return true;
 	}
 
-	public boolean addUserName(String user) throws IOException{
+	@Override
+    public boolean addUserName(String user) throws IOException{
 		Loader l = new Loader(source);
 		ArrayList<String> existingUserNameStrings = l.getUsernames();
 		if(existingUserNameStrings.contains(user)){
@@ -113,7 +115,8 @@ public class Saver {
 			createFolder(source+File.separator+user);
 		}
 	}
-	public boolean deleteUser(String user) throws IOException{
+	@Override
+    public boolean deleteUser(String user) throws IOException{
 		Loader l = new Loader(source);
 		if(deleteUserFromUserQuizzes(user)){
 			System.out.println("user successfully removed from userQuizzes");
@@ -149,7 +152,8 @@ public class Saver {
 		return false;
 	}
 
-	public void deleteFolder(String path) {
+	@Override
+    public void deleteFolder(String path) {
 		File file = new File(path);
 		if(file.list()!=null){
 			int i = file.list().length;
@@ -163,7 +167,8 @@ public class Saver {
 	/*
 	 * need to improve the json to make it understand the map propperly
 	 */
-	public boolean saveUserQuizzes(Map<String, String[]> userQuizzes){
+	@Override
+    public boolean saveUserQuizzes(Map<String, String[]> userQuizzes){
 		if(!writeUserQuizzesJson(userQuizzes)){
 			return false;
 		}
@@ -211,7 +216,8 @@ public class Saver {
 		}
 	}
 
-	public boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
+	@Override
+    public boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
 		if(!userQuizzes.keySet().contains(userName)){
 			System.out.println("User " + userName + " does not exist.");
@@ -234,7 +240,8 @@ public class Saver {
 			return false;
 	}
 
-	public boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
+	@Override
+    public boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
 		if(!userQuizzes.keySet().contains(userName)){
 			System.out.println("User " + userName + " does not exist.");
@@ -264,7 +271,8 @@ public class Saver {
 	 * returns false if config file doesnt exist, which means it's not in the structure, which means that addquiz hasnt been called first.
 	 * @return
 	 */
-	public boolean saveQuiz(Quiz quiz){
+	@Override
+    public boolean saveQuiz(Quiz quiz){
 		File f = new File(source+File.separator + quiz.getOwner()+File.separator+quiz.getQuizName());
 		if(!f.exists()) {
             System.out.println(f.getAbsolutePath() + "doesn't exist, can't save quiz file.");
@@ -327,7 +335,8 @@ public class Saver {
 	/*
 	 * handles adding a question at every level, updates the object
 	 */
-	public boolean addAQuestion(String question, String user, String quiz){
+	@Override
+    public boolean addAQuestion(String question, String user, String quiz){
 		Loader l = new Loader(source);
 		try {
 			if(l.getQuizQuestionsConfig(user, quiz).contains(question))
@@ -342,7 +351,8 @@ public class Saver {
 			return true;
 		return false;
 	}
-	public boolean removeAQuestion(String question, String user, String quiz){
+	@Override
+    public boolean removeAQuestion(String question, String user, String quiz){
 		Loader l = new Loader(source);
 		ArrayList<String> quizConfig;
 		try {
@@ -363,7 +373,8 @@ public class Saver {
 		return false;
 	}
 	
-	public boolean saveAQuestionObject(Question question){
+	@Override
+    public boolean saveAQuestionObject(Question question){
         Loader l = new Loader(source);
         int qNumber;
 		try {
