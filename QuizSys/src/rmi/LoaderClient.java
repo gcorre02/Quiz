@@ -14,6 +14,7 @@ public class LoaderClient {
 
     public static void main(String[] args) {
         LoaderClient ec = new LoaderClient();
+        /*
         //debug
         String callClass = "persistence.Loader";
         String callMethod = "getUsernames";
@@ -24,6 +25,7 @@ public class LoaderClient {
             System.out.println("Couldn't connect bruv");
         }
         //debug
+        */
     }
 
     public <V,T> T run(String inputClass, String inputMethod, V... params) throws Exception {

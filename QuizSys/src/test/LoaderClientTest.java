@@ -1,10 +1,13 @@
 package test;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import rmi.LoaderClient;
 import rmi.LoaderServerLauncher;
+
+import java.util.ArrayList;
 
 import static junit.framework.TestCase.fail;
 
@@ -27,7 +30,7 @@ public class LoaderClientTest {
 
     @After
     public void tearDown() throws Exception {
-       lsl.shutDown();
+        lsl.shutDown();
     }
 
     //@Test
@@ -37,14 +40,20 @@ public class LoaderClientTest {
     }
 
     @Test //TODO impl file system.
-    public void testRun() throws Exception {
-    //this test calls the getUserNames() array.
+    public void testRun() {
+        //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
         String callMethod = "getUsernames";
-        System.out.println(lc.run(callClass, callMethod));
-        fail();
+        ArrayList<String> usernames = null;
+        try {
+            usernames = lc.run(callClass, callMethod);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(usernames);
+        //fail();
     }
-    @Test //TODO impl file system.
+    //@Test //TODO impl file system.
     public void testRunGetADataQuizObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
         //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
@@ -52,6 +61,7 @@ public class LoaderClientTest {
         String quizName = "cars";
         String quizOwner = "Gonzo";
         System.out.println(lc.run(callClass, callMethod,quizName,quizOwner));
+           //TODO serialize quizData, make tests run !(config ?)
         fail();
     }
 }
