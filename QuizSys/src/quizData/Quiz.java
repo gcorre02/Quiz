@@ -11,6 +11,11 @@ public class Quiz implements Serializable {
 	private ArrayList<String> quizQuestions;
 	private String quizName;
 
+    public Quiz(){
+        //single instance creator
+        quizName = "Stubbed";
+    }
+
 	public Quiz(String name, String owner){
 		quizQuestions = new ArrayList<>();
 		quizName = name;

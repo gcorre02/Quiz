@@ -2,6 +2,7 @@ package test;
 
 
 import org.junit.*;
+import quizData.Quiz;
 import rmi.LoaderClient;
 import rmi.LoaderServerLauncher;
 
@@ -48,7 +49,7 @@ public class LoaderClientTest {
         fail();
     }
 
-    @Test //TODO impl file system.
+    //@Test //TODO impl file system.
     public void testRun() {
         //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
@@ -63,14 +64,15 @@ public class LoaderClientTest {
 
         fail();
     }
-   // @Test //TODO impl file system.
+    @Test //TODO impl file system.
     public void testRunGetADataQuizObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
         //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
         String callMethod = "getQuizObject";
         String quizName = "cars";
         String quizOwner = "Gonzo";
-        System.out.println(lc.run(callClass, callMethod,quizOwner,quizName));
+        Quiz quiz = lc.run(callClass, callMethod,quizOwner,quizName);
+        System.out.println(quiz);
            //TODO serialize quizData, make tests run !(config ?)
         fail();
     }
