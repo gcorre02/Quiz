@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *
  * Created by Guilherme on 13-04-2014.
  */
-public class PlayerSaver {
+public class PlayerSaver implements PlayerSaverInterface {
     String source;
     Saver s;
     public PlayerSaver(String path){
@@ -64,6 +64,7 @@ public class PlayerSaver {
      * used to save or update a player object.
      * @param p the player object to create or update.
      */
+    @Override
     public void savePlayer(Player p) {
         String path = source + File.separator + "Player" + File.separator + p.getName()+".txt";
         Gson gson = new Gson();
@@ -85,6 +86,7 @@ public class PlayerSaver {
             f.mkdir();
         }
     }
+    @Override
     public void addPlayer(String name) throws IOException {
         PlayerLoader pl = new PlayerLoader(source);
         ArrayList<String> existingPlayer;
@@ -98,6 +100,7 @@ public class PlayerSaver {
         }
     }
 
+    @Override
     public void removePlayer(String name) throws IOException {
         PlayerLoader pl = new PlayerLoader(source);
         ArrayList<String> existingPlayers;
