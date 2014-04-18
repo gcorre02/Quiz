@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * Created by Guilherme on 13-04-2014.
  */
-public class PlayerLoader {
+public class PlayerLoader implements PlayerLoaderInterface {
     private String source;
     @Getter
     private Loader l;
@@ -22,6 +22,7 @@ public class PlayerLoader {
         l = new Loader(path);
     }
 
+    @Override
     public ArrayList<String> getPlayersArray() throws IOException {
         File f = new File(source + File.separator + "Player" + File.separator + "playersIndex.txt");
         Gson gson = new Gson();
@@ -51,6 +52,7 @@ public class PlayerLoader {
 
         return playernames;
     }
+    @Override
     public Player getPlayer(String name){
         Player p;
 
