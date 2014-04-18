@@ -1,17 +1,15 @@
 package player;
 
 import lombok.AllArgsConstructor;
-import persistence.Loader;
-import persistence.PlayerLoader;
-import persistence.PlayerSaver;
+import persistence.LoaderInterface;
+import persistence.PlayerLoaderInterface;
+import persistence.PlayerSaverInterface;
 import quizData.Player;
-import quizData.Quiz;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
@@ -22,8 +20,8 @@ import java.util.Map;
 public class PlayerMenu {
     String playerName;
     UserInterface ui;
-    PlayerLoader pl;
-    PlayerSaver ps;
+    PlayerLoaderInterface pl;
+    PlayerSaverInterface ps;
 
     public void run() {
         String[] menuArray = {"Browse All Quizzes", "Play a Quiz", "Played Quizzes", "Logout"};
@@ -80,7 +78,7 @@ public class PlayerMenu {
 
     private void playAQuizz() throws IOException {
         //SETUP
-        Loader l = pl.getL();
+        LoaderInterface l = pl.getL();
         showAllQuizzes();
         //USER
         System.out.println("Which user would you like to access ? ");
@@ -106,7 +104,7 @@ public class PlayerMenu {
 
     private void showAllQuizzes() {
         System.out.println("These are all the available quizzes: ");
-        Loader l = pl.getL();
+        LoaderInterface l = pl.getL();
         String print = CollectionPrinter.printMap(l.getUserQuizzes());
         System.out.println(print);
     }

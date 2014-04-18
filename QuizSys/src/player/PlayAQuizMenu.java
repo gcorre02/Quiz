@@ -1,8 +1,8 @@
 package player;
 
 import lombok.AllArgsConstructor;
-import persistence.PlayerLoader;
-import persistence.PlayerSaver;
+import persistence.PlayerLoaderInterface;
+import persistence.PlayerSaverInterface;
 import quizData.Player;
 import quizData.Question;
 import tools.CollectionPrinter;
@@ -19,8 +19,8 @@ import java.util.Map;
 @AllArgsConstructor
 public class PlayAQuizMenu {
     private UserInterface ui;
-    private PlayerLoader pl;
-    private PlayerSaver ps;
+    private PlayerLoaderInterface pl;
+    private PlayerSaverInterface ps;
     private String playerName;
     private String quizOwner;
     private String quiz;

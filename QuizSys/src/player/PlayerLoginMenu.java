@@ -2,7 +2,9 @@ package player;
 
 import lombok.AllArgsConstructor;
 import persistence.PlayerLoader;
+import persistence.PlayerLoaderInterface;
 import persistence.PlayerSaver;
+import persistence.PlayerSaverInterface;
 import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
@@ -14,8 +16,8 @@ import java.util.ArrayList;
  */
 @AllArgsConstructor
 public class PlayerLoginMenu {
-    private PlayerLoader l;
-    private PlayerSaver s;
+    private PlayerLoaderInterface l;
+    private PlayerSaverInterface s;
     private UserInterface ui;
 
     public void run(){
