@@ -1,16 +1,18 @@
 package quizData;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by Guilherme on 13-04-2014.
  */
+@NoArgsConstructor //For rmi deserialization
 @Data
-public class Player {
+public class Player implements Serializable{
     private String name;
     private Map<String, String[]> playedQuizzes;
     private Map<String, Double> quizScores;

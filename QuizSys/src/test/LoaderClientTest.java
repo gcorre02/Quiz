@@ -81,7 +81,7 @@ public class LoaderClientTest {
     }
 
     @Test //TODO impl file system.
-    public void testRunSaveQuizObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
+    public void testRunSaveQuizObj() throws Exception {
         //this test calls the getUserNames() array.
         String callClass = "persistence.Saver";
         String callMethod = "saveQuiz";
@@ -101,13 +101,13 @@ public class LoaderClientTest {
     }
 
     @Test //TODO impl file system.
-    public void testRunGetADataQuestionObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
+    public void testRunGetADataQuestionObj() throws Exception {
         //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
         String callMethod = "getQuestionObject";
-        String quizName = "cars";
-        String quizOwner = "Gonzo";
-        String questionString = "Different Server created question";
+        String quizName = "Another Bond";
+        String quizOwner = "Guy Fawlkes";
+        String questionString = "Who is the sexiest bond villain?";
         Question question = lc.run(callClass, callMethod, quizOwner, quizName, questionString);  //getQuestionObject(String owner, String quiz, String questionString)
         System.out.println(question.getOwner() +"\n"+ question.getQuestionString() + "\n" + CollectionPrinter.collectionPrinter('S',question.getAnswers()));
         //TODO serialize quizData, make tests run !(config ?)

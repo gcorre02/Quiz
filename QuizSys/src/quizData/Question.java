@@ -1,13 +1,16 @@
 package quizData;
 
-import java.util.ArrayList;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 @Data
+@NoArgsConstructor //for deserialization
 @AllArgsConstructor
-public class Question {
+public class Question implements Serializable{
 	private String questionString;
 	private ArrayList<String> answers;
 	private int rightAnswer;
