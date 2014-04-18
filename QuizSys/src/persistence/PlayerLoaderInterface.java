@@ -13,5 +13,5 @@ public interface PlayerLoaderInterface {
 
     Player getPlayer(String name);
 
-    Loader getL();
+    LoaderInterface getL();
 }
