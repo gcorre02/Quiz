@@ -1,9 +1,11 @@
-package rmi;
+package test;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import quizData.Quiz;
+import rmi.GenericClassToBeUSedStub;
+import rmi.GenericGetterStub;
 import tools.CollectionPrinter;
 
 import java.util.ArrayList;
