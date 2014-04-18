@@ -14,7 +14,7 @@ public class LoaderClient {
 
     public static void main(String[] args) {
         LoaderClient ec = new LoaderClient();
-        /*
+
         //debug
         String callClass = "persistence.Loader";
         String callMethod = "getUsernames";
@@ -25,10 +25,10 @@ public class LoaderClient {
             System.out.println("Couldn't connect bruv");
         }
         //debug
-        */
+        
     }
 
-    public <V,T> T run(String inputClass, String inputMethod, V... params) throws Exception {
+    public <V,T> T run(String inputClass, String inputMethod, V... params)  {
 
         Remote service = null;
         try {
@@ -45,6 +45,8 @@ public class LoaderClient {
             T returnableObj = loaderService.doAnythingWithMoreParams(inputClass, inputMethod, params);
             return returnableObj;
         } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

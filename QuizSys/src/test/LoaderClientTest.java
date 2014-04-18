@@ -1,9 +1,7 @@
 package test;
 
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import rmi.LoaderClient;
 import rmi.LoaderServerLauncher;
 
@@ -20,23 +18,31 @@ import static junit.framework.TestCase.fail;
  */
 public class LoaderClientTest {
     LoaderClient lc;
-    LoaderServerLauncher lsl;
+    static LoaderServerLauncher lsl;
+    @BeforeClass
+    public static void setupBeforeClass(){
+        //server is working for all tests
+        lsl = new LoaderServerLauncher();
+        lsl.main(new String[0]);
+    }
+
     @Before
     public void setUp() throws Exception {
         lc = new LoaderClient();
-        lsl = new LoaderServerLauncher();
-        lsl.main(new String[0]);
-        //debug
-        System.out.println("test set up is working");
+
+
     }
 
     @After
     public void tearDown() throws Exception {
-        lsl.shutDown();
-        lsl = null;
+       // lsl = null;
+    }
+    @AfterClass
+    public static void shutDown(){
+        System.exit(0);
     }
 
-    @Test
+    //@Test
     public void testMain() throws Exception {
         lc.main(new String[0]);
         fail();
@@ -57,14 +63,14 @@ public class LoaderClientTest {
 
         fail();
     }
-    //@Test //TODO impl file system.
+   // @Test //TODO impl file system.
     public void testRunGetADataQuizObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
         //this test calls the getUserNames() array.
         String callClass = "persistence.Loader";
         String callMethod = "getQuizObject";
         String quizName = "cars";
         String quizOwner = "Gonzo";
-        System.out.println(lc.run(callClass, callMethod,quizName,quizOwner));
+        System.out.println(lc.run(callClass, callMethod,quizOwner,quizName));
            //TODO serialize quizData, make tests run !(config ?)
         fail();
     }

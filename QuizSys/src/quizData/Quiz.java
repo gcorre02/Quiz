@@ -1,11 +1,12 @@
 package quizData;
 
-import java.util.ArrayList;
-
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 @Data
-public class Quiz {
+public class Quiz implements Serializable {
 	private String owner;
 	private ArrayList<String> quizQuestions;
 	private String quizName;

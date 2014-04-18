@@ -51,6 +51,6 @@ public class LoaderServerLauncher {
         System.out.println("Still working at this stage. ");
     }
     public void shutDown(){
-
+        //TODO is the server allways open ? create a serverInstanciator class for server side and a user instantiaor class on client side.
     }
 }

@@ -6,6 +6,7 @@ import persistence.Loader;
 import tools.CollectionPrinter;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -58,8 +59,21 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
     }
 
     @Override //TODO, quizData objects are not serializable yet.
-    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws Exception {
-        S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance(source);
+    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params)  {
+        S operator = null;
+        try {
+            operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance(source);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         ArrayList<Class<?>> parameters = new ArrayList<>();
         for(V parameter : params){
@@ -67,8 +81,20 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
         }
 
 
-        Method method = operator.getClass().getMethod(inputMethod,parameters.toArray(new Class<?>[0]));//only works for a method with no params
-        T returnableObj = (T) method.invoke(operator, params);
+        Method method = null;//only works for a method with no params
+        try {
+            method = operator.getClass().getMethod(inputMethod,parameters.toArray(new Class<?>[0]));
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        T returnableObj = null;
+        try {
+            returnableObj = (T) method.invoke(operator, params);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
         System.out.println("returning object : " + returnableObj);//TODO make this input  a variable
 
         return returnableObj;

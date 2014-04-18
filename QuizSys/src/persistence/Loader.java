@@ -1,20 +1,15 @@
 package persistence;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import quizData.Question;
 import quizData.Quiz;
 
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.reflect.TypeToken;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Loader {
 	String source;
@@ -80,11 +75,13 @@ public class Loader {
 		
 		file = new File(source + File.separator+ user +File.separator+ quizName+File.separator+quizName + "Object.txt");
 		BufferedReader reader;
-		
-		try {
+		//debug
+        //System.out.println(file.getAbsolutePath());
+        //debug
+        try {
 			reader = new BufferedReader(new FileReader(file));
 		} catch (FileNotFoundException e) {
-			System.out.print("UserQuizzes File cannot be accessed");
+			System.out.print("Object File cannot be accessed");
 			return null;
 		}
 		returnQuiz = gson.fromJson(reader, Quiz.class);
@@ -136,7 +133,7 @@ public class Loader {
 		try {
 			reader = new BufferedReader(new FileReader(file));
 		} catch (FileNotFoundException e) {
-			System.out.print("UserQuizzes File cannot be accessed");
+			System.out.print("Question File cannot be accessed");
 			return null;
 		}
 		returnQuestion = gson.fromJson(reader, Question.class);
