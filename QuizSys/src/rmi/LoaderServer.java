@@ -58,10 +58,17 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
         return s;
     }
 
-    public <T,S> T doAnything(String... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        S operator = (S) Class.forName(params[0]).newInstance();
-        Method method = operator.getClass().getMethod(params[1]);//only works for a method with no params
+    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance("testFiles");
 
-        return (T) method.invoke(operator);
+        ArrayList<Class<?>> parameters = new ArrayList<>();
+        for(V parameter : params){
+            parameters.add(parameter.getClass());
+        }
+
+
+        Method method = operator.getClass().getMethod(inputMethod,parameters.toArray(new Class<?>[0]));//only works for a method with no params
+
+        return (T) method.invoke(operator, params);
     }
 }
