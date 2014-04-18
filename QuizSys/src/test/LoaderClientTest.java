@@ -2,6 +2,7 @@ package test;
 
 
 import org.junit.*;
+import quizData.Question;
 import quizData.Quiz;
 import rmi.LoaderClient;
 import rmi.LoaderServerLauncher;
@@ -95,6 +96,20 @@ public class LoaderClientTest {
         lc.run(callClass, callMethod, q);
         Quiz quiz = lc.run(callClass1, callMethod1, quizOwner, quizName);
         System.out.println(quiz.getOwner() +"\n"+ quiz.getQuizName() + "\n" + CollectionPrinter.collectionPrinter('S',quiz.getQuizQuestions()));
+        //TODO serialize quizData, make tests run !(config ?)
+        fail();
+    }
+
+    @Test //TODO impl file system.
+    public void testRunGetADataQuestionObj() throws Exception { //TODO also test getting a map, getUserQuizzes...
+        //this test calls the getUserNames() array.
+        String callClass = "persistence.Loader";
+        String callMethod = "getQuestionObject";
+        String quizName = "cars";
+        String quizOwner = "Gonzo";
+        String questionString = "Different Server created question";
+        Question question = lc.run(callClass, callMethod, quizOwner, quizName, questionString);  //getQuestionObject(String owner, String quiz, String questionString)
+        System.out.println(question.getOwner() +"\n"+ question.getQuestionString() + "\n" + CollectionPrinter.collectionPrinter('S',question.getAnswers()));
         //TODO serialize quizData, make tests run !(config ?)
         fail();
     }
