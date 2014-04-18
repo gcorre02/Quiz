@@ -4,9 +4,9 @@ import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
 //Client
-public class BasicMain {
+public class ServerMain {
 //TODO need to create a server Runner main and a process to get the folder from the server to set it here:
-
+//STUB
     public static void main(String[] args) {
         final String[] FOLDER = {"ExecTry"};
 		UserInterface ui = new UserInterface();
