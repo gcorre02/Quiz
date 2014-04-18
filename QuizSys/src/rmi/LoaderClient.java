@@ -1,6 +1,5 @@
 package rmi;
 
-import tools.CollectionPrinter;
 import userInterface.UserInterface;
 
 import java.net.MalformedURLException;
@@ -18,13 +17,13 @@ public class LoaderClient {
     public LoaderClient(UserInterface uiInput){
         ui = uiInput;
     }
-
+/*
     public static void main(String[] args) {
         LoaderClient ec = new LoaderClient(ui);
         ec.run();
     }
-
-    public void run() {
+*/
+    public <V> void run(String inputClass, String inputMethod, V... params) throws Exception {
         if(ui == null)
             ui = new UserInterface();
         Remote service = null;
@@ -39,7 +38,7 @@ public class LoaderClient {
         }
         LoaderService loaderService = (LoaderService) service;
         try {
-            System.out.println(CollectionPrinter.collectionPrinter('0', loaderService.loadUserNames()));//TODO make this input  a variable
+            System.out.println(loaderService.doAnythingWithMoreParams(inputClass,inputMethod, params));//TODO make this input  a variable
         } catch (RemoteException e) {
             e.printStackTrace();
         }
