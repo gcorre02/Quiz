@@ -17,12 +17,21 @@ public class LoaderClient {
     public LoaderClient(UserInterface uiInput){
         ui = uiInput;
     }
-/*
+
     public static void main(String[] args) {
         LoaderClient ec = new LoaderClient(ui);
-        ec.run();
+        //debug
+        String callClass = "persistence.Loader";
+        String callMethod = "getUsernames";
+        try {
+            System.out.println(ec.run(callClass, callMethod));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Couldn't connect bruv");
+        }
+        //debug
     }
-*/
+
     public <V,T> T run(String inputClass, String inputMethod, V... params) throws Exception {
         if(ui == null)
             ui = new UserInterface();
@@ -38,8 +47,7 @@ public class LoaderClient {
         }
         LoaderService loaderService = (LoaderService) service;
         try {
-            T returnableObj = loaderService.doAnythingWithMoreParams(inputClass,inputMethod, params);
-             System.out.println(returnableObj);//TODO make this input  a variable
+            T returnableObj = loaderService.doAnythingWithMoreParams(inputClass, inputMethod, params);
             return returnableObj;
         } catch (RemoteException e) {
             e.printStackTrace();

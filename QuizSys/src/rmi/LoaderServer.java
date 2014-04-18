@@ -68,7 +68,9 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
 
 
         Method method = operator.getClass().getMethod(inputMethod,parameters.toArray(new Class<?>[0]));//only works for a method with no params
+        T returnableObj = (T) method.invoke(operator, params);
+        System.out.println("returning object : " + returnableObj);//TODO make this input  a variable
 
-        return (T) method.invoke(operator, params);
+        return returnableObj;
     }
 }

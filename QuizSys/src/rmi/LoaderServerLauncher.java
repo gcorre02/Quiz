@@ -20,10 +20,12 @@ public class LoaderServerLauncher {
         }
         try {
 // 2. Create the registry if there is not one
-            LocateRegistry.createRegistry(1099);
+            LocateRegistry.createRegistry(1099);//TODO set this up better, 1099??
 // 3. Create the server object
             LoaderServer server = LoaderServer.getInstance();
             server.setSource("testFiles");//TODO make this input  a variable
+            //debug TODO
+            System.out.println("this is working at this stage. " + server.toString());
 // 4. Register (bind) the server object on the registy.
 // The registry may be on a different machine
             String registryHost = "//localhost/";
@@ -34,6 +36,8 @@ public class LoaderServerLauncher {
         } catch (RemoteException ex) {
             ex.printStackTrace();
         }
+        //debug TODO
+        System.out.println("Still working at this stage. ");
     }
     public void shutDown(){
         System.exit(0);

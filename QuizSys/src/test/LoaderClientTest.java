@@ -23,25 +23,27 @@ public class LoaderClientTest {
     public void setUp() throws Exception {
         ui = mock(UserInterface.class);
         lc = new LoaderClient(ui);
-        lsl = new LoaderServerLauncher();
-        lsl.main(new String[0]);
+      //  lsl = new LoaderServerLauncher();
+       // lsl.main(new String[0]);
+        //debug
+        System.out.println("test set up is working");
     }
 
     @After
     public void tearDown() throws Exception {
-        lsl.shutDown();
-    }
-
-    @Test
-    public void testMain() throws Exception {
-        //lc.main(new String[0]);
-        fail();
+       //lsl.shutDown();
     }
 
     //@Test
+    public void testMain() throws Exception {
+        lc.main(new String[0]);
+        fail();
+    }
+
+    @Test
     public void testRun() throws Exception {
     //this test calls the getUserNames() array.
-        String callClass = "persistence.Loader.class";
+        String callClass = "persistence.Loader";
         String callMethod = "getUsernames";
         System.out.println(lc.run(callClass, callMethod));
         fail();
