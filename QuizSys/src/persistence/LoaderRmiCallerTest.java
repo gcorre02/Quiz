@@ -2,6 +2,7 @@ package persistence;
 
 import org.junit.*;
 import rmi.LoaderServerLauncher;
+import tools.CollectionPrinter;
 
 import static junit.framework.TestCase.fail;
 
@@ -42,26 +43,31 @@ public class LoaderRmiCallerTest {
 
     @Test
     public void testGetUserQuizzes() throws Exception {
-
+        System.out.println(CollectionPrinter.printMap(lrc.getUserQuizzes()));
+        fail();
     }
 
     @Test
     public void testGetQuizObject() throws Exception {
-
+        System.out.println(lrc.getQuizObject("Gonzo","cars"));
+        fail();
     }
 
     @Test
     public void testGetQuizQuestionsConfig() throws Exception {
-
+        System.out.println(CollectionPrinter.collectionPrinter('S',lrc.getQuizQuestionsConfig("Gonzo","cars")));
+        fail();
     }
 
     @Test
     public void testGetQuestionNumber() throws Exception {
-
+        System.out.println(lrc.getQuestionNumber("Who is the sexiest bond villain?","Guy Fawlkes","Another Bond"));
+        fail();
     }
 
     @Test
     public void testGetQuestionObject() throws Exception {
-
+        System.out.println(lrc.getQuestionObject("Guy Fawlkes", "Another Bond", "Who is the sexiest bond villain?"));
+        fail();
     }
 }
