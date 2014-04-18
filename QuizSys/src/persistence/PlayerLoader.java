@@ -2,7 +2,6 @@ package persistence;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import quizData.Player;
 
@@ -20,6 +19,8 @@ public class PlayerLoader implements PlayerLoaderInterface {
     public PlayerLoader(String path){
         source = path;
         l = new Loader(path);
+        PlayerSaver s = new PlayerSaver(source);
+        s = null;
     }
 
     @Override
