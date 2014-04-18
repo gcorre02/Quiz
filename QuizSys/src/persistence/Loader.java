@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Loader {
+public class Loader implements LoaderInterface {
 	String source;
 	File file;
 	Saver s;
@@ -22,7 +22,8 @@ public class Loader {
 		s = null;
 	}
 
-	public ArrayList<String> getUsernames() throws IOException{
+	@Override
+    public ArrayList<String> getUsernames() throws IOException{
 		ArrayList<String> usernames = new ArrayList<>();
 		file = new File(source+File.separator+"UserNames.txt");
 		BufferedReader reader;
@@ -52,7 +53,8 @@ public class Loader {
 	 * 
 	 * @return
 	 */
-	public Map<String, String[]> getUserQuizzes(){
+	@Override
+    public Map<String, String[]> getUserQuizzes(){
 		Map<String, String[]> userQuizzes = new HashMap<>();
 		Gson gson = new Gson();
 		file = new File(source + File.separator+ "UserQuizzes.txt");
@@ -69,7 +71,8 @@ public class Loader {
 		
 		return userQuizzes;
 	}
-	public Quiz getQuizObject(String user, String quizName){
+	@Override
+    public Quiz getQuizObject(String user, String quizName){
 		Quiz returnQuiz;
 		Gson gson = new Gson();
 		
@@ -89,7 +92,8 @@ public class Loader {
 		return returnQuiz;
 	}
 
-	public ArrayList<String> getQuizQuestionsConfig(String owner, String quizName) throws IOException {
+	@Override
+    public ArrayList<String> getQuizQuestionsConfig(String owner, String quizName) throws IOException {
 		ArrayList<String> returnArray = new ArrayList<>();
 		
 		file = new File(source+File.separator+owner+File.separator+quizName+File.separator+quizName+".txt");
@@ -116,14 +120,16 @@ public class Loader {
 		return returnArray;
 	}
 
-	public int getQuestionNumber(String questionString, String owner,
-			String quiz) throws IOException {
+	@Override
+    public int getQuestionNumber(String questionString, String owner,
+                                 String quiz) throws IOException {
 		ArrayList<String> questions = getQuizQuestionsConfig(owner, quiz);
 		return questions.indexOf(questionString);
 	}
 
-	public Question getQuestionObject(String owner, String quiz,
-			String questionString) throws IOException {
+	@Override
+    public Question getQuestionObject(String owner, String quiz,
+                                      String questionString) throws IOException {
 		Question returnQuestion;
 		Gson gson = new Gson();
 		
