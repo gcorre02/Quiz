@@ -6,7 +6,6 @@ import persistence.Loader;
 import tools.CollectionPrinter;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -58,7 +57,8 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
         return s;
     }
 
-    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+    @Override //TODO, quizData objects are not serializable yet.
+    public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws Exception {
         S operator = (S) Class.forName(inputClass).getDeclaredConstructor(String.class).newInstance("testFiles");
 
         ArrayList<Class<?>> parameters = new ArrayList<>();

@@ -13,4 +13,6 @@ import java.util.ArrayList;
 public interface LoaderService extends Remote {
 
     public ArrayList<String> loadUserNames() throws RemoteException;
+
+    <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params) throws Exception;
 }
