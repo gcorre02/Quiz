@@ -1,5 +1,11 @@
 package persistence;
 
+import com.google.gson.Gson;
+import lombok.Data;
+import quizData.Question;
+import quizData.Quiz;
+import tools.CollectionPrinter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,13 +13,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import quizData.Question;
-import quizData.Quiz;
-import tools.CollectionPrinter;
-import lombok.Data;
-
-import  com.google.gson.Gson;
 
 /**
  * 
@@ -267,9 +266,10 @@ public class Saver {
 	 */
 	public boolean saveQuiz(Quiz quiz){
 		File f = new File(source+File.separator + quiz.getOwner()+File.separator+quiz.getQuizName());
-		if(!f.exists())
-			return false;
-		
+		if(!f.exists()) {
+            System.out.println(f.getAbsolutePath() + "doesn't exist, can't save quiz file.");
+            return false;
+        }
 		if(
 				!saveQuizConfig(quiz.getOwner(),quiz.getQuizName(),quiz.getQuizQuestions())
 				||!saveQuizObject(quiz)
