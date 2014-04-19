@@ -49,6 +49,11 @@ public class PlayAQuizMenu {
         for(String question : questions){
             System.out.println("\n"+question);
             Question q = pl.getL().getQuestionObject(quizOwner,quiz,question);
+            //debug
+            System.out.println("Loaded "+ q + ": ");
+            System.out.println("Owner : " + q.getOwner());
+            System.out.println("Answers : " + CollectionPrinter.collectionPrinter('S',q.getAnswers()));
+            //\debug
             int qScore = getQuestionScore(q);
             score += qScore;
         }

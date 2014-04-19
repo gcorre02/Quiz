@@ -75,8 +75,16 @@ public class PlayerLoginMenu {
         //TODO
         System.out.println("Please enter your name : ");
         String username = ui.readFromUser();
-        PlayerMenu pm = new PlayerMenu(username,ui,l,s);
-        pm.run();
+        try {
+            if(l.getPlayersArray().contains(username)) {
+                PlayerMenu pm = new PlayerMenu(username, ui, l, s);
+                pm.run();
+            }
+        } catch (IOException e) {
+            System.out.println("can't access the server at this time. Please try Logging in later.");
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 
     private void deletePlayer() throws IOException {

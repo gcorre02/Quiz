@@ -71,6 +71,12 @@ public class PlayerLoader implements PlayerLoaderInterface {
         }
         p = gson.fromJson(reader, Player.class);
 
+        try {
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return p;
     }
 }
