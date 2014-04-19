@@ -1,8 +1,12 @@
-package test.mainTests;
+package test;
 
 import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
+
+import java.io.File;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * generates the file structure to allow for testing.
@@ -15,8 +19,11 @@ public class SetupSystemFiles {
     Loader l;
     @Test
     public void run(){
+        source = "testFiles";
         s = new Saver(source);
         l = new Loader(source);
+        File f = new File(source);
+        assertTrue(f.exists());//TODO add more tests to check whole structure.
     }
 
 }
