@@ -20,6 +20,8 @@ public class UserInterfaceTest {
 
 	@After
 	public void tearDown() throws Exception {
+        ui = null;
+        mockedUserInterface = null;
 	}
 
 	@Test

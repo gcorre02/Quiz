@@ -1,23 +1,38 @@
 package userInterface;
 
+/**
+ * Class to handle requests of information from the user.
+ */
 public class UserInterface {
-    //TODO improve the regex, to accept most inputs.
+
+    /**
+     * method to help mock System.console().readLine().
+     *
+     * @return user inputted String.
+     */
 	public String readFromUser() {
-		String input = System.console().readLine();
+        //TODO improve the regex, to accept most inputs.
+        String input = System.console().readLine();
         input = input.replaceAll("\"","");
         return input;
 	}
 
+    /**
+     * Prints choices, requests choice from user and returns a char.
+     *
+     * @param aBunchOfChoices properly formatted choices with digits or Alphas for choice selections
+     * @return a char that represents a choice.
+     */
 	public char getUserAnswer(String aBunchOfChoices) {
 		System.out.println(aBunchOfChoices);
-		char response = readFromUser().toUpperCase().charAt(0);
-		return response;
+        return readFromUser().toUpperCase().charAt(0);
 	}
-	//for mocking
+    /**
+     *     Overload of getUserAnswer for mocking, allows input of a mocked UserInterface obj.
+     */
 	public char getUserAnswer(String aBunchOfChoices, UserInterface ui) {
 		System.out.println(aBunchOfChoices);
-		char response = ui.readFromUser().toUpperCase().charAt(0);
-		return response;
+        return ui.readFromUser().toUpperCase().charAt(0);
 	}
 
 }
