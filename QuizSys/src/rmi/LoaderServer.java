@@ -58,7 +58,7 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
         return s;
     }
 
-    @Override //TODO, quizData objects are not serializable yet.
+    @Override //TODO, concurrency ? just multiple attempts with thread.sleep anfinite number of times.
     public <T,S,V> T doAnythingWithMoreParams(String inputClass, String inputMethod, V... params)  {
         S operator = null;
         try {

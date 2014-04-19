@@ -2,8 +2,7 @@ package test.mainTests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.SetupSystemFiles;
-import test.mainTests.test.LocalMainTest;
+import test.mainTests.test.launchers.LocalMainTest;
 
 /**
  *
