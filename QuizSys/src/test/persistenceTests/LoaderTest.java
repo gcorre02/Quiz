@@ -1,4 +1,4 @@
-package test;
+package test.persistenceTests;
 
 import static org.junit.Assert.*;
 
@@ -26,7 +26,7 @@ public class LoaderTest {
 	String[] gonzoQuizzes = {"numbers","people","cars"};
 	@Before
 	public void setUp() throws Exception {
-		folder = "TestFiles";
+		folder = "testFiles";
 		loader = new Loader(folder);
 		
 		userNames = new ArrayList<>();

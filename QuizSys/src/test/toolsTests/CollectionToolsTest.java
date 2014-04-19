@@ -1,7 +1,8 @@
-package test;
+package test.toolsTests;
 
 import static org.junit.Assert.*;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import quizData.Quiz;
@@ -16,6 +17,11 @@ public class CollectionToolsTest {
 	private Quiz quiz;
 	private String quizName;
 	private String question;
+
+    @BeforeClass
+    public static void beforeTests(){
+        System.out.println("Supposed to appear first in test case");
+    }
 
 	public void setUp() throws Exception {
 		quizName = "Alien";

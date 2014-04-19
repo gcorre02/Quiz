@@ -1,4 +1,4 @@
-package test;
+package test.playerTests;
 
 import org.junit.After;
 import org.junit.Before;

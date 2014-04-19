@@ -1,4 +1,4 @@
-package test;
+package test.rmiTests;
 
 import org.junit.*;
 import persistence.LoaderRmiCaller;

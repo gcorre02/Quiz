@@ -3,7 +3,7 @@ package main;
 import tools.CollectionTools;
 import tools.UserInterface;
 
-//Client
+//Local
 public class BasicMain {
 //TODO need to create a server Runner main and a process to get the folder from the server to set it here:
 

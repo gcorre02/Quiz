@@ -1,18 +1,26 @@
-package test;
+package test.toolsTests;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import tools.UserInterface;
 
+
 public class UserInterfaceTest {
 	UserInterface ui;
 	UserInterface mockedUserInterface;
-	@Before
+
+    @BeforeClass
+    public static void beforeTests(){
+        System.out.println("Supposed to appear second in test case");
+    }
+
+    @Before
 	public void setUp() throws Exception {
 		ui = new UserInterface();
 		mockedUserInterface = mock(UserInterface.class);
