@@ -23,7 +23,7 @@ public class TestSuite {
     //TODO setUp file system here.
     @AfterClass
     public static void close(){
-        System.out.println("\nClosing, thank you for testing!");
-        System.exit(0);
+        System.out.println("\nClosing, thank you for testing!\nYou might need to manually close the jvm at this point");
+        //System.exit(0);
     }
 }

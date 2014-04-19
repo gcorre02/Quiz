@@ -48,6 +48,6 @@ public class ServerMainTest {
         when(ui.getUserAnswer(anyString())).thenReturn('D');
         when(ui.printToUser(anyString())).thenCallRealMethod();
         ServerMain.launch(source, ui);
-//        verify(ui).printToUser("Couldn't understand input. Bye");
+        verify(ui).getUserAnswer(anyString());
     }
 }

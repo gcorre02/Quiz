@@ -9,6 +9,7 @@ import tools.UserInterface;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
 /**
@@ -41,7 +42,11 @@ public class LaunchServerMainTest {
         String callMethod = "getUsernames";
         //exec
         ArrayList<String> usernames = lc.run(callClass, callMethod);
-        //debug
-        System.out.println(usernames);
+        //expected
+        String expected = "Admin";
+        //actual
+        String actual = usernames.get(0);
+        //test
+        assertEquals(expected,actual);
     }
 }
