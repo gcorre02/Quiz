@@ -40,7 +40,8 @@ public class UserInterface {
      * Sends user a message, replaces System.out.println()
      * @param sout message to the user
      */
-    public void printToUser(String sout) {
+    public String printToUser(String sout) {
         System.out.println(sout);
+        return sout;
     }
 }

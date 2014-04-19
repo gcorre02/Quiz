@@ -24,7 +24,6 @@ public class LocalMainTest {
     public void setUp() throws Exception {
         source = "testFiles";
         ui = mock(UserInterface.class);
-
     }
 
     @After
@@ -35,8 +34,8 @@ public class LocalMainTest {
     @Test
     public void testMain() throws Exception {
         when(ui.getUserAnswer(anyString())).thenReturn('D');
+        when(ui.printToUser(anyString())).thenCallRealMethod();
         LocalMain.launch(source,ui);
         verify(ui).printToUser("Couldn't understand input. Bye");
-        fail();
     }
 }

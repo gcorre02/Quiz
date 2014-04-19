@@ -5,10 +5,14 @@ import main.LocalUserLaunchers.LaunchUserLocalVersion;
 import tools.CollectionTools;
 import tools.UserInterface;
 
-//Local
+/**
+ * Launches a local version of the Quiz System.
+ */
 public class LocalMain {
-//TODO need to create a server Runner main and a process to get the folder from the server to set it here:
-
+    /**
+     *
+     * @param args the folder where the quiz file system is. if the folder does not exist or is empty, a new one is created.
+     */
     public static void main(String[] args) {
         final String[] FOLDER = args;//{"ExecTry"};
 		UserInterface ui = new UserInterface();
@@ -28,7 +32,7 @@ public class LocalMain {
         else if(choice == 'B')
             LaunchUserLocalVersion.main(new String[]{source});
         else
-            System.out.println("Couldn't understand input. Bye");
+            ui.printToUser("Couldn't understand input. Bye");
     }
 
 
