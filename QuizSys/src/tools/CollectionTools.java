@@ -1,6 +1,7 @@
 package tools;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -18,7 +19,7 @@ public abstract class CollectionTools {
      * @return A String with the formatted and indexed list of items in the collection, ready to be print.\nReturns null if the input is not one of the possible choices.
      */
 	public static <T> String collectionPrinter(char orderType, ArrayList<T> collection){
-		String result = "";
+		String result;
 		switch(orderType){
 		case'0':
 			result = populateResult(0, collection);
@@ -88,8 +89,8 @@ public abstract class CollectionTools {
     /**
      * Compares two unordered arrays for matches.
      *
-     * @param actualKeys
-     * @param expectedKeys
+     * @param actualKeys set of keys to match
+     * @param expectedKeys other set of keys to match against
      * @return true if all args match, false if not.
      */
 	public static boolean compareTwoArrays(String[] actualKeys, String[] expectedKeys) {
@@ -116,13 +117,10 @@ public abstract class CollectionTools {
      */
 	public static boolean arrayContains(String toCheck, String[] stringArray) {
 		int i = 0;
-		for(String element : stringArray){
-			if(element.equals(toCheck))
-				i++;
-		}
-		if(i>0)
-			return true;
-		return false;
+		for(String element : stringArray)
+            if (element.equals(toCheck))
+                i++;
+		return (i>0);
 	}
 
     /**
@@ -133,9 +131,7 @@ public abstract class CollectionTools {
      */
 	public static String[] addElementToArray(String toAdd, String[] targetArray) {
 		ArrayList<String> content = new ArrayList<>();
-		for(String element : targetArray){
-			content.add(element);
-		}
+        Collections.addAll(content, targetArray);
 		content.add(toAdd);
 		targetArray = new String[content.size()];
 		for(int i = 0; i<content.size();i++){
@@ -152,9 +148,7 @@ public abstract class CollectionTools {
      */
 	public static ArrayList<String> toArrayList(String[] targetArray) {
 		ArrayList<String> result = new ArrayList<>();
-		for(String current : targetArray){
-			result.add(current);
-		}
+        Collections.addAll(result, targetArray);
 		return result;
 	}
 
@@ -177,7 +171,7 @@ public abstract class CollectionTools {
         //Operate through ArrayList.
 		ArrayList<String> content = toArrayList(targetArray);
 		content.remove(toRemove);
-        targetArray = content.toArray(new String[0]);
+        targetArray = content.toArray(new String[content.size()]);
 
         return targetArray;
 	}
