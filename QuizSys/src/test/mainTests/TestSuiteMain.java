@@ -3,6 +3,7 @@ package test.mainTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.SetupSystemFiles;
+import test.mainTests.test.LocalMainTest;
 
 /**
  *
@@ -11,7 +12,7 @@ import test.SetupSystemFiles;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-
+        LocalMainTest.class
         //, local tests go in here.
         //SetupSystemFiles.class,DeleteSystemFiles.class // to be called at the end.
 })

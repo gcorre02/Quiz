@@ -13,7 +13,7 @@ import test.toolsTests.TestSuiteTools;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         SetupSystemFiles.class,
-       // TestSuiteMain.class,
+        TestSuiteMain.class,
         TestSuiteTools.class,
         //, local test suites go in here.
         DeleteSystemFiles.class // to be called at the end.

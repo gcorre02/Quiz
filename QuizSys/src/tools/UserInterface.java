@@ -35,4 +35,12 @@ public class UserInterface {
         return ui.readFromUser().toUpperCase().charAt(0);
 	}
 
+
+    /**
+     * Sends user a message, replaces System.out.println()
+     * @param sout message to the user
+     */
+    public void printToUser(String sout) {
+        System.out.println(sout);
+    }
 }
