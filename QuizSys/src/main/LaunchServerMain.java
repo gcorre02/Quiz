@@ -8,6 +8,6 @@ import rmi.LoaderServerLauncher;
 public class LaunchServerMain {
     public static void main(String[] args) {
         LoaderServerLauncher lsl = new LoaderServerLauncher();
-        lsl.main(new String[0]);
+        lsl.main(args);
     }
 }

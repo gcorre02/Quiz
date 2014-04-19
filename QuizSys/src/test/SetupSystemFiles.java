@@ -25,5 +25,4 @@ public class SetupSystemFiles {
         File f = new File(source);
         assertTrue(f.exists());//TODO add more tests to check whole structure.
     }
-
 }

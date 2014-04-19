@@ -15,10 +15,10 @@ public class LoaderServerLauncher {
     private static String serviceName;
 
     public static void main(String[] args) {
-        launch();
+        launch(args[0]);
     }
 
-    private static void launch() {
+    private static void launch(String source) {
 // 1. If there is no security manager, start one
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
@@ -33,7 +33,7 @@ public class LoaderServerLauncher {
 // 3. Create the server object
 
             server = LoaderServer.getInstance();
-            server.setSource("testFiles");//TODO make this input  a variable
+            server.setSource(source);//TODO make this input  a variable
             //debug TODO
             System.out.println("this is working at this stage. " + server.toString());
 // 4. Register (bind) the server object on the registy.
