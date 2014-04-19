@@ -14,9 +14,8 @@ public class LocalMain {
      * @param args the folder where the quiz file system is. if the folder does not exist or is empty, a new one is created.
      */
     public static void main(String[] args) {
-        final String[] FOLDER = args;//{"ExecTry"};
-		UserInterface ui = new UserInterface();
-        launch(FOLDER[0], ui);
+        UserInterface ui = new UserInterface();
+        launch(args[0], ui);
     }
 
     /*
