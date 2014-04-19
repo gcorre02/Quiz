@@ -1,7 +1,7 @@
 package main;
 
 import tools.CollectionTools;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 //Client
 public class ServerMain {

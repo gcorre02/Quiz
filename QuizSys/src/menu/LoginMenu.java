@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import persistence.LoaderInterface;
 import persistence.SaverInterface;
 import tools.CollectionTools;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package main;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import player.PlayerLoginMenu;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 /**
  * Created by Admin on 15/04/2014.

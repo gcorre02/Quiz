@@ -5,7 +5,7 @@ import persistence.Loader;
 import persistence.LoaderInterface;
 import persistence.Saver;
 import persistence.SaverInterface;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 /**
  * Created by Admin on 15/04/2014.

@@ -18,7 +18,7 @@ import persistence.Loader;
 import persistence.Saver;
 import quizData.Question;
 import quizData.Quiz;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 public class EditQuestionMenuTest {
 

@@ -6,7 +6,7 @@ import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import player.PlayerLoginMenu;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 import java.io.File;
 

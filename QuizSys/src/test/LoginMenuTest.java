@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import persistence.Loader;
 import persistence.Saver;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 public class LoginMenuTest {
 	LoginMenu um;

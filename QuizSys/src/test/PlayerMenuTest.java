@@ -6,7 +6,7 @@ import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import player.PlayerMenu;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 import static junit.framework.TestCase.fail;
 import static org.mockito.Matchers.anyString;

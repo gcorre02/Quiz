@@ -13,6 +13,6 @@ import org.junit.runners.Suite;
         CollectionToolsTest.class,
         UserInterfaceTest.class
 })
-public class TestSuiteStub {
+public class TestSuiteTools {
     //TODO setUp file system here.
 }

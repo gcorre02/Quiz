@@ -1,4 +1,4 @@
-package userInterface;
+package tools;
 
 /**
  * Class to handle requests of information from the user.

@@ -16,7 +16,7 @@ import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
 import quizData.Quiz;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 public class EditQuizMenuTest {
 	private Quiz newQuiz;

@@ -7,7 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 public class UserInterfaceTest {
 	UserInterface ui;

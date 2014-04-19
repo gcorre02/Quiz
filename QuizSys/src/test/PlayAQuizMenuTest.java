@@ -11,7 +11,7 @@ import player.PlayAQuizMenu;
 import quizData.Player;
 import quizData.Question;
 import tools.CollectionTools;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 import java.util.ArrayList;
 

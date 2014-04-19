@@ -2,7 +2,7 @@ package main;
 
 import persistence.*;
 import player.PlayerLoginMenu;
-import userInterface.UserInterface;
+import tools.UserInterface;
 
 /**
  * Created by Admin on 15/04/2014.
