@@ -2,8 +2,6 @@ package test.mainTests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.toolsTests.CollectionToolsTest;
-import test.toolsTests.UserInterfaceTest;
 
 /**
  *
