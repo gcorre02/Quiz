@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import persistence.LoaderInterface;
 import persistence.SaverInterface;
 import quizData.Question;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class EditQuestionMenu {
 			Question qu = l.getQuestionObject(user, quizName, question);
 			ArrayList<String> answers = qu.getAnswers();
 			qu = null;
-			System.out.println(CollectionPrinter.collectionPrinter('0', answers));
+			System.out.println(CollectionTools.collectionPrinter('0', answers));
 		}catch(Exception e){
 			System.out.println(question+" has no answers yet");
 			Question quStub = new Question(question, new ArrayList<String>(), 100, user, quizName);
@@ -36,7 +36,7 @@ public class EditQuestionMenu {
 		menuItems.add("Delete an existing Answer");
 		menuItems.add("Choose the right answer");
 		menuItems.add("Go back to Question choice");
-		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+		String menu = CollectionTools.collectionPrinter('S', menuItems);
 		runMenu(menu);
 
 	}

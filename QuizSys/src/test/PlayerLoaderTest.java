@@ -6,7 +6,7 @@ import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import quizData.Player;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class PlayerLoaderTest {
         //actual
         ArrayList<String> actuals = pl.getPlayersArray();
         //debug
-        System.out.println(CollectionPrinter.collectionPrinter('0',actuals));
+        System.out.println(CollectionTools.collectionPrinter('0', actuals));
         //test
         assertTrue(actuals.containsAll(expecteds));
     }

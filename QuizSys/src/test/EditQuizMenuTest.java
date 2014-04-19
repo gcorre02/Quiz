@@ -79,8 +79,8 @@ public class EditQuizMenuTest {
 		//test
 
 		//Quiz quiz = l.getQuizObject(user, quizName);
-		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
-		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
+		//System.out.println(CollectionTools.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionTools.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
 
 		fail("Not yet implemented"); // TODO
 
@@ -97,8 +97,8 @@ public class EditQuizMenuTest {
 		//test
 
 		//Quiz quiz = l.getQuizObject(user, quizName);
-		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
-		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
+		//System.out.println(CollectionTools.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionTools.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
 
 		fail("Not yet implemented"); // TODO
 
@@ -115,8 +115,8 @@ public class EditQuizMenuTest {
 		//test
 
 		//Quiz quiz = l.getQuizObject(user, quizName);
-		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
-		//System.out.println(CollectionPrinter.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
+		//System.out.println(CollectionTools.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionTools.collectionPrinter('S',l.getQuizQuestionsConfig(user, quizName)));
 
 		fail("Not yet implemented"); // TODO
 

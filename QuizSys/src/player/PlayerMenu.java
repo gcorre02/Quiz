@@ -5,7 +5,7 @@ import persistence.LoaderInterface;
 import persistence.PlayerLoaderInterface;
 import persistence.PlayerSaverInterface;
 import quizData.Player;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class PlayerMenu {
         String[] menuArray = {"Browse All Quizzes", "Play a Quiz", "Played Quizzes", "Logout"};
         ArrayList<String> menuItems = new ArrayList<>();
         Collections.addAll(menuItems, menuArray);
-        String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+        String menu = CollectionTools.collectionPrinter('S', menuItems);
         runMenu(menu);
     }
 
@@ -72,7 +72,7 @@ public class PlayerMenu {
         Map<String, String[]> playedQuizzes = p.getPlayedQuizzes();
         //RUN
         System.out.println("These are the quizzes you have played:");
-        String played = CollectionPrinter.printMap(playedQuizzes);
+        String played = CollectionTools.printMap(playedQuizzes);
         System.out.println(played);
     }
 
@@ -83,7 +83,7 @@ public class PlayerMenu {
         //USER
         System.out.println("Which user would you like to access ? ");
         ArrayList<String> userNames = l.getUsernames();
-        String users = CollectionPrinter.collectionPrinter('0', userNames);
+        String users = CollectionTools.collectionPrinter('0', userNames);
         System.out.println(users);
         String quizOwner = userNames.get(Integer.parseInt(ui.readFromUser()));
         //QUIZ
@@ -91,7 +91,7 @@ public class PlayerMenu {
         String[] quizNames = l.getUserQuizzes().get(quizOwner);
         ArrayList<String> quizNamesArray = new ArrayList<>();
         Collections.addAll(quizNamesArray, quizNames);
-        String quizzes = CollectionPrinter.collectionPrinter('0',quizNamesArray);
+        String quizzes = CollectionTools.collectionPrinter('0', quizNamesArray);
         System.out.println(quizzes);
         String quiz = quizNamesArray.get(Integer.parseInt(ui.readFromUser()));
         //debug
@@ -105,7 +105,7 @@ public class PlayerMenu {
     private void showAllQuizzes() {
         System.out.println("These are all the available quizzes: ");
         LoaderInterface l = pl.getL();
-        String print = CollectionPrinter.printMap(l.getUserQuizzes());
+        String print = CollectionTools.printMap(l.getUserQuizzes());
         System.out.println(print);
     }
 }

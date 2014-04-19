@@ -6,7 +6,7 @@ import quizData.Question;
 import quizData.Quiz;
 import rmi.LoaderClient;
 import rmi.LoaderServerLauncher;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import java.util.ArrayList;
 
@@ -75,7 +75,7 @@ public class LoaderClientTest {
         String quizName = "cars";
         String quizOwner = "Gonzo";
         Quiz quiz = lc.run(callClass, callMethod, quizOwner, quizName);
-        System.out.println(quiz.getOwner() +"\n"+ quiz.getQuizName() + "\n" + CollectionPrinter.collectionPrinter('S',quiz.getQuizQuestions()));
+        System.out.println(quiz.getOwner() +"\n"+ quiz.getQuizName() + "\n" + CollectionTools.collectionPrinter('S', quiz.getQuizQuestions()));
            //TODO serialize quizData, make tests run !(config ?)
         fail();
     }
@@ -95,7 +95,7 @@ public class LoaderClientTest {
         q.setQuizQuestions(questions);
         lc.run(callClass, callMethod, q);
         Quiz quiz = lc.run(callClass1, callMethod1, quizOwner, quizName);
-        System.out.println(quiz.getOwner() +"\n"+ quiz.getQuizName() + "\n" + CollectionPrinter.collectionPrinter('S',quiz.getQuizQuestions()));
+        System.out.println(quiz.getOwner() +"\n"+ quiz.getQuizName() + "\n" + CollectionTools.collectionPrinter('S', quiz.getQuizQuestions()));
         //TODO serialize quizData, make tests run !(config ?)
         fail();
     }
@@ -109,7 +109,7 @@ public class LoaderClientTest {
         String quizOwner = "Guy Fawlkes";
         String questionString = "Who is the sexiest bond villain?";
         Question question = lc.run(callClass, callMethod, quizOwner, quizName, questionString);  //getQuestionObject(String owner, String quiz, String questionString)
-        System.out.println(question.getOwner() +"\n"+ question.getQuestionString() + "\n" + CollectionPrinter.collectionPrinter('S',question.getAnswers()));
+        System.out.println(question.getOwner() +"\n"+ question.getQuestionString() + "\n" + CollectionTools.collectionPrinter('S', question.getAnswers()));
         //TODO serialize quizData, make tests run !(config ?)
         fail();
     }

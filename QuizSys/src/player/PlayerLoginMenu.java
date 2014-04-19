@@ -1,11 +1,9 @@
 package player;
 
 import lombok.AllArgsConstructor;
-import persistence.PlayerLoader;
 import persistence.PlayerLoaderInterface;
-import persistence.PlayerSaver;
 import persistence.PlayerSaverInterface;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.io.IOException;
@@ -26,7 +24,7 @@ public class PlayerLoginMenu {
         menuItems.add("Delete Player");
         menuItems.add("Login");
         menuItems.add("Close Program");
-        String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+        String menu = CollectionTools.collectionPrinter('S', menuItems);
         runMenu(menu);
     }
 

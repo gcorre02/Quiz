@@ -7,9 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import quizData.Quiz;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
-public class CollectionPrinterTest {
+public class CollectionToolsTest {
 
 	private Quiz quiz;
 	private String quizName;
@@ -38,7 +38,7 @@ public class CollectionPrinterTest {
 				+ "\n2 -> what happens to John Hurt in Alien ?\n";
 		String expected = prints;
 		//actual
-		String actual = CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions());
+		String actual = CollectionTools.collectionPrinter('0', quiz.getQuizQuestions());
 		//debug
 		//System.out.println(actual);
 		//test
@@ -56,7 +56,7 @@ public class CollectionPrinterTest {
 				+ "\n3 -> what happens to John Hurt in Alien ?\n";
 		String expected = prints;
 		//actual
-		String actual = CollectionPrinter.collectionPrinter('1', quiz.getQuizQuestions());
+		String actual = CollectionTools.collectionPrinter('1', quiz.getQuizQuestions());
 		//debug
 		//System.out.println(actual);
 		//test
@@ -74,7 +74,7 @@ public class CollectionPrinterTest {
 				+ "\nC -> what happens to John Hurt in Alien ?\n";
 		String expected = prints;
 		//actual
-		String actual = CollectionPrinter.collectionPrinter('S', quiz.getQuizQuestions());
+		String actual = CollectionTools.collectionPrinter('S', quiz.getQuizQuestions());
 		//debug
 		//System.out.println(actual);
 		//test

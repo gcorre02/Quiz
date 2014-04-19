@@ -3,7 +3,7 @@ package test;
 import org.junit.*;
 import persistence.LoaderRmiCaller;
 import rmi.LoaderServerLauncher;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import static junit.framework.TestCase.fail;
 
@@ -44,7 +44,7 @@ public class LoaderRmiCallerTest {
 
     @Test
     public void testGetUserQuizzes() throws Exception {
-        System.out.println(CollectionPrinter.printMap(lrc.getUserQuizzes()));
+        System.out.println(CollectionTools.printMap(lrc.getUserQuizzes()));
         fail();
     }
 
@@ -56,7 +56,7 @@ public class LoaderRmiCallerTest {
 
     @Test
     public void testGetQuizQuestionsConfig() throws Exception {
-        System.out.println(CollectionPrinter.collectionPrinter('S',lrc.getQuizQuestionsConfig("Gonzo","cars")));
+        System.out.println(CollectionTools.collectionPrinter('S', lrc.getQuizQuestionsConfig("Gonzo", "cars")));
         fail();
     }
 

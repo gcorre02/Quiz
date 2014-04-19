@@ -6,7 +6,7 @@ import org.junit.Test;
 import quizData.Quiz;
 import rmi.GenericClassToBeUSedStub;
 import rmi.GenericGetterStub;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class GenericGetterTestTest {
         //System.out.println(inputMethod);
         //\debug
         ArrayList<String> returnMessage = ggt.doAnything(inputClass,inputMethod);
-        System.out.println(CollectionPrinter.collectionPrinter('S',returnMessage));
+        System.out.println(CollectionTools.collectionPrinter('S', returnMessage));
     }
     @Test//TODO impl test
     public void testDoAnythingGetaQuiz() throws Exception {

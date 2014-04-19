@@ -3,7 +3,7 @@ package tools;
 import java.util.ArrayList;
 import java.util.Map;
 
-public abstract class CollectionPrinter {
+public abstract class CollectionTools {
 	public static <T> String collectionPrinter(char orderType, ArrayList<T> collection){
 		String result = "";
 		switch(orderType){

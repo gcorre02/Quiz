@@ -15,7 +15,7 @@ import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
 import quizData.Quiz;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 public class LoaderTest {
 	Loader loader;
@@ -82,10 +82,10 @@ public class LoaderTest {
 		String[] actuals = loader.getUserQuizzes().get("Gonzo");
 		String[] actualKeys =loader.getUserQuizzes().keySet().toArray(new String[0]);
 		//debug
-		System.out.println(CollectionPrinter.printMap(loader.getUserQuizzes()));
+		System.out.println(CollectionTools.printMap(loader.getUserQuizzes()));
 		//test
 		assertArrayEquals(expecteds, actuals);
-		assertTrue(CollectionPrinter.compareTwoArrays(actualKeys, expectedKeys));
+		assertTrue(CollectionTools.compareTwoArrays(actualKeys, expectedKeys));
 	}
 
 	private void generateGonzoQuizzes() {
@@ -109,7 +109,7 @@ public class LoaderTest {
 		//actual
 		Quiz actual = newQuiz;
 		//debug
-		System.out.println(CollectionPrinter.collectionPrinter('0', actual.getQuizQuestions()));
+		System.out.println(CollectionTools.collectionPrinter('0', actual.getQuizQuestions()));
 		//test
 		assertEquals(expected, actual);
 	}

@@ -1,6 +1,6 @@
 package main;
 
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 //Client
@@ -12,7 +12,7 @@ public class ServerMain {
 		UserInterface ui = new UserInterface();
 
         String[] strs = {"Go to Player Menus","Go to User Menus"};
-        String choices = CollectionPrinter.collectionPrinter('S',CollectionPrinter.toArrayList(strs));
+        String choices = CollectionTools.collectionPrinter('S', CollectionTools.toArrayList(strs));
         char choice = ui.getUserAnswer(choices);
         if(choice == 'A')
             LaunchPlayerServerVersion.main(FOLDER);

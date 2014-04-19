@@ -16,7 +16,7 @@ import persistence.Loader;
 import persistence.Saver;
 import quizData.Question;
 import quizData.Quiz;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 public class SaverTest {
 	ArrayList<String> userNames;
@@ -109,7 +109,7 @@ public class SaverTest {
 		File removedFile = new File(folder+File.separator+"Gonzo"+File.separator+"people");
 		//test
 		assertTrue(s.removeQuiz("people", "Gonzo", userQuizzes));
-		assertFalse(CollectionPrinter.arrayContains("people", l.getUserQuizzes().get("Gonzo")));
+		assertFalse(CollectionTools.arrayContains("people", l.getUserQuizzes().get("Gonzo")));
 		assertFalse(removedFile.exists());
 	}
 
@@ -127,7 +127,7 @@ public class SaverTest {
 		//setup
 		Quiz quiz = setupQuiz();
 		//debug
-		//System.out.println(CollectionPrinter.collectionPrinter('0', quiz.getQuizQuestions()));
+		//System.out.println(CollectionTools.collectionPrinter('0', quiz.getQuizQuestions()));
 		//test
 		assertTrue(s.saveQuiz(quiz));
 	}
@@ -161,7 +161,7 @@ public class SaverTest {
 		
 		//debug
 		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
-		System.out.println(CollectionPrinter.collectionPrinter('0', l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName())));
+		System.out.println(CollectionTools.collectionPrinter('0', l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName())));
 		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
 		//enddebug
 
@@ -209,7 +209,7 @@ public class SaverTest {
 		Question actual = l.getQuestionObject(owner, quiz, questionString);
 		String[] actuals = actual.getAnswers().toArray(new String[0]);
 		//debug
-		System.out.println(CollectionPrinter.collectionPrinter('1', actual.getAnswers()));
+		System.out.println(CollectionTools.collectionPrinter('1', actual.getAnswers()));
 		//test
 		assertEquals(expected, actual);
 		assertArrayEquals(expecteds, actuals);

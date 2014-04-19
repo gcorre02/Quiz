@@ -3,7 +3,7 @@ package menu;
 import lombok.AllArgsConstructor;
 import persistence.LoaderInterface;
 import persistence.SaverInterface;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class LoginMenu {
 		menuItems.add("Delete User");
 		menuItems.add("Login");
 		menuItems.add("Close Program");
-		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+		String menu = CollectionTools.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
 

@@ -5,7 +5,7 @@ import persistence.PlayerLoaderInterface;
 import persistence.PlayerSaverInterface;
 import quizData.Player;
 import quizData.Question;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.io.IOException;
@@ -52,7 +52,7 @@ public class PlayAQuizMenu {
             //debug
             System.out.println("Loaded "+ q + ": ");
             System.out.println("Owner : " + q.getOwner());
-            System.out.println("Answers : " + CollectionPrinter.collectionPrinter('S',q.getAnswers()));
+            System.out.println("Answers : " + CollectionTools.collectionPrinter('S', q.getAnswers()));
             //\debug
             int qScore = getQuestionScore(q);
             score += qScore;
@@ -68,7 +68,7 @@ public class PlayAQuizMenu {
     private int getQuestionScore(Question q) {
         ArrayList<String> answers = q.getAnswers();
         //TODO use keys instead of ints
-        System.out.println(CollectionPrinter.collectionPrinter('0',answers));
+        System.out.println(CollectionTools.collectionPrinter('0', answers));
         int answer = Integer.parseInt(ui.readFromUser());
         int rightAnswer = q.getRightAnswer();
         if(answer == rightAnswer)
@@ -96,7 +96,7 @@ public class PlayAQuizMenu {
             playedQuizzes = p.getPlayedQuizzes();
             quizScores = p.getQuizScores();
             if(!playedQuizzes.containsKey(quizOwner)
-                    ||!CollectionPrinter.arrayContains(quiz,playedQuizzes.get(quizOwner))) {
+                    ||!CollectionTools.arrayContains(quiz, playedQuizzes.get(quizOwner))) {
                 String[] newQuizzes = {quiz};
                 playedQuizzes.put(quizOwner, newQuizzes);
             }

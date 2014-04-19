@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import persistence.LoaderInterface;
 import persistence.SaverInterface;
 import quizData.Quiz;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class EditQuizMenu {
 				System.out.println(quizName + " has no questions.");
 			}else{
 				System.out.println("Current Questions:");
-				System.out.println(CollectionPrinter.collectionPrinter('0', userQuestions));
+				System.out.println(CollectionTools.collectionPrinter('0', userQuestions));
 			}
 		} catch (IOException e) {
 			Quiz quiz = new Quiz(quizName, user);
@@ -44,7 +44,7 @@ public class EditQuizMenu {
 		menuItems.add("Delete an existing Question");
 		menuItems.add("Edit a Question");
 		menuItems.add("Go back to Quiz choice");
-		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+		String menu = CollectionTools.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
 

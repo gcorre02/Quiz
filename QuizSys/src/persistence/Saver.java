@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import lombok.Data;
 import quizData.Question;
 import quizData.Quiz;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -224,15 +224,15 @@ public class Saver implements SaverInterface {
 			return false;
 		}
 
-		if(CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
+		if(CollectionTools.arrayContains(quizName, userQuizzes.get(userName))){
 			System.out.println("A quiz with the name " + quizName + " already exists.");
 			return true;
 		}
 		//exec
 		
-		userQuizzes.put(userName, CollectionPrinter.addElementToArray(quizName, userQuizzes.get(userName)));
+		userQuizzes.put(userName, CollectionTools.addElementToArray(quizName, userQuizzes.get(userName)));
 		//debug
-		//System.out.println(CollectionPrinter.printMap(userQuizzes));
+		//System.out.println(CollectionTools.printMap(userQuizzes));
 		//end debug
 		if(saveUserQuizzes(userQuizzes))
 			return true;
@@ -248,13 +248,13 @@ public class Saver implements SaverInterface {
 			return false;
 		}
 
-		if(!CollectionPrinter.arrayContains(quizName, userQuizzes.get(userName))){
+		if(!CollectionTools.arrayContains(quizName, userQuizzes.get(userName))){
 			System.out.println("A quiz with the name " + quizName + " doesnt exist");
 			return true;
 		}
 		
 		//exec
-		userQuizzes.put(userName, CollectionPrinter.removeElementFromArray(quizName, userQuizzes.get(userName)));
+		userQuizzes.put(userName, CollectionTools.removeElementFromArray(quizName, userQuizzes.get(userName)));
 		//deleteQuizFile
 		String path = source + File.separator + userName + File.separator + quizName;
 		deleteFolder(path);

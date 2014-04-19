@@ -3,7 +3,7 @@ package menu;
 import lombok.AllArgsConstructor;
 import persistence.LoaderInterface;
 import persistence.SaverInterface;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.util.ArrayList;
@@ -23,8 +23,8 @@ public class UserMenu {
 			System.out.println(user + " has no quizzes.");
 		}else{
 			System.out.println("These are your quizzes:");
-			ArrayList<String> thisuserSQuizzes = CollectionPrinter.toArrayList(userQuizzes);
-			System.out.println(CollectionPrinter.collectionPrinter('0', thisuserSQuizzes));
+			ArrayList<String> thisuserSQuizzes = CollectionTools.toArrayList(userQuizzes);
+			System.out.println(CollectionTools.collectionPrinter('0', thisuserSQuizzes));
 		}
 
 		//TODO <implement the rest>
@@ -33,7 +33,7 @@ public class UserMenu {
 		menuItems.add("Delete an existing Quizz");
 		menuItems.add("Edit a Quizz");
 		menuItems.add("Go back to login");
-		String menu = CollectionPrinter.collectionPrinter('S', menuItems);
+		String menu = CollectionTools.collectionPrinter('S', menuItems);
 		runMenu(menu);
 	}
 

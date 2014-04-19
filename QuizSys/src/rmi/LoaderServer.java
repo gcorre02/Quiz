@@ -3,7 +3,7 @@ package rmi; /**
  */
 
 import persistence.Loader;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -54,7 +54,7 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
     //\debug
     // This println is not necessary, but helps verifying whether
     // the server has received the call or not on the remote machine
-        System.out.println("Replied to some client with usernames ’" + CollectionPrinter.collectionPrinter('0', s) + "’");
+        System.out.println("Replied to some client with usernames ’" + CollectionTools.collectionPrinter('0', s) + "’");
         return s;
     }
 

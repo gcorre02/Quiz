@@ -10,12 +10,11 @@ import persistence.Saver;
 import player.PlayAQuizMenu;
 import quizData.Player;
 import quizData.Question;
-import tools.CollectionPrinter;
+import tools.CollectionTools;
 import userInterface.UserInterface;
 
 import java.util.ArrayList;
 
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -50,9 +49,9 @@ public class PlayAQuizMenuTest {
 
         //create Question objects
 
-        Question qu0 = new Question(q0,CollectionPrinter.toArrayList(ans0),2, quizOwner,quizName);
-        Question qu1 = new Question(q1,CollectionPrinter.toArrayList(ans1),1, quizOwner,quizName);
-        Question qu3 = new Question(q3,CollectionPrinter.toArrayList(ans3),2, quizOwner,quizName);
+        Question qu0 = new Question(q0, CollectionTools.toArrayList(ans0),2, quizOwner,quizName);
+        Question qu1 = new Question(q1, CollectionTools.toArrayList(ans1),1, quizOwner,quizName);
+        Question qu3 = new Question(q3, CollectionTools.toArrayList(ans3),2, quizOwner,quizName);
 
         //persist question objects
         s = new Saver(source);
