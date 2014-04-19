@@ -13,7 +13,6 @@ public class LaunchServerMain {
      * @param args the file system folder, at position 0.
      */
     public static void main(String[] args) {
-        LoaderServerLauncher lsl = new LoaderServerLauncher();
-        lsl.main(args);
+        LoaderServerLauncher.main(args);
     }
 }

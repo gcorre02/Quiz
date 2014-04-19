@@ -6,7 +6,9 @@ import rmi.LoaderServerLauncher;
 import tools.UserInterface;
 
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  *
@@ -16,13 +18,11 @@ import static org.mockito.Mockito.*;
 public class ServerMainTest {
     String source;
     UserInterface ui;
-    static LoaderServerLauncher lsl;
 
     @BeforeClass
     public static void setupBeforeClass(){
         //server is working for all tests
-        lsl = new LoaderServerLauncher();
-        lsl.main(new String[]{"testFiles"});
+        LoaderServerLauncher.main(new String[]{"testFiles"});
     }
 
     @Before
@@ -36,12 +36,7 @@ public class ServerMainTest {
         source = null;
     }
 
-    @AfterClass
-    public static void shutDown(){
 
-        lsl.shutDown();
-
-    }
 
     @Test
     public void testLaunch() throws Exception {
