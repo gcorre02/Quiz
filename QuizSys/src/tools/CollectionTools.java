@@ -85,8 +85,19 @@ public abstract class CollectionTools {
 		return print;
 	}
 
+    /**
+     * Compares two unordered arrays for matches.
+     *
+     * @param actualKeys
+     * @param expectedKeys
+     * @return true if all args match, false if not.
+     */
 	public static boolean compareTwoArrays(String[] actualKeys, String[] expectedKeys) {
-		int matchCounter = 0;
+		//check if they are of different lenghts, this straight away means they are not similar.
+        if(actualKeys.length!=expectedKeys.length)
+            return false;
+        //compare each element
+        int matchCounter = 0;
 		for(String actual : actualKeys){
 			for(String expected : expectedKeys){
 				if(actual.equals(expected)){
@@ -97,6 +108,12 @@ public abstract class CollectionTools {
         return matchCounter == actualKeys.length;
     }
 
+    /**
+     * Checks if a string[] contains a specified string
+     * @param toCheck String to be checked.
+     * @param stringArray Array to check if the requested String is inside of.
+     * @return True if array contains toCheck. false otherwise.
+     */
 	public static boolean arrayContains(String toCheck, String[] stringArray) {
 		int i = 0;
 		for(String element : stringArray){
@@ -108,6 +125,12 @@ public abstract class CollectionTools {
 		return false;
 	}
 
+    /**
+     * adds a single string into an existing, shorter String[] type
+     * @param toAdd String to input into the array.
+     * @param targetArray array to add the string to.
+     * @return extended version of the targetArray with the new String added to the end.
+     */
 	public static String[] addElementToArray(String toAdd, String[] targetArray) {
 		ArrayList<String> content = new ArrayList<>();
 		for(String element : targetArray){
@@ -118,12 +141,15 @@ public abstract class CollectionTools {
 		for(int i = 0; i<content.size();i++){
 			targetArray[i] = content.get(i);
 		}
-		//debug
-		//System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
-		//end debug
+
 		return targetArray;
 	}
 
+    /**
+     * transforms a String[] into an Arraylist. (made redundant by method addALL(), but dependent)
+     * @param targetArray the array to be turned into an ArrayList
+     * @return resolved ArrayList from the inputed String[].
+     */
 	public static ArrayList<String> toArrayList(String[] targetArray) {
 		ArrayList<String> result = new ArrayList<>();
 		for(String current : targetArray){
@@ -132,23 +158,27 @@ public abstract class CollectionTools {
 		return result;
 	}
 
+    /**
+     *
+     * Returns an array without the falgged string.
+     *
+     * @param toRemove the String to remove from the array[].
+     * @param targetArray the String[] to remove a String from.
+     * @return the result String[] without the flagged String
+     */
 	public static String[] removeElementFromArray(String toRemove,
 			String[] targetArray) {
-		
-		ArrayList<String> content = new ArrayList<>();
-		for(String element : targetArray){
-			content.add(element);
-		}
+		//Error checking
+        if(targetArray.length==0
+                ||!arrayContains(toRemove,targetArray)){
+            System.out.println("Warning: Array is empty or String to be removed is not in the array.");
+            return targetArray;
+        }
+        //Operate through ArrayList.
+		ArrayList<String> content = toArrayList(targetArray);
 		content.remove(toRemove);
-		targetArray = new String[content.size()];
-		for(int i = 0; i<content.size();i++){
-			targetArray[i] = content.get(i);
-		}
-		//debug
-		System.out.println("<<<  Add element to Array debug : >>>\n" + collectionPrinter('0', toArrayList(targetArray)));
-		//end debug
-		return targetArray;
+        targetArray = content.toArray(new String[0]);
+
+        return targetArray;
 	}
-	
-	
 }

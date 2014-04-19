@@ -9,13 +9,17 @@ import org.junit.Test;
 import quizData.Quiz;
 import tools.CollectionTools;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class CollectionToolsTest {
 
 	private Quiz quiz;
 	private String quizName;
 	private String question;
 
-	@Before
+	@Before//TODO this method is only needed by the first 4 tests.
 	public void setUp() throws Exception {
 		quizName = "Alien";
 		quiz = new Quiz(quizName,"Ridley");
@@ -64,15 +68,15 @@ public class CollectionToolsTest {
 		quiz.addQuestion(question);
 		quiz.addQuestion("another question");
 		quiz.addQuestion("what happens to John Hurt in Alien ?");
+
 		//expected
-		String prints = "1 -> "+question
+		String expected = "1 -> "+question
 				+ "\n2 -> another question"
 				+ "\n3 -> what happens to John Hurt in Alien ?\n";
-		String expected = prints;
+
 		//actual
 		String actual = CollectionTools.collectionPrinter('1', quiz.getQuizQuestions());
-		//debug
-		//System.out.println(actual);
+
 		//test
 		assertEquals("The integer based collection printer is not printing propperly",expected, actual);
 	}
@@ -83,10 +87,10 @@ public class CollectionToolsTest {
 		quiz.addQuestion("another question");
 		quiz.addQuestion("what happens to John Hurt in Alien ?");
 		//expected
-		String prints = "A -> "+question
+		String expected = "A -> "+question
 				+ "\nB -> another question"
 				+ "\nC -> what happens to John Hurt in Alien ?\n";
-		String expected = prints;
+
 		//actual
 		String actual = CollectionTools.collectionPrinter('S', quiz.getQuizQuestions());
 		//debug
@@ -96,7 +100,115 @@ public class CollectionToolsTest {
 	}
 
     @Test
-    public final void test testPrintMap(){
+    public final void testPrintMap(){
+        //setup
+        Map<String, String[]> printableMap = new HashMap<>();
+        String[] one = {"one","two","three"};
+        String[] two = {"two","three","four"};
+        String[] three = {"three","four","five"};
+        printableMap.put(one[0],one);
+        printableMap.put(two[0],two);
+        printableMap.put(three[0],three);
+        //actual
+        String actual = CollectionTools.printMap(printableMap);
+        //expected
+        String expected = "one\n" +
+                "| one\n" +
+                "| two\n" +
+                "| three\n" +
+                "two\n" +
+                "| two\n" +
+                "| three\n" +
+                "| four\n" +
+                "three\n" +
+                "| three\n" +
+                "| four\n" +
+                "| five\n";
+        //test
+        assertEquals(expected,actual);
+    }
 
+    @Test
+    public final void testCompareTwoArrays(){
+        //setup
+        String[] actual = {"one","two","three"};
+        String[] expected = {"one","two","three"};
+
+
+        //test
+        assertTrue(CollectionTools.compareTwoArrays(actual,expected));
+    }
+
+    @Test
+    public final void testCompareTwoArraysFailDifLengths(){
+        //setup
+        String[] actual = {"one","two","three"};
+        String[] expected = {"one","two","three","Four"};
+
+        //test
+        assertFalse(CollectionTools.compareTwoArrays(actual,expected));
+    }
+    @Test
+    public final void testCompareTwoArraysFailDifContent(){
+        //setup
+        String[] actual = {"one","two","three"};
+        String[] expected = {"two","two","Four"};
+
+        //test
+        assertFalse(CollectionTools.compareTwoArrays(actual,expected));
+    }
+
+    @Test
+    public final void testArrayContainsTrue(){
+        //setup
+        String[] stringArray = {"one","two","three"};
+        String toCheck = "two";
+        //test
+        assertTrue(CollectionTools.arrayContains(toCheck,stringArray));
+    }
+    @Test
+    public final void testArrayDoesntContainFalse(){
+        //setup
+        String[] stringArray = {"one","two","three"};
+        String toCheck = "four";
+        //test
+        assertFalse(CollectionTools.arrayContains(toCheck,stringArray));
+    }
+
+    @Test
+    public final void testAddElementToArray(){
+        //setup
+        String[] stringArray = {"one","two","three"};
+        String toAdd = "four";
+        //Expecteds
+        String[] expecteds = {"one","two","three","four"};
+        //Actuals
+        String[] actuals = CollectionTools.addElementToArray(toAdd,stringArray);
+        //test
+        assertArrayEquals(expecteds,actuals);
+    }
+
+    @Test
+    public final void testToArraYlist(){
+        //setup
+        String[] stringArray = {"one","two","three"};
+        ArrayList<String> stringArrayList = CollectionTools.toArrayList(stringArray);
+        //test
+        for(int i = 0; i <3; i++){
+            assertEquals(stringArray[i],stringArrayList.get(i));
+        }
+    }
+
+    @Test
+    public final void testRemoveElementFromArray(){
+        //setup
+        String[] stringArray = {"one","two","three"};
+        String toRemove = "two";
+        //Expecteds
+        String[] expecteds = {"one","three"};
+        //Actuals
+        String[] actuals = CollectionTools.removeElementFromArray(toRemove,stringArray);
+        //test
+        assertArrayEquals(expecteds,actuals);
     }
 }
