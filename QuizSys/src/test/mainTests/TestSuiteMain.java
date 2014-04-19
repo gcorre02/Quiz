@@ -1,8 +1,10 @@
 package test.mainTests;
 
+import main.launchers.LaunchServerMain;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.mainTests.test.launchers.LocalMainTest;
+import test.mainTests.test.launchers.ServerMainTest;
 
 /**
  *
@@ -11,7 +13,9 @@ import test.mainTests.test.launchers.LocalMainTest;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        LocalMainTest.class
+        LocalMainTest.class,
+        ServerMainTest.class,
+        LaunchServerMain.class
         //, local tests go in here.
         //SetupSystemFiles.class,DeleteSystemFiles.class // to be called at the end.
 })

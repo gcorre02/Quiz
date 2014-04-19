@@ -1,5 +1,6 @@
 package test;
 
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.mainTests.TestSuiteMain;
@@ -20,4 +21,9 @@ import test.toolsTests.TestSuiteTools;
 })
 public class TestSuite {
     //TODO setUp file system here.
+    @AfterClass
+    public static void close(){
+        System.out.println("\nClosing, thank you for testing!");
+        System.exit(0);
+    }
 }
