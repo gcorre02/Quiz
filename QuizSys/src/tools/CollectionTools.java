@@ -3,7 +3,20 @@ package tools;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**
+ * Supportive collection handling methods
+ */
 public abstract class CollectionTools {
+    /**
+     * Orders the objects in an array with an index for each.
+     * \nUsed for giving the user options.
+     *
+     *
+     * @param orderType Ids the type of index as a char. S for string, 0 to start with 0, 1 to start with 1
+     * @param collection The arrayList with the collection of strings or objects with overriden toString().
+     * @param <T> String or objects with overriden toString(), ready to be presented.
+     * @return A String with the formatted and indexed list of items in the collection, ready to be print.\nReturns null if the input is not one of the possible choices.
+     */
 	public static <T> String collectionPrinter(char orderType, ArrayList<T> collection){
 		String result = "";
 		switch(orderType){
@@ -22,7 +35,7 @@ public abstract class CollectionTools {
 		}
 		return result;
 	}
-	
+
 	private static <T> String populateResult(int i, ArrayList<T> collection){
 		String result = "";
 		for (T current : collection){
@@ -55,7 +68,12 @@ public abstract class CollectionTools {
 		};
 		return keys[i];
 	}
-	
+
+    /**
+     * A string of the inputted map with identation of the children arrays.
+     * @param userQuizzes the map to print
+     * @return the String of the structured map.
+     */
 	public static String printMap(Map<String, String[]> userQuizzes) {
 		String print = "";
 		for(String key : userQuizzes.keySet()){
@@ -76,11 +94,8 @@ public abstract class CollectionTools {
 				}
 			}
 		}
-		if(matchCounter == actualKeys.length){
-			return true;
-		}
-		return false;
-	}
+        return matchCounter == actualKeys.length;
+    }
 
 	public static boolean arrayContains(String toCheck, String[] stringArray) {
 		int i = 0;

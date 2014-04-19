@@ -24,6 +24,9 @@ public class CollectionToolsTest {
 
 	@After
 	public void tearDown() throws Exception {
+        quiz = null;
+        quizName = null;
+        question = null;
 	}
 
 	@Test
@@ -33,16 +36,27 @@ public class CollectionToolsTest {
 		quiz.addQuestion("another question");
 		quiz.addQuestion("what happens to John Hurt in Alien ?");
 		//expected
-		String prints = "0 -> "+question
+		String expected0 = "0 -> "+question
 				+ "\n1 -> another question"
 				+ "\n2 -> what happens to John Hurt in Alien ?\n";
-		String expected = prints;
-		//actual
-		String actual = CollectionTools.collectionPrinter('0', quiz.getQuizQuestions());
-		//debug
-		//System.out.println(actual);
+
+        String expected1 = "1 -> "+question
+                + "\n2 -> another question"
+                + "\n3 -> what happens to John Hurt in Alien ?\n";
+
+        String expectedS = "A -> "+question
+                + "\nB -> another question"
+                + "\nC -> what happens to John Hurt in Alien ?\n";
+
+        //actual
+		String actual0 = CollectionTools.collectionPrinter('0', quiz.getQuizQuestions());
+        String actual1 = CollectionTools.collectionPrinter('1', quiz.getQuizQuestions());
+        String actualS = CollectionTools.collectionPrinter('S', quiz.getQuizQuestions());
+
 		//test
-		assertEquals("The integer based collection printer is not printing propperly",expected, actual);
+        assertEquals("The integer 0 based collection printer is not printing propperly",expected0, actual0);
+        assertEquals("The integer 1 based collection printer is not printing propperly",expected1, actual1);
+        assertEquals("The String based collection printer is not printing propperly",expectedS, actualS);
 	}
 	@Test
 	public final void testOrderQuestionsStartWith1() {
@@ -80,4 +94,9 @@ public class CollectionToolsTest {
 		//test
 		assertEquals("The String based collection printer is not printing propperly",expected, actual);
 	}
+
+    @Test
+    public final void test testPrintMap(){
+
+    }
 }
