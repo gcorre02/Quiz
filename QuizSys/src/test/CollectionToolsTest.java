@@ -2,8 +2,6 @@ package test;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import quizData.Quiz;
@@ -19,14 +17,12 @@ public class CollectionToolsTest {
 	private String quizName;
 	private String question;
 
-	@Before//TODO this method is only needed by the first 4 tests.
 	public void setUp() throws Exception {
 		quizName = "Alien";
 		quiz = new Quiz(quizName,"Ridley");
 		question = "Who is the director of the Alien film?";
 	}
 
-	@After
 	public void tearDown() throws Exception {
         quiz = null;
         quizName = null;
@@ -34,8 +30,9 @@ public class CollectionToolsTest {
 	}
 
 	@Test
-	public final void testOrderQuestions() {
+	public final void testOrderQuestions() throws Exception {
 		//setup
+        setUp();
 		quiz.addQuestion(question);
 		quiz.addQuestion("another question");
 		quiz.addQuestion("what happens to John Hurt in Alien ?");
@@ -61,10 +58,12 @@ public class CollectionToolsTest {
         assertEquals("The integer 0 based collection printer is not printing propperly",expected0, actual0);
         assertEquals("The integer 1 based collection printer is not printing propperly",expected1, actual1);
         assertEquals("The String based collection printer is not printing propperly",expectedS, actualS);
+        tearDown();
 	}
 	@Test
-	public final void testOrderQuestionsStartWith1() {
+	public final void testOrderQuestionsStartWith1() throws Exception {
 		//setup
+        setUp();
 		quiz.addQuestion(question);
 		quiz.addQuestion("another question");
 		quiz.addQuestion("what happens to John Hurt in Alien ?");
@@ -79,9 +78,12 @@ public class CollectionToolsTest {
 
 		//test
 		assertEquals("The integer based collection printer is not printing propperly",expected, actual);
-	}
+
+        tearDown();
+    }
 	@Test
-	public final void testOrderQuestionsString() {
+	public final void testOrderQuestionsString() throws Exception {
+        setUp();
 		//setup
 		quiz.addQuestion(question);
 		quiz.addQuestion("another question");
@@ -97,7 +99,8 @@ public class CollectionToolsTest {
 		//System.out.println(actual);
 		//test
 		assertEquals("The String based collection printer is not printing propperly",expected, actual);
-	}
+	    tearDown();
+    }
 
     @Test
     public final void testPrintMap(){
@@ -207,7 +210,7 @@ public class CollectionToolsTest {
         //Expecteds
         String[] expecteds = {"one","three"};
         //Actuals
-        String[] actuals = CollectionTools.removeElementFromArray(toRemove,stringArray);
+        String[] actuals = CollectionTools.removeElementFromArray(toRemove, stringArray);
         //test
         assertArrayEquals(expecteds,actuals);
     }
