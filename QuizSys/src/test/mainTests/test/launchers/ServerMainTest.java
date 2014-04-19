@@ -7,10 +7,14 @@ import org.junit.Test;
 import tools.UserInterface;
 
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
- * Created by Admin on 19/04/2014.
+ *
+ * Created by Guilherme on 19/04/2014.
+ *
  */
 public class ServerMainTest {
     String source;
@@ -31,7 +35,7 @@ public class ServerMainTest {
     public void testLaunch() throws Exception {
         when(ui.getUserAnswer(anyString())).thenReturn('D');
         when(ui.printToUser(anyString())).thenCallRealMethod();
-        ServerMain.launch(source,ui);
+        ServerMain.launch(source, ui);
         verify(ui).printToUser("Couldn't understand input. Bye");
     }
 }
