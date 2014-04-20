@@ -1,4 +1,4 @@
-package test.quizDataTests;
+package test.quizDataTests.test;
 
 import static org.junit.Assert.*;
 

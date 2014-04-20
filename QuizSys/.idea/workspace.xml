@@ -7,15 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\LoaderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\PlayerLoaderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\PlayerSaverTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\SaverTest.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\LoaderTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java" />
-      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\PlayerLoaderTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/PlayerLoaderTest.java" />
-      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\PlayerSaverTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/PlayerSaverTest.java" />
-      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\persistenceTests\test\SaverTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/SaverTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/playerTests/TestSuitePlayer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/quizDataTests/TestSuiteQuizData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/rmiTests/TestSuiteRmi.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\playerTests\PlayAQuizMenuTest.java" afterPath="$PROJECT_DIR$/src/test/playerTests/test/PlayAQuizMenuTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\playerTests\PlayerLoginMenuTest.java" afterPath="$PROJECT_DIR$/src/test/playerTests/test/PlayerLoginMenuTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\playerTests\PlayerMenuTest.java" afterPath="$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\quizDataTests\QuestionTest.java" afterPath="$PROJECT_DIR$/src/test/quizDataTests/test/QuestionTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\quizDataTests\QuizTest.java" afterPath="$PROJECT_DIR$/src/test/quizDataTests/test/QuizTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\rmiTests\GenericGetterTestTest.java" afterPath="$PROJECT_DIR$/src/test/rmiTests/test/GenericGetterTestTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\rmiTests\LoaderClientTest.java" afterPath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderClientTest.java" />
+      <change type="MOVED" beforePath="C:\Users\Admin\IdeaProjects\Quiz\QuizSys\src\test\rmiTests\LoaderRmiCallerTest.java" afterPath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderRmiCallerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestSuite.java" afterPath="$PROJECT_DIR$/src/test/TestSuite.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -38,18 +41,7 @@
     <favorites_list name="QuizSys" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TestSuitePersistence.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5483871" vertical-offset="0" max-vertical-offset="425">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -62,10 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/launchers/ServerMainTest.java" />
-        <option value="$PROJECT_DIR$/src/rmi/LoaderServerLauncher.java" />
-        <option value="$PROJECT_DIR$/src/rmi/security.policy" />
-        <option value="$PROJECT_DIR$/security.policy" />
         <option value="$PROJECT_DIR$/src/main/launchers/LaunchServerMain.java" />
         <option value="$PROJECT_DIR$/src/test/DeleteSystemFiles.java" />
         <option value="$PROJECT_DIR$/src/main/launchers/ServerMain.java" />
@@ -100,7 +88,6 @@
         <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/EditQuestionMenuRmiTest.java" />
         <option value="$PROJECT_DIR$/src/test/persistenceTests/LoaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java" />
-        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/menu/EditQuestionMenu.java" />
         <option value="$PROJECT_DIR$/src/persistence/LoaderInterface.java" />
         <option value="$PROJECT_DIR$/src/persistence/Loader.java" />
@@ -113,6 +100,11 @@
         <option value="$PROJECT_DIR$/src/persistence/Saver.java" />
         <option value="$PROJECT_DIR$/src/persistence/SaverInterface.java" />
         <option value="$PROJECT_DIR$/src/persistence/SaverRmiCaller.java" />
+        <option value="$PROJECT_DIR$/src/test/playerTests/TestSuitePlayer.java" />
+        <option value="$PROJECT_DIR$/src/test/quizDataTests/TestSuiteQuizData.java" />
+        <option value="$PROJECT_DIR$/src/test/rmiTests/TestSuitePlayer.java" />
+        <option value="$PROJECT_DIR$/src/test/rmiTests/TestSuiteRmi.java" />
+        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
       </list>
     </option>
   </component>
@@ -218,84 +210,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistenceTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistenceTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistenceTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuizSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -361,10 +275,11 @@
       <recent name="test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test.rmiTests" />
+      <recent name="test.quizDataTests" />
+      <recent name="test.playerTests" />
       <recent name="test.persistenceTests" />
       <recent name="test.menuTests.test.remote" />
-      <recent name="test" />
-      <recent name="test.mainTests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\IdeaProjects\Quiz\QuizSys" />
@@ -608,7 +523,7 @@
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
       <workItem from="1397994366077" duration="5287000" />
-      <workItem from="1398003593165" duration="6217000" />
+      <workItem from="1398003593165" duration="6722000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -834,15 +749,19 @@
       <created>1398009577399</created>
       <updated>1398009577399</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="restructured persisten tests packages.">
+      <created>1398009863958</created>
+      <updated>1398009863958</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67848000" />
+    <option name="totallyTimeSpent" value="68353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -859,7 +778,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -886,7 +805,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="refactored LaunchUserServer class for mocking and added javadocks" />
     <MESSAGE value="passed launch user server version tests.&#10;created a TestSuiteMenu stub class." />
     <MESSAGE value="simplified the code in all Launch classes." />
     <MESSAGE value="changed javadoc in launch user server version test class and restructured tests under menuTests package." />
@@ -911,7 +829,8 @@
     <MESSAGE value="wrote javadocs for all PlayerLoader relevant classes." />
     <MESSAGE value="wrote javadocs for all PlayerSaver relevant classes." />
     <MESSAGE value="wrote javadocs for all Saver relevant classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote javadocs for all Saver relevant classes." />
+    <MESSAGE value="restructured persisten tests packages." />
+    <option name="LAST_COMMIT_MESSAGE" value="restructured persisten tests packages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -919,34 +838,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServerLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0329113" vertical-offset="13" max-vertical-offset="969">
-          <caret line="53" column="138" selection-start-line="53" selection-start-column="138" selection-end-line="53" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/ServerMainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6556962" vertical-offset="489" max-vertical-offset="901">
-          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="952">
-          <caret line="35" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/PlayerLoginMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="991" max-vertical-offset="1955">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/LocalUserLaunchers/LaunchPlayerServerVersion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
@@ -1143,14 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="646">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/DeleteSystemFiles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57816374" vertical-offset="73" max-vertical-offset="476">
@@ -1166,16 +1049,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3765#3773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7419355" vertical-offset="228" max-vertical-offset="697">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1332,10 +1205,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/toolsTests/TestSuiteTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/playerTests/TestSuitePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5483871" vertical-offset="0" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="697">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/rmiTests/TestSuiteRmi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59057075" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/quizDataTests/TestSuiteQuizData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6327543" vertical-offset="0" max-vertical-offset="403">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>

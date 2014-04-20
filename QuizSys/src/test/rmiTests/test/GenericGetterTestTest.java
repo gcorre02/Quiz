@@ -1,4 +1,4 @@
-package test.rmiTests;
+package test.rmiTests.test;
 
 import org.junit.After;
 import org.junit.Before;
