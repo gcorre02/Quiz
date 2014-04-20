@@ -1,23 +1,18 @@
 package test.mainTests.test.localUserLaunchers;
 
-import main.LocalUserLaunchers.LaunchUserLocalVersion;
+import main.LocalUserLaunchers.LaunchUserServerVersion;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import tools.UserInterface;
 
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
- *
- * Created by Guilherme on 20/04/2014.
- *
- *
+ * Created by Admin on 20/04/2014.
  */
-public class LaunchUserLocalVersionTest {
+public class LaunchUserServerVersionTest {
     private String source;
     private UserInterface ui;
 
@@ -37,7 +32,7 @@ public class LaunchUserLocalVersionTest {
     public void testLaunch() throws Exception {
         when(ui.printToUser(anyString())).thenCallRealMethod();
         when(ui.getUserAnswer(anyString())).thenReturn('D');
-        LaunchUserLocalVersion.launch(source, ui);
+        LaunchUserServerVersion.launch(source, ui);
         verify(ui).printToUser("Shutting down, thank you.");
     }
 }
