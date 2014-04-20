@@ -167,9 +167,12 @@ public class SaverTest {
 	@Test
 	public final void testRemoveQuestion() throws IOException{
 		//setup
-		String removeableQuestion = "How old is VW?";
-		s.removeAQuestion(removeableQuestion, "Gonzo", "cars");
-		Loader l = new Loader(folder);
+        Loader l = new Loader(folder);
+        String removeableQuestion = "Remove";
+        s.addAQuestion(removeableQuestion,"Gonzo","cars");
+        assertTrue(l.getQuizObject("Gonzo", "cars").getQuizQuestions().contains(removeableQuestion));
+        s.removeAQuestion(removeableQuestion, "Gonzo", "cars");
+
 		//test
 		assertTrue(l.getQuizQuestionsConfig("Gonzo", "cars").size()==2);
 		assertFalse(l.getQuizObject("Gonzo", "cars").getQuizQuestions().contains(removeableQuestion));

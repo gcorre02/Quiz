@@ -61,11 +61,14 @@ public class LoaderTest {
 
 		//expecteds
 		String[] expecteds = userNames.toArray(new String[userNames.size()]);
-
+        ArrayList<String> expectedsList = new ArrayList<String>();
+        Collections.addAll(expectedsList,expecteds);
 		//actuals
 		String[] actuals = retrievedUserNames.toArray(new String[retrievedUserNames.size()]);
+        ArrayList<String> actualsList = new ArrayList<String>();
+        Collections.addAll(actualsList,actuals);
 		//test
-		assertArrayEquals(expecteds, actuals);
+		assertTrue(actualsList.contains(expectedsList));
 	}
 
 	@Test
