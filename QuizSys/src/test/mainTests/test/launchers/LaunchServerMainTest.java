@@ -43,7 +43,7 @@ public class LaunchServerMainTest {
         //exec
         ArrayList<String> usernames = lc.run(callClass, callMethod);
         //expected
-        String expected = "Bartolomeu";
+        String expected = "Admin";
         //actual
         String actual = usernames.get(0);
         //test

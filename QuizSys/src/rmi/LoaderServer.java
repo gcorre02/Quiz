@@ -88,13 +88,20 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
             e.printStackTrace();
         }
         T returnableObj = null;
-        try {
-            returnableObj = (T) method.invoke(operator, params);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
+        //try 4 times to invoke method (rough concurrency handling)
+        int error = 0;
+        while(error!=3){
+            try {
+                returnableObj = (T) method.invoke(operator, params);
+                error = 3;
+            } catch (Exception e) {
+                error++;
+                if(error==3){
+                    e.printStackTrace();
+                }
+            }
         }
+
         System.out.println("Called" +operator.getClass().getName() + "."+method.getName()+"() returning object : " + returnableObj);//TODO make this input  a variable
 
         return returnableObj;
