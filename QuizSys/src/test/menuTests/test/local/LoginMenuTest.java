@@ -23,7 +23,7 @@ public class LoginMenuTest {
 		ui = mock(UserInterface.class);
 		l = new Loader(source);
 		s = new Saver(source);
-		um = spy(new LoginMenu(l,s,ui));
+		um = new LoginMenu(l,s,ui);
 	}
 	
 

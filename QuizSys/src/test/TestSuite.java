@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.mainTests.TestSuiteMain;
+import test.menuTests.TestSuiteMenu;
 import test.toolsTests.TestSuiteTools;
 
 /**
@@ -14,16 +15,22 @@ import test.toolsTests.TestSuiteTools;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         SetupSystemFiles.class,
+        //package test suites
         TestSuiteMain.class,
         TestSuiteTools.class,
-        //, local test suites go in here.
+        TestSuiteMenu.class,
+        //remove test files
         DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuite {
     //TODO setUp file system here.
+
     @AfterClass
     public static void close(){
+
         System.out.println("\nClosing, thank you for testing!\nYou might need to manually close the jvm at this point");
+
+
         //System.exit(0);
     }
 }

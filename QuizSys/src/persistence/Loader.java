@@ -68,8 +68,12 @@ public class Loader implements LoaderInterface {
 		}
 		
 		userQuizzes = gson.fromJson(reader, new TypeToken<Map<String,String[]>>(){}.getType());
-		
-		return userQuizzes;
+        try {
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("Couldn't close reader in loader.getUserQuizzes()");
+        }
+        return userQuizzes;
 	}
 	@Override
     public Quiz getQuizObject(String user, String quizName){
