@@ -36,9 +36,7 @@ public class LoginMenu {
 
 	private void runMenu(String menu){
 		char choice = ui.getUserAnswer(menu);
-		//debug
-		System.out.println(choice);
-		//\debug
+
 		switch(choice){
 		case 'A':
 			createNewUser();
@@ -56,22 +54,22 @@ public class LoginMenu {
 			closeProgram();
 			break;
 		default:
-			System.out.println("Couldn't understand the input, please choose again.");
+			ui.printToUser("Couldn't understand the input, please choose again.");
 			run();
 			break;
 		}
 	}
 	
 	private void closeProgram() {
-		System.out.println("Shutting down, thank you.");
+		ui.printToUser("Shutting down, thank you.");
 	}
 	
 	private void login() {
-		System.out.println("Please enter your username:");
+		ui.printToUser("Please enter your username:");
 		String userName = ui.readFromUser();
 		try {
 			if(l.getUsernames().contains(userName)){
-				System.out.println("Welcome "+userName);
+				ui.printToUser("Welcome "+userName);
 				UserMenu um = new UserMenu(l, s, ui, userName);
 				um.run();
 			}else{
@@ -86,7 +84,7 @@ public class LoginMenu {
 	}
 	
 	private void deleteUser() {
-		System.out.println("Please enter the username you wish to delete:");
+		ui.printToUser("Please enter the username you wish to delete:");
 		String user = ui.readFromUser();
 		try {
 			if(s.deleteUser(user)){
@@ -104,13 +102,13 @@ public class LoginMenu {
 	}
 	
 	private void createNewUser() {
-		System.out.println("Please enter the new username:");
+		ui.printToUser("Please enter the new username:");
 		String newUser = ui.readFromUser();
 		try {
 			if(s.addUserName(newUser)){
-				System.out.println(newUser+" has been added");
+				ui.printToUser(newUser+" has been added");
 			}else{
-				System.out.println(newUser+" already exists");
+				ui.printToUser(newUser+" already exists");
 			}
 		} catch (IOException e) {
 			System.out
