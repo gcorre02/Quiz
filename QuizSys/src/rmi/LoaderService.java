@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 /**
- * An implementation of the echo service.
+ * An interface of the Loader service.
  * this is the interface for the server class.
  */
 public interface LoaderService extends Remote {
