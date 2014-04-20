@@ -38,6 +38,7 @@ public class SetupSystemFiles {
         addSomeUsers();
         setupSeptimusBondQuiz();
         setupGuyFawlkesBondQuestions();
+        generateCarsQuiz();//TODO write test to verify files are there.
     }
 
     private void addSomeUsers() throws IOException {
@@ -122,5 +123,18 @@ public class SetupSystemFiles {
         answers.add("MoneyPenny");
         Question updatableQuestion = new Question(questionString, answers, 1, newUser, newquizName);
         s.saveAQuestionObject(updatableQuestion);
+    }
+
+    private Quiz generateCarsQuiz() {
+        String name = "cars";
+        String owner = "Gonzo";
+        Quiz quiz = new Quiz(name, owner);
+        ArrayList<String> quizQuestions = new ArrayList<>();
+        quizQuestions.add("How old is VW?");
+        quizQuestions.add("What was the first big car maker?");
+        quizQuestions.add("What brand is the batmobile?");
+        quiz.setQuizQuestions(quizQuestions);
+        s.saveQuiz(quiz);
+        return quiz;
     }
 }

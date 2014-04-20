@@ -1,21 +1,19 @@
 package test.persistenceTests.test.local;
 
-import static org.junit.Assert.*;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import persistence.Loader;
 import persistence.Saver;
 import quizData.Quiz;
 import tools.CollectionTools;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+
+import static org.junit.Assert.*;
 
 public class LoaderTest {
 	Loader loader;
@@ -28,13 +26,10 @@ public class LoaderTest {
 	public void setUp() throws Exception {
 		folder = "testFiles";
 		loader = new Loader(folder);
-		
+
 		userNames = new ArrayList<>();
-		for(String name : names){
-			userNames.add(name);
-		}
-		s = new Saver(folder);
-		s.saveUserNames(userNames);
+        Collections.addAll(userNames, names);
+
 		
 	}
 
@@ -56,15 +51,14 @@ public class LoaderTest {
 	@Test
 	public final void testGetUsernames() throws IOException {
 		//setup
-		
-		
-		ArrayList<String> retrievedUserNames = new ArrayList<>();
+		ArrayList<String> retrievedUserNames = loader.getUsernames();
 
-		retrievedUserNames = loader.getUsernames();
 		//debug
 		System.out.println(retrievedUserNames.toString());
+
 		//expecteds
 		String[] expecteds = userNames.toArray(new String[0]); 
+
 		//actuals
 		String[] actuals = retrievedUserNames.toArray(new String[0]); 
 		//test
@@ -73,8 +67,6 @@ public class LoaderTest {
 
 	@Test
 	public final void testGetUserQuizzesMap(){
-		//setup
-		generateGonzoQuizzes();
 		//expected
 		String[] expecteds = gonzoQuizzes;
 		String[] expectedKeys = names;
@@ -88,20 +80,10 @@ public class LoaderTest {
 		assertTrue(CollectionTools.compareTwoArrays(actualKeys, expectedKeys));
 	}
 
-	private void generateGonzoQuizzes() {
-		Map<String, String[]> userQuizzes = new HashMap<>();
-		
-		for(String name : names){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
-		s.saveUserQuizzes(userQuizzes);
-	}
-	
+
 	@Test
 	public final void testGetQuizConfig(){
 		//setup
-		generateGonzoQuizzes();
 		Quiz quiz = generateCarsQuiz();
 		Quiz newQuiz = loader.getQuizObject("Gonzo", "cars");
 		//expected
@@ -113,19 +95,18 @@ public class LoaderTest {
 		//test
 		assertEquals(expected, actual);
 	}
+    private Quiz generateCarsQuiz() {
+        String name = "cars";
+        String owner = "Gonzo";
+        Quiz quiz = new Quiz(name, owner);
+        ArrayList<String> quizQuestions = new ArrayList<>();
+        quizQuestions.add("How old is VW?");
+        quizQuestions.add("What was the first big car maker?");
+        quizQuestions.add("What brand is the batmobile?");
+        quiz.setQuizQuestions(quizQuestions);
+        return quiz;
+    }
 
-	private Quiz generateCarsQuiz() {
-		String name = "cars";
-		String owner = "Gonzo";
-		Quiz quiz = new Quiz(name, owner);
-		ArrayList<String> quizQuestions = new ArrayList<>();
-		quizQuestions.add("How old is VW?");
-		quizQuestions.add("What was the first big car maker?");
-		quizQuestions.add("What brand is the batmobile?");
-		quiz.setQuizQuestions(quizQuestions);
-		s.saveQuiz(quiz);
-		return quiz;
-	}
 	
 
 	//@Test
