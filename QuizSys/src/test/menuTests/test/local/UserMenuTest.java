@@ -1,4 +1,4 @@
-package test.menuTests.test;
+package test.menuTests.test.local;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
