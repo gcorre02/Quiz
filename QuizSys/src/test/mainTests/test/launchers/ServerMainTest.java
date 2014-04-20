@@ -44,5 +44,6 @@ public class ServerMainTest {
         when(ui.printToUser(anyString())).thenCallRealMethod();
         ServerMain.launch(source, ui);
         verify(ui).getUserAnswer(anyString());
+        verify(ui).printToUser("Couldn't understand input. Bye");
     }
 }

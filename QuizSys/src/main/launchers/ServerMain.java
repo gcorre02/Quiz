@@ -28,7 +28,7 @@ public class ServerMain {
         else if(choice == 'B')
             LaunchUserServerVersion.main(new String[]{source});
         else
-            System.out.println("Couldn't understand input. Bye");
+            ui.printToUser("Couldn't understand input. Bye");
     }
 
 
