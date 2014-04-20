@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Question;
 import quizData.Quiz;
 import tools.CollectionTools;
 
@@ -35,7 +36,7 @@ public class SetupSystemFiles {
         s = new Saver(source);
         l = new Loader(source);
         addSomeUsers();
-        SetupSeptimusBondQuiz();
+        setupSeptimusBondQuiz();
     }
 
     private void addSomeUsers() throws IOException {
@@ -80,7 +81,7 @@ public class SetupSystemFiles {
         assertTrue(bond instanceof Quiz);
     }
 
-    private void SetupSeptimusBondQuiz(){
+    private void setupSeptimusBondQuiz(){
 
         user = "Septimus";
         quizName = "Bond Villains";
@@ -94,5 +95,31 @@ public class SetupSystemFiles {
         newQuiz.setQuizQuestions(quizQuestions);
         s.addQuiz(quizName, user, l.getUserQuizzes());
         s.saveQuiz(newQuiz);
+    }
+    private void setupGuyFawlkesBondQuestions(){
+        String newUser = "Guy Fawlkes";
+        String newquizName = "Another Bond";
+        try {
+            s.addUserName(user);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Quiz newQuiz = new Quiz(quizName, user);
+        ArrayList<String> quizQuestions = new ArrayList<>();
+        String questionString = "Who is the sexiest bond villain?";
+        quizQuestions.add("Which bond villain has a massive jaw?");
+        quizQuestions.add("Which bond villain has a golden penis?");
+        quizQuestions.add(questionString);
+        quizQuestions.add("Which bond villain is actually a nice person?");
+        newQuiz.setQuizQuestions(quizQuestions);
+        s.addQuiz(quizName, user, l.getUserQuizzes());
+        s.saveQuiz(newQuiz);
+        ArrayList<String> answers = new ArrayList<String>();
+        answers.add("Odd Job");
+        answers.add("Octopussy");
+        answers.add("Bane");
+        answers.add("MoneyPenny");
+        Question updatableQuestion = new Question(questionString, answers, 1, user, quizName);
+        s.saveAQuestionObject(updatableQuestion);
     }
 }

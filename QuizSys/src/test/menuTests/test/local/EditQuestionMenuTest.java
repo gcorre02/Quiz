@@ -1,67 +1,46 @@
 package test.menuTests.test.local;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
 import menu.EditQuestionMenu;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import persistence.Loader;
 import persistence.Saver;
 import quizData.Question;
 import quizData.Quiz;
 import tools.UserInterface;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class EditQuestionMenuTest {
 
 	private Loader l;
 	private Saver s;
 	private UserInterface ui;
-	private String user;
-	private String quizName;
-	private Quiz newQuiz;
 	private EditQuestionMenu eqm;
-	private ArrayList<String> quizQuestions;
-	private Question updatableQuestion;
-	private ArrayList<String> answers;
-	String questionString;
+	private String questionString;
+    private String newUser;
+    private String newquizName;
 
-	@Before
+    @Before
 	public void setUp() throws Exception {
 		//TODO need to setup the file system.
-		String source = "testFiles";
+        newquizName = "Another Bond";
+        newUser = "Guy Fawlkes";
+
+        String source = "testFiles";
 		s = new Saver(source);
 		l = new Loader(source);
 		ui = mock(UserInterface.class);
-		user = "Guy Fawlkes";
-		s.addUserName(user);
-		quizName = "Another Bond";
-		newQuiz = new Quiz(quizName, user);
-		quizQuestions = new ArrayList<>();
-		questionString ="Who is the sexiest bond villain?";
-		quizQuestions.add("Which bond villain has a massive jaw?");
-		quizQuestions.add("Which bond villain has a golden penis?");
-		quizQuestions.add(questionString);
-		quizQuestions.add("Which bond villain is actually a nice person?");
-		newQuiz.setQuizQuestions(quizQuestions);
-		s.addQuiz(quizName, user, l.getUserQuizzes());
-		s.saveQuiz(newQuiz);
-		answers = new ArrayList<String>();
-		answers.add("Odd Job");
-		answers.add("Octopussy");
-		answers.add("Bane");
-		answers.add("MoneyPenny");
-		updatableQuestion = new Question(questionString, answers, 1, user, quizName);
-		s.saveAQuestionObject(updatableQuestion);
-		eqm = new EditQuestionMenu(questionString,l, s, ui, user, quizName);
+
+        questionString = "Who is the sexiest bond villain?";
+        eqm = new EditQuestionMenu(questionString,l, s, ui, newUser, newquizName);
 	}
 
 	@After
