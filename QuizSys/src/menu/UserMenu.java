@@ -72,7 +72,7 @@ public class UserMenu {
 		//find the name for the selected quiz.
 		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
 		//debug
-		ui.printToUser(quizName+" <<<<WAS PICKED>>>>");
+		ui.printToUser("You picked " + quizName);
 		//debug
 		EditQuizMenu eqm = new EditQuizMenu(l,s,ui,user,quizName);
 		try {

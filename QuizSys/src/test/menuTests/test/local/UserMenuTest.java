@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static junit.framework.TestCase.assertFalse;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class UserMenuTest {
@@ -65,35 +65,48 @@ public class UserMenuTest {
         s.addQuiz(newQuiz,newUser,l.getUserQuizzes());
         UserMenu num = new UserMenu(l,s,ui,newUser);
         //mock
-		when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
+		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
 		when(ui.readFromUser()).thenReturn("0");
 		//run
         num.run();
-		num.run();
         //test
         File f = new File(source + File.separator + newUser + File.separator + newQuiz + File.separator + newQuiz + ".txt");
 		assertFalse(f.exists());
 	}
 
-	//TODO this is just a stubbed test for debug
 	@Test
-	public final void testCreateQuiz(){
-		//creates 3 quizzes
+	public final void testCreateQuiz() throws IOException {
+        //setup
+        String newUser = "Johnny Q";
+        s.addUserName(newUser);
+        String newQuiz = "Boats Boats Boats";
+        String newQuiz1 = "cars 2";
+        String newQuiz2 = "numbers 2";
+        UserMenu num = new UserMenu(l,s,ui,newUser);
+        //creates 3 quizzes
 		when(ui.getUserAnswer(anyString())).thenReturn('A','D','A','D','A','D');
-		when(ui.readFromUser()).thenReturn("Boats Boats Boats","cars 2", "numbers 2");
-		um.run();
-		um.run();
-		um.run();
-		fail("Not yet implemented"); // TODO
+		when(ui.readFromUser()).thenReturn(newQuiz, newQuiz1, newQuiz2);
+		//run
+        num.run();
+		num.run();
+		num.run();
+        File f = new File(source + File.separator + newUser + File.separator + newQuiz + File.separator + newQuiz + ".txt");
+        File f1 = new File(source + File.separator + newUser + File.separator + newQuiz1 + File.separator + newQuiz1 + ".txt");
+        File f2 = new File(source + File.separator + newUser + File.separator + newQuiz2 + File.separator + newQuiz2 + ".txt");
+        //test
+        assertTrue(f.exists());
+        assertTrue(f1.exists());
+        assertTrue(f2.exists());
 	}
 	//TODO this is just a stubbed test for debug
 	@Test
 	public final void testEditQuiz(){
-		
+		//mock
 		when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');
 		when(ui.readFromUser()).thenReturn("0");
-		um.run();
-		
-		fail("Not yet implemented"); // TODO
+		//run
+        um.run();
+		//test
+        verify(ui).printToUser("You picked " + "numbers");
 	}
 }
