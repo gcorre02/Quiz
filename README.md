@@ -1,8 +1,10 @@
 Quiz System
 ====
-
+Some javadocs are missing in a few classes and some tests are not totally implemented. otherwise, all expected behaviour works.
+====
 
 Running (Parenthesis are just explaining what things are):
+
 
 Run server version  
 
@@ -13,6 +15,8 @@ java -Djava.security.policy=security.policy LaunchServerMain(.class) systemFolde
 client
 
 java -Djava.security.policy=security.policy ServerMain(.class) systemFolder(arg)
+
+
 
 Run Local Version
 
