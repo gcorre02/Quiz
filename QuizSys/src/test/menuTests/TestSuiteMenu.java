@@ -8,6 +8,7 @@ package test.menuTests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import test.menuTests.test.local.EditQuestionMenuTest;
 import test.menuTests.test.local.EditQuizMenuTest;
 import test.menuTests.test.local.LoginMenuTest;
 import test.menuTests.test.local.UserMenuTest;
@@ -21,6 +22,7 @@ import test.menuTests.test.remote.UserMenuRmiTest;
         LoginMenuTest.class,
         UserMenuTest.class,
         EditQuizMenuTest.class,
+        EditQuestionMenuTest.class,
 
         //Remote
         LoginMenuRmiTest.class,

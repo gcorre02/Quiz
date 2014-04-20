@@ -37,6 +37,7 @@ public class SetupSystemFiles {
         l = new Loader(source);
         addSomeUsers();
         setupSeptimusBondQuiz();
+        setupGuyFawlkesBondQuestions();
     }
 
     private void addSomeUsers() throws IOException {
@@ -100,11 +101,11 @@ public class SetupSystemFiles {
         String newUser = "Guy Fawlkes";
         String newquizName = "Another Bond";
         try {
-            s.addUserName(user);
+            s.addUserName(newUser);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Quiz newQuiz = new Quiz(quizName, user);
+        Quiz newQuiz = new Quiz(newquizName, newUser);
         ArrayList<String> quizQuestions = new ArrayList<>();
         String questionString = "Who is the sexiest bond villain?";
         quizQuestions.add("Which bond villain has a massive jaw?");
@@ -112,14 +113,14 @@ public class SetupSystemFiles {
         quizQuestions.add(questionString);
         quizQuestions.add("Which bond villain is actually a nice person?");
         newQuiz.setQuizQuestions(quizQuestions);
-        s.addQuiz(quizName, user, l.getUserQuizzes());
+        s.addQuiz(newquizName, newUser, l.getUserQuizzes());
         s.saveQuiz(newQuiz);
         ArrayList<String> answers = new ArrayList<String>();
         answers.add("Odd Job");
         answers.add("Octopussy");
         answers.add("Bane");
         answers.add("MoneyPenny");
-        Question updatableQuestion = new Question(questionString, answers, 1, user, quizName);
+        Question updatableQuestion = new Question(questionString, answers, 1, newUser, newquizName);
         s.saveAQuestionObject(updatableQuestion);
     }
 }

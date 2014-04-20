@@ -1,28 +1,26 @@
 package test.menuTests.test.local;
 
 import menu.EditQuestionMenu;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import persistence.Loader;
+import persistence.LoaderInterface;
 import persistence.Saver;
-import quizData.Question;
-import quizData.Quiz;
+import persistence.SaverInterface;
 import tools.UserInterface;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class EditQuestionMenuTest {
 
-	private Loader l;
-	private Saver s;
-	private UserInterface ui;
+	private LoaderInterface l;
+    private UserInterface ui;
 	private EditQuestionMenu eqm;
 	private String questionString;
     private String newUser;
@@ -35,7 +33,7 @@ public class EditQuestionMenuTest {
         newUser = "Guy Fawlkes";
 
         String source = "testFiles";
-		s = new Saver(source);
+        SaverInterface s = new Saver(source);
 		l = new Loader(source);
 		ui = mock(UserInterface.class);
 
@@ -43,19 +41,6 @@ public class EditQuestionMenuTest {
         eqm = new EditQuestionMenu(questionString,l, s, ui, newUser, newquizName);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public final void testRun() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testEditQuestionMenu() {
-		fail("Not yet implemented"); // TODO
-	}
 
 	@Test
 	public final void testChangeRightAnswerInt() throws IOException {
@@ -66,21 +51,21 @@ public class EditQuestionMenuTest {
 		//expected
 		int expected = 0;
 		//actual
-		int actual = l.getQuestionObject(user, quizName, questionString).getRightAnswer();
+		int actual = l.getQuestionObject(newUser, newquizName, questionString).getRightAnswer();
 		//test
 		assertEquals(expected, actual);
 	}
 	@Test
 	public final void testDeleteAnswer() throws IOException {
 		//expected
-		String expected = l.getQuestionObject(user, quizName, questionString).getAnswer(1);
+		String expected = l.getQuestionObject(newUser, newquizName, questionString).getAnswer(1);
 		//Setup
 		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
 		when(ui.readFromUser()).thenReturn("1");
 		eqm.run();
 		//actual
 		//test
-		assertFalse(l.getQuestionObject(user, quizName, questionString).getAnswers().contains(expected));
+		assertFalse(l.getQuestionObject(newUser, newquizName, questionString).getAnswers().contains(expected));
 	}
 
 	@Test
@@ -93,7 +78,7 @@ public class EditQuestionMenuTest {
 		eqm.run();
 		
 		//actual
-		String actual = l.getQuestionObject(user, quizName, questionString).getAnswer(4);
+		String actual = l.getQuestionObject(newUser, newquizName, questionString).getAnswer(3);
 		//test
 		assertEquals(expected, actual);
 	}
