@@ -109,5 +109,4 @@ public class UserMenu {
 		else
 			ui.printToUser(newQuizName + " could not be created.");
 	}
-
 }

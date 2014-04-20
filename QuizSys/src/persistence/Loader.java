@@ -91,9 +91,13 @@ public class Loader implements LoaderInterface {
 			System.out.print("Object File cannot be accessed");
 			return null;
 		}
-		returnQuiz = gson.fromJson(reader, Quiz.class);
-		
-		return returnQuiz;
+        returnQuiz = gson.fromJson(reader, Quiz.class);
+        try {
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return returnQuiz;
 	}
 
 	@Override
@@ -147,7 +151,8 @@ public class Loader implements LoaderInterface {
 			return null;
 		}
 		returnQuestion = gson.fromJson(reader, Question.class);
-		
+		reader.close();
+
 		return returnQuestion;
 	}
 }
