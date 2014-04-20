@@ -99,11 +99,8 @@ public class PlayerMenu {
         //\debug
         //RUN QUIZ
         PlayAQuizMenu paqm = new PlayAQuizMenu(ui,pl,ps, playerName, quizOwner, quiz);
-        try {
-            paqm.run();
-        } catch (Exception e) {
-            System.out.println("Couldn't complete quiz, please play again later");
-        }
+        paqm.run();
+
     }
 
     private void showAllQuizzes() {

@@ -9,10 +9,7 @@ import quizData.Quiz;
 import tools.CollectionTools;
 import tools.UserInterface;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Admin on 15/04/2014.
@@ -26,7 +23,7 @@ public class PlayAQuizMenu {
     private String quizOwner;
     private String quiz;
 
-    public void run() throws Exception{
+    public void run(){
 
         //TODO played counter needs to be implemented into the Player Object
 

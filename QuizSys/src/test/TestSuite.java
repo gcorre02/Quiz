@@ -6,9 +6,7 @@ import org.junit.runners.Suite;
 import test.mainTests.TestSuiteMain;
 import test.menuTests.TestSuiteMenu;
 import test.persistenceTests.TestSuitePersistence;
-import test.playerTests.TestSuitePlayer;
 import test.quizDataTests.TestSuiteQuizData;
-import test.rmiTests.TestSuiteRmi;
 import test.toolsTests.TestSuiteTools;
 
 /**
@@ -24,12 +22,12 @@ import test.toolsTests.TestSuiteTools;
         TestSuiteTools.class,
         TestSuiteMenu.class,
         TestSuitePersistence.class,
-        TestSuitePlayer.class,
+        //TestSuitePlayer.class,
         TestSuiteQuizData.class,
-        TestSuiteRmi.class,
+        //TestSuiteRmi.class,
         //remove test files
-        DeleteSystemFiles.class // to be called at the end.
-})
+   //     DeleteSystemFiles.class // to be called at the end.
+})//Deprecated test suites haveonly stubs of test files.
 public class TestSuite {
     //TODO setUp file system here.
 

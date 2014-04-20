@@ -64,7 +64,6 @@ public class SetupSystemFiles {
         System.out.println(CollectionTools.printMap(l.getUserQuizzes()));
         //Expected
         Set<String> expectedKeys = new HashSet<>();
-        expectedKeys.add("Admin");
         expectedKeys.add("Gonzo");
         expectedKeys.add("Septimus");
         //actual
