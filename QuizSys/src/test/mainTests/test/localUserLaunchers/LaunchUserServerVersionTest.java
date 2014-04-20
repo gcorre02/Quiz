@@ -12,7 +12,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Created by Admin on 20/04/2014.
+ *
+ * Created by Guilherme on 20/04/2014.
+ *
+ *
  */
 public class LaunchUserServerVersionTest {
     private String source;

@@ -1,4 +1,4 @@
-package test.menuTests;
+package test.menuTests.test;
 
 import static org.mockito.Mockito.*;
 

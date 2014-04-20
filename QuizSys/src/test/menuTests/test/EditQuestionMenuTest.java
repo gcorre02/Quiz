@@ -1,4 +1,4 @@
-package test.menuTests;
+package test.menuTests.test;
 
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.anyString;
