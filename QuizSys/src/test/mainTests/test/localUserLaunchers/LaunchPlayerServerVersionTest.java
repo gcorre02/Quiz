@@ -1,6 +1,6 @@
 package test.mainTests.test.localUserLaunchers;
 
-import main.LocalUserLaunchers.LaunchUserServerVersion;
+import main.LocalUserLaunchers.LaunchPlayerServerVersion;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,9 +12,11 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Created by Admin on 20/04/2014.
+ *
+ * Created by Guilherme on 20/04/2014.
+ *
  */
-public class LaunchUserServerVersionTest {
+public class LaunchPlayerServerVersionTest {
     private String source;
     private UserInterface ui;
 
@@ -34,7 +36,7 @@ public class LaunchUserServerVersionTest {
     public void testLaunch() throws Exception {
         when(ui.printToUser(anyString())).thenCallRealMethod();
         when(ui.getUserAnswer(anyString())).thenReturn('D');
-        LaunchUserServerVersion.launch(source, ui);
-        verify(ui).printToUser("Shutting down, thank you.");
+        LaunchPlayerServerVersion.launch(source, ui);
+        verify(ui).printToUser("Thank you for Playing! ");
     }
 }

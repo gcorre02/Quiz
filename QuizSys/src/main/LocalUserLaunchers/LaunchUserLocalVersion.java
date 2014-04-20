@@ -13,8 +13,6 @@ import tools.UserInterface;
  * Created by Admin on 15/04/2014.
  */
 public class LaunchUserLocalVersion {
-    private static LoaderInterface l;
-    private static SaverInterface s;
 
     /**
      * Launches the UserSystem
@@ -32,8 +30,8 @@ public class LaunchUserLocalVersion {
      * @param ui a potential mock of user interface.
      */
     public static void launch(String source, UserInterface ui) {
-        s = new Saver(source);
-        l = new Loader(source);
+        SaverInterface s = new Saver(source);
+        LoaderInterface l = new Loader(source);
         LoginMenu lm = new LoginMenu(l,s,ui);
         lm.run();
     }

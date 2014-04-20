@@ -12,8 +12,7 @@ import tools.UserInterface;
  *
  */
 public class LaunchPlayerLocalVersion {
-    private static PlayerSaver ps;
-    private static PlayerLoader pl;
+
 
     /**
      * Launch the local player quiz system
@@ -31,8 +30,8 @@ public class LaunchPlayerLocalVersion {
      * @param ui param to pass in an instance of the UserInterface, opens the possibility for mocking.
      */
     public static void launch(String source, UserInterface ui) {
-        ps = new PlayerSaver(source);
-        pl = new PlayerLoader(source);
+        PlayerSaver ps = new PlayerSaver(source);
+        PlayerLoader pl = new PlayerLoader(source);
         PlayerLoginMenu plm = new PlayerLoginMenu(pl,ps,ui);
         plm.run();
     }

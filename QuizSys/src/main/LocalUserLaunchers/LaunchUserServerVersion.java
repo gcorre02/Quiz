@@ -10,12 +10,10 @@ import tools.UserInterface;
  * Created by Guilherme on 15/04/2014.
  */
 public class LaunchUserServerVersion {
-    private static LoaderInterface l;
-    private static SaverInterface s;
 
     /**
      * The User System launcher for the server version.
-     * @param args
+     * @param args [0] position the path to the file structure.
      */
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
@@ -29,8 +27,8 @@ public class LaunchUserServerVersion {
      * @param ui the inputted UserInterface obj
      */
     public static void launch(String source, UserInterface ui) {
-        s = new SaverRmiCaller(source);
-        l = new LoaderRmiCaller(source);
+        SaverInterface s = new SaverRmiCaller(source);
+        LoaderInterface l = new LoaderRmiCaller(source);
         LoginMenu lm = new LoginMenu(l,s,ui);
         lm.run();
     }

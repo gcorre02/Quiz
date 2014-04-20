@@ -6,6 +6,7 @@ import test.mainTests.test.launchers.LaunchServerMainTest;
 import test.mainTests.test.launchers.LocalMainTest;
 import test.mainTests.test.launchers.ServerMainTest;
 import test.mainTests.test.localUserLaunchers.LaunchPlayerLocalVersionTest;
+import test.mainTests.test.localUserLaunchers.LaunchPlayerServerVersionTest;
 import test.mainTests.test.localUserLaunchers.LaunchUserLocalVersionTest;
 import test.mainTests.test.localUserLaunchers.LaunchUserServerVersionTest;
 
@@ -23,8 +24,9 @@ import test.mainTests.test.localUserLaunchers.LaunchUserServerVersionTest;
         //userSpecific local Launchers.
         LaunchPlayerLocalVersionTest.class,
         LaunchUserLocalVersionTest.class,
-        //userSpecific server launchers
-        LaunchUserServerVersionTest.class
+        //userSpecific server launchers //TODO need to create a handler for grabbing the source file location variable.
+        LaunchUserServerVersionTest.class,
+        LaunchPlayerServerVersionTest.class
         //SetupSystemFiles.class,DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuiteMain {

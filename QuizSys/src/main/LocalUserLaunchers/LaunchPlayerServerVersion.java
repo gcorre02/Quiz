@@ -5,17 +5,25 @@ import player.PlayerLoginMenu;
 import tools.UserInterface;
 
 /**
- * Created by Admin on 15/04/2014.
+ * Launches the server version of the Player quiz system.
+ *
+ * Created by Guilherme on 15/04/2014.
  */
 public class LaunchPlayerServerVersion {
-    private static PlayerLoaderInterface pl;
-    private static PlayerSaverInterface ps;
 
+    /**
+     * main version of the Player server system launcher
+     * @param args [0] position is the path to the file structure.
+     */
     public static void main(String[] args) {
-        ps = new PlayerSaverRmiCaller(args[0]);
-        pl = new PlayerLoaderRmiCaller(args[0]);
         UserInterface ui = new UserInterface();
-        PlayerLoginMenu plm = new PlayerLoginMenu(pl,ps,ui);
+        launch(args[0], ui);
+    }
+
+    public static void launch(String source, UserInterface ui) {
+        PlayerSaverInterface ps = new PlayerSaverRmiCaller(source);
+        PlayerLoaderInterface pl = new PlayerLoaderRmiCaller(source);
+        PlayerLoginMenu plm = new PlayerLoginMenu(pl, ps,ui);
         plm.run();
     }
 }
