@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
+import quizData.Quiz;
 import tools.CollectionTools;
 
 import java.io.File;
@@ -25,6 +26,8 @@ public class SetupSystemFiles {
     private String source;
     private Loader l;
     private ArrayList<String> userNames;
+    private String user;
+    private String quizName;
 
     @Before
     public void beforeTests() throws Exception{
@@ -32,6 +35,7 @@ public class SetupSystemFiles {
         s = new Saver(source);
         l = new Loader(source);
         addSomeUsers();
+        SetupSeptimusBondQuiz();
     }
 
     private void addSomeUsers() throws IOException {
@@ -67,5 +71,28 @@ public class SetupSystemFiles {
         Set<String> actualKeys = l.getUserQuizzes().keySet();
         //test
         assertTrue(actualKeys.containsAll(expectedKeys));
+    }
+
+    @Test
+    public void checkSeptimusQuizExists(){
+        Quiz bond = l.getQuizObject(user, quizName);
+        assertTrue(bond.getOwner().equals(user));
+        assertTrue(bond instanceof Quiz);
+    }
+
+    private void SetupSeptimusBondQuiz(){
+
+        user = "Septimus";
+        quizName = "Bond Villains";
+        Quiz newQuiz = new Quiz(quizName, user);
+
+        ArrayList<String> quizQuestions = new ArrayList<>();
+        quizQuestions.add("Which bond villain has a massive jaw?");
+        quizQuestions.add("Which bond villain has a golden penis?");
+        quizQuestions.add("Who is the sexiest bond villain?");
+        quizQuestions.add("Which bond villain is actually a nice person?");
+        newQuiz.setQuizQuestions(quizQuestions);
+        s.addQuiz(quizName, user, l.getUserQuizzes());
+        s.saveQuiz(newQuiz);
     }
 }

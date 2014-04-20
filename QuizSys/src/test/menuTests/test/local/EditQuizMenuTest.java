@@ -1,22 +1,21 @@
 package test.menuTests.test.local;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import menu.EditQuizMenu;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import persistence.Loader;
+import persistence.LoaderInterface;
+import persistence.Saver;
+import persistence.SaverInterface;
+import quizData.Quiz;
+import tools.UserInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import menu.EditQuizMenu;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-
-import persistence.Loader;
-import persistence.Saver;
-import quizData.Quiz;
-import tools.UserInterface;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.*;
 
 public class EditQuizMenuTest {
 	private Quiz newQuiz;
@@ -24,34 +23,27 @@ public class EditQuizMenuTest {
 	private String user;
 	private UserInterface ui;
 	private String quizName;
-	private Loader l;
-	private Saver s;
+	private LoaderInterface l;
+	private SaverInterface s;
 	private ArrayList<String> quizQuestions;
+    private String source;
 
 	@Before
 	public void setUp() throws Exception {
-		//TODO need to setup the file system.
-		String source = "testFiles";
-		l = new Loader(source);
+	    source = "testFiles";
+        l = new Loader(source);
 		s = new Saver(source);
 		ui = mock(UserInterface.class);
-		user = "Septimus";
-		quizName = "Bond Villains";
-		newQuiz = new Quiz(quizName, user);
-		eqm = new EditQuizMenu(l, s, ui, user, quizName);
-		quizQuestions = new ArrayList<>();
-		quizQuestions.add("Which bond villain has a massive jaw?");
-		quizQuestions.add("Which bond villain has a golden penis?");
-		quizQuestions.add("Who is the sexiest bond villain?");
-		quizQuestions.add("Which bond villain is actually a nice person?");
-		newQuiz.setQuizQuestions(quizQuestions);
-		s.addQuiz(quizName, user, l.getUserQuizzes());
-		s.saveQuiz(newQuiz);
+        eqm = new EditQuizMenu(l, s, ui, user, quizName);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		//TODO remove files from system...
+		l=null;
+        s=null;
+        source=null;
+        ui = null;
+        eqm = null;
 	}
 
 	@Test
