@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestSuite.java" afterPath="$PROJECT_DIR$/src/test/TestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/UserMenu.java" afterPath="$PROJECT_DIR$/src/menu/UserMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java" afterPath="$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/menuTests/test/remote/UserMenuRmiTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" afterPath="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -32,66 +31,7 @@
     <favorites_list name="QuizSys" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TestSuiteMenu.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="527">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMenuTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6126582" vertical-offset="1356" max-vertical-offset="1751">
-              <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetupSystemFiles.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/SetupSystemFiles.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1309">
-              <caret line="68" column="54" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestSuite.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="629">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMenu.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/menu/UserMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="1904">
-              <caret line="74" column="47" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1550#1551#0" expanded="true" />
-                <element signature="e#1597#1598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -104,8 +44,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/persistence/PlayerLoader.java" />
-        <option value="$PROJECT_DIR$/src/tools/CollectionPrinter.java" />
         <option value="$PROJECT_DIR$/src/tools/CollectionTools.java" />
         <option value="$PROJECT_DIR$/src/userInterface/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/test/TestSuiteStub.java" />
@@ -150,11 +88,13 @@
         <option value="$PROJECT_DIR$/src/menu/LoginMenu.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/LoginMenuTest.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/LoginMenuRmiTest.java" />
-        <option value="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" />
         <option value="$PROJECT_DIR$/src/persistence/Saver.java" />
-        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/menu/UserMenu.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java" />
+        <option value="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" />
+        <option value="$PROJECT_DIR$/src/persistence/SaverRmiCaller.java" />
+        <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/UserMenuRmiTest.java" />
+        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
       </list>
     </option>
   </component>
@@ -667,7 +607,7 @@
       <workItem from="1397680897267" duration="9732000" />
       <workItem from="1397872664682" duration="461000" />
       <workItem from="1397903957806" duration="39332000" />
-      <workItem from="1397987097101" duration="4981000" />
+      <workItem from="1397987097101" duration="6181000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -833,15 +773,19 @@
       <created>1397991235617</created>
       <updated>1397991235617</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="implemented propper tests in UserMenuTest.class">
+      <created>1397992128545</created>
+      <updated>1397992128545</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55144000" />
+    <option name="totallyTimeSpent" value="56344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -858,7 +802,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33700788" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -885,7 +829,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="optimized code in LocalMain and LMTest" />
     <MESSAGE value="restructured tests further." />
     <MESSAGE value="re-added LocalMainTest" />
     <MESSAGE value="optimized code in server main." />
@@ -910,28 +853,15 @@
     <MESSAGE value="added propper tests to LoginMenuTest.class" />
     <MESSAGE value="refactored a copy of LoginMenuTest to also test interaction with remote." />
     <MESSAGE value="refactored Saver to create a proper object of a quiz file when it generates quiz stubs." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored Saver to create a proper object of a quiz file when it generates quiz stubs." />
+    <MESSAGE value="implemented propper tests in UserMenuTest.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented propper tests in UserMenuTest.class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/rmiTests/LoaderClientTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7875" vertical-offset="195" max-vertical-offset="680">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="850">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/persistenceTests/PlayerSaverTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6279683" vertical-offset="0" max-vertical-offset="986">
@@ -1032,13 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07751938" vertical-offset="820" max-vertical-offset="1666">
-          <caret line="60" column="102" selection-start-line="60" selection-start-column="102" selection-end-line="60" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/rmiTests/LoaderRmiCallerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44854882" vertical-offset="0" max-vertical-offset="1241">
@@ -1050,13 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.405" vertical-offset="467" max-vertical-offset="969">
           <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security.policy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.032911394" vertical-offset="64" max-vertical-offset="459">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1078,6 +994,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0329113" vertical-offset="13" max-vertical-offset="969">
           <caret line="53" column="138" selection-start-line="53" selection-start-column="138" selection-end-line="53" selection-end-column="138" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,30 +1165,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="527">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/persistence/Saver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59947646" vertical-offset="3392" max-vertical-offset="7021">
-          <caret line="213" column="39" selection-start-line="213" selection-start-column="39" selection-end-line="213" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/SetupSystemFiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1309">
+        <state vertical-scroll-proportion="1.506329" vertical-offset="561" max-vertical-offset="1309">
           <caret line="68" column="54" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1356" max-vertical-offset="1751">
+          <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security.policy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1311054" vertical-offset="0" max-vertical-offset="459">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89578164" vertical-offset="30" max-vertical-offset="561">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1280,29 +1203,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="629">
+        <state vertical-scroll-proportion="0.7171216" vertical-offset="0" max-vertical-offset="629">
           <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25897437" vertical-offset="1276" max-vertical-offset="1666">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/menuTests/test/remote/UserMenuRmiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31513646" vertical-offset="1148" max-vertical-offset="1768">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/UserMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="1904">
-          <caret line="74" column="47" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="47" />
+        <state vertical-scroll-proportion="2.2102563" vertical-offset="787" max-vertical-offset="1870">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1550#1551#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java">
+    <entry file="file://$PROJECT_DIR$/src/persistence/SaverRmiCaller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6126582" vertical-offset="1356" max-vertical-offset="1751">
-          <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.31513646" vertical-offset="1131" max-vertical-offset="2261">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/Saver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0128205" vertical-offset="1907" max-vertical-offset="2958">
+          <caret line="224" column="38" selection-start-line="224" selection-start-column="38" selection-end-line="224" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Saver#0" expanded="false" />
+            <element signature="method#Saver#0;class#Saver#0" expanded="false" />
+            <element signature="method#createUserQuizzes#0;class#Saver#0" expanded="false" />
+            <element signature="method#createUserNames#0;class#Saver#0" expanded="false" />
+            <element signature="method#createFolder#0;class#Saver#0" expanded="false" />
+            <element signature="docComment;method#saveUserNames#0;class#Saver#0" expanded="false" />
+            <element signature="method#saveUserNames#0;class#Saver#0" expanded="false" />
+            <element signature="method#addUserName#0;class#Saver#0" expanded="false" />
+            <element signature="method#addUserToUserQuizzes#0;class#Saver#0" expanded="false" />
+            <element signature="method#createUserFolders#0;class#Saver#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#Saver#0" expanded="false" />
+            <element signature="method#deleteUserFromUserQuizzes#0;class#Saver#0" expanded="false" />
+            <element signature="method#deleteFolder#0;class#Saver#0" expanded="false" />
+            <element signature="method#saveUserQuizzes#0;class#Saver#0" expanded="false" />
+            <element signature="method#writeUserQuizzesJson#0;class#Saver#0" expanded="false" />
+            <element signature="method#createQuizFiles#0;class#Saver#0" expanded="false" />
+            <element signature="method#generateQuizFiles#0;class#Saver#0" expanded="false" />
+            <element signature="method#removeQuiz#0;class#Saver#0" expanded="false" />
+            <element signature="docComment;method#saveQuiz#0;class#Saver#0" expanded="false" />
+            <element signature="method#saveQuiz#0;class#Saver#0" expanded="false" />
+            <element signature="method#saveQuizConfig#0;class#Saver#0" expanded="false" />
+            <element signature="method#saveQuizObject#0;class#Saver#0" expanded="false" />
+            <element signature="method#generateQuestionFiles#0;class#Saver#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

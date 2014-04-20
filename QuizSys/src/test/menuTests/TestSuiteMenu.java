@@ -11,6 +11,7 @@ import org.junit.runners.Suite;
 import test.menuTests.test.local.LoginMenuTest;
 import test.menuTests.test.local.UserMenuTest;
 import test.menuTests.test.remote.LoginMenuRmiTest;
+import test.menuTests.test.remote.UserMenuRmiTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -19,7 +20,8 @@ import test.menuTests.test.remote.LoginMenuRmiTest;
         UserMenuTest.class,
 
         //Remote
-        LoginMenuRmiTest.class
+        LoginMenuRmiTest.class,
+        UserMenuRmiTest.class
 })
 public class TestSuiteMenu {
 }
