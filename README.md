@@ -1,16 +1,24 @@
 Quiz System
 ====
 
+
 Running (Parenthesis are just explaining what things are):
 
 Run server version  
+
 server
+
 java -Djava.security.policy=security.policy LaunchServerMain(.class) systemFolder(arg)
+
 client
+
 java -Djava.security.policy=security.policy ServerMain(.class) systemFolder(arg)
 
 Run Local Version
+
 java LocalMain(.class) systemFolder(arg)
+
+
 
 ====
 
@@ -28,3 +36,10 @@ Mockito 1.9.5 (Mocking)
 
 ====
 
+TESTING
+
+Testing is run centrally, through class TestSuite inside package test.
+
+Needs running with -Djava.security.policy=security.policy
+
+For individual testing, SetupSystemFiles must be called by the test suite handling the smaller scope of tests. 

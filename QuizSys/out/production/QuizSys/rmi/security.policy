@@ -1,0 +1,15 @@
+//this is how to run it
+//java -Djava.security.manager -Djava.security.policy=security.policy rmiClientfilename
+grant{
+    permission java.util.PropertyPermission "java.runtime.version", "read";
+    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    permission java.util.PropertyPermission "user.dir", "read";
+    permission java.lang.RuntimePermission "accessDeclaredMembers";
+    permission java.lang.RuntimePermission "setIO";
+    permission java.io.FilePermission "/-", "read,write,delete,execute";
+    permission java.net.SocketPermission "127.0.0.1:*", "accept,connect"; //needed by the server or localized connection between jvms
+  //  permission java.net.SocketPermission "192.168.1.73:*", "accept,connect"; //need for the interaction between two separate computers
+  //  permission java.net.SocketPermission "192.168.1.75:*", "accept,connect";
+};
+
+//C:\Users\user\IdeaProjects\Quiz\QuizSys\out\production\QuizSys>java -Djava.security.policy=rmi/security.policy rmi.LoaderServerLauncher

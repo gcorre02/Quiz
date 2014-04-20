@@ -24,6 +24,11 @@ public class LoginMenu {
     private SaverInterface s;
 	private UserInterface ui;
 
+    /**
+     * Presents the user with choices and launches the associated methods for those choices.
+     * Also loops through utilization until 'D' is called.
+     *
+     */
 	public void run(){
 		ArrayList<String> menuItems = new ArrayList<>();
 		menuItems.add("New user");
@@ -63,7 +68,11 @@ public class LoginMenu {
 	private void closeProgram() {
 		ui.printToUser("Shutting down, thank you.");
 	}
-	
+
+    /**
+     * Gets username from user, checks if it exists and trys to launch UserMenu.
+     *  java.lang.Exception if file is not tottaly accessible or doesnot exist.
+     */
 	private void login() {
 		ui.printToUser("Please enter your username:");
 		String userName = ui.readFromUser();
@@ -82,7 +91,11 @@ public class LoginMenu {
 		}
 		
 	}
-	
+
+    /**
+     * Tries to delete user if he exists.
+     * java.io.IOException if file is not accessible / exists.
+     */
 	private void deleteUser() {
 		ui.printToUser("Please enter the username you wish to delete:");
 		String user = ui.readFromUser();
@@ -100,7 +113,11 @@ public class LoginMenu {
 		}
 		
 	}
-	
+
+    /**
+     * Creates a new user if this does not already exist.
+     * java.io.IOException if file is not accessbile.
+     */
 	private void createNewUser() {
 		ui.printToUser("Please enter the new username:");
 		String newUser = ui.readFromUser();

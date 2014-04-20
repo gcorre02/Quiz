@@ -1,19 +1,14 @@
 package test.menuTests.test.local;
 
-import static org.mockito.Mockito.*;
-
-import java.util.ArrayList;
-import java.util.Map;
-
 import menu.LoginMenu;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import persistence.Loader;
 import persistence.Saver;
 import tools.UserInterface;
+
+import static org.mockito.Mockito.*;
 
 public class LoginMenuTest {
 	LoginMenu um;
@@ -21,8 +16,7 @@ public class LoginMenuTest {
 	Loader l;
 	Saver s;
 	String source;
-	ArrayList<String> userNames;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		source = "testFiles";
@@ -30,24 +24,9 @@ public class LoginMenuTest {
 		l = new Loader(source);
 		s = new Saver(source);
 		um = spy(new LoginMenu(l,s,ui));
-		//file struture setup
-		String[] names = {"Bartolomeu","Gonzo","Sebastiao","Septimus"};
-		userNames = new ArrayList<>();
-		for(String name : names){
-			userNames.add(name);
-		}
-		s.saveUserQuizzes(generateGonzoQuizzes());
 	}
 	
-	private Map<String, String[]> generateGonzoQuizzes() {
-		Map<String, String[]> userQuizzes = l.getUserQuizzes();
-		String[] gonzoQuizzes = {"numbers","people","cars"};
-		for(String name : userNames){
-			userQuizzes.put(name, new String[0]);
-		}
-		userQuizzes.put("Gonzo", gonzoQuizzes);
-		return userQuizzes;
-	}
+
 
 	@After
 	public void tearDown() throws Exception {
@@ -67,6 +46,7 @@ public class LoginMenuTest {
 		//test
 		verify(ui, times(1)).getUserAnswer(anyString());
 	}
+
 	//TODO make independent and a test
 	@Test
 	public void testDeleteUser(){
