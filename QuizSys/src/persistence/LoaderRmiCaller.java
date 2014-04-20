@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * Created by user on 18-04-2014.
+ * A class that implements the interface for loader and is used by the client to call the real methods in the server.
+ *
+ *
+ * Created by Guilherme Ribeiro on 18-04-2014.
  */
 public class LoaderRmiCaller implements LoaderInterface {
     private String source;

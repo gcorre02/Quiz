@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/EditQuestionMenu.java" afterPath="$PROJECT_DIR$/src/menu/EditQuestionMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestSuite.java" afterPath="$PROJECT_DIR$/src/test/TestSuite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/Loader.java" afterPath="$PROJECT_DIR$/src/persistence/Loader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/LoaderInterface.java" afterPath="$PROJECT_DIR$/src/persistence/LoaderInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/LoaderRmiCaller.java" afterPath="$PROJECT_DIR$/src/persistence/LoaderRmiCaller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -32,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Loader.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/persistence/Loader.java">
+      <file leaf-file-name="LoaderRmiCaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/persistence/LoaderRmiCaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.6615386" vertical-offset="307" max-vertical-offset="2635">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.1687346" vertical-offset="56" max-vertical-offset="1428">
+              <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="38" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -55,8 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/LocalMain.java" />
-        <option value="$PROJECT_DIR$/src/main/LaunchServerMain.java" />
         <option value="$PROJECT_DIR$/src/main/ServerMain.java" />
         <option value="$PROJECT_DIR$/src/test/mainTests/LocalMainTest.java" />
         <option value="$PROJECT_DIR$/src/tools/UserInterface.java" />
@@ -97,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/EditQuizMenuRmiTest.java" />
         <option value="$PROJECT_DIR$/src/menu/EditQuizRmiMenu.java" />
         <option value="$PROJECT_DIR$/src/menu/EditQuizMenu.java" />
-        <option value="$PROJECT_DIR$/src/persistence/Loader.java" />
         <option value="$PROJECT_DIR$/src/test/SetupSystemFiles.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/EditQuestionMenuTest.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" />
@@ -106,6 +104,9 @@
         <option value="$PROJECT_DIR$/src/test/persistenceTests/TestSuitePersistence.java" />
         <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/menu/EditQuestionMenu.java" />
+        <option value="$PROJECT_DIR$/src/persistence/LoaderInterface.java" />
+        <option value="$PROJECT_DIR$/src/persistence/Loader.java" />
+        <option value="$PROJECT_DIR$/src/persistence/LoaderRmiCaller.java" />
       </list>
     </option>
   </component>
@@ -523,7 +524,7 @@
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
       <workItem from="1397994366077" duration="5287000" />
-      <workItem from="1398003593165" duration="3234000" />
+      <workItem from="1398003593165" duration="4311000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -729,11 +730,15 @@
       <created>1398006548361</created>
       <updated>1398006548361</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="reviewed code in EditQuestionMenu class&#10;">
+      <created>1398006866854</created>
+      <updated>1398006866854</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64865000" />
+    <option name="totallyTimeSpent" value="65942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -753,7 +758,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -781,7 +786,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="implemented ui.print in servermain and tested it." />
     <MESSAGE value="passed test for LaunchPlayerLocalVersion class." />
     <MESSAGE value="wrote javadocs for LaunchUserLocalVersion class." />
     <MESSAGE value="wrote test for LaunchUserLocalVersion." />
@@ -806,7 +810,8 @@
     <MESSAGE value="reviewed EditQuestionMenutest for propper behaviour.&#10;" />
     <MESSAGE value="made EditQuestionMenuRmi class work with server." />
     <MESSAGE value="restructured persistence tests and added a testSuite for persistence." />
-    <option name="LAST_COMMIT_MESSAGE" value="restructured persistence tests and added a testSuite for persistence." />
+    <MESSAGE value="reviewed code in EditQuestionMenu class&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewed code in EditQuestionMenu class&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -814,20 +819,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/rmiTests/GenericGetterTestTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2975" vertical-offset="0" max-vertical-offset="1700">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/toolsTests/TestSuiteTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51" vertical-offset="0" max-vertical-offset="442">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="3968" max-vertical-offset="37162">
@@ -1208,10 +1199,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/LoaderInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33746898" vertical-offset="0" max-vertical-offset="544">
+          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/persistence/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.6615386" vertical-offset="307" max-vertical-offset="2635">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9156327" vertical-offset="889" max-vertical-offset="1360">
+          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+          <folding>
+            <element signature="method#getUsernames#0;class#Loader#0" expanded="false" />
+            <element signature="docComment;method#getUserQuizzes#0;class#Loader#0" expanded="false" />
+            <element signature="method#getUserQuizzes#0;class#Loader#0" expanded="false" />
+            <element signature="docComment;method#getQuizObject#0;class#Loader#0" expanded="false" />
+            <element signature="method#getQuizObject#0;class#Loader#0" expanded="false" />
+            <element signature="method#getQuizQuestionsConfig#0;class#Loader#0" expanded="false" />
+            <element signature="method#getQuestionNumber#0;class#Loader#0" expanded="false" />
+            <element signature="method#getQuestionObject#0;class#Loader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/LoaderRmiCaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1687346" vertical-offset="56" max-vertical-offset="1428">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="38" selection-end-column="44" />
           <folding />
         </state>
       </provider>

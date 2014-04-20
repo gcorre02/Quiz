@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * Created by user on 18-04-2014.
+ *
+ * Created by Guilherme Ribeiro on 18-04-2014.
+ *
+ * This interface works for connecting the RMI version of Loader to the real version of Loader.
+ *
  */
 public interface LoaderInterface {
     ArrayList<String> getUsernames() throws IOException;

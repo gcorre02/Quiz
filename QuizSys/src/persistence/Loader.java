@@ -8,13 +8,20 @@ import quizData.Quiz;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Local Loader class that interacts directly with  the data and file structure.
+ */
 public class Loader implements LoaderInterface {
 	String source;
 	File file;
 	Saver s;
+
+    /**
+     * Instantiates Saver to make sure that the file structure exists.
+     * @param path to the data structure in the file system.
+     */
 	public Loader(String path){
 		source = path;
 		//setup basic file system;
@@ -22,6 +29,11 @@ public class Loader implements LoaderInterface {
 		s = null;
 	}
 
+    /**
+     * Method to return the saved structure of existing users.
+     * @return all the usernames as an arraylist
+     * @throws IOException if it has a problem accessing the files.
+     */
 	@Override
     public ArrayList<String> getUsernames() throws IOException{
 		ArrayList<String> usernames = new ArrayList<>();
@@ -49,13 +61,13 @@ public class Loader implements LoaderInterface {
 		return usernames;
 	}
 	/**
-	 * TODO should verify that all userquizzes have associated folders and files.
+	 *
 	 * 
-	 * @return
+	 * @return Map all quizzes mapped to their corresponding users.
 	 */
 	@Override
     public Map<String, String[]> getUserQuizzes(){
-		Map<String, String[]> userQuizzes = new HashMap<>();
+		Map<String, String[]> userQuizzes;
 		Gson gson = new Gson();
 		file = new File(source + File.separator+ "UserQuizzes.txt");
 		BufferedReader reader;
@@ -75,7 +87,14 @@ public class Loader implements LoaderInterface {
         }
         return userQuizzes;
 	}
-	@Override
+
+    /**
+     * Grabs the referenced quiz object from the data structure
+     * @param user The user name that owns the quiz.
+     * @param quizName the name of the requested quiz.
+     * @return the quiz object.
+     */
+    @Override
     public Quiz getQuizObject(String user, String quizName){
 		Quiz returnQuiz;
 		Gson gson = new Gson();
@@ -100,6 +119,15 @@ public class Loader implements LoaderInterface {
         return returnQuiz;
 	}
 
+    /**
+     * Returns an array with the ordered questions belonging to the targetted quiz.
+     * This is a separate simpler file located in the file system next to the quiz object file.
+     *
+     * @param owner the name of the owner of the quiz.
+     * @param quizName the name of the quiz.
+     * @return returns an array with the ordered questions.
+     * @throws IOException if file is not properly accessible.
+     */
 	@Override
     public ArrayList<String> getQuizQuestionsConfig(String owner, String quizName) throws IOException {
 		ArrayList<String> returnArray = new ArrayList<>();
@@ -128,6 +156,14 @@ public class Loader implements LoaderInterface {
 		return returnArray;
 	}
 
+    /**
+     * returns an integer corresponding to the requested question
+     * @param questionString the String of the question itself.
+     * @param owner the name of the owner of the quiz.
+     * @param quiz the name of the quiz.
+     * @return the integer identifying the question in the file system.
+     * @throws IOException if the quiz config file is not accessible.
+     */
 	@Override
     public int getQuestionNumber(String questionString, String owner,
                                  String quiz) throws IOException {
@@ -135,6 +171,14 @@ public class Loader implements LoaderInterface {
 		return questions.indexOf(questionString);
 	}
 
+    /**
+     * returns the referenced question object
+     * @param owner the name of the owner of the quiz.
+     * @param quiz the name of the quiz.
+     * @param questionString the String of the question itself.
+     * @return the question object represented by the request
+     * @throws IOException if the question object file is not accessible.
+     */
 	@Override
     public Question getQuestionObject(String owner, String quiz,
                                       String questionString) throws IOException {
