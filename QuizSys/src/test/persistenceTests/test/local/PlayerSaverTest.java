@@ -3,23 +3,30 @@ package test.persistenceTests.test.local;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 
 import java.io.File;
 import java.io.IOException;
 
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Guilherme on 13-04-2014.
+ * Created by Guilherme on 13-04-2014.\n
+ * Test class for PlayerSaver
  */
 public class PlayerSaverTest {
     PlayerSaver ps;
     String path;
+    private PlayerLoader pl;
+
     @Before
     public void setUp() throws Exception {
         path = "testFiles";
         ps = new PlayerSaver(path);
+        pl = new PlayerLoader(path);
     }
 
     @After
@@ -46,15 +53,23 @@ public class PlayerSaverTest {
     }
     @Test
     public final void testAddPlayerAddsPlayer() throws IOException {
-        //TODO just a behaviour stub
+        //expected
         String expected = "Jonah";
+        //exec
         ps.addPlayer(expected);
+        //actual
+        String actual = pl.getPlayer(expected).getName();
+        //test
+        assertEquals(expected,actual);
     }
     @Test
     public final void testDeletePlayerDelsPlayer() throws IOException {
-        //TODO just a behaviour stub
+        //expected
         String expected = "Jon";
+        //exec
         ps.addPlayer(expected);
+        assertTrue(pl.getPlayersArray().contains(expected));
         ps.removePlayer(expected);
+        assertFalse(pl.getPlayersArray().contains(expected));
     }
 }

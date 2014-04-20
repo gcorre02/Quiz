@@ -1,6 +1,13 @@
 package test.persistenceTests.test.local;
 
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import persistence.Loader;
+import persistence.Saver;
+import quizData.Question;
+import quizData.Quiz;
+import tools.CollectionTools;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,16 +15,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
-import persistence.Loader;
-import persistence.Saver;
-import quizData.Question;
-import quizData.Quiz;
-import tools.CollectionTools;
-
+/**
+ * Test Class for the Saver class.
+ */
 public class SaverTest {
 	ArrayList<String> userNames;
 	Saver s;
@@ -36,7 +38,6 @@ public class SaverTest {
 
 	@After
 	public void tearDown() throws Exception {
-		//s.deleteFolder(folder); //TODO <make it available for general testing>
 		userNames = null;
 		s = null;
 		folder = null;
@@ -60,10 +61,9 @@ public class SaverTest {
 	public final void testSaveUserNames() {
 		assertTrue(s.saveUserNames(userNames));
 	}
-	//these two tests are trying to be handled concurrently by the system, which forces them to wait for each other.
+
 	@Test
 	public final void testAddUserNames() throws IOException {
-		//	s.saveUserNames(userNames);
 		String newUser = "Guy Fawlkes";
 		assertTrue(s.addUserName(newUser));
 		File f = new File(folder + File.separator + newUser);
@@ -71,7 +71,6 @@ public class SaverTest {
 	}
 	@Test
 	public final void testDeleteUserNames() throws IOException {
-		//s.saveUserNames(userNames);
 		String newUser = "DeleteableUser";
 		s.addUserName(newUser);
 		assertTrue(s.deleteUser(newUser));
@@ -126,8 +125,6 @@ public class SaverTest {
 	public final void testSaveQuiz() {
 		//setup
 		Quiz quiz = setupQuiz();
-		//debug
-		//System.out.println(CollectionTools.collectionPrinter('0', quiz.getQuizQuestions()));
 		//test
 		assertTrue(s.saveQuiz(quiz));
 	}
@@ -144,7 +141,6 @@ public class SaverTest {
 		quizQuestions.add("What was the first big car maker?");
 		quizQuestions.add("What brand is the batmobile?");
 		quiz.setQuizQuestions(quizQuestions);
-		s.saveQuiz(quiz);
 		return quiz;
 	}
 
@@ -159,12 +155,6 @@ public class SaverTest {
 		//actual
 		Loader l = new Loader(folder);
 		
-		//debug
-		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
-		System.out.println(CollectionTools.collectionPrinter('0', l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName())));
-		System.out.println("<<<<<<<<<<< Add Question Debug >>>>>>>>>>>");
-		//enddebug
-
 		String actual = l.getQuizQuestionsConfig(quiz.getOwner(), quiz.getQuizName()).get(3);
 
 		//test
@@ -178,7 +168,6 @@ public class SaverTest {
 	public final void testRemoveQuestion() throws IOException{
 		//setup
 		String removeableQuestion = "How old is VW?";
-		setupQuiz();
 		s.removeAQuestion(removeableQuestion, "Gonzo", "cars");
 		Loader l = new Loader(folder);
 		//test

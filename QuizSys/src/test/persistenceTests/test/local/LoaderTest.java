@@ -6,7 +6,6 @@ import org.junit.Test;
 import persistence.Loader;
 import persistence.Saver;
 import quizData.Quiz;
-import tools.CollectionTools;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +15,9 @@ import java.util.Set;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for Loader
+ */
 public class LoaderTest {
 	Loader loader;
 	String folder;
@@ -75,11 +77,18 @@ public class LoaderTest {
 		String[] actuals = loader.getUserQuizzes().get("Gonzo");
         Set<String> strings = loader.getUserQuizzes().keySet();
         String[] actualKeys = strings.toArray(new String[strings.size()]);
-		//debug
-		System.out.println(CollectionTools.printMap(loader.getUserQuizzes()));
-		//test
-		assertArrayEquals(expecteds, actuals);
-		assertTrue(CollectionTools.compareTwoArrays(actualKeys, expectedKeys));
+        //toLists
+        ArrayList<String> expectedList = new ArrayList<>();
+        Collections.addAll(expectedList,expecteds);
+        ArrayList<String> expectedKeysList = new ArrayList<>();
+        Collections.addAll(expectedKeysList,expectedKeys);
+        ArrayList<String> actualList = new ArrayList<>();
+        Collections.addAll(actualList,actuals);
+        ArrayList<String> actualKeysList = new ArrayList<>();
+        Collections.addAll(actualKeysList,actualKeys);
+        //test
+        assertTrue(actualList.containsAll(expectedList));
+        assertTrue(actualKeysList.containsAll(expectedKeysList));
 	}
 
 
@@ -106,13 +115,4 @@ public class LoaderTest {
         quiz.setQuizQuestions(quizQuestions);
         return quiz;
     }
-
-	
-
-	//@Test
-	public final void testSaveQuestionToJson() throws IOException{
-		//TODO <already tested by saver. create if time allows it>
-		fail();
-	}
-
 }

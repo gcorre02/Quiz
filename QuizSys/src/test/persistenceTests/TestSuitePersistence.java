@@ -15,10 +15,12 @@ import test.persistenceTests.test.local.SaverTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+        //local
         LoaderTest.class,
         PlayerLoaderTest.class,
         PlayerSaverTest.class,
         SaverTest.class
+        //remote is already tested by menuTests, but it would be good to write some dedicated ones if time allows it.
 })
 public class TestSuitePersistence {
 }
