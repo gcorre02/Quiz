@@ -8,32 +8,30 @@ import persistence.Loader;
 import persistence.LoaderInterface;
 import persistence.Saver;
 import persistence.SaverInterface;
-import quizData.Quiz;
 import tools.UserInterface;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
 
 public class EditQuizMenuTest {
-	private Quiz newQuiz;
 	private EditQuizMenu eqm;
-	private String user;
 	private UserInterface ui;
-	private String quizName;
 	private LoaderInterface l;
 	private SaverInterface s;
-	private ArrayList<String> quizQuestions;
     private String source;
+    private String user;
+    private String quizName;
 
-	@Before
+    @Before
 	public void setUp() throws Exception {
 	    source = "testFiles";
         l = new Loader(source);
 		s = new Saver(source);
 		ui = mock(UserInterface.class);
+        user = "Septimus";
+        quizName = "Bond Villains";
         eqm = new EditQuizMenu(l, s, ui, user, quizName);
 	}
 

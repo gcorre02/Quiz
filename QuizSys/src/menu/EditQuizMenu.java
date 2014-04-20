@@ -25,16 +25,16 @@ public class EditQuizMenu {
 		try {
 			userQuestions = l.getQuizQuestionsConfig(user, quizName);
 			if(userQuestions == null){
-				System.out.println(quizName + " has no questions.");
+				ui.printToUser(quizName + " has no questions.");
 			}else{
-				System.out.println("Current Questions:");
-				System.out.println(CollectionTools.collectionPrinter('0', userQuestions));
+				ui.printToUser("Current Questions:");
+				ui.printToUser(CollectionTools.collectionPrinter('0', userQuestions));
 			}
 		} catch (IOException e) {
 			Quiz quiz = new Quiz(quizName, user);
 			quiz.setQuizQuestions(new ArrayList<String>());
 			s.saveQuiz(quiz);
-			System.out.println("Quiz is empty.");
+			ui.printToUser("Quiz is empty.");
 		}
 		
 
@@ -50,9 +50,7 @@ public class EditQuizMenu {
 
 	public void runMenu(String menu){
 		char choice = ui.getUserAnswer(menu);
-		//debug
-		System.out.println(choice);
-		//\debug
+
 		switch(choice){
 		case 'A':
 			createNewQuestion();
@@ -62,7 +60,7 @@ public class EditQuizMenu {
 			try {
 				deleteQuestion();
 			} catch (NumberFormatException | IOException e) {
-				System.out.println("Couldn't access the requested question, please try again.");
+				ui.printToUser("Couldn't access the requested question, please try again.");
 			}
 			run();
 			break;
@@ -70,7 +68,7 @@ public class EditQuizMenu {
 			try {
 				editQuestion();
 			} catch (Exception e) {
-				System.out.println("Couldn't access the question, please try again later.");
+				ui.printToUser("Couldn't access the question, please try again later.");
 			}
 			run();
 			break;
@@ -78,40 +76,40 @@ public class EditQuizMenu {
 			goBack();
 			break;
 		default:
-			System.out.println("Couldn't understand the input, please choose again.");
+			ui.printToUser("Couldn't understand the input, please choose again.");
 			run();
 			break;
 		}
 	}
 
 	private void editQuestion() throws NumberFormatException, IOException {
-		System.out.println("Please enter the number for the question you wish to edit :");
+		ui.printToUser("Please enter the number for the question you wish to edit :");
 		String question = l.getQuizQuestionsConfig(user, quizName).get(Integer.parseInt(ui.readFromUser()));
 		EditQuestionMenu ecm =  new EditQuestionMenu(question, l, s, ui, user, quizName);
 		ecm.run();
 	}
 
 	private void goBack() {
-		System.out.println("You will be returned to the previous menu.");
+		ui.printToUser("You will be returned to the previous menu.");
 	}
 
 	private void deleteQuestion() throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Please enter the number of the question you wish to delete.");
+		ui.printToUser("Please enter the number of the question you wish to delete.");
 		String question = l.getQuizQuestionsConfig(user, quizName).get(Integer.parseInt(ui.readFromUser()));
 		s.removeAQuestion(question, user, quizName);
 		//debug
-		System.out.println(question+" <<<<WAS PICKED>>>>");
+		ui.printToUser(question+" <<<<WAS PICKED>>>>");
 		//debug
 	}
 
 	private void createNewQuestion() {
 		// TODO Auto-generated method stub
-		System.out.println("Please enter a question:");
+		ui.printToUser("Please enter a question:");
 		String question = ui.readFromUser();
 		if(s.addAQuestion(question, user, quizName))
-			System.out.println(question + " was added succesfully.");
+			ui.printToUser(question + " was added succesfully.");
 		else
-			System.out.println("Couldnt add the question, please try again later.");
+			ui.printToUser("Couldnt add the question, please try again later.");
 	}
 }
