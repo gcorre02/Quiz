@@ -28,7 +28,7 @@ import test.toolsTests.TestSuiteTools;
         TestSuiteQuizData.class,
         TestSuiteRmi.class,
         //remove test files
-        DeleteSystemFiles.class // to be called at the end.
+   //     DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuite {
     //TODO setUp file system here.

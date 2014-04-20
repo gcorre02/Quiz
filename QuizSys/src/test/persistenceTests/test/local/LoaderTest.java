@@ -89,11 +89,9 @@ public class LoaderTest {
 		Quiz quiz = generateCarsQuiz();
 		Quiz newQuiz = loader.getQuizObject("Gonzo", "cars");
 		//expected
-		Quiz expected = quiz;
+		String expected = quiz.getQuizName();
 		//actual
-		Quiz actual = newQuiz;
-		//debug
-		System.out.println(CollectionTools.collectionPrinter('0', actual.getQuizQuestions()));
+		String actual = newQuiz.getQuizName();
 		//test
 		assertEquals(expected, actual);
 	}
