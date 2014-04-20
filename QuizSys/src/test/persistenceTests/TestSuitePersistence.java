@@ -8,10 +8,10 @@ package test.persistenceTests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.persistenceTests.test.LoaderTest;
-import test.persistenceTests.test.PlayerLoaderTest;
-import test.persistenceTests.test.PlayerSaverTest;
-import test.persistenceTests.test.SaverTest;
+import test.persistenceTests.test.local.LoaderTest;
+import test.persistenceTests.test.local.PlayerLoaderTest;
+import test.persistenceTests.test.local.PlayerSaverTest;
+import test.persistenceTests.test.local.SaverTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({

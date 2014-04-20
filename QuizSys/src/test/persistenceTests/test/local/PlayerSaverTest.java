@@ -1,4 +1,4 @@
-package test.persistenceTests.test;
+package test.persistenceTests.test.local;
 
 import org.junit.After;
 import org.junit.Before;
