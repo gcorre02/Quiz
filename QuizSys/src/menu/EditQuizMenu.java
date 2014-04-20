@@ -10,6 +10,15 @@ import tools.UserInterface;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class that launches option for the quiz creator to edit the quiz object.
+ * Also launches the question editor menu.
+ *
+ * Loader l can be local or server defined.
+ * Saver s can loal or server defined
+ * UserInterface ui can be mocked
+ *
+ */
 @AllArgsConstructor
 public class EditQuizMenu {
     private LoaderInterface l;
@@ -17,7 +26,11 @@ public class EditQuizMenu {
 	private UserInterface ui;
 	private String user;
 	private String quizName;
-	
+
+    /**
+     * Launches the menu.
+     * @throws NullPointerException if the file access methods launches errors.
+     */
 	public void run() throws NullPointerException{
 		//TODO <need to check if quiz has any questions first>
 

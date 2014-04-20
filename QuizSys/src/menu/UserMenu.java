@@ -8,6 +8,9 @@ import tools.UserInterface;
 
 import java.util.ArrayList;
 
+/**
+ * User menu , allows for user to select a quiz to edit or delete a quiz.
+ */
 @AllArgsConstructor
 public class UserMenu {
     private LoaderInterface l;
@@ -15,6 +18,10 @@ public class UserMenu {
 	private UserInterface ui;
 	private String user;
 
+    /**
+     * Launches the menu.
+     * @throws NullPointerException if the file it is accessing is not accessile.
+     */
 	public void run() throws NullPointerException{
 		//TODO <need to check if user has any quizzes first>
 

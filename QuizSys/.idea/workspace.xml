@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/menuTests/test/local/EditQuizMenuTest.java" afterPath="$PROJECT_DIR$/src/test/menuTests/test/local/EditQuizMenuTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/EditQuizMenu.java" afterPath="$PROJECT_DIR$/src/menu/EditQuizMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/UserMenu.java" afterPath="$PROJECT_DIR$/src/menu/UserMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -31,23 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserMenu.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserMenu.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menu/UserMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1480" max-vertical-offset="1870">
-              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditQuizMenu.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/menu/EditQuizMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42183623" vertical-offset="1275" max-vertical-offset="2023">
-              <caret line="85" column="84" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="84" />
+            <state vertical-scroll-proportion="-3.1410255" vertical-offset="1599" max-vertical-offset="1989">
+              <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/menu/LoginMenu.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/LoginMenuTest.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/LoginMenuRmiTest.java" />
-        <option value="$PROJECT_DIR$/src/menu/UserMenu.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/UserMenuTest.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/remote/UserMenuRmiTest.java" />
         <option value="$PROJECT_DIR$/src/persistence/SaverRmiCaller.java" />
@@ -117,8 +105,9 @@
         <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/TestSuiteMenu.java" />
         <option value="$PROJECT_DIR$/src/test/SetupSystemFiles.java" />
-        <option value="$PROJECT_DIR$/src/menu/EditQuizMenu.java" />
         <option value="$PROJECT_DIR$/src/test/menuTests/test/local/EditQuizMenuTest.java" />
+        <option value="$PROJECT_DIR$/src/menu/EditQuizMenu.java" />
+        <option value="$PROJECT_DIR$/src/menu/UserMenu.java" />
       </list>
     </option>
   </component>
@@ -616,7 +605,7 @@
       <workItem from="1397872664682" duration="461000" />
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
-      <workItem from="1397994366077" duration="3817000" />
+      <workItem from="1397994366077" duration="4132000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -798,11 +787,15 @@
       <created>1397997567439</created>
       <updated>1397997567439</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="wrote propper tests for EditQuizMenu test.">
+      <created>1397998432559</created>
+      <updated>1397998432559</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60161000" />
+    <option name="totallyTimeSpent" value="60476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -823,7 +816,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -850,7 +843,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="tested ServerMain.launch()" />
     <MESSAGE value="added javadocs for LaunchServerMain" />
     <MESSAGE value="made the test suite more robust and capable of handling server launching and closing. &#10;added mockito permissions to the security policy." />
     <MESSAGE value="passed LaunchServerMainTest and managed to propperly close the JVM." />
@@ -875,7 +867,8 @@
     <MESSAGE value="solved a problem inherent to the specificity requirement of the client available  caller method." />
     <MESSAGE value="setup the file system for the test class EditQuizMenuTest." />
     <MESSAGE value="refactored sout() to ui.printToUser()" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored sout() to ui.printToUser()" />
+    <MESSAGE value="wrote propper tests for EditQuizMenu test." />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote propper tests for EditQuizMenu test." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1281,20 +1274,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/UserMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/menu/EditQuizMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1480" max-vertical-offset="1870">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9156327" vertical-offset="1807" max-vertical-offset="2278">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/EditQuizMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/menu/UserMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42183623" vertical-offset="1275" max-vertical-offset="2023">
-          <caret line="85" column="84" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="84" />
+        <state vertical-scroll-proportion="-3.1410255" vertical-offset="1599" max-vertical-offset="1989">
+          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
