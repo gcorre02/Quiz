@@ -20,11 +20,11 @@ public class UserMenu {
 
 		String[] userQuizzes = l.getUserQuizzes().get(user);
 		if(userQuizzes == null){
-			System.out.println(user + " has no quizzes.");
+			ui.printToUser(user + " has no quizzes.");
 		}else{
-			System.out.println("These are your quizzes:");
+			ui.printToUser("These are your quizzes:");
 			ArrayList<String> thisuserSQuizzes = CollectionTools.toArrayList(userQuizzes);
-			System.out.println(CollectionTools.collectionPrinter('0', thisuserSQuizzes));
+			ui.printToUser(CollectionTools.collectionPrinter('0', thisuserSQuizzes));
 		}
 
 		//TODO <implement the rest>
@@ -39,9 +39,7 @@ public class UserMenu {
 
 	public void runMenu(String menu){
 		char choice = ui.getUserAnswer(menu);
-		//debug
-		System.out.println(choice);
-		//\debug
+
 		switch(choice){
 		case 'A':
 			createNewQuiz();
@@ -59,50 +57,50 @@ public class UserMenu {
 			goBack();
 			break;
 		default:
-			System.out.println("Couldn't understand the input, please choose again.");
+			ui.printToUser("Couldn't understand the input, please choose again.");
 			run();
 			break;
 		}
 	}
 
 	private void goBack() {
-		System.out.println("Logging out, thank you");
+		ui.printToUser("Logging out, thank you");
 	}
 
 	private void editQuiz() {
-		System.out.println("Please enter the number for the quiz you wish to edit");
+		ui.printToUser("Please enter the number for the quiz you wish to edit");
 		//find the name for the selected quiz.
 		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
 		//debug
-		System.out.println(quizName+" <<<<WAS PICKED>>>>");
+		ui.printToUser(quizName+" <<<<WAS PICKED>>>>");
 		//debug
 		EditQuizMenu eqm = new EditQuizMenu(l,s,ui,user,quizName);
 		try {
 			eqm.run();
 		} catch (Exception e) {
-			System.out.println("Couldn't access the quiz, please try again");
+			ui.printToUser("Couldn't access the quiz, please try again");
 		}
 	}
 
 	private void deleteQuiz() {
-		System.out.println("Please enter the number of the quiz you wish to delete");
+		ui.printToUser("Please enter the number of the quiz you wish to delete");
 		String quizName = l.getUserQuizzes().get(user)[Integer.parseInt(ui.readFromUser())];
 		//debug
-		System.out.println(quizName+" <<<<WAS PICKED>>>>");
+		ui.printToUser(quizName+" <<<<WAS PICKED>>>>");
 		//debug
 		if(s.removeQuiz(quizName, user, l.getUserQuizzes()))
-			System.out.println("Quiz " + quizName + " has been removed successfuly");
+			ui.printToUser("Quiz " + quizName + " has been removed successfuly");
 		else
-			System.out.println("Quiz " + quizName + " could not be completely removed. \nThere might be a conflict with the file system. \nPlease try again.");
+			ui.printToUser("Quiz " + quizName + " could not be completely removed. \nThere might be a conflict with the file system. \nPlease try again.");
 	}
 
 	private void createNewQuiz() {
-		System.out.println("Please enter the name of the quiz you want to create");
+		ui.printToUser("Please enter the name of the quiz you want to create");
 		String newQuizName = ui.readFromUser();
 		if(s.addQuiz(newQuizName, user, l.getUserQuizzes()))
-			System.out.println(newQuizName + " was successfully created.");
+			ui.printToUser(newQuizName + " was successfully created.");
 		else
-			System.out.println(newQuizName + " could not be created.");
+			ui.printToUser(newQuizName + " could not be created.");
 	}
 
 }

@@ -1,27 +1,31 @@
 package test.menuTests.test.local;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 import menu.UserMenu;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import persistence.Loader;
+import persistence.LoaderInterface;
 import persistence.Saver;
+import persistence.SaverInterface;
 import tools.UserInterface;
+
+import java.io.File;
+import java.io.IOException;
+
+import static junit.framework.TestCase.assertFalse;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.*;
 
 public class UserMenuTest {
 	private UserInterface ui;
 	private UserMenu um;
-	private Loader l;
-	private Saver s;
+	private LoaderInterface l;
+	private SaverInterface s;
 	private String user;
 	private String source;
 	@Before
 	public void setUp() throws Exception {
-		//TODO need to write a setup for the file structure
 		ui = mock(UserInterface.class);
 		source = "testFiles";
 		l = new Loader(source);
@@ -40,32 +44,35 @@ public class UserMenuTest {
 		um = null;
 	}
 
-	//TODO this is just a stubbed test for debug
 	@Test
 	public final void testrunMenu() {
-		when(ui.getUserAnswer(anyString())).thenReturn('D');
-		um.run();
-		fail("Not yet implemented"); // TODO
+		//mock
+        when(ui.getUserAnswer(anyString())).thenReturn('D');
+		//run
+        um.run();
+        //test
+		verify(ui).printToUser("Logging out, thank you");
 	}
 
-	@Test(expected = NullPointerException.class)
-	public final void testrunMenuNullExceptionDoesntBrakeSystem() {
-		String newSource = "unexistingFolder";
-		l = new Loader(newSource);
-		s = new Saver(newSource);
-		um = new UserMenu(l, s, ui, user);
-		when(ui.getUserAnswer(anyString())).thenReturn('D');
-		um.run();
-	}
 
-	//TODO this is just a stubbed test for debug
+
 	@Test
-	public final void testDeleteQuiz(){
+	public final void testDeleteQuiz() throws IOException {
+        //setup
+        String newUser = "Sapo";
+        s.addUserName(newUser);
+        String newQuiz = "sapinhos";
+        s.addQuiz(newQuiz,newUser,l.getUserQuizzes());
+        UserMenu num = new UserMenu(l,s,ui,newUser);
+        //mock
 		when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
 		when(ui.readFromUser()).thenReturn("0");
-		um.run();
-		um.run();
-		fail("Not yet implemented"); // TODO
+		//run
+        num.run();
+		num.run();
+        //test
+        File f = new File(source + File.separator + newUser + File.separator + newQuiz + File.separator + newQuiz + ".txt");
+		assertFalse(f.exists());
 	}
 
 	//TODO this is just a stubbed test for debug

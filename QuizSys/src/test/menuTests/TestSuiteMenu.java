@@ -9,16 +9,17 @@ package test.menuTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.menuTests.test.local.LoginMenuTest;
+import test.menuTests.test.local.UserMenuTest;
 import test.menuTests.test.remote.LoginMenuRmiTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         //Local
         LoginMenuTest.class,
+        UserMenuTest.class,
 
         //Remote
         LoginMenuRmiTest.class
 })
 public class TestSuiteMenu {
-//TODO need to repeat the same tests using the rmi versions of all the persistence classes.
 }

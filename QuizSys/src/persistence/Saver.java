@@ -206,14 +206,16 @@ public class Saver implements SaverInterface {
 	/*
 	 * needs to check if the files already exist.
 	 */
-	private void generateQuizFiles(String user, String[] strings) throws IOException {
-		for(String quizname: strings){
+	private void generateQuizFiles(String user, String[] quizNames) throws IOException {
+		for(String quizname: quizNames){
 			createFolder(source+File.separator+user+File.separator+quizname);
 			File quizFile = new File(source+File.separator+user+File.separator+quizname+File.separator+quizname+".txt");
 			if(!quizFile.exists()){
-				quizFile.createNewFile();
+                Quiz q = new Quiz(quizname,user);
+                saveQuiz(q);
 			}
 		}
+
 	}
 
 	@Override
