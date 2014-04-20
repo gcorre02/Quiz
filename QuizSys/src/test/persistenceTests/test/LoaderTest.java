@@ -1,4 +1,4 @@
-package test.persistenceTests;
+package test.persistenceTests.test;
 
 import static org.junit.Assert.*;
 
