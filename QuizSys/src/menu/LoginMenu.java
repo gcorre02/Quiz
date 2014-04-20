@@ -82,12 +82,10 @@ public class LoginMenu {
 				UserMenu um = new UserMenu(l, s, ui, userName);
 				um.run();
 			}else{
-				System.out
-                        .println(userName + " does not exist, can't login.");
+				ui.printToUser(userName + " does not exist, can't login.");
 			}
 		} catch (Exception e) {
-			System.out
-                    .println("couldn't access the file, please try logging in again later");
+			ui.printToUser("couldn't access the file, please try logging in again later");
 		}
 		
 	}
@@ -101,15 +99,12 @@ public class LoginMenu {
 		String user = ui.readFromUser();
 		try {
 			if(s.deleteUser(user)){
-				System.out
-                        .println("user "+user+" was deleted successfully");
+				ui.printToUser("user "+user+" was deleted successfully");
 			}else{
-				System.out
-                        .println("User "+user+" does not exist.");
+				ui.printToUser("User "+user+" does not exist.");
 			}
 		} catch (IOException e) {
-			System.out
-                    .println("Couldn't delete user, file might be locked by another user or application, please try again");
+			ui.printToUser("Couldn't delete user, file might be locked by another user or application, please try again");
 		}
 		
 	}
@@ -128,8 +123,7 @@ public class LoginMenu {
 				ui.printToUser(newUser+" already exists");
 			}
 		} catch (IOException e) {
-			System.out
-                    .println("Couldn't add user, file might be locked by another user or application, please try again");
+			ui.printToUser("Couldn't add user, file might be locked by another user or application, please try again");
 		}
 		
 	}
