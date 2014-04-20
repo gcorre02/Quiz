@@ -9,6 +9,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
+ * The real methods for all persistence loading data related to player files.
+ *
  * Created by Guilherme on 13-04-2014.
  */
 public class PlayerLoader implements PlayerLoaderInterface {
@@ -16,6 +18,11 @@ public class PlayerLoader implements PlayerLoaderInterface {
     @Getter
     private Loader l;
 
+    /**
+     * Instantiates PlayerSaver to ensure the file system exists.
+     * Instantiates Loader for any possible needs of data communication with user data.
+     * @param path to the file structure in the system.
+     */
     public PlayerLoader(String path){
         source = path;
         l = new Loader(path);
@@ -23,10 +30,15 @@ public class PlayerLoader implements PlayerLoaderInterface {
         s = null;
     }
 
+    /**
+     * Returns an array with all registered player names
+     *
+     * @return array with all registered player names.
+     * @throws IOException if the file with player names is not propperly accessible.
+     */
     @Override
     public ArrayList<String> getPlayersArray() throws IOException {
         File f = new File(source + File.separator + "Player" + File.separator + "playersIndex.txt");
-        Gson gson = new Gson();
         ArrayList<String> playernames = new ArrayList<>();
         BufferedReader reader;
         JsonReader jReader;
@@ -48,11 +60,14 @@ public class PlayerLoader implements PlayerLoaderInterface {
         jReader.close();
         reader.close();
 
-
-        //TODO finish this
-
         return playernames;
     }
+
+    /**
+     * returns the player object.
+     * @param name of the player.
+     * @return requested player object.
+     */
     @Override
     public Player getPlayer(String name){
         Player p;

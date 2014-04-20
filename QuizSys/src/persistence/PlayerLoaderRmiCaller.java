@@ -9,7 +9,10 @@ import java.util.ArrayList;
 //TODO need to write tests for this.
 
 /**
- * Created by user on 18-04-2014.
+ * Client side version of PlayerLoader, sends requests to the server for the real methods./n
+ *
+ * Created by Guilherme Ribeiro on 18-04-2014.
+ *
  */
 public class PlayerLoaderRmiCaller implements PlayerLoaderInterface {
     private String source;
