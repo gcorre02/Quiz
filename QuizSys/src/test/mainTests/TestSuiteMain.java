@@ -6,6 +6,7 @@ import test.mainTests.test.launchers.LaunchServerMainTest;
 import test.mainTests.test.launchers.LocalMainTest;
 import test.mainTests.test.launchers.ServerMainTest;
 import test.mainTests.test.localUserLaunchers.LaunchPlayerLocalVersionTest;
+import test.mainTests.test.localUserLaunchers.LaunchUserLocalVersionTest;
 
 /**
  *
@@ -14,11 +15,13 @@ import test.mainTests.test.localUserLaunchers.LaunchPlayerLocalVersionTest;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+        //launchers
         LocalMainTest.class,
         ServerMainTest.class,
         LaunchServerMainTest.class,
-        //
-        LaunchPlayerLocalVersionTest.class
+        //userSpecificLaunchers.
+        LaunchPlayerLocalVersionTest.class,
+        LaunchUserLocalVersionTest.class
         //SetupSystemFiles.class,DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuiteMain {
