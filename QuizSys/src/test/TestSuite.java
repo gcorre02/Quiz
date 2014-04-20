@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import test.mainTests.TestSuiteMain;
 import test.menuTests.TestSuiteMenu;
+import test.persistenceTests.TestSuitePersistence;
 import test.toolsTests.TestSuiteTools;
 
 /**
@@ -19,8 +20,9 @@ import test.toolsTests.TestSuiteTools;
         TestSuiteMain.class,
         TestSuiteTools.class,
         TestSuiteMenu.class,
+        TestSuitePersistence.class,
         //remove test files
-      //  DeleteSystemFiles.class // to be called at the end.
+        DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuite {
     //TODO setUp file system here.

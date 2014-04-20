@@ -23,7 +23,6 @@ public class EditQuestionMenu {
 		try{
 			Question qu = l.getQuestionObject(user, quizName, question);
 			ArrayList<String> answers = qu.getAnswers();
-			qu = null;
 			System.out.println(CollectionTools.collectionPrinter('0', answers));
 		}catch(Exception e){
 			System.out.println(question+" has no answers yet");
@@ -95,7 +94,7 @@ public class EditQuestionMenu {
 		System.out.println("Please enter the number to identify the new right answer :");
 		int newRightAnswer = Integer.parseInt(ui.readFromUser());
 		qu.setRightAnswer(newRightAnswer);
-		String newRightAnswerStr =""; 
+		String newRightAnswerStr;
 		try{
 			newRightAnswerStr = qu.getAnswer(newRightAnswer);
 		}catch(Exception e){
@@ -111,7 +110,7 @@ public class EditQuestionMenu {
 
 		System.out.println("Please enter the number for the answer you wish to delete:");
 		int answerToDelete = Integer.parseInt(ui.readFromUser());
-		String answerStr =""; 
+		String answerStr;
 		try{
 			answerStr = qu.getAnswer(answerToDelete);
 		}catch(Exception e){
