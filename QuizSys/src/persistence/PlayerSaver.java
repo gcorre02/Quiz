@@ -11,13 +11,20 @@ import java.util.ArrayList;
 
 /**
  *
- * handles persistence for the player file system.
+ * handles persistence on the server side for the player file system.
  *
  * Created by Guilherme on 13-04-2014.
  */
 public class PlayerSaver implements PlayerSaverInterface {
     String source;
     Saver s;
+
+    /**
+     * Makes sure the file system structure exists and instantiates it if not.
+     *
+     *
+     * @param path to the file structure in the system.
+     */
     public PlayerSaver(String path){
         this.source = path;
         //makes all the checks for the admin file structure
@@ -86,31 +93,50 @@ public class PlayerSaver implements PlayerSaverInterface {
             f.mkdir();
         }
     }
-    @Override //TODO should return something
-    public void addPlayer(String name) throws IOException {
+
+    /**
+     * adds a reference to player to the file structure
+     *
+     * @param name the new name to input
+     * @return true if the operation works, false if a player already exists.
+     * @throws IOException if the file system cannot be accessed propperly
+     */
+    @Override
+    public boolean addPlayer(String name) throws IOException {
         PlayerLoader pl = new PlayerLoader(source);
         ArrayList<String> existingPlayer;
         existingPlayer = pl.getPlayersArray();
         if(existingPlayer.contains(name)){
             System.out.println(name + " already exists.");
+            return false;
+
         }else{
             existingPlayer.add(name);
             savePlayersIndexJson(existingPlayer);
             System.out.println("Player " + name + " has been added.");
+            return true;
         }
     }
 
+    /**
+     * removes a player.
+     *
+     * @param name of the player to remove
+     * @throws IOException if the file structure cannot be accessed.
+     */
     @Override
-    public void removePlayer(String name) throws IOException {
+    public boolean removePlayer(String name) throws IOException {
         PlayerLoader pl = new PlayerLoader(source);
         ArrayList<String> existingPlayers;
         existingPlayers = pl.getPlayersArray();
         if(!existingPlayers.contains(name)){
             System.out.println(name + " has already been removed.");
+            return false;
         }else{
             existingPlayers.remove(name);
             deletePlayerFile(name);
             savePlayersIndexJson(existingPlayers);
+            return true;
         }
     }
 

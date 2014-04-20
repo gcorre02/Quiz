@@ -10,7 +10,7 @@ import java.io.IOException;
 public interface PlayerSaverInterface {
     void savePlayer(Player p);
 
-    void addPlayer(String name) throws IOException;
+    boolean addPlayer(String name) throws IOException;
 
-    void removePlayer(String name) throws IOException;
+    boolean removePlayer(String name) throws IOException;
 }

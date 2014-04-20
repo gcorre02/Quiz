@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerLoader.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerLoaderInterface.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerLoaderInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerSaver.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerSaver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerSaverInterface.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerSaverInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerSaverRmiCaller.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerSaverRmiCaller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -33,11 +33,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerLoaderRmiCaller.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java">
+      <file leaf-file-name="PlayerSaver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26153848" vertical-offset="17" max-vertical-offset="867">
-              <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1161" max-vertical-offset="2635">
+              <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerSaverRmiCaller.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaverRmiCaller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6203474" vertical-offset="413" max-vertical-offset="816">
+              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerSaverInterface.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaverInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -56,8 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/launchers/LocalMain.java" />
-        <option value="$PROJECT_DIR$/src/test/mainTests/test/LocalMainTest.java" />
         <option value="$PROJECT_DIR$/src/rmi/LoaderServer.java" />
         <option value="$PROJECT_DIR$/src/main/launchers/ServerMainTest.java" />
         <option value="$PROJECT_DIR$/src/rmi/LoaderServerLauncher.java" />
@@ -107,6 +125,8 @@
         <option value="$PROJECT_DIR$/src/persistence/PlayerLoader.java" />
         <option value="$PROJECT_DIR$/src/persistence/PlayerLoaderInterface.java" />
         <option value="$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java" />
+        <option value="$PROJECT_DIR$/src/persistence/PlayerSaver.java" />
+        <option value="$PROJECT_DIR$/src/persistence/PlayerSaverRmiCaller.java" />
       </list>
     </option>
   </component>
@@ -524,7 +544,7 @@
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
       <workItem from="1397994366077" duration="5287000" />
-      <workItem from="1398003593165" duration="4748000" />
+      <workItem from="1398003593165" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -738,11 +758,15 @@
       <created>1398007955116</created>
       <updated>1398007955116</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="wrote javadocs for all PlayerLoader relevant classes.">
+      <created>1398008388282</created>
+      <updated>1398008388282</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66379000" />
+    <option name="totallyTimeSpent" value="66720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -762,7 +786,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -790,7 +814,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="wrote javadocs for LaunchUserLocalVersion class." />
     <MESSAGE value="wrote test for LaunchUserLocalVersion." />
     <MESSAGE value="refactored loginMenu class to use ui.printToUser instead of sout()." />
     <MESSAGE value="refactored LaunchUserServer class for mocking and added javadocks" />
@@ -815,7 +838,8 @@
     <MESSAGE value="restructured persistence tests and added a testSuite for persistence." />
     <MESSAGE value="reviewed code in EditQuestionMenu class&#10;" />
     <MESSAGE value="wrote javadocs for all classes corresponding to persistence.Loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote javadocs for all classes corresponding to persistence.Loader" />
+    <MESSAGE value="wrote javadocs for all PlayerLoader relevant classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote javadocs for all PlayerLoader relevant classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -823,27 +847,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/rmi/LoaderClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.405" vertical-offset="467" max-vertical-offset="969">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rmi/security.policy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12911393" vertical-offset="0" max-vertical-offset="395">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/LocalMainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2911392" vertical-offset="102" max-vertical-offset="765">
-          <caret line="38" column="65" selection-start-line="35" selection-start-column="8" selection-end-line="38" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServerLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0329113" vertical-offset="13" max-vertical-offset="969">
@@ -1232,8 +1235,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/persistence/PlayerLoaderRmiCaller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26153848" vertical-offset="17" max-vertical-offset="867">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="867">
           <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaverInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1722" max-vertical-offset="2635">
+          <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/PlayerSaverRmiCaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6203474" vertical-offset="413" max-vertical-offset="816">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding />
         </state>
       </provider>
