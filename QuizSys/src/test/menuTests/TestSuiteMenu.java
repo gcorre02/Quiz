@@ -12,6 +12,7 @@ import test.menuTests.test.local.EditQuestionMenuTest;
 import test.menuTests.test.local.EditQuizMenuTest;
 import test.menuTests.test.local.LoginMenuTest;
 import test.menuTests.test.local.UserMenuTest;
+import test.menuTests.test.remote.EditQuestionMenuRmiTest;
 import test.menuTests.test.remote.EditQuizMenuRmiTest;
 import test.menuTests.test.remote.LoginMenuRmiTest;
 import test.menuTests.test.remote.UserMenuRmiTest;
@@ -27,7 +28,8 @@ import test.menuTests.test.remote.UserMenuRmiTest;
         //Remote
         LoginMenuRmiTest.class,
         UserMenuRmiTest.class,
-        EditQuizMenuRmiTest.class
+        EditQuizMenuRmiTest.class,
+        EditQuestionMenuRmiTest.class
 })
 public class TestSuiteMenu {
 }
