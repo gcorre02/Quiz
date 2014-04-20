@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-//TODO write a test class for this.
 /**
+ * client side Saver to call real methods over the network.
+ *
  * Created by user on 18-04-2014.
  */
 public class SaverRmiCaller implements SaverInterface {

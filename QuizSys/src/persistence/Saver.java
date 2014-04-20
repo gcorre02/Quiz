@@ -18,9 +18,10 @@ import java.util.Map;
 /**
  * 
  * TODO <>no support for changing question numbers at the moment.
- * 
- * source defines the folder where all the quiz system files are.
  * TODO<concurrency> some conflict checking must go in here.
+ *
+ * Server side real methods for handling user data.
+ *
  * @author Guilherme
  *
  */
@@ -28,6 +29,12 @@ import java.util.Map;
 public class Saver implements SaverInterface {
 	String source;
 	File file;
+
+
+    /**
+     * Makes sure the file system structure is corrent and generates it if not.
+     * @param path defines the folder where all the quiz system files are.
+     */
 	public Saver(String path){
 		source = path;
 		createFolder(path);
@@ -61,10 +68,10 @@ public class Saver implements SaverInterface {
 	}
 	/**
 	 * 
-	 * add User names should be called usually, saveUserNames has the danger of overwriting existing users
-	 * TODO <overwriting> make it private !!!???
-	 * @param userNames
-	 * @return
+	 * add User names should be called usually, saveUserNames has the danger of overwriting existing users.
+     * Generates the file for storing the usernames registry.
+	 * @param userNames the array with all the usernames registered in the system.
+	 * @return true if operation works.
 	 */
 	@Override
     public boolean saveUserNames(ArrayList<String> userNames){
@@ -82,6 +89,12 @@ public class Saver implements SaverInterface {
 		return true;
 	}
 
+    /**
+     * registers a new user to the structure. created basic stub file structure for the user.
+     * @param user the name of the user to be registered.
+     * @return true if method's behaviour works.
+     * @throws IOException if file structure cannot be accessed propperly.
+     */
 	@Override
     public boolean addUserName(String user) throws IOException{
 		Loader l = new Loader(source);
@@ -116,7 +129,14 @@ public class Saver implements SaverInterface {
 			createFolder(source+File.separator+user);
 		}
 	}
-	@Override
+
+    /**
+     * removes a user completely for the system.
+     * @param user name of the user to remove.
+     * @return true if removal is successful
+     * @throws IOException if file structure is not accessed properly
+     */
+    @Override
     public boolean deleteUser(String user) throws IOException{
 		Loader l = new Loader(source);
 		if(deleteUserFromUserQuizzes(user)){
@@ -153,6 +173,10 @@ public class Saver implements SaverInterface {
 		return false;
 	}
 
+    /**
+     * deletes folder and all children.
+     * @param path to the folder to remove.
+     */
 	@Override
     public void deleteFolder(String path) {
 		File file = new File(path);
@@ -165,8 +189,10 @@ public class Saver implements SaverInterface {
 		}
 		file.delete();
 	}
+
 	/*
-	 * need to improve the json to make it understand the map propperly
+	 * persists the userQuizzes reference structure.
+	 * UserQuizzes maps each user to their quizzes.
 	 */
 	@Override
     public boolean saveUserQuizzes(Map<String, String[]> userQuizzes){
@@ -219,6 +245,13 @@ public class Saver implements SaverInterface {
 
 	}
 
+    /**
+     * adds a quiz object to the structure
+     * @param quizName of the quiz
+     * @param userName of the user
+     * @param userQuizzes the quiz referencing structure
+     * @return true if methods behaves as expected
+     */
 	@Override
     public boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
@@ -232,16 +265,23 @@ public class Saver implements SaverInterface {
 			return true;
 		}
 		//exec
-		
+
 		userQuizzes.put(userName, CollectionTools.addElementToArray(quizName, userQuizzes.get(userName)));
-		//debug
-		//System.out.println(CollectionTools.printMap(userQuizzes));
-		//end debug
+
 		if(saveUserQuizzes(userQuizzes))
 			return true;
 		else
 			return false;
 	}
+
+    /**
+     * Version of addQuizz that takes a LinkedHashMap as parameter for whence it is called over the network.
+     *
+     * @param quizName
+     * @param userName
+     * @param userQuizzes
+     * @return true if the structure works.
+     */
     @Override
     public boolean addQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes){
         //error checking
@@ -266,12 +306,25 @@ public class Saver implements SaverInterface {
             return false;
     }
 
+    /**
+     * Overload of removeQuiz with LinkedHashMap as a parameter for handling requests over the network.
+     * @param quizName
+     * @param userName
+     * @param userQuizzes
+     * @return true if the removal is successful.
+     */
     @Override
     public boolean removeQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes) {
         return removeQuiz(quizName,userName,(Map)userQuizzes);
     }
 
-
+    /**
+     * removes and cleans up all files relevant to  the referenced quiz in the system.
+     * @param quizName
+     * @param userName
+     * @param userQuizzes
+     * @return false if quiz already does not exist or accessing the structure is not possible.
+     */
     @Override
     public boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
@@ -301,7 +354,7 @@ public class Saver implements SaverInterface {
 	/**
 	 * each quiz has a config file, which has the name of the quiz and stores the name of the quiz object file, and associated questions.
 	 * returns false if config file doesnt exist, which means it's not in the structure, which means that addquiz hasnt been called first.
-	 * @return
+	 * @return true if saving the object is successful.
 	 */
 	@Override
     public boolean saveQuiz(Quiz quiz){
@@ -364,9 +417,14 @@ public class Saver implements SaverInterface {
 		}
 		return true;
 	}
-	/*
-	 * handles adding a question at every level, updates the object
-	 */
+
+    /**
+     * handles adding a question at every level, updates the object
+     * @param question String for the question itself
+     * @param user owner of the quiz
+     * @param quiz name
+     * @return true if persisting Question object is successful
+     */
 	@Override
     public boolean addAQuestion(String question, String user, String quiz){
 		Loader l = new Loader(source);
@@ -383,6 +441,14 @@ public class Saver implements SaverInterface {
 			return true;
 		return false;
 	}
+
+    /**
+     * removes referenced question
+     * @param question String for the question itself
+     * @param user name of the user
+     * @param quiz name that owns the question
+     * @return true if operation is successful
+     */
 	@Override
     public boolean removeAQuestion(String question, String user, String quiz){
 		Loader l = new Loader(source);
@@ -404,7 +470,13 @@ public class Saver implements SaverInterface {
 			return true;
 		return false;
 	}
-	
+
+    /**
+     * persists passed question object
+     *
+     * @param question object to persist
+     * @return true if persisting operation is successful
+     */
 	@Override
     public boolean saveAQuestionObject(Question question){
         Loader l = new Loader(source);
