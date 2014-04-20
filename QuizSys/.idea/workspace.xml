@@ -7,16 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderClientTest.java" afterPath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderClientTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderRmiCallerTest.java" afterPath="$PROJECT_DIR$/src/test/rmiTests/test/LoaderRmiCallerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/DeleteSystemFiles.java" afterPath="$PROJECT_DIR$/src/test/DeleteSystemFiles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/PlayAQuizMenu.java" afterPath="$PROJECT_DIR$/src/player/PlayAQuizMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/quizData/Player.java" afterPath="$PROJECT_DIR$/src/quizData/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/playerTests/test/PlayerLoginMenuTest.java" afterPath="$PROJECT_DIR$/src/test/playerTests/test/PlayerLoginMenuTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/PlayerMenu.java" afterPath="$PROJECT_DIR$/src/player/PlayerMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java" afterPath="$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/PlayerSaver.java" afterPath="$PROJECT_DIR$/src/persistence/PlayerSaver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/persistenceTests/test/local/SaverTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/SaverTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/quizData/Quiz.java" afterPath="$PROJECT_DIR$/src/quizData/Quiz.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -60,12 +53,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerMenuTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlayerMenuTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29339853" vertical-offset="1104" max-vertical-offset="1530">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1104" max-vertical-offset="1530">
               <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SetupSystemFiles.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/SetupSystemFiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="2448">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3751#3759#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayAQuizMenu.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PlayAQuizMenu.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/player/PlayAQuizMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1853">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.7371134" vertical-offset="156" max-vertical-offset="2091">
+              <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -115,8 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/LocalUserLaunchers/LaunchPlayerServerVersion.java" />
-        <option value="$PROJECT_DIR$/src/main/LocalUserLaunchers/LaunchUserServerVersion.java" />
         <option value="$PROJECT_DIR$/src/main/LocalUserLaunchers/LaunchPlayerLocalVersion.java" />
         <option value="$PROJECT_DIR$/src/main/LocalUserLaunchers/LaunchUserLocalVersion.java" />
         <option value="$PROJECT_DIR$/src/test/mainTests/test/localUserLaunchers/LaunchUserServerVersionTest.java" />
@@ -162,10 +166,12 @@
         <option value="$PROJECT_DIR$/src/test/playerTests/test/PlayerLoginMenuTest.java" />
         <option value="$PROJECT_DIR$/src/test/rmiTests/test/LoaderClientTest.java" />
         <option value="$PROJECT_DIR$/src/persistence/PlayerSaver.java" />
-        <option value="$PROJECT_DIR$/src/player/PlayAQuizMenu.java" />
         <option value="$PROJECT_DIR$/src/player/PlayerMenu.java" />
         <option value="$PROJECT_DIR$/src/quizData/Player.java" />
         <option value="$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java" />
+        <option value="$PROJECT_DIR$/src/test/DeleteSystemFiles.java" />
+        <option value="$PROJECT_DIR$/src/quizData/Quiz.java" />
+        <option value="$PROJECT_DIR$/src/player/PlayAQuizMenu.java" />
       </list>
     </option>
   </component>
@@ -738,7 +744,7 @@
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
       <workItem from="1397994366077" duration="5287000" />
-      <workItem from="1398003593165" duration="13211000" />
+      <workItem from="1398003593165" duration="14519000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -992,11 +998,15 @@
       <created>1398025279709</created>
       <updated>1398025279710</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="solved a few exceptions that had to do with Player handling.">
+      <created>1398028496943</created>
+      <updated>1398028496943</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74842000" />
+    <option name="totallyTimeSpent" value="76150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1018,7 +1028,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31496063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31496063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1044,7 +1054,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="added propper tests to LoginMenuTest.class" />
     <MESSAGE value="refactored a copy of LoginMenuTest to also test interaction with remote." />
     <MESSAGE value="refactored Saver to create a proper object of a quiz file when it generates quiz stubs." />
     <MESSAGE value="implemented propper tests in UserMenuTest.class" />
@@ -1069,7 +1078,8 @@
     <MESSAGE value="passed all tests in LoaderTest.clas" />
     <MESSAGE value="reviewed all the tests under persistence." />
     <MESSAGE value="corrected a problem in savertest with removing objects other test might need." />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected a problem in savertest with removing objects other test might need." />
+    <MESSAGE value="solved a few exceptions that had to do with Player handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="solved a few exceptions that had to do with Player handling." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1107,13 +1117,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/quizData/Quiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.23076923" vertical-offset="178" max-vertical-offset="680">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1381,17 +1384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/SetupSystemFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="2448">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3751#3759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/persistence/PlayerLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.72" vertical-offset="1259" max-vertical-offset="1751">
@@ -1411,14 +1403,6 @@
             <element signature="docComment;method#getQuizObject#0;class#Loader#0" expanded="false" />
             <element signature="method#getQuestionNumber#0;class#Loader#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/DeleteSystemFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="476">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,26 +1459,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/PlayAQuizMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1853">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/PlayerMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1870">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/quizData/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="578">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1509,10 +1477,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/SetupSystemFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="2448">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3751#3759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/quizData/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="578">
+          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/quizData/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.079896905" vertical-offset="105" max-vertical-offset="731">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="13" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/DeleteSystemFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43041238" vertical-offset="71" max-vertical-offset="493">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/playerTests/test/PlayerMenuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29339853" vertical-offset="1104" max-vertical-offset="1530">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1104" max-vertical-offset="1530">
           <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/PlayAQuizMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7371134" vertical-offset="156" max-vertical-offset="2091">
+          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
           <folding />
         </state>
       </provider>

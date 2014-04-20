@@ -4,12 +4,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 @Data
 public class Quiz implements Serializable {
 	private String owner;
 	private ArrayList<String> quizQuestions;
 	private String quizName;
+    private LinkedHashMap<Double, String> highestScore;
 
     public Quiz(){
         //single instance creator
@@ -20,6 +22,8 @@ public class Quiz implements Serializable {
 		quizQuestions = new ArrayList<>();
 		quizName = name;
 		this.owner = owner;
+        highestScore=new LinkedHashMap<>();
+        highestScore.put(0.0, "Nobody");
 	}
 
     //TODO need to have a field that is set if quiz can be played or not. corresponding checks also in the PlayerMenus

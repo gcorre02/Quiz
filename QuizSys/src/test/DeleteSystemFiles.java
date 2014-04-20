@@ -16,7 +16,8 @@ public class DeleteSystemFiles {
     String source;
     Saver s;
     @Test
-    public void close(){
+    public void close() throws InterruptedException {
+        Thread.sleep(100);
         source = "testFiles";
         s = new Saver(source);
         s.deleteFolder(source);

@@ -5,11 +5,13 @@ import persistence.PlayerLoaderInterface;
 import persistence.PlayerSaverInterface;
 import quizData.Player;
 import quizData.Question;
+import quizData.Quiz;
 import tools.CollectionTools;
 import tools.UserInterface;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -32,11 +34,25 @@ public class PlayAQuizMenu {
         double score = 0;
 
         score = playQuiz();
-
-
+        boolean highestScore = checkHighScore(score);
+        if(highestScore){
+            System.out.println("New global high score: " + score + "%");
+        }
         System.out.println("Your score is " + score + "%");
 
         close(score);
+    }
+
+    private boolean checkHighScore(double score) {
+        Quiz q = pl.getL().getQuizObject(quizOwner,quiz);
+        LinkedHashMap<Double,String> highestScore = q.getHighestScore();
+        if(highestScore.keySet().toArray(new Double[0])[0]<score){
+            highestScore = new LinkedHashMap<>();
+            highestScore.put(score,playerName);
+            q.setHighestScore(highestScore);
+            return true;
+        }
+        return false;
     }
 
     private double playQuiz() {
