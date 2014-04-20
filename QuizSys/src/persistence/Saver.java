@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -241,8 +242,37 @@ public class Saver implements SaverInterface {
 		else
 			return false;
 	}
+    @Override
+    public boolean addQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes){
+        //error checking
+        if(!userQuizzes.keySet().contains(userName)){
+            System.out.println("User " + userName + " does not exist.");
+            return false;
+        }
 
-	@Override
+        if(CollectionTools.arrayContains(quizName, userQuizzes.get(userName))){
+            System.out.println("A quiz with the name " + quizName + " already exists.");
+            return true;
+        }
+        //exec
+
+        userQuizzes.put(userName, CollectionTools.addElementToArray(quizName, userQuizzes.get(userName)));
+        //debug
+        //System.out.println(CollectionTools.printMap(userQuizzes));
+        //end debug
+        if(saveUserQuizzes(userQuizzes))
+            return true;
+        else
+            return false;
+    }
+
+    @Override
+    public boolean removeQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes) {
+        return removeQuiz(quizName,userName,(Map)userQuizzes);
+    }
+
+
+    @Override
     public boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes){
 		//error checking
 		if(!userQuizzes.keySet().contains(userName)){

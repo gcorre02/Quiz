@@ -5,6 +5,7 @@ import quizData.Quiz;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -25,6 +26,10 @@ public interface SaverInterface {
     boolean saveUserQuizzes(Map<String, String[]> userQuizzes);
 
     boolean addQuiz(String quizName, String userName, Map<String, String[]> userQuizzes);
+
+    boolean addQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes);
+
+    boolean removeQuiz(String quizName, String userName, LinkedHashMap<String, String[]> userQuizzes);
 
     boolean removeQuiz(String quizName, String userName, Map<String, String[]> userQuizzes);
 

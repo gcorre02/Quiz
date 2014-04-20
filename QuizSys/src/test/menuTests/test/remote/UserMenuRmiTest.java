@@ -9,6 +9,7 @@ import tools.UserInterface;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -60,7 +61,8 @@ public class UserMenuRmiTest {
         String newUser = "Sapo";
         s.addUserName(newUser);
         String newQuiz = "sapinhos";
-        s.addQuiz(newQuiz,newUser,l.getUserQuizzes());
+        Map<String, String[]> quizMap = l.getUserQuizzes();
+        s.addQuiz(newQuiz,newUser,quizMap);
         UserMenu num = new UserMenu(l,s,ui,newUser);
         //mock
 		when(ui.getUserAnswer(anyString())).thenReturn('B','D');
