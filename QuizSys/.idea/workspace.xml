@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java" afterPath="$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SetupSystemFiles.java" afterPath="$PROJECT_DIR$/src/test/SetupSystemFiles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="LoaderTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.362283" vertical-offset="0" max-vertical-offset="1887">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state vertical-scroll-proportion="4.2183623" vertical-offset="0" max-vertical-offset="1904">
+              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -597,7 +596,7 @@
       <workItem from="1397903957806" duration="39332000" />
       <workItem from="1397987097101" duration="6181000" />
       <workItem from="1397994366077" duration="5287000" />
-      <workItem from="1398003593165" duration="7284000" />
+      <workItem from="1398003593165" duration="7352000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -831,11 +830,15 @@
       <created>1398010366990</created>
       <updated>1398010366991</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="reviewed LoaderTest class.">
+      <created>1398010926454</created>
+      <updated>1398010926454</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68915000" />
+    <option name="totallyTimeSpent" value="68983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -855,7 +858,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32440946" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -883,7 +886,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="simplified the code in all Launch classes." />
     <MESSAGE value="changed javadoc in launch user server version test class and restructured tests under menuTests package." />
     <MESSAGE value="changed the readme." />
     <MESSAGE value="Restructured MenuTests package to allow for a set of local tests and another set of remote tests." />
@@ -908,7 +910,8 @@
     <MESSAGE value="wrote javadocs for all Saver relevant classes." />
     <MESSAGE value="restructured persisten tests packages." />
     <MESSAGE value="restructured all tests packages and created all necessary TestSuites." />
-    <option name="LAST_COMMIT_MESSAGE" value="restructured all tests packages and created all necessary TestSuites." />
+    <MESSAGE value="reviewed LoaderTest class." />
+    <option name="LAST_COMMIT_MESSAGE" value="reviewed LoaderTest class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1336,8 +1339,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/persistenceTests/test/local/LoaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.362283" vertical-offset="0" max-vertical-offset="1887">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="4.2183623" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
           <folding />
         </state>
       </provider>

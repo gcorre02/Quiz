@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -43,7 +44,7 @@ public class LoaderTest {
 
 	@Test
 	public final void testLoader() {
-		assertTrue(loader instanceof Loader);
+		assertTrue(loader != null);
 		File f = new File(folder);
 		assertTrue(f.exists());
 	}
@@ -57,10 +58,10 @@ public class LoaderTest {
 		System.out.println(retrievedUserNames.toString());
 
 		//expecteds
-		String[] expecteds = userNames.toArray(new String[0]); 
+		String[] expecteds = userNames.toArray(new String[userNames.size()]);
 
 		//actuals
-		String[] actuals = retrievedUserNames.toArray(new String[0]); 
+		String[] actuals = retrievedUserNames.toArray(new String[retrievedUserNames.size()]);
 		//test
 		assertArrayEquals(expecteds, actuals);
 	}
@@ -72,7 +73,8 @@ public class LoaderTest {
 		String[] expectedKeys = names;
 		//actual
 		String[] actuals = loader.getUserQuizzes().get("Gonzo");
-		String[] actualKeys =loader.getUserQuizzes().keySet().toArray(new String[0]);
+        Set<String> strings = loader.getUserQuizzes().keySet();
+        String[] actualKeys = strings.toArray(new String[strings.size()]);
 		//debug
 		System.out.println(CollectionTools.printMap(loader.getUserQuizzes()));
 		//test
