@@ -92,6 +92,7 @@ public class LoaderServer extends UnicastRemoteObject implements LoaderService {
         int error = 0;
         while(error!=3){
             try {
+                Thread.sleep(100);
                 returnableObj = (T) method.invoke(operator, params);
                 error = 3;
             } catch (Exception e) {

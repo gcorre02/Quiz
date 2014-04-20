@@ -9,10 +9,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="Still need to improve the test, specially problems with overwriting information other tests need.">
+    <list default="true" id="9984cec9-3e37-4178-a7ef-1fe3c2730fb8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java" afterPath="$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rmi/LoaderServer.java" afterPath="$PROJECT_DIR$/src/rmi/LoaderServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuizSys.iws" />
@@ -36,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LaunchServerMainTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LaunchServerMainTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="782">
-              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.79217607" vertical-offset="271" max-vertical-offset="731">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoaderServer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LoaderServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9141414" vertical-offset="1219" max-vertical-offset="1785">
-              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1308" max-vertical-offset="1802">
+              <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -128,8 +127,8 @@
         <option value="$PROJECT_DIR$/src/test/SetupSystemFiles.java" />
         <option value="$PROJECT_DIR$/src/rmi/LoaderServerLauncher.java" />
         <option value="$PROJECT_DIR$/src/rmi/LoaderService.java" />
-        <option value="$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java" />
         <option value="$PROJECT_DIR$/src/rmi/LoaderServer.java" />
+        <option value="$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java" />
       </list>
     </option>
   </component>
@@ -535,7 +534,7 @@
       <workItem from="1398031698301" duration="295000" />
       <workItem from="1398032735168" duration="13000" />
       <workItem from="1398032752732" duration="5000" />
-      <workItem from="1398032761852" duration="983000" />
+      <workItem from="1398032761852" duration="1252000" />
     </task>
     <task id="LOCAL-00001" summary="got the security policy to work with all levels of limitations. (only with jars though, Gson still creating a problem)">
       <created>1397691527359</created>
@@ -797,11 +796,15 @@
       <created>1398031436725</created>
       <updated>1398031436725</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="added a rough concurrency handling at LoaderServer">
+      <created>1398033792394</created>
+      <updated>1398033792394</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78736000" />
+    <option name="totallyTimeSpent" value="79005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -849,7 +852,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="refactored Saver to create a proper object of a quiz file when it generates quiz stubs." />
     <MESSAGE value="implemented propper tests in UserMenuTest.class" />
     <MESSAGE value="solved a problem inherent to the specificity requirement of the client available  caller method." />
     <MESSAGE value="setup the file system for the test class EditQuizMenuTest." />
@@ -874,7 +876,8 @@
     <MESSAGE value="corrected a problem in savertest with removing objects other test might need." />
     <MESSAGE value="solved a few exceptions that had to do with Player handling." />
     <MESSAGE value="Still need to improve the test, specially problems with overwriting information other tests need." />
-    <option name="LAST_COMMIT_MESSAGE" value="Still need to improve the test, specially problems with overwriting information other tests need." />
+    <MESSAGE value="added a rough concurrency handling at LoaderServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a rough concurrency handling at LoaderServer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1224,14 +1227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="782">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rmi/LoaderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
@@ -1242,8 +1237,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rmi/LoaderServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9141414" vertical-offset="1219" max-vertical-offset="1785">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1308" max-vertical-offset="1802">
+          <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/mainTests/test/launchers/LaunchServerMainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79217607" vertical-offset="271" max-vertical-offset="731">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
       </provider>
