@@ -47,7 +47,7 @@ public class PlayerLoginMenuTest {
     @Test
     public void testRun() throws Exception {
         //TODO only a stub
-        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
         plm.run();
 
         fail();
@@ -59,7 +59,7 @@ public class PlayerLoginMenuTest {
         String playerStr = "Goncalo";
         ps.addPlayer(playerStr);
         when(ui.readFromUser()).thenReturn(playerStr);
-        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
         plm.run();
         //Expected
         String expected = playerStr;
@@ -75,7 +75,7 @@ public class PlayerLoginMenuTest {
         //TODO only a stub
         String playerStr = "Jeremias";
         when(ui.readFromUser()).thenReturn(playerStr);
-        when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('A','D','D');
         plm.run();
         //Expected
         String expected = playerStr;

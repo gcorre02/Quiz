@@ -6,7 +6,10 @@ import org.junit.Test;
 import persistence.PlayerLoader;
 import persistence.PlayerSaver;
 import player.PlayerMenu;
+import quizData.Player;
 import tools.UserInterface;
+
+import java.io.IOException;
 
 import static junit.framework.TestCase.fail;
 import static org.mockito.Matchers.anyString;
@@ -48,7 +51,7 @@ public class PlayerMenuTest {
     public void testRun() throws Exception {
         //TODO implement
         //setup
-        when(ui.getUserAnswer(anyString())).thenReturn('A','C','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('A','C','D','D');
         //debug
         pm.run();
         //test
@@ -58,7 +61,7 @@ public class PlayerMenuTest {
     public void testShowAllQuizzes() throws Exception {
         //TODO improve test, kinda sucks
         //setup
-        when(ui.getUserAnswer(anyString())).thenReturn('A','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('A','D','D');
         //debug
         pm.run();
         //test
@@ -68,7 +71,7 @@ public class PlayerMenuTest {
     public void testPlayAQuiz() throws Exception {
         //TODO implement
         //setup
-        when(ui.getUserAnswer(anyString())).thenReturn('B','D');
+        when(ui.getUserAnswer(anyString())).thenReturn('B','D','D');
         when(ui.readFromUser()).thenReturn("1","0");
         //debug
         pm.run();
@@ -77,12 +80,16 @@ public class PlayerMenuTest {
     }
 
     @Test
-    public void testPrintPlayedQuizzes() {
+    public void testPrintPlayedQuizzes() throws IOException {
         //TODO implement
         //setup
-        when(ui.getUserAnswer(anyString())).thenReturn('C','D');
-
+        when(ui.getUserAnswer(anyString())).thenReturn('C','D','D');
+        Player p = new Player(player);
+        ps.removePlayer(player);
+        ps.savePlayer(p);
         //debug
+        System.out.println(p.getPlayedQuizzes());
+
         pm.run();
         //test
         fail();

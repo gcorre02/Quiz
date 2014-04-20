@@ -8,7 +8,6 @@ import quizData.Question;
 import tools.CollectionTools;
 import tools.UserInterface;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,43 +24,39 @@ public class PlayAQuizMenu {
     private String quizOwner;
     private String quiz;
 
-    public void run() {
+    public void run() throws Exception{
 
         //TODO played counter needs to be implemented into the Player Object
 
         System.out.println("Welcome to " + quiz);
         double score = 0;
-        try {
-            score = playQuiz();
-        } catch (IOException e) {
-            System.out.println("Couldn't complete the quiz, please play again.");
-        }
+
+        score = playQuiz();
+
 
         System.out.println("Your score is " + score + "%");
 
         close(score);
     }
 
-    private double playQuiz() throws IOException {
+    private double playQuiz() {
         double score = 0;
+        try {
+            ArrayList<String> questions = pl.getL().getQuizQuestionsConfig(quizOwner, quiz);
+            for (String question : questions) {
+                System.out.println("\n" + question);
+                Question q = pl.getL().getQuestionObject(quizOwner, quiz, question);
+                int qScore = getQuestionScore(q);
+                score += qScore;
+            }
 
-        ArrayList<String> questions = pl.getL().getQuizQuestionsConfig(quizOwner,quiz);
-        for(String question : questions){
-            System.out.println("\n"+question);
-            Question q = pl.getL().getQuestionObject(quizOwner,quiz,question);
-            //debug
-            System.out.println("Loaded "+ q + ": ");
-            System.out.println("Owner : " + q.getOwner());
-            System.out.println("Answers : " + CollectionTools.collectionPrinter('S', q.getAnswers()));
-            //\debug
-            int qScore = getQuestionScore(q);
-            score += qScore;
+            int numberOfQuestions = questions.size();
+
+            score = score / numberOfQuestions * 100;
+        }catch(Exception e){
+            score = 0;
+            System.out.println("Couldn't finish the quiz");
         }
-
-        int numberOfQuestions = questions.size();
-
-        score = score / numberOfQuestions * 100;
-
         return score;
     }
 
@@ -84,7 +79,9 @@ public class PlayAQuizMenu {
         Player p = pl.getPlayer(playerName);
         Map<String, String[]> playedQuizzes;
         Map<String, Double> quizScores;
-
+        if(!p.getPlayedQuizzes().containsKey(quizOwner+"."+quiz)){
+            p.getQuizScores().put((quizOwner+"."+quiz),0.0);
+        }
         if(p.firstPlay()){
             playedQuizzes = new HashMap<>();
             String[] currentQuiz = {quiz};

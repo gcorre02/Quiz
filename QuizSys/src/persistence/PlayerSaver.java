@@ -48,14 +48,15 @@ public class PlayerSaver implements PlayerSaverInterface {
         String path = source + File.separator + "Player" + File.separator + "playersIndex.txt";
         Gson gson = new Gson();
         File file = new File(path);
-        PrintWriter w;
+        PrintWriter w = null;
         try {
             w = new PrintWriter(file);
             w.println(gson.toJson(inputArray));
-            w.close();
         } catch (FileNotFoundException e) {
             System.out.println("Couldn't create the player's file system.");
         }
+        w.close();
+
 
         createPlayersFiles(inputArray);
     }
@@ -76,14 +77,14 @@ public class PlayerSaver implements PlayerSaverInterface {
         String path = source + File.separator + "Player" + File.separator + p.getName()+".txt";
         Gson gson = new Gson();
         File file = new File(path);
-        PrintWriter w;
+        PrintWriter w = null;
         try {
             w = new PrintWriter(file);
             w.println(gson.toJson(p));
-            w.close();
         } catch (FileNotFoundException e) {
             System.out.println("Couldn't persist the player's object.");
         }
+        w.close();
 
     }
 

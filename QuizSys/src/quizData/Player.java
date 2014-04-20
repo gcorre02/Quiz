@@ -20,9 +20,9 @@ public class Player implements Serializable{
     public Player(String name){
         this.name = name;
         playedQuizzes = new HashMap<>();
-        playedQuizzes.put("No Quizzes Played Yet",new String[0]);
+        playedQuizzes.put("No Quizzes Played Yet",new String[]{"none"});
         quizScores = new HashMap<>();
-        quizScores.put("No Quizzes Played Yet", 0.0);
+        quizScores.put("No Quizzes Played Yet", 1.0);
     }
     public boolean firstPlay(){
         if(playedQuizzes.containsKey("No Quizzes Played Yet"))

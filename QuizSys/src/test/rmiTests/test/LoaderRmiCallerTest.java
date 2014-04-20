@@ -1,8 +1,9 @@
 package test.rmiTests.test;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import persistence.LoaderRmiCaller;
-import rmi.LoaderServerLauncher;
 import tools.CollectionTools;
 
 import static junit.framework.TestCase.fail;
@@ -11,15 +12,9 @@ import static junit.framework.TestCase.fail;
  * Created by user on 18-04-2014.
  */
 public class LoaderRmiCallerTest {
-    static LoaderServerLauncher lsl;
     private LoaderRmiCaller lrc;
 
-    @BeforeClass
-    public static void setupBeforeClass(){
-        //server is working for all tests
-        lsl = new LoaderServerLauncher();
-        lsl.main(new String[0]);
-    }
+
     @Before
     public void setup() throws Exception{
         lrc = new LoaderRmiCaller("testFiles");
@@ -30,11 +25,7 @@ public class LoaderRmiCallerTest {
         lrc = null;
     }
 
-    @AfterClass
-    public static void shutDown(){
 
-        System.exit(0);
-    }
 
     @Test //TODO impl file structure
     public void testGetUsernames() throws Exception {

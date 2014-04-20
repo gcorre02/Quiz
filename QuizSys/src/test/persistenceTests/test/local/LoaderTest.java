@@ -68,7 +68,7 @@ public class LoaderTest {
         ArrayList<String> actualsList = new ArrayList<String>();
         Collections.addAll(actualsList,actuals);
 		//test
-		assertTrue(actualsList.contains(expectedsList));
+		assertTrue(actualsList.containsAll(expectedsList));
 	}
 
 	@Test

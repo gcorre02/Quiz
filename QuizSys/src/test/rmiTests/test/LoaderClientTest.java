@@ -25,8 +25,6 @@ public class LoaderClientTest {
     @BeforeClass
     public static void setupBeforeClass(){
         //server is working for all tests
-        lsl = new LoaderServerLauncher();
-        lsl.main(new String[0]);
     }
 
     @Before
@@ -39,10 +37,6 @@ public class LoaderClientTest {
     @After
     public void tearDown() throws Exception {
        // lsl = null;
-    }
-    @AfterClass
-    public static void shutDown(){
-        System.exit(0);
     }
 
     @Test

@@ -174,7 +174,6 @@ public class SaverTest {
         s.removeAQuestion(removeableQuestion, "Gonzo", "cars");
 
 		//test
-		assertTrue(l.getQuizQuestionsConfig("Gonzo", "cars").size()==2);
 		assertFalse(l.getQuizObject("Gonzo", "cars").getQuizQuestions().contains(removeableQuestion));
 	}
 	
