@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 import test.mainTests.test.launchers.LaunchServerMainTest;
 import test.mainTests.test.launchers.LocalMainTest;
 import test.mainTests.test.launchers.ServerMainTest;
+import test.mainTests.test.localUserLaunchers.LaunchPlayerLocalVersionTest;
 
 /**
  *
@@ -15,8 +16,9 @@ import test.mainTests.test.launchers.ServerMainTest;
 @Suite.SuiteClasses({
         LocalMainTest.class,
         ServerMainTest.class,
-        LaunchServerMainTest.class
-        //, local tests go in here.
+        LaunchServerMainTest.class,
+        //
+        LaunchPlayerLocalVersionTest.class
         //SetupSystemFiles.class,DeleteSystemFiles.class // to be called at the end.
 })
 public class TestSuiteMain {

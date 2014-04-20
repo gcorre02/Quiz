@@ -19,8 +19,8 @@ import static org.mockito.Mockito.mock;
  */
 public class LaunchServerMainTest {
 
-    String source;
-    UserInterface ui;
+    private String source;
+    private UserInterface ui;
 
     @Before
     public void setUp() throws Exception {
