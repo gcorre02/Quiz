@@ -31,7 +31,7 @@ public class LaunchUserLocalVersion {
      * @param source The path to the folder where the file structure is.
      * @param ui a potential mock of user interface.
      */
-    private static void launch(String source, UserInterface ui) {
+    public static void launch(String source, UserInterface ui) {
         s = new Saver(source);
         l = new Loader(source);
         LoginMenu lm = new LoginMenu(l,s,ui);
